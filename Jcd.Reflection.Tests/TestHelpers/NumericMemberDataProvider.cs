@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 
-using Jcd.Utilities.Test.TestHelpers;
+using Jcd.Reflection.Tests.TestHelpers;
 
 namespace Jcd.Utilities.Test.Extensions
 {

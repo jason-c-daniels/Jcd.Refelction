@@ -12,6 +12,9 @@
         <RepositoryUrl>https://github.com/jason-c-daniels/Jcd.Reflection</RepositoryUrl>
         <RepositoryType>GitHub</RepositoryType>
         <PackageTags>reflection csharp c#</PackageTags>
+        <PackageVersion>1.0.1</PackageVersion>
+        <AssemblyVersion>1.0.1</AssemblyVersion>
+        <FileVersion>1.0.1</FileVersion>
     </PropertyGroup>
 
     <ItemGroup>
