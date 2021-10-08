@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Jcd.Reflection</Title>
+        <Authors>Jason C Daniels</Authors>
+        <Description>A small library containing some commonly implemented reflection helpers.</Description>
+        <Copyright>2018-2021</Copyright>
+        <PackageProjectUrl>https://github.com/jason-c-daniels/Jcd.Reflection</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/jason-c-daniels/Jcd.Reflection/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/jason-c-daniels/Jcd.Reflection</RepositoryUrl>
+        <RepositoryType>GitHub</RepositoryType>
+        <PackageTags>reflection csharp c#</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Jcd.Validations" Version="1.0.0" />
+      <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    </ItemGroup>
+
+</Project>
