@@ -16,11 +16,11 @@
         <FileVersion>1.0.2</FileVersion>
         <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
         <PackageIconUrl>https://s.gravatar.com/avatar/c7e8df18f543ea857ac93660a190df98?s=320</PackageIconUrl>
-        <PackageReleaseNotes>Added support for .net standard 2.0</PackageReleaseNotes>
+        <PackageReleaseNotes>Upgraded Jcd.Validations to 1.0.8</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Jcd.Validations" Version="1.0.2" />
+      <PackageReference Include="Jcd.Validations" Version="1.0.8" />
       <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     </ItemGroup>
 
