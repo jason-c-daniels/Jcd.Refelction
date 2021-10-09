@@ -4,3 +4,8 @@ The settings indicating "how" to enumerate. (i.e. BingindFlgas and a predicate f
 ```csharp
 public struct FieldOrPropertyEnumerator.Settings
 ```
+
+| Fields | |
+| :--- | :--- |
+| [Flags](Jcd_Reflection_FieldOrPropertyEnumerator_Settings_Flags.md 'Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Flags') | The BindingFlags for the member lookup.<br/> |
+| [Skip](Jcd_Reflection_FieldOrPropertyEnumerator_Settings_Skip.md 'Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Skip') | A predicate for skipping certain members.<br/> |

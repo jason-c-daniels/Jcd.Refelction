@@ -15,7 +15,13 @@ namespace Jcd.Reflection
         /// </summary>
         public struct Settings
         {
+            /// <summary>
+            /// The BindingFlags for the member lookup.
+            /// </summary>
             public BindingFlags? Flags;
+            /// <summary>
+            /// A predicate for skipping certain members.
+            /// </summary>
             public Func<MethodInfo, bool> Skip;
         }
         
@@ -44,7 +50,7 @@ namespace Jcd.Reflection
         /// <summary>
         /// Constructs a MethodInfoEnumerator from an instance and settings.
         /// </summary>
-        /// <param name="type">The instance to enumerate</param>
+        /// <param name="item">The instance to enumerate</param>
         /// <param name="settings">The settings controlling enumeration</param>
         public MethodInfoEnumerator(object item,
                                     Settings settings = default(Settings)) : this((Type) (item is Type || item is null

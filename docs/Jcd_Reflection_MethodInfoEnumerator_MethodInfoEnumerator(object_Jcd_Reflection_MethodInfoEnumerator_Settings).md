@@ -7,6 +7,7 @@ public MethodInfoEnumerator(object item, Jcd.Reflection.MethodInfoEnumerator.Set
 #### Parameters
 <a name='Jcd_Reflection_MethodInfoEnumerator_MethodInfoEnumerator(object_Jcd_Reflection_MethodInfoEnumerator_Settings)_item'></a>
 `item` [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')  
+The instance to enumerate
   
 <a name='Jcd_Reflection_MethodInfoEnumerator_MethodInfoEnumerator(object_Jcd_Reflection_MethodInfoEnumerator_Settings)_settings'></a>
 `settings` [Settings](Jcd_Reflection_MethodInfoEnumerator_Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')  

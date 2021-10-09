@@ -15,7 +15,13 @@ namespace Jcd.Reflection
       /// </summary>
       public struct Settings
       {
+         /// <summary>
+         /// The BindingFlags for the member lookup.
+         /// </summary>
          public BindingFlags? Flags;
+         /// <summary>
+         /// A predicate for skipping certain members.
+         /// </summary>
          public Func<MemberInfo, bool> Skip;
       }
 

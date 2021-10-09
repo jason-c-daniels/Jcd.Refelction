@@ -15,7 +15,6 @@ namespace Jcd.Reflection
         /// </summary>
         /// <param name="self"></param>
         /// <param name="name"></param>
-        /// <param name="settings"></param>
         /// <returns>null if none found</returns>
         public static MethodInfo GetMethod(this object self, string name)
         {
@@ -40,12 +39,25 @@ namespace Jcd.Reflection
             return type.GetMethod(name, settings);
         }
         
+        /// <summary>
+        /// Gets a methodInfo by name from a type. 
+        /// </summary>
+        /// <param name="type">the type to interrogate</param>
+        /// <param name="name">the name of the method</param>
+        /// <returns>the result of the call, if any</returns>
         public static MethodInfo GetMethod(this Type type, string name)
         {
             Argument.IsNotNull(type,nameof(type));
             return type.GetMethod(name, new MethodInfoEnumerator.Settings { Flags = BindingFlags.Static });
         }
         
+        /// <summary>
+        /// Gets a methodInfo by name from a type. 
+        /// </summary>
+        /// <param name="type">the type to interrogate</param>
+        /// <param name="name">the name of the method</param>
+        /// <param name="settings"></param>
+        /// <returns>the result of the call, if any</returns>
         public static MethodInfo GetMethod(this Type type, string name, MethodInfoEnumerator.Settings settings)
         {
             Argument.IsNotNull(type,nameof(type));
@@ -57,7 +69,6 @@ namespace Jcd.Reflection
         /// </summary>
         /// <param name="self"></param>
         /// <param name="filter"></param>
-        /// <param name="settings"></param>
         /// <returns></returns>
         public static MethodInfo[] FilterMethods(this object self, Func<MethodInfo, bool> filter)
         {
@@ -204,7 +215,7 @@ namespace Jcd.Reflection
         /// <param name="name">The name of the method</param>
         /// <param name="params">The params to pass</param>
         /// <typeparam name="TOut">The type of the return</typeparam>
-        /// <returns>The result of the call, if any</returns>        /// <typeparam name="TOut"></typeparam>
+        /// <returns>The result of the call, if any</returns>
         public static TOut Invoke<TOut>(this Type type, string name, params object[] @params)
         {
             return (TOut)type.GetMethod(name, new MethodInfoEnumerator.Settings {Flags = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public }).Invoke(type,@params);
@@ -218,11 +229,10 @@ namespace Jcd.Reflection
         /// <param name="params">The params to pass</param>
         /// <param name="settings">The settings such as binding flags</param>
         /// <typeparam name="TOut">The type of the return</typeparam>
-        /// <returns>The result of the call, if any</returns>        /// <typeparam name="TOut"></typeparam>
+        /// <returns>The result of the call, if any</returns>
         public static TOut Invoke<TOut>(this Type type, string name, MethodInfoEnumerator.Settings settings, params object[] @params)
         {
             return (TOut)type.GetMethod(name, settings).Invoke(type,@params);
         }
-        
     }
 }

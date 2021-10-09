@@ -4,3 +4,8 @@ The settings controlling how to enumerate (e.g. what binding flags to use, speci
 ```csharp
 public struct MemberInfoEnumerator.Settings
 ```
+
+| Fields | |
+| :--- | :--- |
+| [Flags](Jcd_Reflection_MemberInfoEnumerator_Settings_Flags.md 'Jcd.Reflection.MemberInfoEnumerator.Settings.Flags') | The BindingFlags for the member lookup.<br/> |
+| [Skip](Jcd_Reflection_MemberInfoEnumerator_Settings_Skip.md 'Jcd.Reflection.MemberInfoEnumerator.Settings.Skip') | A predicate for skipping certain members.<br/> |
