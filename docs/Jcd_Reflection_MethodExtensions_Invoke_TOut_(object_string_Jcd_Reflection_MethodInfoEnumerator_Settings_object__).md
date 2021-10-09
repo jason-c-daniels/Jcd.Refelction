@@ -19,7 +19,7 @@ The instance to invoke the method on
 the name of the method to invoke
   
 <a name='Jcd_Reflection_MethodExtensions_Invoke_TOut_(object_string_Jcd_Reflection_MethodInfoEnumerator_Settings_object__)_settings'></a>
-`settings` [Jcd.Reflection.MethodInfoEnumerator.Settings](https://docs.microsoft.com/en-us/dotnet/api/Jcd.Reflection.MethodInfoEnumerator.Settings 'Jcd.Reflection.MethodInfoEnumerator.Settings')  
+`settings` [Settings](Jcd_Reflection_MethodInfoEnumerator_Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')  
 binding flags and skip predicate
   
 <a name='Jcd_Reflection_MethodExtensions_Invoke_TOut_(object_string_Jcd_Reflection_MethodInfoEnumerator_Settings_object__)_params'></a>

@@ -5,18 +5,35 @@ using System.Reflection;
 
 namespace Jcd.Reflection
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class MethodInfoEnumerator : IEnumerable<MethodInfo>
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public struct Settings
         {
             public BindingFlags? Flags;
             public Func<MethodInfo, bool> Skip;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
         public Settings EnumerationSettings { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public Type Type { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="settings"></param>
         public MethodInfoEnumerator(Type type,
                                     Settings settings = default(Settings))
         {
@@ -24,6 +41,11 @@ namespace Jcd.Reflection
             EnumerationSettings = settings;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="settings"></param>
         public MethodInfoEnumerator(object item,
                                     Settings settings = default(Settings)) : this((Type) (item is Type || item is null
                 ? item
@@ -33,6 +55,10 @@ namespace Jcd.Reflection
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<MethodInfo> GetEnumerator()
         {
             if (Type == null) yield break;
@@ -48,6 +74,10 @@ namespace Jcd.Reflection
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();

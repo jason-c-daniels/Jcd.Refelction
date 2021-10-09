@@ -122,6 +122,14 @@ namespace Jcd.Reflection
             return self.Invoke(name, new MethodInfoEnumerator.Settings{Flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public },@params);
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="self"></param>
+        /// <param name="methodInfo"></param>
+        /// <param name="params"></param>
+        /// <typeparam name="TOut"></typeparam>
+        /// <returns></returns>
         public static TOut Invoke<TOut>(this object self, MethodInfo methodInfo, params object[] @params)
         {
             Argument.IsNotNull(self,"self");
@@ -161,22 +169,53 @@ namespace Jcd.Reflection
             return self.Invoke<TOut>(name, new MethodInfoEnumerator.Settings{Flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public },@params);
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="name"></param>
+        /// <param name="params"></param>
+        /// <returns></returns>
         public static object Invoke(this Type type, string name, params object[] @params)
         {
             return type.GetMethod(name, new MethodInfoEnumerator.Settings {Flags = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public }).Invoke(type,@params);
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="name"></param>
+        /// <param name="settings"></param>
+        /// <param name="params"></param>
+        /// <returns></returns>
         public static object Invoke(this Type type, string name, MethodInfoEnumerator.Settings settings, params object[] @params)
         {
             return type.GetMethod(name, settings).Invoke(type,@params);
         }
         
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="name"></param>
+        /// <param name="params"></param>
+        /// <typeparam name="TOut"></typeparam>
+        /// <returns></returns>
         public static TOut Invoke<TOut>(this Type type, string name, params object[] @params)
         {
             return (TOut)type.GetMethod(name, new MethodInfoEnumerator.Settings {Flags = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public }).Invoke(type,@params);
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="name"></param>
+        /// <param name="settings"></param>
+        /// <param name="params"></param>
+        /// <typeparam name="TOut"></typeparam>
+        /// <returns></returns>
         public static TOut Invoke<TOut>(this Type type, string name, MethodInfoEnumerator.Settings settings, params object[] @params)
         {
             return (TOut)type.GetMethod(name, settings).Invoke(type,@params);

@@ -4,10 +4,18 @@ using Jcd.Validations;
 
 namespace Jcd.Reflection
 {
+   /// <summary>
+   /// 
+   /// </summary>
    public class FieldOrPropertyInfo : MemberInfo
    {
       private readonly MemberInfo _memberInfo;
       private readonly BindingFlags _flags;
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="memberInfo"></param>
+      /// <param name="flags"></param>
       public FieldOrPropertyInfo(MemberInfo memberInfo, BindingFlags flags)
       {
          Argument.IsNotNull(memberInfo, nameof(memberInfo));
@@ -16,25 +24,65 @@ namespace Jcd.Reflection
          _memberInfo = memberInfo;
       }
 
+      /// <summary>
+      /// 
+      /// </summary>
       public override Type DeclaringType => _memberInfo.DeclaringType;
 
+      /// <summary>
+      /// 
+      /// </summary>
       public override MemberTypes MemberType => _memberInfo.MemberType;
 
+      /// <summary>
+      /// 
+      /// </summary>
       public override string Name => _memberInfo.Name;
 
+      /// <summary>
+      /// 
+      /// </summary>
       public override Type ReflectedType => _memberInfo.ReflectedType;
 
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="inherit"></param>
+      /// <returns></returns>
       public override object[] GetCustomAttributes(bool inherit) => _memberInfo.GetCustomAttributes(inherit);
 
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="attributeType"></param>
+      /// <param name="inherit"></param>
+      /// <returns></returns>
       public override object[] GetCustomAttributes(Type attributeType, bool inherit) => _memberInfo.GetCustomAttributes(attributeType, inherit);
 
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="attributeType"></param>
+      /// <param name="inherit"></param>
+      /// <returns></returns>
       public override bool IsDefined(Type attributeType, bool inherit) => _memberInfo.IsDefined(attributeType, inherit);
 
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="obj"></param>
+      /// <returns></returns>
       public object GetValue(object obj)
       {
          return GetValue(obj, out _);
       }
 
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="obj"></param>
+      /// <param name="errored"></param>
+      /// <returns></returns>
       public object GetValue(object obj, out bool errored)
       {
          try
@@ -50,12 +98,22 @@ namespace Jcd.Reflection
          }
       }
       
-      
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="obj"></param>
+      /// <param name="value"></param>
       public void SetValue(object obj, object value)
       {
          SetValue(obj, value, out _);
       }
 
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="obj"></param>
+      /// <param name="value"></param>
+      /// <param name="errored"></param>
       public void SetValue(object obj, object value , out bool errored)
       {
          try

@@ -12,7 +12,7 @@ public static System.Reflection.MethodInfo GetMethod(this object self, string na
 `name` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')  
   
 <a name='Jcd_Reflection_MethodExtensions_GetMethod(object_string_Jcd_Reflection_MethodInfoEnumerator_Settings)_settings'></a>
-`settings` [Jcd.Reflection.MethodInfoEnumerator.Settings](https://docs.microsoft.com/en-us/dotnet/api/Jcd.Reflection.MethodInfoEnumerator.Settings 'Jcd.Reflection.MethodInfoEnumerator.Settings')  
+`settings` [Settings](Jcd_Reflection_MethodInfoEnumerator_Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')  
   
 #### Returns
 [System.Reflection.MethodInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MethodInfo 'System.Reflection.MethodInfo')  
