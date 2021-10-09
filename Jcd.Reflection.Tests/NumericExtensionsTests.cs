@@ -1,5 +1,5 @@
 ﻿using System.Numerics;
-using Jcd.Utilities.Test.Extensions;
+using Jcd.Reflection.Tests.TestHelpers;
 using Xunit;
 
 namespace Jcd.Reflection.Tests
