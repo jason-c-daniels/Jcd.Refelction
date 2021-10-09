@@ -32,15 +32,7 @@ namespace Jcd.Reflection
 
       public object GetValue(object obj)
       {
-         try
-         {
-            if (MemberType == MemberTypes.Property) return DeclaringType?.GetProperty(Name, _flags)?.GetValue(obj);
-            return DeclaringType?.GetField(Name, _flags)?.GetValue(obj);
-         }
-         catch
-         {
-            return null; // throwing exceptions from a property is a bad practice. Perhaps I'll ad the ability to bypass the catch block. But i'm not feeling that generous right now.
-         }
+         return GetValue(obj, out _);
       }
 
       public object GetValue(object obj, out bool errored)
@@ -55,6 +47,29 @@ namespace Jcd.Reflection
          {
             errored = true;
             return null; // throwing exceptions from a property is a bad practice. Perhaps I'll ad the ability to bypass the catch block. But i'm not feeling that generous right now.
+         }
+      }
+      
+      
+      public void SetValue(object obj, object value)
+      {
+         SetValue(obj, value, out _);
+      }
+
+      public void SetValue(object obj, object value , out bool errored)
+      {
+         try
+         {
+            if (MemberType == MemberTypes.Property)
+               DeclaringType?.GetProperty(Name, _flags)?.SetValue(obj, value);
+            else 
+               DeclaringType?.GetField(Name, _flags)?.SetValue(obj, value);
+            
+            errored = false;
+         }
+         catch
+         {
+            errored = true;
          }
       }
    }

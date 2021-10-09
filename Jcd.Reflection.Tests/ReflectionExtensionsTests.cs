@@ -316,7 +316,7 @@ namespace Jcd.Reflection.Tests
       {
          var kvp = new KeyValuePair<string, string>();
          var _ = new { Key = "key", Value = "value", Pair = "Pear" };
-         Assert.Null(kvp.GetPropertyOrFieldValue("Nada"));
+         Assert.Null(kvp.GetValue("Nada"));
       }
 
       /// <summary>
@@ -326,9 +326,84 @@ namespace Jcd.Reflection.Tests
       public void GetPropertyOrFieldValue_WhenObjectHasPropertyOrFieldWithTheName_ReturnsValue()
       {
          var kvp = new { Key = "key", Value = "value", Pair = "Pear" };
-         var val = kvp.GetPropertyOrFieldValue("Key");
+         var val = kvp.GetValue("Key");
          Assert.NotNull(val);
          Assert.Equal(kvp.Key,val);
       }
+
+      [Fact]
+      public void ToExpando_Object_Returns_A_Dynamic_Object_With_Accessible_Properties()
+      {
+         var a = new TestClassC();
+         dynamic aeo=a.ToExpandoObject();
+         
+         Assert.Equal(a.Field1,aeo.Field1);
+         Assert.Equal(a.Field2,aeo.Field2);
+         Assert.Equal(a.Prop1,aeo.Prop1);
+         Assert.Equal(a.Prop2,aeo.Prop2);
+         Assert.Equal(a.IntDict["Foo"], aeo.IntDict.Foo);
+      }
+
+      [Fact]
+      public void ToDictionaryTree_Returns_A_String_Object_Dictionary_Tree_Of_The_Object()
+      {
+         var a = new TestClassA();
+
+         dynamic aeo=a.ToExpandoObject();
+         var ado = a.ToDictionaryTree();
+         Assert.Equal(ado,aeo);
+      }
+
+      [Fact]
+      public void IsScalar_When_Given_DataType_of_Type_Returns_True()
+      {
+         var t = typeof(Type);
+         Assert.True(t.IsScalar());
+      }
+
+      [Fact]
+      public void EnumerateProperties_On_Scalar_Returns_Null()
+      {
+         Assert.Null(1.EnumerateProperties());
+      }
+      [Fact]
+      public void EnumerateFields_On_Scalar_Returns_Null()
+      {
+         Assert.Null(1.EnumerateFields());
+      }
+
+      [Fact]
+      public void GetValue_Gets_A_Property()
+      {
+         var a = new TestClassA();
+         var v = a.GetValue("Prop1");
+         Assert.Equal(a.Prop1,v);
+      }
+      
+      [Fact]
+      public void GetValue_Gets_A_Field()
+      {
+         var a = new TestClassA();
+         var v = a.GetValue("Field1");
+         Assert.Equal(a.Field1,v);
+      }
+      
+      
+      [Fact]
+      public void SetValue_Sets_A_Property()
+      {
+         var a = new TestClassA();
+         a.SetValue("Prop1",7);
+         Assert.Equal(7, a.Prop1);
+      }
+      
+      [Fact]
+      public void SetValue_Sets_A_Field()
+      {
+         var a = new TestClassA();
+         a.SetValue("Field1",7);
+         Assert.Equal(7, a.Field1);
+      }
+      
    }
 }

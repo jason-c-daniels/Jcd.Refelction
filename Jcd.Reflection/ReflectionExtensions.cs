@@ -132,15 +132,26 @@ namespace Jcd.Reflection
          return hasKey && hasValue;
       }
 
-      public static object GetPropertyOrFieldValue(this object self, string fieldOrPropertyName)
+      public static object GetValue(this object self, string fieldOrPropertyName)
       {
          var t = self.GetType();
-         var value = t.GetProperty(fieldOrPropertyName)?.GetValue(self);
-         value = value ?? t.GetField(fieldOrPropertyName)?.GetValue(self);
-         return value;
+         var pi = t.GetProperty(fieldOrPropertyName);
+         if (pi != null) return pi.GetValue(self);
+         var fi = t.GetField(fieldOrPropertyName);
+         if (fi != null) return fi.GetValue(self);
+         return null;
       }
 
-      private static IDictionary<string, object> ToDictionaryTree(this object self,
+      public static void SetValue(this object self, string fieldOrPropertyName, object value)
+      {
+         var t = self.GetType();
+         var pi = t.GetProperty(fieldOrPropertyName);
+         var fi = t.GetField(fieldOrPropertyName);
+         if (pi !=null) pi.SetValue(self,value);
+         else if (fi!=null) fi.SetValue(self, value);
+      }
+      
+      public static IDictionary<string, object> ToDictionaryTree(this object self,
          HashSet<object> visited = null,
          Func<string, string> keyRenamingStrategy = null,
          Func<string, object, bool> valueRetentionStrategy = null)
@@ -148,7 +159,7 @@ namespace Jcd.Reflection
          return (IDictionary<string, object>)self.ToDictionaryTree<Dictionary<string, object>>(keyRenamingStrategy:keyRenamingStrategy, valueRetentionStrategy:valueRetentionStrategy);
       }
 
-      private static ExpandoObject ToExpandoObject(this object self, HashSet<object> visited = null, Func<string,string> keyRenamingStrategy=null, Func<string, object, bool> valueRetentionStrategy = null)
+      public static ExpandoObject ToExpandoObject(this object self, HashSet<object> visited = null, Func<string,string> keyRenamingStrategy=null, Func<string, object, bool> valueRetentionStrategy = null)
       {
          string MyKeyRenamingStrategy(string key)
          {
@@ -273,8 +284,8 @@ namespace Jcd.Reflection
             var key = index.ToString();
             if (isKeyValuePair.HasValue && isKeyValuePair.Value)
             {
-               key = item.GetPropertyOrFieldValue("Key").ToString();
-               var value = item.GetPropertyOrFieldValue("Value");
+               key = item.GetValue("Key").ToString();
+               var value = item.GetValue("Value");
                root.Append<TNode>(key, value, visited, keyRenamingStrategy, valueRetentionStrategy);
             }
             else
@@ -331,6 +342,5 @@ namespace Jcd.Reflection
             }
          }
       }
-
    }
 }

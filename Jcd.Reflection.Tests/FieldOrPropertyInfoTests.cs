@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using Jcd.Reflection;
 using Moq;
@@ -183,6 +184,60 @@ namespace Jcd.Reflection.Tests
          dt.Verify(s => s.GetField(name,flags));
          fi.Verify(s => s.GetValue(obj));
          Assert.Same(result, res);
+      }
+
+      [Fact]
+      public void GetValue_When_Property_Throws_An_Exception_Returns_Null()
+      {
+         var a = new TestClassC();
+         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "ExceptionalProperty").First();
+         var value=fopi.GetValue(a);
+         Assert.Null(value);
+      }
+      
+      [Fact]
+      public void GetValue_When_Property_Throws_An_Exception_Returns_Null_And_Outputs_Errored_Of_True()
+      {
+         var a = new TestClassC();
+         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "ExceptionalProperty").First();
+         var value=fopi.GetValue(a, out bool errored);
+         Assert.Null(value);
+         Assert.True(errored);
+      }
+
+      [Fact]
+      public void SetValue_When_Property_Throws_An_Exception_Throws_No_Exception()
+      {
+         var a = new TestClassC();
+         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "ExceptionalProperty").First();
+         fopi.SetValue(a,5);
+      }
+      
+      [Fact]
+      public void SetValue_When_Property_Throws_An_Exception_Throws_No_Exception_And_Returns_Errored_True()
+      {
+         var a = new TestClassC();
+         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "ExceptionalProperty").First();
+         fopi.SetValue(a,5, out bool errored);
+         Assert.True(errored);
+      }
+
+      [Fact]
+      public void SetValue_Sets_A_Property_Successfully()
+      {
+         var a = new TestClassA();
+         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "Prop1").First();
+         fopi.SetValue(a,13);
+         Assert.Equal(13,a.Prop1);
+      }
+      
+      [Fact]
+      public void SetValue_Sets_A_Field_Successfully()
+      {
+         var a = new TestClassA();
+         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "Field1").First();
+         fopi.SetValue(a,13);
+         Assert.Equal(13,a.Field1);
       }
    }
 }

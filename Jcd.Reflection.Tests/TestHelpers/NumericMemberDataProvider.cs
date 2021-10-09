@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 
-using Jcd.Reflection.Tests.TestHelpers;
-
-namespace Jcd.Utilities.Test.Extensions
+namespace Jcd.Reflection.Tests.TestHelpers
 {
    /// <summary>
    ///    An XUnit data provider. This one provides lists of numeric data of a various sorts.
