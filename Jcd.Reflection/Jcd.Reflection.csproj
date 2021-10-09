@@ -19,7 +19,19 @@
         <PackageReleaseNotes>Upgraded Jcd.Validations to 1.0.8</PackageReleaseNotes>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>..\docs\Jcd.Reflection.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>..\docs\Jcd.Reflection.xml</DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
+      <PackageReference Include="DefaultDocumentation" Version="0.7.9">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
       <PackageReference Include="Jcd.Validations" Version="1.0.8" />
       <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     </ItemGroup>
