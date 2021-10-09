@@ -151,6 +151,8 @@ namespace Jcd.Reflection
          else if (fi!=null) fi.SetValue(self, value);
       }
       
+      
+      
       public static IDictionary<string, object> ToDictionaryTree(this object self,
          HashSet<object> visited = null,
          Func<string, string> keyRenamingStrategy = null,

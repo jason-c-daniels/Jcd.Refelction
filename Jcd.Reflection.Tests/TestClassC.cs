@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection.PortableExecutable;
 
 namespace Jcd.Reflection.Tests
 {
@@ -20,5 +21,12 @@ namespace Jcd.Reflection.Tests
             get => throw new NotImplementedException();
             set => throw new NotImplementedException();
         }
+
+        public int Add(int a, int b) => op_Add(a,b);
+        private int op_Add(int a, int b) => a + b;
+
+        public static int Sub(int a, int b) => op_Sub(a, b);
+
+        private static int op_Sub(int a, int b) => a - b;
     }
 }
