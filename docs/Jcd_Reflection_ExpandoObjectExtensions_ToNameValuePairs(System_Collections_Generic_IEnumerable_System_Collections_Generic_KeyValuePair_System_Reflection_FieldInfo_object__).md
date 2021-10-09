@@ -1,5 +1,6 @@
 ### [Jcd.Reflection](Jcd_Reflection.md 'Jcd.Reflection').[ExpandoObjectExtensions](Jcd_Reflection_ExpandoObjectExtensions.md 'Jcd.Reflection.ExpandoObjectExtensions')
 ## ExpandoObjectExtensions.ToNameValuePairs(IEnumerable&lt;KeyValuePair&lt;FieldInfo,object&gt;&gt;) Method
+Creates a set of FieldInfo to (current) value pairs for a given object.   
 ```csharp
 public static System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string,object>> ToNameValuePairs(this System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.Reflection.FieldInfo,object>> items);
 ```

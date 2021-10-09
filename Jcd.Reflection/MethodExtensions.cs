@@ -173,52 +173,52 @@ namespace Jcd.Reflection
         }
         
         /// <summary>
-        /// 
+        /// Invokes a static method on a type 
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="name"></param>
-        /// <param name="params"></param>
-        /// <returns></returns>
+        /// <param name="type">The type containing the static method</param>
+        /// <param name="name">The name of the method</param>
+        /// <param name="params">The params to pass</param>
+        /// <returns>The result of the call, if any</returns>
         public static object Invoke(this Type type, string name, params object[] @params)
         {
             return type.GetMethod(name, new MethodInfoEnumerator.Settings {Flags = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public }).Invoke(type,@params);
         }
         
         /// <summary>
-        /// 
+        /// Invokes a static method on a type 
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="name"></param>
-        /// <param name="settings"></param>
-        /// <param name="params"></param>
-        /// <returns></returns>
+        /// <param name="type">The type containing the static method</param>
+        /// <param name="name">The name of the method</param>
+        /// <param name="params">The params to pass</param>
+        /// <param name="settings">Thee settings such as BindingFlags</param>
+        /// <returns>The result of the call, if any</returns>
         public static object Invoke(this Type type, string name, MethodInfoEnumerator.Settings settings, params object[] @params)
         {
             return type.GetMethod(name, settings).Invoke(type,@params);
         }
         
         /// <summary>
-        /// 
+        /// Invokes a static method on a type, coercing the return type 
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="name"></param>
-        /// <param name="params"></param>
-        /// <typeparam name="TOut"></typeparam>
-        /// <returns></returns>
+        /// <param name="type">The type containing the static method</param>
+        /// <param name="name">The name of the method</param>
+        /// <param name="params">The params to pass</param>
+        /// <typeparam name="TOut">The type of the return</typeparam>
+        /// <returns>The result of the call, if any</returns>        /// <typeparam name="TOut"></typeparam>
         public static TOut Invoke<TOut>(this Type type, string name, params object[] @params)
         {
             return (TOut)type.GetMethod(name, new MethodInfoEnumerator.Settings {Flags = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public }).Invoke(type,@params);
         }
         
         /// <summary>
-        /// 
+        /// Invokes a static method on a type, coercing the return type 
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="name"></param>
-        /// <param name="settings"></param>
-        /// <param name="params"></param>
-        /// <typeparam name="TOut"></typeparam>
-        /// <returns></returns>
+        /// <param name="type">The type containing the static method</param>
+        /// <param name="name">The name of the method</param>
+        /// <param name="params">The params to pass</param>
+        /// <param name="settings">The settings such as binding flags</param>
+        /// <typeparam name="TOut">The type of the return</typeparam>
+        /// <returns>The result of the call, if any</returns>        /// <typeparam name="TOut"></typeparam>
         public static TOut Invoke<TOut>(this Type type, string name, MethodInfoEnumerator.Settings settings, params object[] @params)
         {
             return (TOut)type.GetMethod(name, settings).Invoke(type,@params);

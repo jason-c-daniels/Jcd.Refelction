@@ -15,13 +15,13 @@ namespace Jcd.Reflection
     public static class ExpandoObjectExtensions
     {      
         /// <summary>
-        /// 
+        /// Decomposes an object graph into a string-object dictionary tree. Cycles are not preserved.
         /// </summary>
-        /// <param name="self"></param>
-        /// <param name="visited"></param>
-        /// <param name="keyRenamingStrategy"></param>
-        /// <param name="valueRetentionStrategy"></param>
-        /// <returns></returns>
+        /// <param name="self">The object to decompose</param>
+        /// <param name="visited">A hashset of visited objects</param>
+        /// <param name="keyRenamingStrategy">A function to rename a key when it's deemed necessary</param>
+        /// <param name="valueRetentionStrategy">a function to determine if a value is to be retained</param>
+        /// <returns>The dictionary</returns>
         public static IDictionary<string, object> ToDictionaryTree(this object self,
                                                                    HashSet<object> visited = null,
                                                                    Func<string, string> keyRenamingStrategy = null,
@@ -31,13 +31,13 @@ namespace Jcd.Reflection
         }
 
         /// <summary>
-        /// 
+        /// Convert an object into an ExpandoObject, tree, breaking cycles in the object graph. 
         /// </summary>
-        /// <param name="self"></param>
-        /// <param name="visited"></param>
-        /// <param name="keyRenamingStrategy"></param>
-        /// <param name="valueRetentionStrategy"></param>
-        /// <returns></returns>
+        /// <param name="self">the object to convert</param>
+        /// <param name="visited">A hashset of visited objects</param>
+        /// <param name="keyRenamingStrategy">A function to rename a key when it's deemed necessary</param>
+        /// <param name="valueRetentionStrategy">a function to determine if a value is to be retained</param>
+        /// <returns>The ExpandoObject</returns>
         public static ExpandoObject ToExpandoObject(this object self, HashSet<object> visited = null, Func<string,string> keyRenamingStrategy=null, Func<string, object, bool> valueRetentionStrategy = null)
         {
             string MyKeyRenamingStrategy(string key)
@@ -358,7 +358,7 @@ namespace Jcd.Reflection
         }
 
         /// <summary>
-        /// 
+        /// Creates a set of FieldInfo to (current) value pairs for a given object. 
         /// </summary>
         /// <param name="items"></param>
         /// <returns></returns>
@@ -376,16 +376,15 @@ namespace Jcd.Reflection
         }
 
         /// <summary>
-        /// 
+        /// Determines if a type is a KeyValuePair 
         /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+        /// <param name="type">the type to interrogate</param>
+        /// <returns>true if it is (via duck typing)</returns>
         public static bool IsKeyValuePair(this Type type)
         {
             var hasKey = type.GetTypeInfo().GetField("Key") != null || type.GetTypeInfo().GetProperty("Key") != null;
             var hasValue = type.GetTypeInfo().GetField("Value") != null || type.GetTypeInfo().GetProperty("Value") != null;
             return hasKey && hasValue;
         }
-
     }
 }
