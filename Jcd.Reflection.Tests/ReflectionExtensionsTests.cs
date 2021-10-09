@@ -183,8 +183,8 @@ namespace Jcd.Reflection.Tests
       public void ToPropertyInfoValuePairs_WhenItemsIsNull_ThrowsArgumentNullException()
       {
          var a = new TestClassA();
-         Assert.Throws<ArgumentNullException>(() => ReflectionExtensions.ToPropertyInfoValuePairs(null, a).ToList());
-         Assert.Throws<ArgumentNullException>(() => ReflectionExtensions.ToPropertyInfoValuePairs(null, null).ToList());
+         Assert.Throws<ArgumentNullException>(() => ExpandoObjectExtensions.ToPropertyInfoValuePairs(null, a).ToList());
+         Assert.Throws<ArgumentNullException>(() => ExpandoObjectExtensions.ToPropertyInfoValuePairs(null, null).ToList());
       }
 
       /// <summary>
@@ -217,8 +217,8 @@ namespace Jcd.Reflection.Tests
       public void ToFieldInfoValuePairs_WhenItemsIsNull_ThrowsArgumentNullException()
       {
          var a = new TestClassA();
-         Assert.Throws<ArgumentNullException>(() => ReflectionExtensions.ToFieldInfoValuePairs(null, a).ToList());
-         Assert.Throws<ArgumentNullException>(() => ReflectionExtensions.ToFieldInfoValuePairs(null, null).ToList());
+         Assert.Throws<ArgumentNullException>(() => ExpandoObjectExtensions.ToFieldInfoValuePairs(null, a).ToList());
+         Assert.Throws<ArgumentNullException>(() => ExpandoObjectExtensions.ToFieldInfoValuePairs(null, null).ToList());
       }
 
       /// <summary>

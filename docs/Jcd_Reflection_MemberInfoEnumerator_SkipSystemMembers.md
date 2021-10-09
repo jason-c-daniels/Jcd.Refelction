@@ -1,5 +1,6 @@
 ### [Jcd.Reflection](Jcd_Reflection.md 'Jcd.Reflection').[MemberInfoEnumerator](Jcd_Reflection_MemberInfoEnumerator.md 'Jcd.Reflection.MemberInfoEnumerator')
 ## MemberInfoEnumerator.SkipSystemMembers Field
+Predefined skip predicate for skipping system members.    
 ```csharp
 public static Func<MemberInfo,bool> SkipSystemMembers;
 ```

@@ -1,5 +1,6 @@
 ### [Jcd.Reflection](Jcd_Reflection.md 'Jcd.Reflection').[MethodInfoEnumerator](Jcd_Reflection_MethodInfoEnumerator.md 'Jcd.Reflection.MethodInfoEnumerator')
 ## MethodInfoEnumerator.System.Collections.IEnumerable.GetEnumerator() Method
+Gets an enumerator for the MethodInfos enumerated  
 ```csharp
 System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator();
 ```

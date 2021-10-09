@@ -1,5 +1,6 @@
 ### [Jcd.Reflection](Jcd_Reflection.md 'Jcd.Reflection').[FieldOrPropertyEnumerator](Jcd_Reflection_FieldOrPropertyEnumerator.md 'Jcd.Reflection.FieldOrPropertyEnumerator')
 ## FieldOrPropertyEnumerator.Type Property
+The data type being reflected on.   
 ```csharp
 public System.Type Type { get; }
 ```

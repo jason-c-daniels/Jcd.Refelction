@@ -12,10 +12,10 @@ namespace Jcd.Reflection
       private readonly MemberInfo _memberInfo;
       private readonly BindingFlags _flags;
       /// <summary>
-      /// 
+      /// A dual purpose MemberInfo type.
       /// </summary>
-      /// <param name="memberInfo"></param>
-      /// <param name="flags"></param>
+      /// <param name="memberInfo">The member info on which this instance is based.</param>
+      /// <param name="flags">the binding flags</param>
       public FieldOrPropertyInfo(MemberInfo memberInfo, BindingFlags flags)
       {
          Argument.IsNotNull(memberInfo, nameof(memberInfo));
@@ -25,64 +25,64 @@ namespace Jcd.Reflection
       }
 
       /// <summary>
-      /// 
+      /// Gets the type that declares the member.   
       /// </summary>
       public override Type DeclaringType => _memberInfo.DeclaringType;
 
       /// <summary>
-      /// 
+      /// Gets the type of the member
       /// </summary>
       public override MemberTypes MemberType => _memberInfo.MemberType;
 
       /// <summary>
-      /// 
+      /// Gets the name of the member
       /// </summary>
       public override string Name => _memberInfo.Name;
 
       /// <summary>
-      /// 
+      /// gets the reflected type of the member.
       /// </summary>
       public override Type ReflectedType => _memberInfo.ReflectedType;
 
       /// <summary>
-      /// 
+      /// Gets custom attributes for the member.
       /// </summary>
-      /// <param name="inherit"></param>
-      /// <returns></returns>
+      /// <param name="inherit">Get inherited attributes if true</param>
+      /// <returns>an array of custom attributes</returns>
       public override object[] GetCustomAttributes(bool inherit) => _memberInfo.GetCustomAttributes(inherit);
 
       /// <summary>
-      /// 
+      /// Gets custom attributes of a specified type for a member.
       /// </summary>
-      /// <param name="attributeType"></param>
-      /// <param name="inherit"></param>
+      /// <param name="attributeType">The data type for the custom attribute</param>
+      /// <param name="inherit">Get inherited attributes if true</param>
       /// <returns></returns>
       public override object[] GetCustomAttributes(Type attributeType, bool inherit) => _memberInfo.GetCustomAttributes(attributeType, inherit);
 
       /// <summary>
-      /// 
+      /// Checks if a custom attribute of the specified type exists for the member. 
       /// </summary>
-      /// <param name="attributeType"></param>
-      /// <param name="inherit"></param>
+      /// <param name="attributeType">The data type for the custom attribute</param>
+      /// <param name="inherit">Checks inheritance tree if true</param>
       /// <returns></returns>
       public override bool IsDefined(Type attributeType, bool inherit) => _memberInfo.IsDefined(attributeType, inherit);
 
       /// <summary>
-      /// 
+      /// Gets the value from the object. 
       /// </summary>
-      /// <param name="obj"></param>
-      /// <returns></returns>
+      /// <param name="obj">the object to get the value from</param>
+      /// <returns>the retrieved value</returns>
       public object GetValue(object obj)
       {
          return GetValue(obj, out _);
       }
 
       /// <summary>
-      /// 
+      /// Gets a value from an object, and indicates if an error occurred during that process. 
       /// </summary>
-      /// <param name="obj"></param>
-      /// <param name="errored"></param>
-      /// <returns></returns>
+      /// <param name="obj">the object to get the value from</param>
+      /// <param name="errored">true if an exception occurred during the get.</param>
+      /// <returns>The value retrieved</returns>
       public object GetValue(object obj, out bool errored)
       {
          try
@@ -99,21 +99,21 @@ namespace Jcd.Reflection
       }
       
       /// <summary>
-      /// 
+      /// Sets a value on an object. 
       /// </summary>
-      /// <param name="obj"></param>
-      /// <param name="value"></param>
+      /// <param name="obj">The object to manipulate</param>
+      /// <param name="value">The value to set.</param>
       public void SetValue(object obj, object value)
       {
          SetValue(obj, value, out _);
       }
 
       /// <summary>
-      /// 
+      /// Sets a value on an object. 
       /// </summary>
-      /// <param name="obj"></param>
-      /// <param name="value"></param>
-      /// <param name="errored"></param>
+      /// <param name="obj">The object to manipulate</param>
+      /// <param name="value">The value to set.</param>
+      /// <param name="errored">true if an exception occurred during the set.</param>
       public void SetValue(object obj, object value , out bool errored)
       {
          try

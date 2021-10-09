@@ -1,5 +1,6 @@
 ### [Jcd.Reflection](Jcd_Reflection.md 'Jcd.Reflection')
 ## MethodExtensions Class
+Extension methods to help invoke methods via reflection.  
 ```csharp
 public static class MethodExtensions
 ```

@@ -6,12 +6,12 @@ using System.Reflection;
 namespace Jcd.Reflection
 {
     /// <summary>
-    /// 
+    /// Enumerates the method information for a given type. 
     /// </summary>
     public class MethodInfoEnumerator : IEnumerable<MethodInfo>
     {
         /// <summary>
-        /// 
+        /// The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
         /// </summary>
         public struct Settings
         {
@@ -20,20 +20,20 @@ namespace Jcd.Reflection
         }
         
         /// <summary>
-        /// 
+        /// Gets or sets the settings controlling method info enumeration
         /// </summary>
         public Settings EnumerationSettings { get; set; }
 
         /// <summary>
-        /// 
+        /// The type whose methods are enumerated.
         /// </summary>
         public Type Type { get; }
 
         /// <summary>
-        /// 
+        /// Constructs a MethodInfoEnumerator from a type and settings.
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="settings"></param>
+        /// <param name="type">The type to enumerate</param>
+        /// <param name="settings">The settings controlling enumeration</param>
         public MethodInfoEnumerator(Type type,
                                     Settings settings = default(Settings))
         {
@@ -42,10 +42,10 @@ namespace Jcd.Reflection
         }
         
         /// <summary>
-        /// 
+        /// Constructs a MethodInfoEnumerator from an instance and settings.
         /// </summary>
-        /// <param name="item"></param>
-        /// <param name="settings"></param>
+        /// <param name="type">The instance to enumerate</param>
+        /// <param name="settings">The settings controlling enumeration</param>
         public MethodInfoEnumerator(object item,
                                     Settings settings = default(Settings)) : this((Type) (item is Type || item is null
                 ? item
@@ -56,9 +56,9 @@ namespace Jcd.Reflection
         }
 
         /// <summary>
-        /// 
+        /// Gets an enumerator for the MethodInfos enumerated
         /// </summary>
-        /// <returns></returns>
+        /// <returns>An enumerator</returns>
         public IEnumerator<MethodInfo> GetEnumerator()
         {
             if (Type == null) yield break;
@@ -75,9 +75,9 @@ namespace Jcd.Reflection
         }
 
         /// <summary>
-        /// 
+        /// Gets an enumerator for the MethodInfos enumerated
         /// </summary>
-        /// <returns></returns>
+        /// <returns>An enumerator</returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();

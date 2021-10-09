@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using System.Reflection;
 
 namespace Jcd.Reflection
 {
@@ -166,6 +169,40 @@ namespace Jcd.Reflection
 
                return false;
          }
+      }
+
+      /// <summary>
+      /// 
+      /// </summary>
+      public static readonly HashSet<Type> BuiltInNonPrimitiveScalars = new HashSet<Type>(new[] { typeof(DateTime), typeof(DateTimeOffset), typeof(TimeSpan), typeof(Uri), typeof(Guid), typeof(string), typeof(BigInteger) });
+
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="self"></param>
+      /// <param name="nonPrimitiveScalars"></param>
+      /// <returns></returns>
+      public static bool IsScalar(this object self, HashSet<Type> nonPrimitiveScalars=null)
+      {
+         if (self == null || self is Type) return true;
+         return self.GetType().IsScalar(nonPrimitiveScalars);
+      }
+
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="type"></param>
+      /// <param name="nonPrimitiveScalars"></param>
+      /// <returns></returns>
+      public static bool IsScalar(this Type type, HashSet<Type> nonPrimitiveScalars=null)
+      {
+         if (type == typeof(Type)) return true;
+         nonPrimitiveScalars = nonPrimitiveScalars == null
+            ? BuiltInNonPrimitiveScalars
+            : new HashSet<Type>(nonPrimitiveScalars.Union(BuiltInNonPrimitiveScalars));
+
+         var ti = type.GetTypeInfo();
+         return ti.IsEnum || ti.IsPrimitive || nonPrimitiveScalars.Contains(type);
       }
 
       #endregion Public Methods

@@ -6,12 +6,12 @@ using System.Reflection;
 namespace Jcd.Reflection
 {
    /// <summary>
-   /// 
+   /// Enumerated MemberInfos for a given object or type.
    /// </summary>
    public class MemberInfoEnumerator : IEnumerable<MemberInfo>
    {
       /// <summary>
-      /// 
+      /// The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
       /// </summary>
       public struct Settings
       {
@@ -20,41 +20,46 @@ namespace Jcd.Reflection
       }
 
       /// <summary>
-      /// 
+      /// Predefined skip predicate for skipping system members.  
       /// </summary>
       public static Func<MemberInfo, bool> SkipSystemMembers = mi =>
          mi.DeclaringType?.Namespace != null && mi.DeclaringType.Namespace.StartsWith("System");
+      
+      /// <summary>
+      /// Predefined skip predicate for skipping system members.  
+      /// </summary>
       public static Func<MemberInfo, bool> SkipSystemAndNonDataMembers = mi =>
          SkipSystemMembers(mi) || (mi.MemberType != MemberTypes.Field && mi.MemberType != MemberTypes.Property);
 
       /// <summary>
-      /// 
+      /// Gets or sets the settings controlling member info enumeration
       /// </summary>
       public Settings EnumerationSettings { get; set; }
 
       /// <summary>
-      /// 
+      /// The type whose members are enumerated.
       /// </summary>
       public Type Type { get; }
 
       /// <summary>
-      /// 
+      /// Constructs a MemberInfoEnumerator from a type and settings.
       /// </summary>
-      /// <param name="type"></param>
-      /// <param name="settings"></param>
+      /// <param name="type">The type to enumerate</param>
+      /// <param name="settings">The settings controlling enumeration</param>
       public MemberInfoEnumerator(Type type,
          Settings settings = default(Settings))
       {
          Type = type;
          EnumerationSettings = settings;
       }
+
       /// <summary>
-      /// 
+      /// Constructs a MemberInfoEnumerator from an instance and settings.
       /// </summary>
-      /// <param name="item"></param>
-      /// <param name="settings"></param>
+      /// <param name="item">The instance to enumerate</param>
+      /// <param name="settings">The settings controlling enumeration</param>
       public MemberInfoEnumerator(object item,
-         Settings settings = default(Settings)) : this((Type) (item is Type || item is null
+                                  Settings settings = default(Settings)) : this((Type) (item is Type || item is null
             ? item
             : item.GetType()),
          settings)
@@ -63,9 +68,9 @@ namespace Jcd.Reflection
       }
 
       /// <summary>
-      /// 
+      /// Gets the enumerator 
       /// </summary>
-      /// <returns></returns>
+      /// <returns>An enumerator</returns>
       public IEnumerator<MemberInfo> GetEnumerator()
       {
          if (Type == null) yield break;
@@ -82,9 +87,9 @@ namespace Jcd.Reflection
       }
 
       /// <summary>
-      /// 
+      /// Gets an enumerator
       /// </summary>
-      /// <returns></returns>
+      /// <returns>An enumerator</returns>
       IEnumerator IEnumerable.GetEnumerator()
       {
          return GetEnumerator();

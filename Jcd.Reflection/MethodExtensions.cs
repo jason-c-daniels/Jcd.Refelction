@@ -5,6 +5,9 @@ using Jcd.Validations;
 
 namespace Jcd.Reflection
 {
+    /// <summary>
+    /// Extension methods to help invoke methods via reflection.
+    /// </summary>
     public static class MethodExtensions
     {
         /// <summary>

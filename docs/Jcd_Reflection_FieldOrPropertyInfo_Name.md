@@ -1,5 +1,6 @@
 ### [Jcd.Reflection](Jcd_Reflection.md 'Jcd.Reflection').[FieldOrPropertyInfo](Jcd_Reflection_FieldOrPropertyInfo.md 'Jcd.Reflection.FieldOrPropertyInfo')
 ## FieldOrPropertyInfo.Name Property
+Gets the name of the member  
 ```csharp
 public override string Name { get; }
 ```
