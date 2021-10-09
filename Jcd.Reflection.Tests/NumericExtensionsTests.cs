@@ -1,8 +1,8 @@
-﻿using Jcd.Reflection;
-using Jcd.Reflection.Tests.TestHelpers;
+﻿using System.Numerics;
+using Jcd.Utilities.Test.Extensions;
 using Xunit;
 
-namespace Jcd.Utilities.Test.Extensions
+namespace Jcd.Reflection.Tests
 {
    /// <summary>
    ///    Tests the validity of some numeric extensions used by the IntegerEncoder class.
@@ -205,6 +205,17 @@ namespace Jcd.Utilities.Test.Extensions
       [MemberData(nameof(NumericMemberDataProvider.UInt32List), MemberType = typeof(NumericMemberDataProvider))]
       [MemberData(nameof(NumericMemberDataProvider.UInt64List), MemberType = typeof(NumericMemberDataProvider))]
       public void IsUnsignedType_WhenGivenUnsignedData_ReturnsTrue(object self) { Assert.True(self.IsUnsignedType()); }
+
+      [Theory]
+      [MemberData(nameof(NumericMemberDataProvider.BigIntegerList), MemberType = typeof(NumericMemberDataProvider))]
+      public void IsBigIntegerType_When_Given_BigIntegers_Returns_True(object bi) { Assert.True(bi.IsBigIntegerType()); }
+
+      [Theory]
+      [MemberData(nameof(NumericMemberDataProvider.ByteList), MemberType = typeof(NumericMemberDataProvider))]
+      [MemberData(nameof(NumericMemberDataProvider.UInt16List), MemberType = typeof(NumericMemberDataProvider))]
+      [MemberData(nameof(NumericMemberDataProvider.UInt32List), MemberType = typeof(NumericMemberDataProvider))]
+      [MemberData(nameof(NumericMemberDataProvider.UInt64List), MemberType = typeof(NumericMemberDataProvider))]
+      public void IsBigIntegerType_When_Given_NonBigIntegers_Returns_False(object bi) { Assert.False(bi.IsBigIntegerType()); }
 
       #endregion Public Methods
    }
