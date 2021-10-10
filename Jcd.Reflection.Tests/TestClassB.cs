@@ -3,9 +3,11 @@
 
 namespace Jcd.Reflection.Tests
 {
-   class TestClassB : TestClassA
+   internal class TestClassB : TestClassA
    {
+      // ReSharper disable once UnusedMember.Global
       public DateTime Prop6 { get; set; } = DateTime.Now;
+      // ReSharper disable once UnusedMember.Global
       protected static string Prop7 { get; set; } = "hello4";
       // ReSharper disable once ArrangeTypeMemberModifiers
       // ReSharper disable once UnusedMember.Local

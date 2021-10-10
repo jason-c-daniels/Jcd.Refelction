@@ -19,7 +19,7 @@ namespace Jcd.Reflection.Tests
       }
 
       /// <summary>
-      /// Validate that Constructor Throws ArgumentException when nonproperty or nonfield memberinfo passed. 
+      /// Validate that Constructor Throws ArgumentException when non-property or non-field MemberInfo passed. 
       /// </summary>
       [Theory]
       [InlineData(MemberTypes.Constructor)]
@@ -35,7 +35,7 @@ namespace Jcd.Reflection.Tests
       }
 
       /// <summary>
-      /// Validate that Constructor does not throw any exception when property or field memberinfo passed. 
+      /// Validate that Constructor does not throw any exception when property or field MemberInfo passed. 
       /// </summary>
       [Theory]
       [InlineData(MemberTypes.Field)]
@@ -54,10 +54,10 @@ namespace Jcd.Reflection.Tests
       public void AllProperties_WhenCalled_ReturnDelegatedValue()
       {
          var mi = new Mock<MemberInfo>();
-         var expectedMemberType = MemberTypes.Property;
+         const MemberTypes expectedMemberType = MemberTypes.Property;
          var expectedDeclaringType = typeof(TestClassA);
          var expectedReflectedType = typeof(TestClassB);
-         var expectedName = "AnExpectedName";
+         const string expectedName = "AnExpectedName";
 
          mi.SetupGet(s => s.MemberType).Returns(expectedMemberType);
          mi.SetupGet(s => s.DeclaringType).Returns(expectedDeclaringType);
@@ -98,7 +98,7 @@ namespace Jcd.Reflection.Tests
       }
 
       /// <summary>
-      /// Validate that GetCustomAttributes (with type) delegates to memberinfo when called.
+      /// Validate that GetCustomAttributes (with type) delegates to MemberInfo when called.
       /// </summary>
       [Theory]
       [InlineData(MemberTypes.Property, typeof(string), false)]
@@ -111,7 +111,7 @@ namespace Jcd.Reflection.Tests
       [InlineData(MemberTypes.Field, typeof(Type), true)]
       public void GetCustomAttributesWithType_WhenCalled_DelegatesToMemberInfoImplementation(MemberTypes memberType, Type attributeType, bool inherit)
       {
-         var result = new object[] { };
+         var result = Array.Empty<object>();
          var mi = new Mock<MemberInfo>();
          mi.SetupGet(s => s.MemberType).Returns(memberType);
          mi.Setup(s => s.GetCustomAttributes(attributeType, inherit)).Returns(result);
@@ -122,7 +122,7 @@ namespace Jcd.Reflection.Tests
       }
 
       /// <summary>
-      /// Validate that GetCustomAttributes (with inherit) delegates to memberinfo when called.
+      /// Validate that GetCustomAttributes (with inherit) delegates to MemberInfo when called.
       /// </summary>
       [Theory]
       [InlineData(MemberTypes.Property, false)]
@@ -131,7 +131,7 @@ namespace Jcd.Reflection.Tests
       [InlineData(MemberTypes.Field,  false)]
       public void GetCustomAttributesWithInherit_WhenCalled_DelegatesToMemberInfoImplementation(MemberTypes memberType, bool inherit)
       {
-         var result = new object[] { };
+         var result = Array.Empty<object>();
          var mi = new Mock<MemberInfo>();
          mi.SetupGet(s => s.MemberType).Returns(memberType);
          mi.Setup(s => s.GetCustomAttributes(inherit)).Returns(result);
@@ -142,14 +142,14 @@ namespace Jcd.Reflection.Tests
       }
 
       /// <summary>
-      /// Validate that GetValue (for property) delegates to memberinfo when called.
+      /// Validate that GetValue (for property) delegates to MemberInfo when called.
       /// </summary>
       [Fact]
       public void GetValueForProperty_WhenCalled_DelegatesToMemberInfoImplementation()
       {
-         var result = "A name";
-         var name = "Prop2";
-         var flags = BindingFlags.Public | BindingFlags.Instance;
+         const string result = "A name";
+         const string name = "Prop2";
+         const BindingFlags flags = BindingFlags.Public | BindingFlags.Instance;
          var obj = new TestClassA { Prop2 = result };
          var mi = obj.GetType().GetMember(name)[0];
          var sut = new FieldOrPropertyInfo(mi, flags);
@@ -158,7 +158,7 @@ namespace Jcd.Reflection.Tests
       }
 
       /// <summary>
-      /// Validate that GetValue (for field) delegates to memberinfo when called.
+      /// Validate that GetValue (for field) delegates to MemberInfo when called.
       /// </summary>
       [Fact]
       public void GetValueForField_WhenCalled_DelegatesToMemberInfoImplementation()
@@ -168,8 +168,8 @@ namespace Jcd.Reflection.Tests
          var mi = new Mock<MemberInfo>();
          var dt = new Mock<Type>();
          var fi = new Mock<FieldInfo>();
-         var flags = BindingFlags.Public | BindingFlags.Instance;
-         var name = "name";
+         const BindingFlags flags = BindingFlags.Public | BindingFlags.Instance;
+         const string name = "name";
          mi.SetupGet(s => s.Name).Returns(name);
          mi.SetupGet(s => s.MemberType).Returns(MemberTypes.Field);
          mi.SetupGet(s => s.DeclaringType).Returns(dt.Object);
@@ -189,8 +189,8 @@ namespace Jcd.Reflection.Tests
       public void GetValue_When_Property_Throws_An_Exception_Returns_Null()
       {
          var a = new TestClassC();
-         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "ExceptionalProperty").First();
-         var value=fopi.GetValue(a);
+         var item=new FieldOrPropertyEnumerator(a).First(x => x.Name == "ExceptionalProperty");
+         var value=item.GetValue(a);
          Assert.Null(value);
       }
       
@@ -198,8 +198,8 @@ namespace Jcd.Reflection.Tests
       public void GetValue_When_Property_Throws_An_Exception_Returns_Null_And_Outputs_Errored_Of_True()
       {
          var a = new TestClassC();
-         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "ExceptionalProperty").First();
-         var value=fopi.GetValue(a, out bool errored);
+         var item=new FieldOrPropertyEnumerator(a).First(x => x.Name == "ExceptionalProperty");
+         var value=item.GetValue(a, out var errored);
          Assert.Null(value);
          Assert.True(errored);
       }
@@ -208,16 +208,16 @@ namespace Jcd.Reflection.Tests
       public void SetValue_When_Property_Throws_An_Exception_Throws_No_Exception()
       {
          var a = new TestClassC();
-         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "ExceptionalProperty").First();
-         fopi.SetValue(a,5);
+         var item=new FieldOrPropertyEnumerator(a).First(x => x.Name == "ExceptionalProperty");
+         item.SetValue(a,5);
       }
       
       [Fact]
       public void SetValue_When_Property_Throws_An_Exception_Throws_No_Exception_And_Returns_Errored_True()
       {
          var a = new TestClassC();
-         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "ExceptionalProperty").First();
-         fopi.SetValue(a,5, out bool errored);
+         var item=new FieldOrPropertyEnumerator(a).First(x => x.Name == "ExceptionalProperty");
+         item.SetValue(a,5, out var errored);
          Assert.True(errored);
       }
 
@@ -225,8 +225,8 @@ namespace Jcd.Reflection.Tests
       public void SetValue_Sets_A_Property_Successfully()
       {
          var a = new TestClassA();
-         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "Prop1").First();
-         fopi.SetValue(a,13);
+         var item=new FieldOrPropertyEnumerator(a).First(x => x.Name == "Prop1");
+         item.SetValue(a,13);
          Assert.Equal(13,a.Prop1);
       }
       
@@ -234,8 +234,8 @@ namespace Jcd.Reflection.Tests
       public void SetValue_Sets_A_Field_Successfully()
       {
          var a = new TestClassA();
-         var fopi=new FieldOrPropertyEnumerator(a).Where(x => x.Name == "Field1").First();
-         fopi.SetValue(a,13);
+         var item=new FieldOrPropertyEnumerator(a).First(x => x.Name == "Field1");
+         item.SetValue(a,13);
          Assert.Equal(13,a.Field1);
       }
    }

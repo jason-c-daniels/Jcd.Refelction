@@ -17,7 +17,7 @@ namespace Jcd.Reflection.Tests.TestHelpers
       public static IEnumerable<object[]> AllScalars()
       {
          var biMax = new BigInteger(ulong.MaxValue) * 2;
-         Uri.TryCreate("http://google.com", UriKind.Absolute, out Uri uri);
+         Uri.TryCreate("http://google.com", UriKind.Absolute, out var uri);
          yield return new[] { (object)typeof(int) };
          yield return new[] { (object)null };
          yield return new[] { (object)biMax };

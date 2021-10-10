@@ -117,7 +117,7 @@ namespace Jcd.Reflection.Tests
       [MemberData(nameof(NumericMemberDataProvider.NonNumbersCollection),
          MemberType =
             typeof(NumericMemberDataProvider))]
-      public void IsNumericType_WhenGivenNonnumericData_ReturnsFalse(object self)
+      public void IsNumericType_WhenGivenNonNumericData_ReturnsFalse(object self)
       {
          Assert.False(self.IsNumericType());
       }

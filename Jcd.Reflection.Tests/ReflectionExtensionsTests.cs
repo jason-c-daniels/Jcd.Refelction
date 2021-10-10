@@ -102,12 +102,12 @@ namespace Jcd.Reflection.Tests
       }
 
       /// <summary>
-      /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip backign fields.
+      /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip backing fields.
       /// </summary>
       [Fact]
       public void EnumerateFieldsOnType_WhenBindingsSetToReturnAll_EnumeratesAllFieldsExceptBacking()
       {
-         var fields = typeof(TestClassB).EnumerateFields(BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy, skip: fi => fi.Name[0] == '<').ToList();
+         var fields = typeof(TestClassB).EnumerateFields(BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy, fi => fi.Name[0] == '<').ToList();
          Assert.Equal(7, fields.Count);
       }
 
@@ -143,12 +143,12 @@ namespace Jcd.Reflection.Tests
       }
 
       /// <summary>
-      /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip backign fields.
+      /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip backing fields.
       /// </summary>
       [Fact]
       public void EnumerateFieldsOnObject_WhenBindingsSetToReturnAll_EnumeratesAllFieldsExceptBacking()
       {
-         var fields = new TestClassB().EnumerateFields(BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy, skip: fi => fi.Name[0] == '<').ToList();
+         var fields = new TestClassB().EnumerateFields(BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy, fi => fi.Name[0] == '<').ToList();
          Assert.Equal(7, fields.Count);
       }
 
@@ -281,7 +281,7 @@ namespace Jcd.Reflection.Tests
       public void IsScalar_WhenTypeNotIsScalarButExistsAsCustomScalar_ReturnsTrue()
       {
          Assert.True(new TestClassA().IsScalar(new HashSet<Type>(new[] { typeof(TestClassA) })));
-         // Idiot testing to ensure we dibn't nuke the other scalar objects. Which might have been the case earlier. Okay it was the case.
+         // Idiot testing to ensure we didn't nuke the other scalar objects. Which might have been the case earlier. Okay it was the case.
          Assert.True(DateTime.Now.IsScalar(new HashSet<Type>(new[] { typeof(TestClassA) })));
       }
 
@@ -291,7 +291,7 @@ namespace Jcd.Reflection.Tests
       [Fact]
       public void IsKeyValuePair_WhenObjectIsNotAKeyValuePair_ReturnsFalse()
       {
-         object kvp = new object();
+         var kvp = new object();
          Assert.False(kvp.GetType().IsKeyValuePair());
       }
 

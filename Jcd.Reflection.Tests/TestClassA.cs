@@ -1,11 +1,17 @@
-﻿#pragma warning disable 414
+﻿// ReSharper disable PropertyCanBeMadeInitOnly.Global
+// ReSharper disable UnusedMember.Global
+#pragma warning disable 414
 namespace Jcd.Reflection.Tests
 {
-   class TestClassA
+   internal class TestClassA
    {
+      // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
       public int Prop1 { get; set; } = 5;
       public string Prop2 { get; set; } = "hello";
+      // ReSharper disable once FieldCanBeMadeReadOnly.Global
+      // ReSharper disable once ConvertToConstant.Global
       public int Field1 = 5;
+      // ReSharper disable once ConvertToConstant.Global
       public readonly string Field2 = "hello";
 
       // ReSharper disable once UnusedMember.Global

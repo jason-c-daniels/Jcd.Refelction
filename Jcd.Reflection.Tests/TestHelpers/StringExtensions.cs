@@ -1,4 +1,6 @@
 ﻿using System.Text;
+// ReSharper disable UnusedType.Global
+// ReSharper disable UnusedMember.Global
 
 namespace Jcd.Reflection.Tests.TestHelpers
 {
@@ -18,13 +20,13 @@ namespace Jcd.Reflection.Tests.TestHelpers
 
          foreach (var c in text)
          {
-            isLeadingZero = isLeadingZero && (c == '0');
+            isLeadingZero = isLeadingZero && c == '0';
 
             if (!isLeadingZero) sb.Append(c);
          }
 
-         if ((sb.Length == 0) &&
-             (text.Length > 0)) sb.Append('0');
+         if (sb.Length == 0 &&
+             text.Length > 0) sb.Append('0');
 
          return sb.ToString();
       }

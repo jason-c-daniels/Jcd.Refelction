@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+// ReSharper disable UnusedMember.Global
 
 namespace Jcd.Reflection.Tests.TestHelpers
 {
@@ -30,8 +32,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> ByteList()
       {
-         byte two = 2;
-         byte one = 1;
+         const byte two = 2;
+         const byte one = 1;
 
          yield return new[] {(object) byte.MaxValue};
          yield return new[] {(object) byte.MinValue};
@@ -44,8 +46,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> DecimalList()
       {
-         decimal two = 2;
-         decimal one = 1;
+         const decimal two = 2;
+         const decimal one = 1;
 
          yield return new[] {(object) decimal.MaxValue};
          yield return new[] {(object) decimal.MinValue};
@@ -58,8 +60,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> DoublePrecisionFloatList()
       {
-         double two = 2;
-         double one = 1;
+         const double two = 2;
+         const double one = 1;
 
          yield return new[] {(object) double.MaxValue};
          yield return new[] {(object) double.MinValue};
@@ -72,8 +74,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> Int16List()
       {
-         short two = 2;
-         short one = 1;
+         const short two = 2;
+         const short one = 1;
 
          yield return new[] {(object) short.MaxValue};
          yield return new[] {(object) short.MinValue};
@@ -86,8 +88,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> Int32List()
       {
-         var two = 2;
-         var one = 1;
+         const int two = 2;
+         const int one = 1;
 
          yield return new[] {(object) int.MaxValue};
          yield return new[] {(object) int.MinValue};
@@ -100,8 +102,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> Int64List()
       {
-         long two = 2;
-         long one = 1;
+         const long two = 2;
+         const long one = 1;
 
          yield return new[] {(object) long.MaxValue};
          yield return new[] {(object) long.MinValue};
@@ -194,10 +196,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> FibonacciBigIntegerList()
       {
-         foreach (var bi in new NaiiveFibonacciGenerator(long.MaxValue * (BigInteger) 15))
-         {
-            yield return new[] {(object) bi};
-         }
+         return from BigInteger bi in new NaiiveFibonacciGenerator(long.MaxValue * (BigInteger) 15) 
+                select new[] {(object) bi};
       }
 
       /// <summary>
@@ -205,12 +205,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> FibonacciUInt64List()
       {
-         foreach (var bi in new NaiiveFibonacciGenerator(ulong.MaxValue))
-         {
-            var v = (ulong) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from ulong v in new NaiiveFibonacciGenerator(ulong.MaxValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -218,12 +214,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> FibonacciInt64List()
       {
-         foreach (var bi in new NaiiveFibonacciGenerator(long.MaxValue))
-         {
-            var v = (long) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from long v in new NaiiveFibonacciGenerator(long.MaxValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -231,12 +223,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> FibonacciUInt32List()
       {
-         foreach (var bi in new NaiiveFibonacciGenerator(uint.MaxValue))
-         {
-            var v = (uint) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from uint v in new NaiiveFibonacciGenerator(uint.MaxValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -244,12 +232,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> FibonacciInt32List()
       {
-         foreach (var bi in new NaiiveFibonacciGenerator(int.MaxValue))
-         {
-            var v = (int) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from int v in new NaiiveFibonacciGenerator(int.MaxValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -257,12 +241,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> FibonacciUInt16List()
       {
-         foreach (var bi in new NaiiveFibonacciGenerator(ushort.MaxValue))
-         {
-            var v = (ushort) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from ushort v in new NaiiveFibonacciGenerator(ushort.MaxValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -270,12 +250,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> FibonacciInt16List()
       {
-         foreach (var bi in new NaiiveFibonacciGenerator(short.MaxValue))
-         {
-            var v = (short) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from short v in new NaiiveFibonacciGenerator(short.MaxValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -283,12 +259,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> FibonacciByteList()
       {
-         foreach (var bi in new NaiiveFibonacciGenerator(byte.MaxValue))
-         {
-            var v = (byte) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from byte v in new NaiiveFibonacciGenerator(byte.MaxValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -296,12 +268,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> FibonacciSByteList()
       {
-         foreach (var bi in new NaiiveFibonacciGenerator(sbyte.MaxValue))
-         {
-            var v = (sbyte) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from sbyte v in new NaiiveFibonacciGenerator(sbyte.MaxValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -309,12 +277,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> NegativeFibonacciSByteList()
       {
-         foreach (var bi in new NegativeNaiiveFibonacciGenerator(sbyte.MinValue))
-         {
-            var v = (sbyte) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from sbyte v in new NegativeNaiiveFibonacciGenerator(sbyte.MinValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -322,12 +286,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> NegativeFibonacciInt16List()
       {
-         foreach (var bi in new NegativeNaiiveFibonacciGenerator(short.MinValue))
-         {
-            var v = (short) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from short v in new NegativeNaiiveFibonacciGenerator(short.MinValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -335,12 +295,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> NegativeFibonacciInt32List()
       {
-         foreach (var bi in new NegativeNaiiveFibonacciGenerator(int.MinValue))
-         {
-            var v = (int) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from int v in new NegativeNaiiveFibonacciGenerator(int.MinValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -348,12 +304,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> NegativeFibonacciInt64List()
       {
-         foreach (var bi in new NegativeNaiiveFibonacciGenerator(long.MinValue))
-         {
-            var v = (long) bi;
-
-            yield return new[] {(object) v};
-         }
+         return from long v in new NegativeNaiiveFibonacciGenerator(long.MinValue) 
+                select new[] {(object) v};
       }
 
       /// <summary>
@@ -361,10 +313,8 @@ namespace Jcd.Reflection.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> NegativeFibonacciBigIntegerList()
       {
-         foreach (var bi in new NegativeNaiiveFibonacciGenerator(long.MinValue * (BigInteger) 15))
-         {
-            yield return new[] {(object) bi};
-         }
+         return from BigInteger bi in new NegativeNaiiveFibonacciGenerator(long.MinValue * (BigInteger) 15) 
+                select new[] {(object) bi};
       }
    }
 }
