@@ -16,7 +16,7 @@
         <FileVersion>1.0.2</FileVersion>
         <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
         <PackageIconUrl>https://s.gravatar.com/avatar/c7e8df18f543ea857ac93660a190df98?s=320</PackageIconUrl>
-        <PackageReleaseNotes>Upgraded Jcd.Validations to 1.0.8</PackageReleaseNotes>
+        <PackageReleaseNotes>Fixed GitHub issues #3 and #4 (unused params in ToExpandoObject and ToDictionaryTree)</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
