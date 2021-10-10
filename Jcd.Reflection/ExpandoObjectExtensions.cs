@@ -52,7 +52,7 @@ namespace Jcd.Reflection
                 return (valueRetentionStrategy == null || valueRetentionStrategy(key, value)) && DefaultExpandoValueRetentionStrategy(value);
             }
 
-            return (ExpandoObject)self.ToDictionaryTree<ExpandoObject>(keyRenamingStrategy: MyKeyRenamingStrategy, valueRetentionStrategy: MyValueRetentionStrategy);
+            return (ExpandoObject)self.ToDictionaryTree<ExpandoObject>(visited, MyKeyRenamingStrategy, MyValueRetentionStrategy);
         }
 
         /// <summary>
@@ -295,11 +295,11 @@ namespace Jcd.Reflection
         /// </summary>
         /// <param name="items"></param>
         /// <param name="item"></param>
-        /// <param name="skip"></param>
         /// <returns></returns>
         [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
-        public static IEnumerable<KeyValuePair<PropertyInfo, object>> ToPropertyInfoValuePairs(
-            this IEnumerable<PropertyInfo> items, object item, Func<PropertyInfo, bool> skip = null)
+        public static IEnumerable<KeyValuePair<PropertyInfo, object>> 
+            ToPropertyInfoValuePairs(this IEnumerable<PropertyInfo> items, 
+                                     object item)
         {
             Argument.IsNotNull(item, nameof(item));
             // ReSharper disable once PossibleMultipleEnumeration
@@ -344,11 +344,11 @@ namespace Jcd.Reflection
         /// </summary>
         /// <param name="items"></param>
         /// <param name="item"></param>
-        /// <param name="skip"></param>
         /// <returns></returns>
         [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
-        public static IEnumerable<KeyValuePair<FieldInfo, object>> ToFieldInfoValuePairs(
-            this IEnumerable<FieldInfo> items, object item, Func<FieldInfo, bool> skip = null)
+        public static IEnumerable<KeyValuePair<FieldInfo, object>> 
+            ToFieldInfoValuePairs(this IEnumerable<FieldInfo> items, 
+                                  object item)
         {
             Argument.IsNotNull(item, nameof(item));
             // ReSharper disable once PossibleMultipleEnumeration
