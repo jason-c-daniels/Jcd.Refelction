@@ -2,6 +2,9 @@ using System;
 using System.Linq;
 using System.Reflection;
 using Jcd.Validations;
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable ConvertIfStatementToNullCoalescingAssignment
+// ReSharper disable UnusedMember.Global
 
 namespace Jcd.Reflection
 {

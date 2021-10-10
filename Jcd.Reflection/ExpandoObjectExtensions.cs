@@ -6,6 +6,8 @@ using System.Dynamic;
 using System.Reflection;
 using System.Text;
 using Jcd.Validations;
+// ReSharper disable UseDeconstruction
+// ReSharper disable ConvertIfStatementToNullCoalescingAssignment
 
 namespace Jcd.Reflection
 {
@@ -61,7 +63,7 @@ namespace Jcd.Reflection
         private static string DefaultExpandoKeyRenamingStrategy(string k)
         {
             var sb = new StringBuilder();
-            char pc = '_';
+            var pc = '_';
             pc = BuildName(k, sb, pc);
             if (sb.Length == 0)
             {
@@ -77,19 +79,19 @@ namespace Jcd.Reflection
         /// <returns></returns>
         private static bool DefaultExpandoValueRetentionStrategy(object value)
         {
-            var retain = false;
-            if (value != null)
+            if (value == null) return false;
+            var retain = true;
+            switch (value)
             {
-                retain = true;
-                if (value is IDictionary dictionary)
-                {
+                case IDictionary dictionary:
                     retain = dictionary.Count > 0;
-                }
-                else if (value is IEnumerable collection)
+                    break;
+                case IEnumerable collection:
                 {
                     var enumerator = collection.GetEnumerator();
                     retain = enumerator.MoveNext();
-                    if (enumerator is IDisposable disp) disp.Dispose();
+                    if (enumerator is IDisposable disposable) disposable.Dispose();
+                    break;
                 }
             }
 
@@ -108,35 +110,35 @@ namespace Jcd.Reflection
         private static dynamic ToDictionaryTree<TNode>(this object self, HashSet<object> visited = null, Func<string, string> keyRenamingStrategy = null, Func<string, object, bool> valueRetentionStrategy = null)
             where TNode : IDictionary<string, object>, new()
         {
-            TNode root = default(TNode);
+            var root = default(TNode);
             if (visited == null) visited = new HashSet<object>();
             if (keyRenamingStrategy == null) keyRenamingStrategy = k => k;
             if (valueRetentionStrategy == null) valueRetentionStrategy = (name, value) => true;
-            if (!visited.Contains(self))
+            if (visited.Contains(self)) return root;
+            visited.Add(self);
+            root = new TNode();
+            if (self.IsScalar()) return self;
+            try
             {
-                visited.Add(self);
-                root = new TNode();
-                if (self.IsScalar()) return self;
-                try
+                switch (self)
                 {
-                    if (self is IDictionary dictionary)
-                    {
+                    case IDictionary dictionary:
                         AppendDictionary(visited, keyRenamingStrategy, valueRetentionStrategy, dictionary, root);
-                    }
-                    else if (self is IEnumerable coll)
+                        break;
+                    case IEnumerable coll:
                     {
                         if (AppendEnumerable(visited, keyRenamingStrategy, valueRetentionStrategy, coll, root, out var array))
                             return array;
+                        break;
                     }
-                    else
-                    {
+                    default:
                         AppendObject(self, visited, keyRenamingStrategy, valueRetentionStrategy, root);
-                    }
+                        break;
                 }
-                finally
-                {
-                    visited.Remove(self);
-                }
+            }
+            finally
+            {
+                visited.Remove(self);
             }
             return root;
         }
@@ -203,9 +205,12 @@ namespace Jcd.Reflection
             var list = new List<object>();
             foreach (var item in enumerable)
             {
-                if (!isKeyValuePair.HasValue)
+                // ReSharper disable once ConvertSwitchStatementToSwitchExpression
+                switch (isKeyValuePair)
                 {
-                    isKeyValuePair = item?.GetType().IsKeyValuePair();
+                    case null:
+                        isKeyValuePair = item?.GetType().IsKeyValuePair();
+                        break;
                 }
 
                 var key = index.ToString();
@@ -247,13 +252,13 @@ namespace Jcd.Reflection
             foreach (var c in k)
             {
 
-                if ((sb.Length > 0 && (Char.IsLetterOrDigit(c) || c == '_')) || // valid member name char.
-                    (sb.Length == 0 && (Char.IsLetter(c) || c == '_' || c == '@'))) // valid member name starting char
+                if (sb.Length > 0 && (char.IsLetterOrDigit(c) || c == '_') || // valid member name char.
+                    sb.Length == 0 && (char.IsLetter(c) || c == '_' || c == '@')) // valid member name starting char
                 {
-                    if ((Char.IsLetterOrDigit(pc) && sb.Length > 0) || c == '_' || c == '@')
+                    if (char.IsLetterOrDigit(pc) && sb.Length > 0 || c == '_' || c == '@')
                         sb.Append(c);
-                    else if (sb.Length > 0 || Char.IsLetter(c))
-                        sb.Append(Char.ToUpperInvariant(c));
+                    else if (sb.Length > 0 || char.IsLetter(c))
+                        sb.Append(char.ToUpperInvariant(c));
                 }
                 pc = c;
             }
@@ -276,14 +281,12 @@ namespace Jcd.Reflection
         {
             Argument.IsNotNull(keyRenamingStrategy,nameof(keyRenamingStrategy));
             Argument.IsNotNull(valueRetentionStrategy, nameof(valueRetentionStrategy));
-            if (!visited.Contains(val))
+            if (visited.Contains(val)) return;
+            key = keyRenamingStrategy(key);
+            var value = val.IsScalar() ? val : val.ToDictionaryTree<TNode>(visited, keyRenamingStrategy,valueRetentionStrategy);
+            if (!dictionary.ContainsKey(key) && valueRetentionStrategy(key,value))
             {
-                key = keyRenamingStrategy(key);
-                var value = val.IsScalar() ? val : val.ToDictionaryTree<TNode>(visited, keyRenamingStrategy,valueRetentionStrategy);
-                if (!dictionary.ContainsKey(key) && valueRetentionStrategy(key,value))
-                {
-                    dictionary.Add(key, value);
-                }
+                dictionary.Add(key, value);
             }
         }
         
@@ -335,7 +338,8 @@ namespace Jcd.Reflection
                 yield return new KeyValuePair<string, object>(kvp.Key.Name, kvp.Value);
             }
         }
-                /// <summary>
+        
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="items"></param>

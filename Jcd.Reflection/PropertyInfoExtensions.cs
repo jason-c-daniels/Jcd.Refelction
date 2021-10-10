@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Dynamic;
-using System.Linq;
-using System.Numerics;
 using System.Reflection;
-using System.Text;
-using Jcd.Validations;
 
 namespace Jcd.Reflection
 {
@@ -20,7 +13,7 @@ namespace Jcd.Reflection
       /// Enumerate the PropertyInfo entries for a given type 
       /// </summary>
       /// <param name="type">The data type to reflect on</param>
-      /// <param name="flags">The bindingflags</param>
+      /// <param name="flags">The BindingFlags</param>
       /// <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
       /// <returns>An enumerable across PropertyInfo s</returns>
       public static IEnumerable<PropertyInfo> EnumerateProperties(this Type type, BindingFlags? flags = null,
@@ -41,14 +34,13 @@ namespace Jcd.Reflection
       /// Enumerate the PropertyInfo entries for a given type 
       /// </summary>
       /// <param name="self">The data instance to reflect on</param>
-      /// <param name="flags">The bindingflags</param>
+      /// <param name="flags">The BindingFlags</param>
       /// <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
       /// <returns>An enumerable across PropertyInfo s</returns>
       public static IEnumerable<PropertyInfo> EnumerateProperties(this object self, BindingFlags? flags = null,
                                                                   Func<PropertyInfo, bool> skip = null)
       {
-         if (self.IsScalar()) return null;
-         return self.GetType().EnumerateProperties(flags, skip);
+         return self.IsScalar() ? null : self.GetType().EnumerateProperties(flags, skip);
       }
       
    }

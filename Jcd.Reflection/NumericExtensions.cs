@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace Jcd.Reflection
 {
@@ -40,6 +41,7 @@ namespace Jcd.Reflection
       /// <returns>true if the object is of a floating point data type</returns>
       public static bool IsFloatType(this object self)
       {
+         // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
          switch (Type.GetTypeCode(self.GetType()))
          {
             case TypeCode.Double:
@@ -60,6 +62,7 @@ namespace Jcd.Reflection
       /// <returns>true if the object is of an integer data type</returns>
       public static bool IsIntegerType(this object self)
       {
+         // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
          switch (Type.GetTypeCode(self.GetType()))
          {
             case TypeCode.Byte:
@@ -73,10 +76,8 @@ namespace Jcd.Reflection
 
                return true;
 
-         default:
-         {
-            return self is BigInteger;
-         }
+            default:
+               return self is BigInteger;
          }
       }
 
@@ -87,6 +88,7 @@ namespace Jcd.Reflection
       /// <returns>true if the object is of a numeric data type</returns>
       public static bool IsNumericType(this object self)
       {
+         // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
          switch (Type.GetTypeCode(self.GetType()))
          {
             case TypeCode.Byte:
@@ -118,6 +120,7 @@ namespace Jcd.Reflection
          var type = self.GetType();
          var tc = Type.GetTypeCode(type);
 
+         // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
          switch (tc)
          {
             case TypeCode.SByte:
@@ -156,6 +159,7 @@ namespace Jcd.Reflection
       /// <returns>true if the object is of an unsigned data type</returns>
       public static bool IsUnsignedType(this object self)
       {
+         // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
          switch (Type.GetTypeCode(self.GetType()))
          {
             case TypeCode.Byte:

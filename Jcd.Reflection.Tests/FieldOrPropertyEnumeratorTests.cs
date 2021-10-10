@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using System.Reflection;
-using Jcd.Reflection;
 using Xunit;
 
 namespace Jcd.Reflection.Tests

@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable FieldCanBeMadeReadOnly.Global
 
 namespace Jcd.Reflection
 {
@@ -35,11 +37,12 @@ namespace Jcd.Reflection
       /// Predefined skip predicate for skipping system members.  
       /// </summary>
       public static Func<MemberInfo, bool> SkipSystemAndNonDataMembers = mi =>
-         SkipSystemMembers(mi) || (mi.MemberType != MemberTypes.Field && mi.MemberType != MemberTypes.Property);
+         SkipSystemMembers(mi) || mi.MemberType != MemberTypes.Field && mi.MemberType != MemberTypes.Property;
 
       /// <summary>
       /// Gets or sets the settings controlling member info enumeration
       /// </summary>
+      // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
       public Settings EnumerationSettings { get; set; }
 
       /// <summary>
@@ -53,7 +56,7 @@ namespace Jcd.Reflection
       /// <param name="type">The type to enumerate</param>
       /// <param name="settings">The settings controlling enumeration</param>
       public MemberInfoEnumerator(Type type,
-         Settings settings = default(Settings))
+         Settings settings = default)
       {
          Type = type;
          EnumerationSettings = settings;
@@ -64,8 +67,9 @@ namespace Jcd.Reflection
       /// </summary>
       /// <param name="item">The instance to enumerate</param>
       /// <param name="settings">The settings controlling enumeration</param>
+      // ReSharper disable once UnusedMember.Global
       public MemberInfoEnumerator(object item,
-                                  Settings settings = default(Settings)) : this((Type) (item is Type || item is null
+                                  Settings settings = default) : this((Type) (item is Type || item is null
             ? item
             : item.GetType()),
          settings)

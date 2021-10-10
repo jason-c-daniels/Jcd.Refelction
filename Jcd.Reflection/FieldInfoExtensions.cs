@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using Jcd.Validations;
 
 namespace Jcd.Reflection
 {
@@ -16,7 +15,7 @@ namespace Jcd.Reflection
         /// Enumerate the FieldInfo entries for a given type 
         /// </summary>
         /// <param name="type">The data type to reflect on</param>
-        /// <param name="flags">The bindingflags</param>
+        /// <param name="flags">The BindingFlags</param>
         /// <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
         /// <returns>An enumerable across FieldInfo s</returns>
         [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
@@ -37,15 +36,12 @@ namespace Jcd.Reflection
         /// Enumerate the FieldInfo entries for a given instance 
         /// </summary>
         /// <param name="self">The data instance to reflect on</param>
-        /// <param name="flags">The bindingflags</param>
+        /// <param name="flags">The BindingFlags</param>
         /// <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
         /// <returns>An enumerable across FieldInfo s</returns>
-        public static IEnumerable<FieldInfo> EnumerateFields(this object self, BindingFlags? flags = null,
-                                                             Func<FieldInfo, bool> skip = null)
-        {
-            if (self.IsScalar()) return null;
-            return self.GetType().EnumerateFields(flags, skip);
-        }
-
+        public static IEnumerable<FieldInfo> EnumerateFields(this object self, 
+                                                             BindingFlags? flags = null, 
+                                                             Func<FieldInfo, bool> skip = null) 
+            => self.IsScalar() ? null : self.GetType().EnumerateFields(flags, skip);
     }
 }

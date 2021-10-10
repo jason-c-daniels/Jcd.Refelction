@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Jcd.Reflection;
 using Jcd.Reflection.Tests.TestHelpers;
 using Xunit;
 

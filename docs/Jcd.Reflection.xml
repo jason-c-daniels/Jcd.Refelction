@@ -159,7 +159,7 @@
             Enumerate the FieldInfo entries for a given type 
             </summary>
             <param name="type">The data type to reflect on</param>
-            <param name="flags">The bindingflags</param>
+            <param name="flags">The BindingFlags</param>
             <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
             <returns>An enumerable across FieldInfo s</returns>
         </member>
@@ -168,7 +168,7 @@
             Enumerate the FieldInfo entries for a given instance 
             </summary>
             <param name="self">The data instance to reflect on</param>
-            <param name="flags">The bindingflags</param>
+            <param name="flags">The BindingFlags</param>
             <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
             <returns>An enumerable across FieldInfo s</returns>
         </member>
@@ -179,7 +179,7 @@
         </member>
         <member name="T:Jcd.Reflection.FieldOrPropertyEnumerator.Settings">
             <summary>
-            The settings indicating "how" to enumerate. (i.e. BingindFlgas and a predicate for skipping members)
+            The settings indicating "how" to enumerate. (i.e. BindingFlags and a predicate for skipping members)
             </summary>
         </member>
         <member name="F:Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Flags">
@@ -675,7 +675,7 @@
             Enumerate the PropertyInfo entries for a given type 
             </summary>
             <param name="type">The data type to reflect on</param>
-            <param name="flags">The bindingflags</param>
+            <param name="flags">The BindingFlags</param>
             <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
             <returns>An enumerable across PropertyInfo s</returns>
         </member>
@@ -684,7 +684,7 @@
             Enumerate the PropertyInfo entries for a given type 
             </summary>
             <param name="self">The data instance to reflect on</param>
-            <param name="flags">The bindingflags</param>
+            <param name="flags">The BindingFlags</param>
             <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
             <returns>An enumerable across PropertyInfo s</returns>
         </member>

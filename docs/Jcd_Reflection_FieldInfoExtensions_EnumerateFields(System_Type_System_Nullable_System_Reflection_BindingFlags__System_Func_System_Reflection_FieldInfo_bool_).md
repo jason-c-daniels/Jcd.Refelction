@@ -11,7 +11,7 @@ The data type to reflect on
   
 <a name='Jcd_Reflection_FieldInfoExtensions_EnumerateFields(System_Type_System_Nullable_System_Reflection_BindingFlags__System_Func_System_Reflection_FieldInfo_bool_)_flags'></a>
 `flags` [System.Nullable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')[System.Reflection.BindingFlags](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.BindingFlags 'System.Reflection.BindingFlags')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Nullable-1 'System.Nullable`1')  
-The bindingflags
+The BindingFlags
   
 <a name='Jcd_Reflection_FieldInfoExtensions_EnumerateFields(System_Type_System_Nullable_System_Reflection_BindingFlags__System_Func_System_Reflection_FieldInfo_bool_)_skip'></a>
 `skip` [System.Func&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Reflection.FieldInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo 'System.Reflection.FieldInfo')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Func-2 'System.Func`2')  

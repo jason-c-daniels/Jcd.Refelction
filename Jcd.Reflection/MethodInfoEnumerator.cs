@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace Jcd.Reflection
 {
@@ -22,12 +23,14 @@ namespace Jcd.Reflection
             /// <summary>
             /// A predicate for skipping certain members.
             /// </summary>
+            // ReSharper disable once UnassignedField.Global
             public Func<MethodInfo, bool> Skip;
         }
         
         /// <summary>
         /// Gets or sets the settings controlling method info enumeration
         /// </summary>
+        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
         public Settings EnumerationSettings { get; set; }
 
         /// <summary>
@@ -41,7 +44,7 @@ namespace Jcd.Reflection
         /// <param name="type">The type to enumerate</param>
         /// <param name="settings">The settings controlling enumeration</param>
         public MethodInfoEnumerator(Type type,
-                                    Settings settings = default(Settings))
+                                    Settings settings = default)
         {
             Type = type;
             EnumerationSettings = settings;
@@ -52,8 +55,9 @@ namespace Jcd.Reflection
         /// </summary>
         /// <param name="item">The instance to enumerate</param>
         /// <param name="settings">The settings controlling enumeration</param>
+        // ReSharper disable once UnusedMember.Global
         public MethodInfoEnumerator(object item,
-                                    Settings settings = default(Settings)) : this((Type) (item is Type || item is null
+                                    Settings settings = default) : this((Type) (item is Type || item is null
                 ? item
                 : item.GetType()),
             settings)

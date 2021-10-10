@@ -1,5 +1,4 @@
-﻿using System.Numerics;
-using Jcd.Reflection.Tests.TestHelpers;
+﻿using Jcd.Reflection.Tests.TestHelpers;
 using Xunit;
 
 namespace Jcd.Reflection.Tests

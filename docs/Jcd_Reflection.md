@@ -15,6 +15,6 @@
 
 | Structs | |
 | :--- | :--- |
-| [FieldOrPropertyEnumerator.Settings](Jcd_Reflection_FieldOrPropertyEnumerator_Settings.md 'Jcd.Reflection.FieldOrPropertyEnumerator.Settings') | The settings indicating "how" to enumerate. (i.e. BingindFlgas and a predicate for skipping members)<br/> |
+| [FieldOrPropertyEnumerator.Settings](Jcd_Reflection_FieldOrPropertyEnumerator_Settings.md 'Jcd.Reflection.FieldOrPropertyEnumerator.Settings') | The settings indicating "how" to enumerate. (i.e. BindingFlags and a predicate for skipping members)<br/> |
 | [MemberInfoEnumerator.Settings](Jcd_Reflection_MemberInfoEnumerator_Settings.md 'Jcd.Reflection.MemberInfoEnumerator.Settings') | The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)<br/> |
 | [MethodInfoEnumerator.Settings](Jcd_Reflection_MethodInfoEnumerator_Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings') | The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)<br/> |

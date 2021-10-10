@@ -17,8 +17,7 @@ namespace Jcd.Reflection
             var pi = t.GetProperty(fieldOrPropertyName);
             if (pi != null) return pi.GetValue(self);
             var fi = t.GetField(fieldOrPropertyName);
-            if (fi != null) return fi.GetValue(self);
-            return null;
+            return fi != null ? fi.GetValue(self) : null;
         }
 
         /// <summary>
