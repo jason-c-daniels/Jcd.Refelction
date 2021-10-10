@@ -344,7 +344,7 @@ namespace Jcd.Reflection.Tests
       }
 
       [Fact]
-      public void ToDictionaryTree_Returns_A_String_Object_Dictionary_Tree_Of_The_Object()
+      public void ToDictionaryTree_And_ToExpando_Object_Perform_A_Compatible_RoundTrip()
       {
          var a = new TestClassA();
 
@@ -353,6 +353,22 @@ namespace Jcd.Reflection.Tests
          Assert.Equal(ado,aeo);
       }
 
+      [Fact]
+      public void ToDictionaryTree_Returns_A_String_Object_Dictionary_Tree_Of_The_Object_Without_The_PreVisited_Items()
+      {
+         //TODO: This is a bit of a hack, but it works. 
+         //      Add more in depth tests later. 
+         var a = new TestClassA();
+         var visited = new HashSet<object>();
+         visited.Add(a);
+         dynamic aeo=a.ToExpandoObject(visited);
+         var ado = a.ToDictionaryTree(visited);
+         Assert.Equal(ado,aeo);
+         // we expect null because the root was marked as visited
+         Assert.Null(ado);
+         Assert.Null(aeo);
+      }
+      
       [Fact]
       public void IsScalar_When_Given_DataType_of_Type_Returns_True()
       {

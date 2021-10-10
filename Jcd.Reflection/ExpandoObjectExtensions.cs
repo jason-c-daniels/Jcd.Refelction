@@ -29,7 +29,10 @@ namespace Jcd.Reflection
                                                                    Func<string, string> keyRenamingStrategy = null,
                                                                    Func<string, object, bool> valueRetentionStrategy = null)
         {
-            return (IDictionary<string, object>)self.ToDictionaryTree<Dictionary<string, object>>(keyRenamingStrategy:keyRenamingStrategy, valueRetentionStrategy:valueRetentionStrategy);
+            return (IDictionary<string, object>)self.ToDictionaryTree<Dictionary<string, object>>(
+                visited,
+                keyRenamingStrategy,
+                valueRetentionStrategy);
         }
 
         /// <summary>
@@ -107,7 +110,10 @@ namespace Jcd.Reflection
         /// <param name="valueRetentionStrategy"></param>
         /// <typeparam name="TNode"></typeparam>
         /// <returns></returns>
-        private static dynamic ToDictionaryTree<TNode>(this object self, HashSet<object> visited = null, Func<string, string> keyRenamingStrategy = null, Func<string, object, bool> valueRetentionStrategy = null)
+        private static dynamic ToDictionaryTree<TNode>(this object self, 
+                                                       HashSet<object> visited = null, 
+                                                       Func<string, string> keyRenamingStrategy = null, 
+                                                       Func<string, object, bool> valueRetentionStrategy = null)
             where TNode : IDictionary<string, object>, new()
         {
             var root = default(TNode);
