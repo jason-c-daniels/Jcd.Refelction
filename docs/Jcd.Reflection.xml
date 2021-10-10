@@ -110,7 +110,7 @@
             <param name="valueRetentionStrategy"></param>
             <typeparam name="TNode"></typeparam>
         </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToPropertyInfoValuePairs(System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo},System.Object,System.Func{System.Reflection.PropertyInfo,System.Boolean})">
+        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToPropertyInfoValuePairs(System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo},System.Object)">
             <summary>
             Creates a set of PropertyInfo to (current) value pairs for a given object. 
             </summary>
@@ -126,7 +126,7 @@
             <param name="items"></param>
             <returns></returns>
         </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToFieldInfoValuePairs(System.Collections.Generic.IEnumerable{System.Reflection.FieldInfo},System.Object,System.Func{System.Reflection.FieldInfo,System.Boolean})">
+        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToFieldInfoValuePairs(System.Collections.Generic.IEnumerable{System.Reflection.FieldInfo},System.Object)">
             <summary>
             
             </summary>
