@@ -10,7 +10,6 @@ namespace Jcd.Reflection
     /// </summary>
     public static class FieldInfoExtensions
     {
-
         /// <summary>
         /// Enumerate the FieldInfo entries for a given type 
         /// </summary>

@@ -42,6 +42,5 @@ namespace Jcd.Reflection
       {
          return self.IsScalar() ? null : self.GetType().EnumerateProperties(flags, skip);
       }
-      
    }
 }
