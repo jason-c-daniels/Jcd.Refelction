@@ -9,7 +9,6 @@ namespace Jcd.Reflection.Tests
 {
    public class ReflectionExtensionsTests
    {
-
       /// <summary>
       /// Validate that EnumerateProperties enumerates public instance properties, inherited, when called with default parameters.
       /// </summary>
@@ -403,7 +402,6 @@ namespace Jcd.Reflection.Tests
          Assert.Equal(a.Field1,v);
       }
       
-      
       [Fact]
       public void SetValue_Sets_A_Property()
       {
@@ -419,6 +417,5 @@ namespace Jcd.Reflection.Tests
          a.SetValue("Field1",7);
          Assert.Equal(7, a.Field1);
       }
-      
    }
 }

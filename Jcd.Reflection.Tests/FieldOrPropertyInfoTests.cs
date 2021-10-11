@@ -8,8 +8,7 @@ namespace Jcd.Reflection.Tests
 {
     public class FieldOrPropertyInfoTests
     {
-
-      /// <summary>
+       /// <summary>
       /// Validate that Constructor Throws ArgumentNullException When memberInfoIsNull. 
       /// </summary>
       [Fact]

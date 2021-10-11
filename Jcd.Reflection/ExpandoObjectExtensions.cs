@@ -243,7 +243,6 @@ namespace Jcd.Reflection
             if (isKeyValuePair.HasValue && isKeyValuePair.Value) return false;
             array = list.ToArray();
             return true;
-
         }
 
         /// <summary>
@@ -257,10 +256,12 @@ namespace Jcd.Reflection
         {
             foreach (var c in k)
             {
-
-                if (sb.Length > 0 && (char.IsLetterOrDigit(c) || c == '_') || // valid member name char.
-                    sb.Length == 0 && (char.IsLetter(c) || c == '_' || c == '@')) // valid member name starting char
+                // ReSharper disable once ArrangeRedundantParentheses
+                if ((sb.Length > 0 && (char.IsLetterOrDigit(c) || c == '_')) || // valid member name char.
+                    // ReSharper disable once ArrangeRedundantParentheses
+                    (sb.Length == 0 && (char.IsLetter(c) || c == '_' || c == '@'))) // valid member name starting char
                 {
+                    // TODO: untangle this logic and create meaningful comments or temp variables.
                     if (char.IsLetterOrDigit(pc) && sb.Length > 0 || c == '_' || c == '@')
                         sb.Append(c);
                     else if (sb.Length > 0 || char.IsLetter(c))

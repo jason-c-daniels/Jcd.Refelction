@@ -37,7 +37,8 @@ namespace Jcd.Reflection
       /// Predefined skip predicate for skipping system members.  
       /// </summary>
       public static Func<MemberInfo, bool> SkipSystemAndNonDataMembers = mi =>
-         SkipSystemMembers(mi) || mi.MemberType != MemberTypes.Field && mi.MemberType != MemberTypes.Property;
+         // ReSharper disable once ArrangeRedundantParentheses
+         SkipSystemMembers(mi) || (mi.MemberType != MemberTypes.Field && mi.MemberType != MemberTypes.Property);
 
       /// <summary>
       /// Gets or sets the settings controlling member info enumeration
