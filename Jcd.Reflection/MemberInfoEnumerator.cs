@@ -75,7 +75,6 @@ namespace Jcd.Reflection
             : item.GetType()),
          settings)
       {
-
       }
 
       /// <summary>

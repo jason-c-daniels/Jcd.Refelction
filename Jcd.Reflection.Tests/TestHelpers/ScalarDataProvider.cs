@@ -10,7 +10,6 @@ namespace Jcd.Reflection.Tests.TestHelpers
    /// </summary>
    public class ScalarDataProvider
    {
-
       /// <summary>
       /// Provides a set of BigIntegers
       /// </summary>
@@ -37,6 +36,5 @@ namespace Jcd.Reflection.Tests.TestHelpers
          yield return new[] { (object)Guid.Empty };
          yield return new[] { (object)"a string" };
       }
-
    }
 }

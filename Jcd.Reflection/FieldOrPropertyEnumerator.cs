@@ -60,7 +60,6 @@ namespace Jcd.Reflection
       public FieldOrPropertyEnumerator(object item, Settings settings = default) 
          : this((Type)(item is Type || item is null ? item : item.GetType()), settings)
       {
-
       }
 
       /// <summary>
