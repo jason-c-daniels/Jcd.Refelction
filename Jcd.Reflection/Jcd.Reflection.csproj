@@ -16,8 +16,20 @@
         <FileVersion>1.0.2</FileVersion>
         <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
         <PackageIconUrl>https://s.gravatar.com/avatar/c7e8df18f543ea857ac93660a190df98?s=320</PackageIconUrl>
-        <PackageReleaseNotes>Fixed GitHub issues #3 and #4 (unused params in ToExpandoObject and ToDictionaryTree)</PackageReleaseNotes>
+        <PackageReleaseNotes>* fixed SetValue for private data and structs
+* fixed GetValue for private data
+* Added unit tests to cover these cases
+* Added an *.Examples project 
+* Updated README.md with example code
+* Embedding README.md in nuget package now</PackageReleaseNotes>
     </PropertyGroup>
+    
+    <PropertyGroup>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    <ItemGroup>
+      <None Include="..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
       <DocumentationFile>..\docs\Jcd.Reflection.xml</DocumentationFile>
@@ -32,7 +44,7 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
-      <PackageReference Include="Jcd.Validations" Version="1.0.17" />
+      <PackageReference Include="Jcd.Validations" Version="1.1.7" />
       <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     </ItemGroup>
 

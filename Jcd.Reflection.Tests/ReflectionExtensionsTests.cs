@@ -417,5 +417,21 @@ namespace Jcd.Reflection.Tests
          a.SetValue("Field1",7);
          Assert.Equal(7, a.Field1);
       }
+      
+      [Fact]
+      public void SetValue_Sets_A_Property_On_A_Struct()
+      {
+         var a = new TestStruct(10);
+         a.SetValue("AProp",7);
+         Assert.Equal(7, a.AProp);
+      }
+      
+      [Fact]
+      public void SetValue_Sets_A_Field_On_A_Struct()
+      {
+         var a = new TestStruct(5);
+         a.SetValue("_afield",7);
+         Assert.Equal(7, a.GetValue("_afield"));
+      }      
    }
 }

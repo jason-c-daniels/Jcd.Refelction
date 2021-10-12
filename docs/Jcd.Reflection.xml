@@ -691,21 +691,34 @@
             GetValue and SetValue implementations.
             </summary>
         </member>
-        <member name="M:Jcd.Reflection.ValueExtensions.GetValue(System.Object,System.String)">
+        <member name="M:Jcd.Reflection.ValueExtensions.GetValue(System.Object,System.String,System.Reflection.BindingFlags)">
             <summary>
             Gets a value from a named field or property
             </summary>
             <param name="self">the instance to retrieve the vale from</param>
             <param name="fieldOrPropertyName">the name of the item to get.</param>
+            <param name="bindingFlags">The binding flags that help control property or field lookup</param>
             <returns>The value</returns>
         </member>
-        <member name="M:Jcd.Reflection.ValueExtensions.SetValue(System.Object,System.String,System.Object)">
+        <member name="M:Jcd.Reflection.ValueExtensions.SetValue``1(``0,System.String,System.Object,System.Reflection.BindingFlags)">
             <summary>
             Sets a value on a field or property 
             </summary>
             <param name="self">The instance to set the value on</param>
             <param name="fieldOrPropertyName">the name of the field or property to set</param>
             <param name="value">The value to set.</param>
+            <param name="bindingFlags">The binding flags that help control property or field lookup</param>
+            <typeparam name="T">The type of data being modified.</typeparam>
+        </member>
+        <member name="M:Jcd.Reflection.ValueExtensions.SetValue``1(``0@,System.String,System.Object,System.Reflection.BindingFlags)">
+            <summary>
+            Sets a value on a field or property. 
+            </summary>
+            <param name="self">The instance to set the value on</param>
+            <param name="fieldOrPropertyName">the name of the field or property to set</param>
+            <param name="value">The value to set.</param>
+            <param name="bindingFlags">The binding flags that help control property or field lookup</param>
+            <typeparam name="T">The type of data being modified.</typeparam>
         </member>
     </members>
 </doc>

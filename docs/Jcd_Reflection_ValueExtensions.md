@@ -9,5 +9,6 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 
 | Methods | |
 | :--- | :--- |
-| [GetValue(object, string)](Jcd_Reflection_ValueExtensions_GetValue(object_string).md 'Jcd.Reflection.ValueExtensions.GetValue(object, string)') | Gets a value from a named field or property<br/> |
-| [SetValue(object, string, object)](Jcd_Reflection_ValueExtensions_SetValue(object_string_object).md 'Jcd.Reflection.ValueExtensions.SetValue(object, string, object)') | Sets a value on a field or property <br/> |
+| [GetValue(object, string, BindingFlags)](Jcd_Reflection_ValueExtensions_GetValue(object_string_System_Reflection_BindingFlags).md 'Jcd.Reflection.ValueExtensions.GetValue(object, string, System.Reflection.BindingFlags)') | Gets a value from a named field or property<br/> |
+| [SetValue&lt;T&gt;(T, string, object, BindingFlags)](Jcd_Reflection_ValueExtensions_SetValue_T_(T_string_object_System_Reflection_BindingFlags).md 'Jcd.Reflection.ValueExtensions.SetValue&lt;T&gt;(T, string, object, System.Reflection.BindingFlags)') | Sets a value on a field or property <br/> |
+| [SetValue&lt;T&gt;(T, string, object, BindingFlags)](Jcd_Reflection_ValueExtensions_SetValue_T_(T_string_object_System_Reflection_BindingFlags).md 'Jcd.Reflection.ValueExtensions.SetValue&lt;T&gt;(T, string, object, System.Reflection.BindingFlags)') | Sets a value on a field or property. <br/> |

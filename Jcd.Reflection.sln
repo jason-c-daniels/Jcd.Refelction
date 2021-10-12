@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jcd.Reflection", "Jcd.Refle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jcd.Reflection.Tests", "Jcd.Reflection.Tests\Jcd.Reflection.Tests.csproj", "{68505ECD-18FF-4EEC-81DD-77F461D21A37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jcd.Reflection.Examples", "Jcd.Reflection.Examples\Jcd.Reflection.Examples.csproj", "{E07DEE4C-4CC4-4D92-9821-DED720A798A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{68505ECD-18FF-4EEC-81DD-77F461D21A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68505ECD-18FF-4EEC-81DD-77F461D21A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68505ECD-18FF-4EEC-81DD-77F461D21A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E07DEE4C-4CC4-4D92-9821-DED720A798A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E07DEE4C-4CC4-4D92-9821-DED720A798A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E07DEE4C-4CC4-4D92-9821-DED720A798A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E07DEE4C-4CC4-4D92-9821-DED720A798A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
