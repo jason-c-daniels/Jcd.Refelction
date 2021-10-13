@@ -5,7 +5,7 @@ namespace Jcd.Reflection.Examples
 {
     public class TestClass
     {
-        private int _field=0;
+        private int _field;
         private int PrivateProperty { 
             get=>_field;
             set => _field = value;
