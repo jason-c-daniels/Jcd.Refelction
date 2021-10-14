@@ -1,5 +1,8 @@
 ﻿// ReSharper disable PropertyCanBeMadeInitOnly.Global
 // ReSharper disable UnusedMember.Global
+
+using Jcd.Reflection.Tests.TestHelpers;
+
 #pragma warning disable 414
 namespace Jcd.Reflection.Tests
 {

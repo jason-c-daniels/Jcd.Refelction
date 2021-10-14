@@ -6,6 +6,7 @@
 | [FieldInfoExtensions](Jcd_Reflection_FieldInfoExtensions.md 'Jcd.Reflection.FieldInfoExtensions') | Extension methods to aid in reflecting on fields.<br/> |
 | [FieldOrPropertyEnumerator](Jcd_Reflection_FieldOrPropertyEnumerator.md 'Jcd.Reflection.FieldOrPropertyEnumerator') | Enumerates both properties and fields on a given data type.<br/> |
 | [FieldOrPropertyInfo](Jcd_Reflection_FieldOrPropertyInfo.md 'Jcd.Reflection.FieldOrPropertyInfo') |  |
+| [GetCustomAttributesExtensions](Jcd_Reflection_GetCustomAttributesExtensions.md 'Jcd.Reflection.GetCustomAttributesExtensions') | Various extension methods that assist in getting custom attributes of a specified type.<br/> |
 | [MemberInfoEnumerator](Jcd_Reflection_MemberInfoEnumerator.md 'Jcd.Reflection.MemberInfoEnumerator') | Enumerated MemberInfos for a given object or type.<br/> |
 | [MethodExtensions](Jcd_Reflection_MethodExtensions.md 'Jcd.Reflection.MethodExtensions') | Extension methods to help invoke methods via reflection.<br/> |
 | [MethodInfoEnumerator](Jcd_Reflection_MethodInfoEnumerator.md 'Jcd.Reflection.MethodInfoEnumerator') | Enumerates the method information for a given type. <br/> |

@@ -16,12 +16,7 @@
         <FileVersion>1.0.2</FileVersion>
         <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
         <PackageIconUrl>https://s.gravatar.com/avatar/c7e8df18f543ea857ac93660a190df98?s=320</PackageIconUrl>
-        <PackageReleaseNotes>* fixed SetValue for private data and structs
-* fixed GetValue for private data
-* Added unit tests to cover these cases
-* Added an *.Examples project 
-* Updated README.md with example code
-* Embedding README.md in nuget package now</PackageReleaseNotes>
+        <PackageReleaseNotes>Added generic GetCustomAttributes extensions for all supported types.</PackageReleaseNotes>
     </PropertyGroup>
     
     <PropertyGroup>

@@ -1,3 +1,4 @@
+using System.Reflection;
 using Xunit;
 
 namespace Jcd.Reflection.Tests
@@ -59,5 +60,34 @@ namespace Jcd.Reflection.Tests
             var result = new TestClassC().Invoke<int>("Add", 7, 4);
             Assert.Equal(11,result);
         }
+
+        [Fact]
+        public void Invoke_On_Instance_Executes_Method_With_Result3()
+        {
+            var result = typeof(TestClassC).Invoke<int>("Sub", new MethodInfoEnumerator.Settings { Flags = BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic } ,7, 4);
+            Assert.Equal(3,result);
+        }
+        
+        [Fact]
+        public void Invoke_On_Instance_Executes_Method_With_Result4()
+        {
+            var result = typeof(TestClassC).Invoke("Sub", new MethodInfoEnumerator.Settings { Flags = BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic } ,7, 4);
+            Assert.Equal(3,result);
+        }
+        
+        [Fact]
+        public void GetMethod_For_Existing_Method_On_Instance_Returns_The_MethodInfo()
+        {
+            var result = new TestClassC().GetMethod("Add");
+            Assert.NotNull(result);
+        }
+        
+        [Fact]
+        public void GetMethod_For_NonExistent_Method_On_Instance_Returns_Null()
+        {
+            var result = new TestClassC().GetMethod("NotMyMethod");
+            Assert.Null(result);
+        }
+        
     }
 }
