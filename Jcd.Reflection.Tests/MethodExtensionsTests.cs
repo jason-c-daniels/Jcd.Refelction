@@ -88,6 +88,5 @@ namespace Jcd.Reflection.Tests
             var result = new TestClassC().GetMethod("NotMyMethod");
             Assert.Null(result);
         }
-        
     }
 }

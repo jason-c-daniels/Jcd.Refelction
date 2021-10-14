@@ -261,8 +261,10 @@ namespace Jcd.Reflection
                     // ReSharper disable once ArrangeRedundantParentheses
                     (sb.Length == 0 && (char.IsLetter(c) || c == '_' || c == '@'))) // valid member name starting char
                 {
-                    // TODO: untangle this logic and create meaningful comments or temp variables.
-                    if (char.IsLetterOrDigit(pc) && sb.Length > 0 || c == '_' || c == '@')
+                    // This is disabled to stop codefactor.io and resharper from fighting.
+                    // plus the logic is much clearer now.
+                    // ReSharper disable once ArrangeRedundantParentheses
+                    if ((char.IsLetterOrDigit(pc) && sb.Length > 0) || (c == '_') || (c == '@'))
                         sb.Append(c);
                     else if (sb.Length > 0 || char.IsLetter(c))
                         sb.Append(char.ToUpperInvariant(c));
