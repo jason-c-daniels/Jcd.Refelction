@@ -1,46 +1,62 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>8</LangVersion>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+    
+    <PropertyGroup>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Jcd.Reflection</Title>
         <Authors>Jason C Daniels</Authors>
         <Description>A small library containing some commonly implemented reflection helpers.</Description>
-        <Copyright>2018-2021</Copyright>
+        <Copyright>2018-2023</Copyright>
         <PackageProjectUrl>https://github.com/jason-c-daniels/Jcd.Reflection</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/jason-c-daniels/Jcd.Reflection/blob/main/LICENSE</PackageLicenseUrl>
+        <PackageLicense>MIT</PackageLicense>
         <RepositoryUrl>https://github.com/jason-c-daniels/Jcd.Reflection</RepositoryUrl>
         <RepositoryType>GitHub</RepositoryType>
         <PackageTags>reflection csharp c#</PackageTags>
         <PackageVersion>1.0.2</PackageVersion>
         <AssemblyVersion>1.0.2</AssemblyVersion>
         <FileVersion>1.0.2</FileVersion>
-        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-        <PackageIconUrl>https://s.gravatar.com/avatar/c7e8df18f543ea857ac93660a190df98?s=320</PackageIconUrl>
-        <PackageReleaseNotes>Added generic GetCustomAttributes extensions for all supported types.</PackageReleaseNotes>
+        <PackageIcon>Jason.C.Daniels.jpg</PackageIcon>
+        <PackageReleaseNotes>Misc. updates.</PackageReleaseNotes>
     </PropertyGroup>
-    
+
     <PropertyGroup>
-      <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
     <ItemGroup>
-      <None Include="..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <DocumentationFile>..\docs\Jcd.Reflection.xml</DocumentationFile>
+        <DocumentationFile>..\docs\Jcd.Reflection.xml</DocumentationFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DocumentationFile>..\docs\Jcd.Reflection.xml</DocumentationFile>
+        <DocumentationFile>..\docs\Jcd.Reflection.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="DefaultDocumentation" Version="0.7.9">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="Jcd.Validations" Version="1.1.7" />
-      <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+        <PackageReference Include="DefaultDocumentation" Version="0.8.2">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Jcd.Validations" Version="1.1.7"/>
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="icon"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="icon\Jason.C.Daniels.jpg"/>
+        <Content Include="icon\Jason.C.Daniels.jpg" Pack="true" PackagePath="\">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
 </Project>

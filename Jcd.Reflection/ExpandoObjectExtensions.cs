@@ -1,3 +1,5 @@
+#region
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +8,9 @@ using System.Dynamic;
 using System.Reflection;
 using System.Text;
 using Jcd.Validations;
+
+#endregion
+
 // ReSharper disable UseDeconstruction
 // ReSharper disable ConvertIfStatementToNullCoalescingAssignment
 
@@ -15,7 +20,7 @@ namespace Jcd.Reflection
     /// Extension methods for creating expando objects from POCOs or string object dictionaries
     /// </summary>
     public static class ExpandoObjectExtensions
-    {      
+    {
         /// <summary>
         /// Decomposes an object graph into a string-object dictionary tree. Cycles are not preserved.
         /// </summary>
@@ -27,7 +32,8 @@ namespace Jcd.Reflection
         public static IDictionary<string, object> ToDictionaryTree(this object self,
                                                                    HashSet<object> visited = null,
                                                                    Func<string, string> keyRenamingStrategy = null,
-                                                                   Func<string, object, bool> valueRetentionStrategy = null)
+                                                                   Func<string, object, bool> valueRetentionStrategy =
+                                                                       null)
         {
             return (IDictionary<string, object>)self.ToDictionaryTree<Dictionary<string, object>>(
                 visited,
@@ -43,7 +49,9 @@ namespace Jcd.Reflection
         /// <param name="keyRenamingStrategy">A function to rename a key when it's deemed necessary</param>
         /// <param name="valueRetentionStrategy">a function to determine if a value is to be retained</param>
         /// <returns>The ExpandoObject</returns>
-        public static ExpandoObject ToExpandoObject(this object self, HashSet<object> visited = null, Func<string,string> keyRenamingStrategy=null, Func<string, object, bool> valueRetentionStrategy = null)
+        public static ExpandoObject ToExpandoObject(this object self, HashSet<object> visited = null,
+                                                    Func<string, string> keyRenamingStrategy = null,
+                                                    Func<string, object, bool> valueRetentionStrategy = null)
         {
             string MyKeyRenamingStrategy(string key)
             {
@@ -52,10 +60,12 @@ namespace Jcd.Reflection
 
             bool MyValueRetentionStrategy(string key, object value)
             {
-                return (valueRetentionStrategy == null || valueRetentionStrategy(key, value)) && DefaultExpandoValueRetentionStrategy(value);
+                return (valueRetentionStrategy == null || valueRetentionStrategy(key, value)) &&
+                       DefaultExpandoValueRetentionStrategy(value);
             }
 
-            return (ExpandoObject)self.ToDictionaryTree<ExpandoObject>(visited, MyKeyRenamingStrategy, MyValueRetentionStrategy);
+            return (ExpandoObject)self.ToDictionaryTree<ExpandoObject>(visited, MyKeyRenamingStrategy,
+                MyValueRetentionStrategy);
         }
 
         /// <summary>
@@ -68,10 +78,7 @@ namespace Jcd.Reflection
             var sb = new StringBuilder();
             var pc = '_';
             pc = BuildName(k, sb, pc);
-            if (sb.Length == 0)
-            {
-                BuildName($"__MungedField{k}", sb, pc);
-            }
+            if (sb.Length == 0) BuildName($"__MungedField{k}", sb, pc);
             return sb.ToString();
         }
 
@@ -110,9 +117,9 @@ namespace Jcd.Reflection
         /// <param name="valueRetentionStrategy"></param>
         /// <typeparam name="TNode"></typeparam>
         /// <returns></returns>
-        private static dynamic ToDictionaryTree<TNode>(this object self, 
-                                                       HashSet<object> visited = null, 
-                                                       Func<string, string> keyRenamingStrategy = null, 
+        private static dynamic ToDictionaryTree<TNode>(this object self,
+                                                       HashSet<object> visited = null,
+                                                       Func<string, string> keyRenamingStrategy = null,
                                                        Func<string, object, bool> valueRetentionStrategy = null)
             where TNode : IDictionary<string, object>, new()
         {
@@ -133,7 +140,8 @@ namespace Jcd.Reflection
                         break;
                     case IEnumerable coll:
                     {
-                        if (AppendEnumerable(visited, keyRenamingStrategy, valueRetentionStrategy, coll, root, out var array))
+                        if (AppendEnumerable(visited, keyRenamingStrategy, valueRetentionStrategy, coll, root,
+                                out var array))
                             return array;
                         break;
                     }
@@ -146,6 +154,7 @@ namespace Jcd.Reflection
             {
                 visited.Remove(self);
             }
+
             return root;
         }
 
@@ -158,13 +167,14 @@ namespace Jcd.Reflection
         /// <param name="dictionary1"></param>
         /// <param name="root"></param>
         /// <typeparam name="TNode"></typeparam>
-        private static void AppendDictionary<TNode>(HashSet<object> visited, Func<string, string> keyRenamingStrategy, Func<string, object, bool> valueRetentionStrategy,
-                                                    IDictionary dictionary1, TNode root) where TNode : IDictionary<string, object>, new()
+        private static void AppendDictionary<TNode>(HashSet<object> visited, Func<string, string> keyRenamingStrategy,
+                                                    Func<string, object, bool> valueRetentionStrategy,
+                                                    IDictionary dictionary1, TNode root)
+            where TNode : IDictionary<string, object>, new()
         {
             foreach (var key in dictionary1.Keys)
-            {
-                root.Append<TNode>(key.ToString(), dictionary1[key], visited, keyRenamingStrategy, valueRetentionStrategy);
-            }
+                root.Append<TNode>(key.ToString(), dictionary1[key], visited, keyRenamingStrategy,
+                    valueRetentionStrategy);
         }
 
         /// <summary>
@@ -176,19 +186,17 @@ namespace Jcd.Reflection
         /// <param name="valueRetentionStrategy"></param>
         /// <param name="root"></param>
         /// <typeparam name="TNode"></typeparam>
-        private static void AppendObject<TNode>(object self, HashSet<object> visited, Func<string, string> keyRenamingStrategy,
-                                                Func<string, object, bool> valueRetentionStrategy, TNode root) where TNode : IDictionary<string, object>, new()
+        private static void AppendObject<TNode>(object self, HashSet<object> visited,
+                                                Func<string, string> keyRenamingStrategy,
+                                                Func<string, object, bool> valueRetentionStrategy, TNode root)
+            where TNode : IDictionary<string, object>, new()
         {
             var type = self.GetType();
             foreach (var kvp in type.EnumerateProperties().ToPropertyInfoValuePairs(self).ToNameValuePairs())
-            {
                 root.Append<TNode>(kvp.Key, kvp.Value, visited, keyRenamingStrategy, valueRetentionStrategy);
-            }
 
             foreach (var kvp in type.EnumerateFields().ToFieldInfoValuePairs(self).ToNameValuePairs())
-            {
                 root.Append<TNode>(kvp.Key, kvp.Value, visited, keyRenamingStrategy, valueRetentionStrategy);
-            }
         }
 
         /// <summary>
@@ -202,8 +210,10 @@ namespace Jcd.Reflection
         /// <param name="array"></param>
         /// <typeparam name="TNode"></typeparam>
         /// <returns></returns>
-        private static bool AppendEnumerable<TNode>(HashSet<object> visited, Func<string, string> keyRenamingStrategy, Func<string, object, bool> valueRetentionStrategy,
-                                                    IEnumerable enumerable, TNode root, out dynamic array) where TNode : IDictionary<string, object>, new()
+        private static bool AppendEnumerable<TNode>(HashSet<object> visited, Func<string, string> keyRenamingStrategy,
+                                                    Func<string, object, bool> valueRetentionStrategy,
+                                                    IEnumerable enumerable, TNode root, out dynamic array)
+            where TNode : IDictionary<string, object>, new()
         {
             array = null;
             var index = 0;
@@ -231,10 +241,7 @@ namespace Jcd.Reflection
                     var val = item.IsScalar()
                         ? item
                         : item.ToDictionaryTree<TNode>(visited, keyRenamingStrategy, valueRetentionStrategy);
-                    if (valueRetentionStrategy($"{key}:{index}", val))
-                    {
-                        list.Add(val);
-                    }
+                    if (valueRetentionStrategy($"{key}:{index}", val)) list.Add(val);
                 }
 
                 index++;
@@ -264,11 +271,12 @@ namespace Jcd.Reflection
                     // This is disabled to stop codefactor.io and resharper from fighting.
                     // plus the logic is much clearer now.
                     // ReSharper disable once ArrangeRedundantParentheses
-                    if ((char.IsLetterOrDigit(pc) && sb.Length > 0) || (c == '_') || (c == '@'))
+                    if ((char.IsLetterOrDigit(pc) && sb.Length > 0) || (c == '_') || c == '@')
                         sb.Append(c);
                     else if (sb.Length > 0 || char.IsLetter(c))
                         sb.Append(char.ToUpperInvariant(c));
                 }
+
                 pc = c;
             }
 
@@ -285,20 +293,21 @@ namespace Jcd.Reflection
         /// <param name="keyRenamingStrategy"></param>
         /// <param name="valueRetentionStrategy"></param>
         /// <typeparam name="TNode"></typeparam>
-        private static void Append<TNode>(this IDictionary<string, object> dictionary, string key, object val, HashSet<object> visited, Func<string, string> keyRenamingStrategy, Func<string,object,bool> valueRetentionStrategy)
-            where TNode: IDictionary<string, object>, new()
+        private static void Append<TNode>(this IDictionary<string, object> dictionary, string key, object val,
+                                          HashSet<object> visited, Func<string, string> keyRenamingStrategy,
+                                          Func<string, object, bool> valueRetentionStrategy)
+            where TNode : IDictionary<string, object>, new()
         {
-            Argument.IsNotNull(keyRenamingStrategy,nameof(keyRenamingStrategy));
+            Argument.IsNotNull(keyRenamingStrategy, nameof(keyRenamingStrategy));
             Argument.IsNotNull(valueRetentionStrategy, nameof(valueRetentionStrategy));
             if (visited.Contains(val)) return;
             key = keyRenamingStrategy(key);
-            var value = val.IsScalar() ? val : val.ToDictionaryTree<TNode>(visited, keyRenamingStrategy,valueRetentionStrategy);
-            if (!dictionary.ContainsKey(key) && valueRetentionStrategy(key,value))
-            {
-                dictionary.Add(key, value);
-            }
+            var value = val.IsScalar()
+                ? val
+                : val.ToDictionaryTree<TNode>(visited, keyRenamingStrategy, valueRetentionStrategy);
+            if (!dictionary.ContainsKey(key) && valueRetentionStrategy(key, value)) dictionary.Add(key, value);
         }
-        
+
         /// <summary>
         /// Creates a set of PropertyInfo to (current) value pairs for a given object. 
         /// </summary>
@@ -306,8 +315,8 @@ namespace Jcd.Reflection
         /// <param name="item"></param>
         /// <returns></returns>
         [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
-        public static IEnumerable<KeyValuePair<PropertyInfo, object>> 
-            ToPropertyInfoValuePairs(this IEnumerable<PropertyInfo> items, 
+        public static IEnumerable<KeyValuePair<PropertyInfo, object>>
+            ToPropertyInfoValuePairs(this IEnumerable<PropertyInfo> items,
                                      object item)
         {
             Argument.IsNotNull(item, nameof(item));
@@ -342,12 +351,9 @@ namespace Jcd.Reflection
             // ReSharper disable once PossibleMultipleEnumeration
             Argument.IsNotNull(items, nameof(items));
             // ReSharper disable once PossibleMultipleEnumeration
-            foreach (var kvp in items)
-            {
-                yield return new KeyValuePair<string, object>(kvp.Key.Name, kvp.Value);
-            }
+            foreach (var kvp in items) yield return new KeyValuePair<string, object>(kvp.Key.Name, kvp.Value);
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -355,8 +361,8 @@ namespace Jcd.Reflection
         /// <param name="item"></param>
         /// <returns></returns>
         [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
-        public static IEnumerable<KeyValuePair<FieldInfo, object>> 
-            ToFieldInfoValuePairs(this IEnumerable<FieldInfo> items, 
+        public static IEnumerable<KeyValuePair<FieldInfo, object>>
+            ToFieldInfoValuePairs(this IEnumerable<FieldInfo> items,
                                   object item)
         {
             Argument.IsNotNull(item, nameof(item));
@@ -382,10 +388,7 @@ namespace Jcd.Reflection
             // ReSharper disable once PossibleMultipleEnumeration
             Argument.IsNotNull(items, nameof(items));
             // ReSharper disable once PossibleMultipleEnumeration
-            foreach (var kvp in items)
-            {
-                yield return new KeyValuePair<string, object>(kvp.Key.Name, kvp.Value);
-            }
+            foreach (var kvp in items) yield return new KeyValuePair<string, object>(kvp.Key.Name, kvp.Value);
         }
 
         /// <summary>
@@ -396,7 +399,8 @@ namespace Jcd.Reflection
         public static bool IsKeyValuePair(this Type type)
         {
             var hasKey = type.GetTypeInfo().GetField("Key") != null || type.GetTypeInfo().GetProperty("Key") != null;
-            var hasValue = type.GetTypeInfo().GetField("Value") != null || type.GetTypeInfo().GetProperty("Value") != null;
+            var hasValue = type.GetTypeInfo().GetField("Value") != null ||
+                           type.GetTypeInfo().GetProperty("Value") != null;
             return hasKey && hasValue;
         }
     }

@@ -1,7 +1,9 @@
 # Jcd.Reflection
+
 A set of reflection helpers
 
 ## Examples
+
 ```csharp
     internal static class Program
     {
@@ -22,7 +24,6 @@ A set of reflection helpers
             val = c.Invoke<int>("InternalGetField");
             Console.WriteLine(val);
 ```
-
 
 [![GitHub](https://img.shields.io/github/license/jason-c-daniels/Jcd.Reflection)](https://github.com/jason-c-daniels/Jcd.Reflection/blob/main/LICENSE)
 [![Build status](https://ci.appveyor.com/api/projects/status/sbmfvmr1jmcf1pic?svg=true)](https://ci.appveyor.com/project/jason-c-daniels/jcd-reflection)

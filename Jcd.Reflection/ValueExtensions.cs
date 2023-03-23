@@ -1,4 +1,8 @@
+#region
+
 using System.Reflection;
+
+#endregion
 
 namespace Jcd.Reflection
 {
@@ -14,7 +18,9 @@ namespace Jcd.Reflection
         /// <param name="fieldOrPropertyName">the name of the item to get.</param>
         /// <param name="bindingFlags">The binding flags that help control property or field lookup</param>
         /// <returns>The value</returns>
-        public static object GetValue(this object self, string fieldOrPropertyName, BindingFlags bindingFlags=BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
+        public static object GetValue(this object self, string fieldOrPropertyName,
+                                      BindingFlags bindingFlags = BindingFlags.Public | BindingFlags.NonPublic |
+                                                                  BindingFlags.Instance)
         {
             var t = self.GetType();
             var pi = t.GetProperty(fieldOrPropertyName, bindingFlags);
@@ -31,7 +37,9 @@ namespace Jcd.Reflection
         /// <param name="value">The value to set.</param>
         /// <param name="bindingFlags">The binding flags that help control property or field lookup</param>
         /// <typeparam name="T">The type of data being modified.</typeparam>
-        public static void SetValue<T>(this T self, string fieldOrPropertyName, object value, BindingFlags bindingFlags=BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
+        public static void SetValue<T>(this T self, string fieldOrPropertyName, object value,
+                                       BindingFlags bindingFlags = BindingFlags.Public | BindingFlags.NonPublic |
+                                                                   BindingFlags.Instance)
             where T : class
         {
             var t = self.GetType();
@@ -40,7 +48,7 @@ namespace Jcd.Reflection
             if (pi != null) pi.SetValue(self, value);
             else if (fi != null) fi.SetValue(self, value);
         }
-        
+
 
         /// <summary>
         /// Sets a value on a field or property. 
@@ -50,7 +58,9 @@ namespace Jcd.Reflection
         /// <param name="value">The value to set.</param>
         /// <param name="bindingFlags">The binding flags that help control property or field lookup</param>
         /// <typeparam name="T">The type of data being modified.</typeparam>
-        public static void SetValue<T>(this ref T self, string fieldOrPropertyName, object value, BindingFlags bindingFlags=BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
+        public static void SetValue<T>(this ref T self, string fieldOrPropertyName, object value,
+                                       BindingFlags bindingFlags = BindingFlags.Public | BindingFlags.NonPublic |
+                                                                   BindingFlags.Instance)
             where T : struct
         {
             object data = self; // box it
@@ -61,6 +71,5 @@ namespace Jcd.Reflection
             else if (fi != null) fi.SetValue(data, value);
             self = (T)data; // now capture the modified value
         }
-        
     }
 }

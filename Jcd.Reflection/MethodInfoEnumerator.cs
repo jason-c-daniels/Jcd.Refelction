@@ -1,7 +1,12 @@
+#region
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+
+#endregion
+
 // ReSharper disable MemberCanBePrivate.Global
 
 namespace Jcd.Reflection
@@ -11,33 +16,6 @@ namespace Jcd.Reflection
     /// </summary>
     public class MethodInfoEnumerator : IEnumerable<MethodInfo>
     {
-        /// <summary>
-        /// The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
-        /// </summary>
-        public struct Settings
-        {
-            /// <summary>
-            /// The BindingFlags for the member lookup.
-            /// </summary>
-            public BindingFlags? Flags;
-            /// <summary>
-            /// A predicate for skipping certain members.
-            /// </summary>
-            // ReSharper disable once UnassignedField.Global
-            public Func<MethodInfo, bool> Skip;
-        }
-        
-        /// <summary>
-        /// Gets or sets the settings controlling method info enumeration
-        /// </summary>
-        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
-        public Settings EnumerationSettings { get; set; }
-
-        /// <summary>
-        /// The type whose methods are enumerated.
-        /// </summary>
-        public Type Type { get; }
-
         /// <summary>
         /// Constructs a MethodInfoEnumerator from a type and settings.
         /// </summary>
@@ -49,7 +27,7 @@ namespace Jcd.Reflection
             Type = type;
             EnumerationSettings = settings;
         }
-        
+
         /// <summary>
         /// Constructs a MethodInfoEnumerator from an instance and settings.
         /// </summary>
@@ -57,12 +35,23 @@ namespace Jcd.Reflection
         /// <param name="settings">The settings controlling enumeration</param>
         // ReSharper disable once UnusedMember.Global
         public MethodInfoEnumerator(object item,
-                                    Settings settings = default) : this((Type) (item is Type || item is null
+                                    Settings settings = default) : this((Type)(item is Type || item is null
                 ? item
                 : item.GetType()),
             settings)
         {
         }
+
+        /// <summary>
+        /// Gets or sets the settings controlling method info enumeration
+        /// </summary>
+        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
+        public Settings EnumerationSettings { get; set; }
+
+        /// <summary>
+        /// The type whose methods are enumerated.
+        /// </summary>
+        public Type Type { get; }
 
         /// <summary>
         /// Gets an enumerator for the MethodInfos enumerated
@@ -90,6 +79,23 @@ namespace Jcd.Reflection
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        /// <summary>
+        /// The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
+        /// </summary>
+        public struct Settings
+        {
+            /// <summary>
+            /// The BindingFlags for the member lookup.
+            /// </summary>
+            public BindingFlags? Flags;
+
+            /// <summary>
+            /// A predicate for skipping certain members.
+            /// </summary>
+            // ReSharper disable once UnassignedField.Global
+            public Func<MethodInfo, bool> Skip;
         }
     }
 }

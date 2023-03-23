@@ -175,31 +175,6 @@
             Enumerates both properties and fields on a given data type.
             </summary>
         </member>
-        <member name="T:Jcd.Reflection.FieldOrPropertyEnumerator.Settings">
-            <summary>
-            The settings indicating "how" to enumerate. (i.e. BindingFlags and a predicate for skipping members)
-            </summary>
-        </member>
-        <member name="F:Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Flags">
-            <summary>
-            The BindingFlags for the member lookup.
-            </summary>
-        </member>
-        <member name="F:Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Skip">
-            <summary>
-            A predicate for skipping certain members.
-            </summary>
-        </member>
-        <member name="P:Jcd.Reflection.FieldOrPropertyEnumerator.EnumerationSettings">
-            <summary>
-            Gets or sets the settings that control enumeration. 
-            </summary>
-        </member>
-        <member name="P:Jcd.Reflection.FieldOrPropertyEnumerator.Type">
-            <summary>
-            The data type being reflected on. 
-            </summary>
-        </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyEnumerator.#ctor(System.Type,Jcd.Reflection.FieldOrPropertyEnumerator.Settings)">
             <summary>
             Constructs a FieldOrPropertyEnumerator from a type and settings.
@@ -214,6 +189,16 @@
             <param name="item">The object instance to reflect on</param>
             <param name="settings">the settings controlling enumeration</param>
         </member>
+        <member name="P:Jcd.Reflection.FieldOrPropertyEnumerator.EnumerationSettings">
+            <summary>
+            Gets or sets the settings that control enumeration. 
+            </summary>
+        </member>
+        <member name="P:Jcd.Reflection.FieldOrPropertyEnumerator.Type">
+            <summary>
+            The data type being reflected on. 
+            </summary>
+        </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyEnumerator.GetEnumerator">
             <summary>
             Enumerates the FieldOrPropertyInfo entries for the given type.
@@ -225,6 +210,21 @@
             Enumerates the FieldOrPropertyInfo entries for the given type.
             </summary>
             <returns>An enumerator for the FieldOrPropertyInfo's</returns>
+        </member>
+        <member name="T:Jcd.Reflection.FieldOrPropertyEnumerator.Settings">
+            <summary>
+            The settings indicating "how" to enumerate. (i.e. BindingFlags and a predicate for skipping members)
+            </summary>
+        </member>
+        <member name="F:Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Flags">
+            <summary>
+            The BindingFlags for the member lookup.
+            </summary>
+        </member>
+        <member name="F:Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Skip">
+            <summary>
+            A predicate for skipping certain members.
+            </summary>
         </member>
         <member name="T:Jcd.Reflection.FieldOrPropertyInfo">
             <summary>
@@ -420,21 +420,6 @@
             Enumerated MemberInfos for a given object or type.
             </summary>
         </member>
-        <member name="T:Jcd.Reflection.MemberInfoEnumerator.Settings">
-            <summary>
-            The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
-            </summary>
-        </member>
-        <member name="F:Jcd.Reflection.MemberInfoEnumerator.Settings.Flags">
-            <summary>
-            The BindingFlags for the member lookup.
-            </summary>
-        </member>
-        <member name="F:Jcd.Reflection.MemberInfoEnumerator.Settings.Skip">
-            <summary>
-            A predicate for skipping certain members.
-            </summary>
-        </member>
         <member name="F:Jcd.Reflection.MemberInfoEnumerator.SkipSystemMembers">
             <summary>
             Predefined skip predicate for skipping system members.  
@@ -443,16 +428,6 @@
         <member name="F:Jcd.Reflection.MemberInfoEnumerator.SkipSystemAndNonDataMembers">
             <summary>
             Predefined skip predicate for skipping system members.  
-            </summary>
-        </member>
-        <member name="P:Jcd.Reflection.MemberInfoEnumerator.EnumerationSettings">
-            <summary>
-            Gets or sets the settings controlling member info enumeration
-            </summary>
-        </member>
-        <member name="P:Jcd.Reflection.MemberInfoEnumerator.Type">
-            <summary>
-            The type whose members are enumerated.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.MemberInfoEnumerator.#ctor(System.Type,Jcd.Reflection.MemberInfoEnumerator.Settings)">
@@ -469,6 +444,16 @@
             <param name="item">The instance to enumerate</param>
             <param name="settings">The settings controlling enumeration</param>
         </member>
+        <member name="P:Jcd.Reflection.MemberInfoEnumerator.EnumerationSettings">
+            <summary>
+            Gets or sets the settings controlling member info enumeration
+            </summary>
+        </member>
+        <member name="P:Jcd.Reflection.MemberInfoEnumerator.Type">
+            <summary>
+            The type whose members are enumerated.
+            </summary>
+        </member>
         <member name="M:Jcd.Reflection.MemberInfoEnumerator.GetEnumerator">
             <summary>
             Gets the enumerator 
@@ -481,26 +466,61 @@
             </summary>
             <returns>An enumerator</returns>
         </member>
+        <member name="T:Jcd.Reflection.MemberInfoEnumerator.Settings">
+            <summary>
+            The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
+            </summary>
+        </member>
+        <member name="F:Jcd.Reflection.MemberInfoEnumerator.Settings.Flags">
+            <summary>
+            The BindingFlags for the member lookup.
+            </summary>
+        </member>
+        <member name="F:Jcd.Reflection.MemberInfoEnumerator.Settings.Skip">
+            <summary>
+            A predicate for skipping certain members.
+            </summary>
+        </member>
         <member name="T:Jcd.Reflection.MethodExtensions">
             <summary>
             Extension methods to help invoke methods via reflection.
+            </summary>
+        </member>
+        <member name="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter">
+            <summary>
+            A pre-filter to select all, including inherited, instance methods.
+            </summary>
+        </member>
+        <member name="F:Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter">
+            <summary>
+            A pre-filter to select all, including inherited, static methods.
+            </summary>
+        </member>
+        <member name="F:Jcd.Reflection.MethodExtensions.DirectInstanceMethodsFilter">
+            <summary>
+            A pre-filter to select all but inherited instance methods.
+            </summary>
+        </member>
+        <member name="F:Jcd.Reflection.MethodExtensions.DirectStaticMethodsFilter">
+            <summary>
+            A pre-filter to select all but inherited static methods.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Object,System.String)">
             <summary>
             Finds the first method by the provided name and returns its MethodInfo
             </summary>
-            <param name="self"></param>
-            <param name="name"></param>
+            <param name="self">The instance to find the method on</param>
+            <param name="name">the method name.</param>
             <returns>null if none found</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Object,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings)">
             <summary>
             Finds the first method by the provided name and returns its MethodInfo
             </summary>
-            <param name="self"></param>
-            <param name="name"></param>
-            <param name="settings"></param>
+            <param name="self">The instance to find the method on</param>
+            <param name="name">the method name.</param>
+            <param name="settings">settings that control method selection. <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/> </param>
             <returns>null if none found</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Type,System.String)">
@@ -524,18 +544,18 @@
             <summary>
             Given a filter return an array of matching MethodInfo's
             </summary>
-            <param name="self"></param>
-            <param name="filter"></param>
-            <returns></returns>
+            <param name="self">The target object of the method selection.</param>
+            <param name="filter">a predicate to select or exclude specific methods.</param>
+            <returns>an array of matching methods</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.FilterMethods(System.Object,System.Func{System.Reflection.MethodInfo,System.Boolean},Jcd.Reflection.MethodInfoEnumerator.Settings)">
             <summary>
             Given a filter return an array of matching MethodInfo's
             </summary>
-            <param name="self"></param>
-            <param name="filter"></param>
-            <param name="settings"></param>
-            <returns></returns>
+            <param name="self">The target object of the method selection.</param>
+            <param name="filter">a predicate to select or exclude specific methods.</param>
+            <param name="settings">The method selection settings such as <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/></param>
+            <returns>an array of matching methods</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke(System.Object,System.Reflection.MethodInfo,System.Object[])">
             <summary>
@@ -552,7 +572,7 @@
             </summary>
             <param name="self">The instance to invoke the method on</param>
             <param name="name">the name of the method to invoke</param>
-            <param name="settings">binding flags and skip predicate</param>
+            <param name="settings">The method selection settings such as <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/></param>
             <param name="params">the params for the method</param>
             <returns>the result, if any</returns>
         </member>
@@ -581,7 +601,7 @@
             </summary>
             <param name="self">The instance to invoke the method on</param>
             <param name="name">the name of the method to invoke</param>
-            <param name="settings">binding flags and skip predicate</param>
+            <param name="settings">The method selection settings such as <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/></param>
             <param name="params">the params for the method</param>
             <returns>the result, if any</returns>
             <typeparam name="TOut">result type</typeparam>
@@ -612,7 +632,7 @@
             <param name="type">The type containing the static method</param>
             <param name="name">The name of the method</param>
             <param name="params">The params to pass</param>
-            <param name="settings">Thee settings such as BindingFlags</param>
+            <param name="settings">The method selection settings such as <see cref="F:Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter"/></param>
             <returns>The result of the call, if any</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke``1(System.Type,System.String,System.Object[])">
@@ -632,38 +652,13 @@
             <param name="type">The type containing the static method</param>
             <param name="name">The name of the method</param>
             <param name="params">The params to pass</param>
-            <param name="settings">The settings such as binding flags</param>
+            <param name="settings">The method selection settings such as <see cref="F:Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter"/></param>
             <typeparam name="TOut">The type of the return</typeparam>
             <returns>The result of the call, if any</returns>
         </member>
         <member name="T:Jcd.Reflection.MethodInfoEnumerator">
             <summary>
             Enumerates the method information for a given type. 
-            </summary>
-        </member>
-        <member name="T:Jcd.Reflection.MethodInfoEnumerator.Settings">
-            <summary>
-            The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
-            </summary>
-        </member>
-        <member name="F:Jcd.Reflection.MethodInfoEnumerator.Settings.Flags">
-            <summary>
-            The BindingFlags for the member lookup.
-            </summary>
-        </member>
-        <member name="F:Jcd.Reflection.MethodInfoEnumerator.Settings.Skip">
-            <summary>
-            A predicate for skipping certain members.
-            </summary>
-        </member>
-        <member name="P:Jcd.Reflection.MethodInfoEnumerator.EnumerationSettings">
-            <summary>
-            Gets or sets the settings controlling method info enumeration
-            </summary>
-        </member>
-        <member name="P:Jcd.Reflection.MethodInfoEnumerator.Type">
-            <summary>
-            The type whose methods are enumerated.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.MethodInfoEnumerator.#ctor(System.Type,Jcd.Reflection.MethodInfoEnumerator.Settings)">
@@ -680,6 +675,16 @@
             <param name="item">The instance to enumerate</param>
             <param name="settings">The settings controlling enumeration</param>
         </member>
+        <member name="P:Jcd.Reflection.MethodInfoEnumerator.EnumerationSettings">
+            <summary>
+            Gets or sets the settings controlling method info enumeration
+            </summary>
+        </member>
+        <member name="P:Jcd.Reflection.MethodInfoEnumerator.Type">
+            <summary>
+            The type whose methods are enumerated.
+            </summary>
+        </member>
         <member name="M:Jcd.Reflection.MethodInfoEnumerator.GetEnumerator">
             <summary>
             Gets an enumerator for the MethodInfos enumerated
@@ -691,6 +696,21 @@
             Gets an enumerator for the MethodInfos enumerated
             </summary>
             <returns>An enumerator</returns>
+        </member>
+        <member name="T:Jcd.Reflection.MethodInfoEnumerator.Settings">
+            <summary>
+            The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
+            </summary>
+        </member>
+        <member name="F:Jcd.Reflection.MethodInfoEnumerator.Settings.Flags">
+            <summary>
+            The BindingFlags for the member lookup.
+            </summary>
+        </member>
+        <member name="F:Jcd.Reflection.MethodInfoEnumerator.Settings.Skip">
+            <summary>
+            A predicate for skipping certain members.
+            </summary>
         </member>
         <member name="T:Jcd.Reflection.NumericExtensions">
             <summary>

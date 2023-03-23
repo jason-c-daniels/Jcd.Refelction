@@ -1,7 +1,11 @@
+#region
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+
+#endregion
 
 namespace Jcd.Reflection
 {
@@ -38,9 +42,11 @@ namespace Jcd.Reflection
         /// <param name="flags">The BindingFlags</param>
         /// <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
         /// <returns>An enumerable across FieldInfo s</returns>
-        public static IEnumerable<FieldInfo> EnumerateFields(this object self, 
-                                                             BindingFlags? flags = null, 
-                                                             Func<FieldInfo, bool> skip = null) 
-            => self.IsScalar() ? null : self.GetType().EnumerateFields(flags, skip);
+        public static IEnumerable<FieldInfo> EnumerateFields(this object self,
+                                                             BindingFlags? flags = null,
+                                                             Func<FieldInfo, bool> skip = null)
+        {
+            return self.IsScalar() ? null : self.GetType().EnumerateFields(flags, skip);
+        }
     }
 }

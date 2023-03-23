@@ -1,6 +1,11 @@
+#region
+
 using System;
 using System.Linq;
 using System.Reflection;
+
+#endregion
+
 // ReSharper disable MemberCanBePrivate.Global
 
 namespace Jcd.Reflection
@@ -17,8 +22,8 @@ namespace Jcd.Reflection
         /// <param name="inherit">inspect the inheritance hierarchy</param>
         /// <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
         /// <returns>An enumerable </returns>
-        public static TAttribute[] GetCustomAttributes<TAttribute>(this Enum value, bool inherit=false) 
-            where TAttribute: Attribute
+        public static TAttribute[] GetCustomAttributes<TAttribute>(this Enum value, bool inherit = false)
+            where TAttribute : Attribute
         {
             var type = value.GetType();
             var memberInfos = type.GetMember(Enum.GetName(type, value) ?? value.ToString()).FirstOrDefault();
@@ -26,7 +31,7 @@ namespace Jcd.Reflection
             if (attributes is null || !attributes.Any()) return Array.Empty<TAttribute>();
             return attributes;
         }
-        
+
         /// <summary>
         /// Gets all attributes of a specified type on a FieldInfo
         /// </summary>
@@ -34,13 +39,13 @@ namespace Jcd.Reflection
         /// <param name="inherit">inspect the inheritance hierarchy</param>
         /// <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
         /// <returns>An enumerable </returns>
-        public static TAttribute[] GetCustomAttributes<TAttribute>(this FieldInfo fieldInfo, bool inherit=false)
-            where TAttribute: Attribute
+        public static TAttribute[] GetCustomAttributes<TAttribute>(this FieldInfo fieldInfo, bool inherit = false)
+            where TAttribute : Attribute
         {
-            var attributes=fieldInfo.GetCustomAttributes(typeof(TAttribute), inherit);
+            var attributes = fieldInfo.GetCustomAttributes(typeof(TAttribute), inherit);
             if (attributes.Length == 0) return Array.Empty<TAttribute>();
             return (from attribute in attributes
-                   select (TAttribute)attribute).ToArray();
+                    select (TAttribute)attribute).ToArray();
         }
 
         /// <summary>
@@ -50,15 +55,15 @@ namespace Jcd.Reflection
         /// <param name="inherit">inspect the inheritance hierarchy</param>
         /// <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
         /// <returns>An enumerable </returns>
-        public static TAttribute[] GetCustomAttributes<TAttribute>(this PropertyInfo propertyInfo, bool inherit=false)
-            where TAttribute: Attribute
+        public static TAttribute[] GetCustomAttributes<TAttribute>(this PropertyInfo propertyInfo, bool inherit = false)
+            where TAttribute : Attribute
         {
-            var attributes=propertyInfo.GetCustomAttributes(typeof(TAttribute), inherit);
+            var attributes = propertyInfo.GetCustomAttributes(typeof(TAttribute), inherit);
             if (attributes.Length == 0) return Array.Empty<TAttribute>();
             return (from attribute in attributes
                     select (TAttribute)attribute).ToArray();
         }
-        
+
         /// <summary>
         /// Gets all attributes of a specified type on a MethodInfo
         /// </summary>
@@ -66,15 +71,15 @@ namespace Jcd.Reflection
         /// <param name="inherit">inspect the inheritance hierarchy</param>
         /// <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
         /// <returns>An enumerable </returns>
-        public static TAttribute[] GetCustomAttributes<TAttribute>(this MethodInfo methodInfo, bool inherit=false)
-            where TAttribute: Attribute
+        public static TAttribute[] GetCustomAttributes<TAttribute>(this MethodInfo methodInfo, bool inherit = false)
+            where TAttribute : Attribute
         {
-            var attributes=methodInfo.GetCustomAttributes(typeof(TAttribute), inherit);
+            var attributes = methodInfo.GetCustomAttributes(typeof(TAttribute), inherit);
             if (attributes.Length == 0) return Array.Empty<TAttribute>();
             return (from attribute in attributes
                     select (TAttribute)attribute).ToArray();
         }
-        
+
         /// <summary>
         /// Gets all attributes of a specified type on a type
         /// </summary>
@@ -82,15 +87,15 @@ namespace Jcd.Reflection
         /// <param name="inherit">inspect the inheritance hierarchy</param>
         /// <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
         /// <returns>An enumerable </returns>
-        public static TAttribute[] GetCustomAttributes<TAttribute>(this Type type, bool inherit=false)
-            where TAttribute: Attribute
+        public static TAttribute[] GetCustomAttributes<TAttribute>(this Type type, bool inherit = false)
+            where TAttribute : Attribute
         {
-            var attributes=type.GetCustomAttributes(typeof(TAttribute), inherit);
+            var attributes = type.GetCustomAttributes(typeof(TAttribute), inherit);
             if (attributes.Length == 0) return Array.Empty<TAttribute>();
             return (from attribute in attributes
                     select (TAttribute)attribute).ToArray();
         }
-        
+
         /// <summary>
         /// Gets all attributes of a specified type on a parameter
         /// </summary>
@@ -98,15 +103,15 @@ namespace Jcd.Reflection
         /// <param name="inherit">inspect the inheritance hierarchy</param>
         /// <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
         /// <returns>An enumerable </returns>
-        public static TAttribute[] GetCustomAttributes<TAttribute>(this ParameterInfo paramInfo, bool inherit=false)
-            where TAttribute: Attribute
+        public static TAttribute[] GetCustomAttributes<TAttribute>(this ParameterInfo paramInfo, bool inherit = false)
+            where TAttribute : Attribute
         {
-            var attributes=paramInfo.GetCustomAttributes(typeof(TAttribute), inherit);
+            var attributes = paramInfo.GetCustomAttributes(typeof(TAttribute), inherit);
             if (attributes.Length == 0) return Array.Empty<TAttribute>();
             return (from attribute in attributes
                     select (TAttribute)attribute).ToArray();
         }
-        
+
         /// <summary>
         /// Gets all attributes of a specified type on a module
         /// </summary>
@@ -114,15 +119,15 @@ namespace Jcd.Reflection
         /// <param name="inherit">inspect the inheritance hierarchy</param>
         /// <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
         /// <returns>An enumerable </returns>
-        public static TAttribute[] GetCustomAttributes<TAttribute>(this Module module, bool inherit=false)
-            where TAttribute: Attribute
+        public static TAttribute[] GetCustomAttributes<TAttribute>(this Module module, bool inherit = false)
+            where TAttribute : Attribute
         {
-            var attributes=module.GetCustomAttributes(typeof(TAttribute), inherit);
+            var attributes = module.GetCustomAttributes(typeof(TAttribute), inherit);
             if (attributes.Length == 0) return Array.Empty<TAttribute>();
             return (from attribute in attributes
                     select (TAttribute)attribute).ToArray();
         }
-        
+
         /// <summary>
         /// Gets all attributes of a specified type on a TypeInfo
         /// </summary>
@@ -130,15 +135,15 @@ namespace Jcd.Reflection
         /// <param name="inherit">inspect the inheritance hierarchy</param>
         /// <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
         /// <returns>An enumerable </returns>
-        public static TAttribute[] GetCustomAttributes<TAttribute>(this TypeInfo typeInfo, bool inherit=false)
-            where TAttribute: Attribute
+        public static TAttribute[] GetCustomAttributes<TAttribute>(this TypeInfo typeInfo, bool inherit = false)
+            where TAttribute : Attribute
         {
-            var attributes=typeInfo.GetCustomAttributes(typeof(TAttribute), inherit);
+            var attributes = typeInfo.GetCustomAttributes(typeof(TAttribute), inherit);
             if (attributes.Length == 0) return Array.Empty<TAttribute>();
             return (from attribute in attributes
                     select (TAttribute)attribute).ToArray();
         }
-        
+
         /// <summary>
         /// Gets all attributes of a specified type on an assembly
         /// </summary>
@@ -146,15 +151,15 @@ namespace Jcd.Reflection
         /// <param name="inherit">inspect the inheritance hierarchy</param>
         /// <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
         /// <returns>An enumerable </returns>
-        public static TAttribute[] GetCustomAttributes<TAttribute>(this Assembly assembly, bool inherit=false)
-            where TAttribute: Attribute
+        public static TAttribute[] GetCustomAttributes<TAttribute>(this Assembly assembly, bool inherit = false)
+            where TAttribute : Attribute
         {
-            var attributes=assembly.GetCustomAttributes(typeof(TAttribute), inherit);
+            var attributes = assembly.GetCustomAttributes(typeof(TAttribute), inherit);
             if (attributes.Length == 0) return Array.Empty<TAttribute>();
             return (from attribute in attributes
                     select (TAttribute)attribute).ToArray();
         }
-        
+
         /// <summary>
         /// Gets all attributes of a specified type on a parameter
         /// </summary>
@@ -162,15 +167,15 @@ namespace Jcd.Reflection
         /// <param name="inherit">inspect the inheritance hierarchy</param>
         /// <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
         /// <returns>An enumerable </returns>
-        public static TAttribute[] GetCustomAttributes<TAttribute>(this EventInfo eventInfo, bool inherit=false)
-            where TAttribute: Attribute
+        public static TAttribute[] GetCustomAttributes<TAttribute>(this EventInfo eventInfo, bool inherit = false)
+            where TAttribute : Attribute
         {
-            var attributes=eventInfo.GetCustomAttributes(typeof(TAttribute), inherit);
+            var attributes = eventInfo.GetCustomAttributes(typeof(TAttribute), inherit);
             if (attributes.Length == 0) return Array.Empty<TAttribute>();
             return (from attribute in attributes
                     select (TAttribute)attribute).ToArray();
         }
-        
+
         /// <summary>
         /// Gets all attributes of a specified type on a MemberInfo
         /// </summary>
@@ -178,10 +183,10 @@ namespace Jcd.Reflection
         /// <param name="inherit">inspect the inheritance hierarchy</param>
         /// <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
         /// <returns>An enumerable </returns>
-        public static TAttribute[] GetCustomAttributes<TAttribute>(this MemberInfo memberInfo, bool inherit=false)
-            where TAttribute: Attribute
+        public static TAttribute[] GetCustomAttributes<TAttribute>(this MemberInfo memberInfo, bool inherit = false)
+            where TAttribute : Attribute
         {
-            var attributes=memberInfo.GetCustomAttributes(typeof(TAttribute), inherit);
+            var attributes = memberInfo.GetCustomAttributes(typeof(TAttribute), inherit);
             if (attributes.Length == 0) return Array.Empty<TAttribute>();
             return (from attribute in attributes
                     select (TAttribute)attribute).ToArray();
