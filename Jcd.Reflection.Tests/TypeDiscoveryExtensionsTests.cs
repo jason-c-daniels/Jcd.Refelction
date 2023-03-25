@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Jcd.Reflection.Tests._Fakes.AssemblyTest;
-using Jcd.Reflection.Tests._Fakes.TypesTest;
 using Jcd.Reflection.Tests.Fakes;
 using Xunit;
 // ReSharper disable InconsistentNaming
 
 namespace Jcd.Reflection.Tests;
 
-public class AssemblyExtensionsTests
+public class TypeDiscoveryExtensionsTests
 {
     [Fact]
     public void FindImplementationsOf_On_A_Single_Assembly_Returns_The_Expected_Types()
@@ -61,6 +60,7 @@ public class AssemblyExtensionsTests
     public void FindImplementationsOf_On_Assembly_Throws_When_Assembly_Is_Null()
     {
         Assembly assembly = null;
+        // ReSharper disable once ExpressionIsAlwaysNull
         Assert.Throws<ArgumentNullException>(() => assembly.FindImplementationsOf<IPlainOldInterface>());
     }
     
@@ -74,6 +74,7 @@ public class AssemblyExtensionsTests
     public void FindImplementationsOf_On_Assemblies_Throws_When_Assembly_Is_Null()
     {
         IEnumerable<Assembly> assemblies = null;
+        // ReSharper disable once ExpressionIsAlwaysNull
         Assert.Throws<ArgumentNullException>(() => assemblies.FindImplementationsOf<IPlainOldInterface>().ToList());
     }
     
