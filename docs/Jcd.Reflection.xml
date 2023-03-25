@@ -16,7 +16,7 @@
             <param name="value">the enum value to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located <typeparam name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
+            <returns>An array of located <typeparamref name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes(System.Enum,System.Type,System.Boolean)">
             <summary>
@@ -34,7 +34,7 @@
             <param name="fieldInfo">the field to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located <typeparam name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
+            <returns>An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.PropertyInfo,System.Boolean)">
             <summary>
@@ -43,7 +43,7 @@
             <param name="propertyInfo">the property to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located <typeparam name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
+            <returns>An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.MethodInfo,System.Boolean)">
             <summary>
@@ -52,7 +52,7 @@
             <param name="methodInfo">the method to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located <typeparam name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
+            <returns>An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Type,System.Boolean)">
             <summary>
@@ -61,7 +61,7 @@
             <param name="type">the type to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located <typeparam name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
+            <returns>An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.ParameterInfo,System.Boolean)">
             <summary>
@@ -70,7 +70,7 @@
             <param name="paramInfo">the parameter to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located <typeparam name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
+            <returns>An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.Module,System.Boolean)">
             <summary>
@@ -79,7 +79,7 @@
             <param name="module">the module to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located <typeparam name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
+            <returns>An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.TypeInfo,System.Boolean)">
             <summary>
@@ -88,7 +88,7 @@
             <param name="typeInfo">the typeInfo to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located <typeparam name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
+            <returns>An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.Assembly,System.Boolean)">
             <summary>
@@ -97,7 +97,7 @@
             <param name="assembly">the assembly to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located <typeparam name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
+            <returns>An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.EventInfo,System.Boolean)">
             <summary>
@@ -106,7 +106,7 @@
             <param name="eventInfo">the eventINfo to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located <typeparam name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
+            <returns>An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.MemberInfo,System.Boolean)">
             <summary>
@@ -115,7 +115,7 @@
             <param name="memberInfo">the MemberInfo to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located <typeparam name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
+            <returns>An array of located <typeparamref name="TAttribute"/> instances. If none are found, an empty array is returned.</returns>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Enum,System.Type,System.Boolean)">
             <summary>
@@ -167,6 +167,150 @@
             Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.FieldInfo"/>.
             </summary>
             <param name="fieldInfo">The <see cref="T:System.Reflection.FieldInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.PropertyInfo,System.Type,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.PropertyInfo"/>.
+            </summary>
+            <param name="propertyInfo">The <see cref="T:System.Reflection.PropertyInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <param name="attributeType">The type of the attribute to detect.</param>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.PropertyInfo,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.PropertyInfo"/>.
+            </summary>
+            <param name="propertyInfo">The <see cref="T:System.Reflection.PropertyInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.MethodInfo,System.Type,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.MethodInfo"/>.
+            </summary>
+            <param name="methodInfo">The <see cref="T:System.Reflection.MethodInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <param name="attributeType">The type of the attribute to detect.</param>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.MethodInfo,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.MethodInfo"/>.
+            </summary>
+            <param name="methodInfo">The <see cref="T:System.Reflection.MethodInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.ParameterInfo,System.Type,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.ParameterInfo"/>.
+            </summary>
+            <param name="paramInfo">The <see cref="T:System.Reflection.ParameterInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <param name="attributeType">The type of the attribute to detect.</param>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.ParameterInfo,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.MethodInfo"/>.
+            </summary>
+            <param name="paramInfo">The <see cref="T:System.Reflection.MethodInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.Module,System.Type,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.Module"/>.
+            </summary>
+            <param name="module">The <see cref="T:System.Reflection.Module"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <param name="attributeType">The type of the attribute to detect.</param>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.Module,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.Module"/>.
+            </summary>
+            <param name="module">The <see cref="T:System.Reflection.Module"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.TypeInfo,System.Type,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.TypeInfo"/>.
+            </summary>
+            <param name="typeInfo">The <see cref="T:System.Reflection.TypeInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <param name="attributeType">The type of the attribute to detect.</param>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.TypeInfo,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.TypeInfo"/>.
+            </summary>
+            <param name="typeInfo">The <see cref="T:System.Reflection.TypeInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.Assembly,System.Type,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+            <param name="assembly">The <see cref="T:System.Reflection.Assembly"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <param name="attributeType">The type of the attribute to detect.</param>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.Assembly,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.Assembly"/>.
+            </summary>
+            <param name="assembly">The <see cref="T:System.Reflection.Assembly"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.EventInfo,System.Type,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.EventInfo"/>.
+            </summary>
+            <param name="eventInfo">The <see cref="T:System.Reflection.EventInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <param name="attributeType">The type of the attribute to detect.</param>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.EventInfo,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.EventInfo"/>.
+            </summary>
+            <param name="eventInfo">The <see cref="T:System.Reflection.EventInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.MemberInfo,System.Type,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.MemberInfo"/>.
+            </summary>
+            <param name="memberInfo">The <see cref="T:System.Reflection.MemberInfo"/> instance to inspect</param>
+            <param name="inherit">inspect the inheritance hierarchy</param>
+            <param name="attributeType">The type of the attribute to detect.</param>
+            <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+            Determines if an attribute has been applied to a specific <see cref="T:System.Reflection.MemberInfo"/>.
+            </summary>
+            <param name="memberInfo">The <see cref="T:System.Reflection.MemberInfo"/> instance to inspect</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
@@ -883,9 +1027,9 @@
             Gets implementations of the specified type from an assembly.
             </summary>
             <param name="assembly">the assembly to search.</param>
-            <param name="returnTargetTypeIfConcrete">If <see cref="!:T"/> is in the target assembly, and it's a concrete, return it as well.</param>
+            <param name="returnTargetTypeIfConcrete">If <typeparamref name="T"/> is in the target assembly, and it's a concrete, return it as well.</param>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the implementations of <typeparam name="T"></typeparam></returns>
-            <exception cref="T:System.ArgumentNullException">When <see cref="!:assembly"/> is null.</exception>
+            <exception cref="T:System.ArgumentNullException">When <paramref name="assembly"/> cref="assembly"/> is null.</exception>
         </member>
         <member name="M:Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(System.Reflection.Assembly,System.Type,System.Boolean)">
             <summary>
@@ -893,18 +1037,18 @@
             </summary>
             <param name="assembly">the assembly to search.</param>
             <param name="type">The type to find implementations of.</param>
-            <param name="returnTargetTypeIfConcrete">If <see cref="!:type"/> is in the target assembly, and it's a concrete, return it as well.</param>
+            <param name="returnTargetTypeIfConcrete">If <paramref name="type"/> is in the target assembly, and it's a concrete, return it as well.</param>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the implementations of <paramref name="type"/></returns>
-            <exception cref="T:System.ArgumentNullException">When either <see cref="!:assembly"/> or <see cref="!:type"/> is null.</exception>
+            <exception cref="T:System.ArgumentNullException">When either <paramref name="assembly"/> or <paramref name="type"/> is null.</exception>
         </member>
         <member name="M:Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf``1(System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Boolean)">
             <summary>
             Gets implementations of the specified type from a collection of assemblies.
             </summary>
             <param name="assemblies">The collection of assemblies to search.</param>
-            <param name="returnTargetTypeIfConcrete">If <see cref="!:T"/> is in the target assembly, and it's a concrete, return it as well.</param>
+            <param name="returnTargetTypeIfConcrete">If <typeparamref name="T"/> is in the target assembly, and it's a concrete, return it as well.</param>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the implementations of <typeparamref name="T"/></returns>
-            <exception cref="T:System.ArgumentNullException">When <see cref="!:assemblies"/> is null.</exception>
+            <exception cref="T:System.ArgumentNullException">When <paramref name="assemblies"/> is null.</exception>
         </member>
         <member name="M:Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Type,System.Boolean)">
             <summary>
@@ -912,7 +1056,7 @@
             </summary>
             <param name="assemblies">The collection of assemblies to search.</param>
             <param name="type">The type to find implementations of.</param>
-            <param name="returnTargetTypeIfConcrete">If <see cref="!:type"/> is in the target assembly, and it's a concrete, return it as well.</param>
+            <param name="returnTargetTypeIfConcrete">If <paramref name="type"/> is in the target assembly, and it's a concrete, return it as well.</param>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of the implementations of <paramref name="type"/></returns>
             <exception cref="T:System.ArgumentNullException">When either assembly or type is null.</exception>
         </member>
@@ -937,7 +1081,7 @@
             <param name="derivedType">The type to check inheritance on.</param>
             <param name="parentType">The type to check for inheritance against.</param>
             <param name="allowSelfToCompareToTrueIfConcrete">if </param>
-            <returns>True if type inherits from <see cref="!:parentType"/></returns>
+            <returns>True if type inherits from <paramref name="parentType"/></returns>
             <remarks>
             The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project, on GitHub, by Kristian Hellang 
             provided the inspiration and overall algorithm for determining if a type was derived from another
@@ -946,7 +1090,7 @@
         </member>
         <member name="M:Jcd.Reflection.TypeExtensions.InheritsFromGenericTypeDefinition(System.Type,System.Type,System.Boolean)">
             <summary>
-            Determines if the <see cref="!:derivedType"/> is directly or indirectly derived from the <see cref="!:genericTypeDefinition"/>
+            Determines if the <paramref name="derivedType"/> is directly or indirectly derived from the <paramref name="genericTypeDefinition"/>
             </summary>
             <param name="derivedType">The type to inspect.</param>
             <param name="genericTypeDefinition">The generic type definition to compare against.</param>
@@ -960,7 +1104,7 @@
         </member>
         <member name="M:Jcd.Reflection.TypeExtensions.DirectlyInheritsFromGenericTypeDefinition(System.Type,System.Type,System.Boolean)">
             <summary>
-            Determines if the <see cref="!:derivedType"/> is directly derived from the <see cref="!:genericTypeDefinition"/>
+            Determines if the <paramref name="derivedType"/> is directly derived from the <paramref name="genericTypeDefinition"/>
             </summary>
             <param name="derivedType">The type to inspect.</param>
             <param name="genericTypeDefinition">The generic type definition to compare against.</param>

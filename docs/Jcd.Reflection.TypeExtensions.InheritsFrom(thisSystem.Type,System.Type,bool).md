@@ -29,7 +29,7 @@ if
 
 #### Returns
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
-True if type inherits from [parentType](https://docs.microsoft.com/en-us/dotnet/api/parentType 'parentType')
+True if type inherits from [parentType](Jcd.Reflection.TypeExtensions.InheritsFrom(thisSystem.Type,System.Type,bool).md#Jcd.Reflection.TypeExtensions.InheritsFrom(thisSystem.Type,System.Type,bool).parentType 'Jcd.Reflection.TypeExtensions.InheritsFrom(this System.Type, System.Type, bool).parentType')
 
 ### Remarks
 The [Scrutor](https://github.com/khellang/Scrutor 'https://github.com/khellang/Scrutor') project, on GitHub, by Kristian Hellang   

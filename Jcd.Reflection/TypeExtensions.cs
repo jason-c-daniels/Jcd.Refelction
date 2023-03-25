@@ -2,6 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+// ReSharper disable ConvertIfStatementToReturnStatement
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable HeapView.ClosureAllocation
+// ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable UnusedMember.Global
 
 namespace Jcd.Reflection;
 
@@ -18,7 +23,7 @@ public static class TypeExtensions
     /// <typeparam name="T">The type to check inheritance from.</typeparam>
     /// <returns>True if type inherits from <typeparamref name="T"/></returns>
     public static bool InheritsFrom<T>(this Type derivedType, bool allowSelfToCompareToTrueIfConcrete=false) => 
-        derivedType.InheritsFrom(typeof(T));
+        derivedType.InheritsFrom(typeof(T), allowSelfToCompareToTrueIfConcrete);
 
     /// <summary>
     /// Checks if one type inherits from another. This will match generic inheritance as well.
@@ -26,7 +31,7 @@ public static class TypeExtensions
     /// <param name="derivedType">The type to check inheritance on.</param>
     /// <param name="parentType">The type to check for inheritance against.</param>
     /// <param name="allowSelfToCompareToTrueIfConcrete">if </param>
-    /// <returns>True if type inherits from <see cref="parentType"/></returns>
+    /// <returns>True if type inherits from <paramref name="parentType"/></returns>
     /// <remarks>
     /// The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project, on GitHub, by Kristian Hellang 
     /// provided the inspiration and overall algorithm for determining if a type was derived from another
@@ -40,7 +45,7 @@ public static class TypeExtensions
                 : derivedType != parentType && parentType.IsAssignableFrom(derivedType);
 
     /// <summary>
-    /// Determines if the <see cref="derivedType"/> is directly or indirectly derived from the <see cref="genericTypeDefinition"/>
+    /// Determines if the <paramref name="derivedType"/> is directly or indirectly derived from the <paramref name="genericTypeDefinition"/>
     /// </summary>
     /// <param name="derivedType">The type to inspect.</param>
     /// <param name="genericTypeDefinition">The generic type definition to compare against.</param>
@@ -62,7 +67,7 @@ public static class TypeExtensions
     }
 
     /// <summary>
-    /// Determines if the <see cref="derivedType"/> is directly derived from the <see cref="genericTypeDefinition"/>
+    /// Determines if the <paramref name="derivedType"/> is directly derived from the <paramref name="genericTypeDefinition"/>
     /// </summary>
     /// <param name="derivedType">The type to inspect.</param>
     /// <param name="genericTypeDefinition">The generic type definition to compare against.</param>
@@ -94,17 +99,17 @@ public static class TypeExtensions
     /// </summary>
     /// <param name="type">the type to retrieve base types from.</param>
     /// <returns>an array of the non-interface base types</returns>
-    public static Type[] GetNonInterfaceBaseTypes(this Type type)
+    public static IEnumerable<Type> GetNonInterfaceBaseTypes(this Type type)
     {
-        var l = new List<Type>();
+        var types = new List<Type>();
         var currentType = type;
         while (currentType.BaseType != null)
         {
-            l.Add(currentType.BaseType);
+            types.Add(currentType.BaseType);
             currentType = currentType.BaseType;
         }
 
-        return l.ToArray();
+        return types;
     }
 
     /// <summary>

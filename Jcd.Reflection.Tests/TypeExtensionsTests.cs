@@ -20,7 +20,11 @@ public class TypeExtensionsTests
     struct S2<T> 
         where T : struct
     {
-        public T F;
+        public T F = default;
+
+        public S2()
+        {
+        }
     }
 
     interface I<T>

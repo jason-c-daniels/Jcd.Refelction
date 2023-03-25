@@ -2,7 +2,7 @@
 
 ## TypeExtensions.InheritsFromGenericTypeDefinition(this Type, Type, bool) Method
 
-Determines if the [derivedType](https://docs.microsoft.com/en-us/dotnet/api/derivedType 'derivedType') is directly or indirectly derived from the [genericTypeDefinition](https://docs.microsoft.com/en-us/dotnet/api/genericTypeDefinition 'genericTypeDefinition')
+Determines if the [derivedType](Jcd.Reflection.TypeExtensions.InheritsFromGenericTypeDefinition(thisSystem.Type,System.Type,bool).md#Jcd.Reflection.TypeExtensions.InheritsFromGenericTypeDefinition(thisSystem.Type,System.Type,bool).derivedType 'Jcd.Reflection.TypeExtensions.InheritsFromGenericTypeDefinition(this System.Type, System.Type, bool).derivedType') is directly or indirectly derived from the [genericTypeDefinition](Jcd.Reflection.TypeExtensions.InheritsFromGenericTypeDefinition(thisSystem.Type,System.Type,bool).md#Jcd.Reflection.TypeExtensions.InheritsFromGenericTypeDefinition(thisSystem.Type,System.Type,bool).genericTypeDefinition 'Jcd.Reflection.TypeExtensions.InheritsFromGenericTypeDefinition(this System.Type, System.Type, bool).genericTypeDefinition')
 
 ```csharp
 public static bool InheritsFromGenericTypeDefinition(this System.Type derivedType, System.Type genericTypeDefinition, bool allowSelfToCompareToTrueIfConcrete=false);
