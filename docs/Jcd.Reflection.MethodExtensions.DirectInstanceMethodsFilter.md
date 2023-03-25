@@ -9,4 +9,5 @@ public static readonly Settings DirectInstanceMethodsFilter;
 ```
 
 #### Field Value
+
 [Settings](Jcd.Reflection.MethodInfoEnumerator.Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')

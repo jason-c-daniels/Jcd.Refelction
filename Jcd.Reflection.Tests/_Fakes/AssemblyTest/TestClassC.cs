@@ -55,5 +55,8 @@ internal class TestClassC : TestClassB
         return a - b;
     }
 
-    public int GetValue() => 10;
+    public int GetValue()
+    {
+        return 10;
+    }
 }

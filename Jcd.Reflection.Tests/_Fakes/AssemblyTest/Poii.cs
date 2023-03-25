@@ -1,4 +1,8 @@
+#region
+
 using Jcd.Reflection.Tests.Fakes;
+
+#endregion
 
 namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
 

@@ -2,7 +2,6 @@
 
 using System.Linq;
 using System.Reflection;
-using Jcd.Reflection.Tests._Fakes;
 using Jcd.Reflection.Tests._Fakes.AssemblyTest;
 using Xunit;
 

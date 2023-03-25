@@ -7,6 +7,7 @@ Decomposes an object graph into a string-object dictionary tree. Cycles are not 
 ```csharp
 public static System.Collections.Generic.IDictionary<string,object> ToDictionaryTree(this object self, System.Collections.Generic.HashSet<object> visited=null, System.Func<string,string> keyRenamingStrategy=null, System.Func<string,object,bool> valueRetentionStrategy=null);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.ExpandoObjectExtensions.ToDictionaryTree(thisobject,System.Collections.Generic.HashSet_object_,System.Func_string,string_,System.Func_string,object,bool_).self'></a>
@@ -34,5 +35,6 @@ A function to rename a key when it's deemed necessary
 a function to determine if a value is to be retained
 
 #### Returns
+
 [System.Collections.Generic.IDictionary&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IDictionary-2 'System.Collections.Generic.IDictionary`2')  
 The dictionary

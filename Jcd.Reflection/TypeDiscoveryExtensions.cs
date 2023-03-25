@@ -1,7 +1,12 @@
+#region
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+
+#endregion
+
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable HeapView.ClosureAllocation
 // ReSharper disable HeapView.DelegateAllocation
@@ -22,9 +27,11 @@ public static class TypeDiscoveryExtensions
     /// <param name="returnTargetTypeIfConcrete">If <typeparamref name="T"/> is in the target assembly, and it's a concrete, return it as well.</param>
     /// <returns>An <see cref="IEnumerable{Type}"/> of the implementations of <typeparam name="T"></typeparam></returns>
     /// <exception cref="ArgumentNullException">When <paramref name="assembly"/> cref="assembly"/> is null.</exception>
-    public static IEnumerable<Type> FindImplementationsOf<T>(this Assembly assembly, 
-                                                             bool returnTargetTypeIfConcrete=false) =>
-        FindImplementationsOf(assembly, typeof(T), returnTargetTypeIfConcrete);
+    public static IEnumerable<Type> FindImplementationsOf<T>(this Assembly assembly,
+                                                             bool returnTargetTypeIfConcrete = false)
+    {
+        return FindImplementationsOf(assembly, typeof(T), returnTargetTypeIfConcrete);
+    }
 
     /// <summary>
     /// Gets implementations of the specified type from an assembly.
@@ -34,15 +41,15 @@ public static class TypeDiscoveryExtensions
     /// <param name="returnTargetTypeIfConcrete">If <paramref name="type"/> is in the target assembly, and it's a concrete, return it as well.</param>
     /// <returns>An <see cref="IEnumerable{Type}"/> of the implementations of <paramref name="type"/></returns>
     /// <exception cref="ArgumentNullException">When either <paramref name="assembly"/> or <paramref name="type"/> is null.</exception>
-    public static IEnumerable<Type> FindImplementationsOf(this Assembly assembly, 
-                                                          Type type, 
-                                                          bool returnTargetTypeIfConcrete=false)
+    public static IEnumerable<Type> FindImplementationsOf(this Assembly assembly,
+                                                          Type type,
+                                                          bool returnTargetTypeIfConcrete = false)
     {
         if (assembly == null) throw new ArgumentNullException(nameof(assembly));
         if (type == null) throw new ArgumentNullException(nameof(type));
         return from t in assembly.GetTypes()
                where t.IsConcreteType()
-                     && t.InheritsFrom(type,returnTargetTypeIfConcrete)
+                     && t.InheritsFrom(type, returnTargetTypeIfConcrete)
                select t;
     }
 
@@ -53,9 +60,12 @@ public static class TypeDiscoveryExtensions
     /// <param name="returnTargetTypeIfConcrete">If <typeparamref name="T"/> is in the target assembly, and it's a concrete, return it as well.</param>
     /// <returns>An <see cref="IEnumerable{Type}"/> of the implementations of <typeparamref name="T"/></returns>
     /// <exception cref="ArgumentNullException">When <paramref name="assemblies"/> is null.</exception>
-    public static IEnumerable<Type> FindImplementationsOf<T>(this IEnumerable<Assembly> assemblies, bool returnTargetTypeIfConcrete=false)
-        => FindImplementationsOf(assemblies, typeof(T), returnTargetTypeIfConcrete);
-        
+    public static IEnumerable<Type> FindImplementationsOf<T>(this IEnumerable<Assembly> assemblies,
+                                                             bool returnTargetTypeIfConcrete = false)
+    {
+        return FindImplementationsOf(assemblies, typeof(T), returnTargetTypeIfConcrete);
+    }
+
     /// <summary>
     /// Gets implementations of the specified type from a collection of assemblies.
     /// </summary>
@@ -64,9 +74,9 @@ public static class TypeDiscoveryExtensions
     /// <param name="returnTargetTypeIfConcrete">If <paramref name="type"/> is in the target assembly, and it's a concrete, return it as well.</param>
     /// <returns>An <see cref="IEnumerable{Type}"/> of the implementations of <paramref name="type"/></returns>
     /// <exception cref="ArgumentNullException">When either assembly or type is null.</exception>
-    public static IEnumerable<Type> FindImplementationsOf(this IEnumerable<Assembly> assemblies, 
-                                                          Type type, 
-                                                          bool returnTargetTypeIfConcrete=false)
+    public static IEnumerable<Type> FindImplementationsOf(this IEnumerable<Assembly> assemblies,
+                                                          Type type,
+                                                          bool returnTargetTypeIfConcrete = false)
     {
         if (assemblies == null) throw new ArgumentNullException(nameof(assemblies));
         if (type == null) throw new ArgumentNullException(nameof(type));

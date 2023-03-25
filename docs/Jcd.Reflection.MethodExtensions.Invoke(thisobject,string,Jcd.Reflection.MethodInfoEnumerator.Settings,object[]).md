@@ -7,6 +7,7 @@ Invoke the method on the specified object using the provided parameters
 ```csharp
 public static object Invoke(this object self, string name, Jcd.Reflection.MethodInfoEnumerator.Settings settings, params object[] @params);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke(thisobject,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).self'></a>
@@ -25,7 +26,8 @@ the name of the method to invoke
 
 `settings` [Settings](Jcd.Reflection.MethodInfoEnumerator.Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')
 
-The method selection settings such as [AllInstanceMethodsFilter](Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter')
+The method selection settings such
+as [AllInstanceMethodsFilter](Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter')
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke(thisobject,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).params'></a>
 
@@ -34,5 +36,6 @@ The method selection settings such as [AllInstanceMethodsFilter](Jcd.Reflection.
 the params for the method
 
 #### Returns
+
 [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')  
 the result, if any

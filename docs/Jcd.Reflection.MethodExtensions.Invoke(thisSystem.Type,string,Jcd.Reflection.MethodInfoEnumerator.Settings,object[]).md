@@ -7,6 +7,7 @@ Invokes a static method on a type
 ```csharp
 public static object Invoke(this System.Type type, string name, Jcd.Reflection.MethodInfoEnumerator.Settings settings, params object[] @params);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke(thisSystem.Type,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).type'></a>
@@ -25,7 +26,8 @@ The name of the method
 
 `settings` [Settings](Jcd.Reflection.MethodInfoEnumerator.Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')
 
-The method selection settings such as [AllStaticMethodsFilter](Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter')
+The method selection settings such
+as [AllStaticMethodsFilter](Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter')
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke(thisSystem.Type,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).params'></a>
 
@@ -34,5 +36,6 @@ The method selection settings such as [AllStaticMethodsFilter](Jcd.Reflection.Me
 The params to pass
 
 #### Returns
+
 [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')  
 The result of the call, if any

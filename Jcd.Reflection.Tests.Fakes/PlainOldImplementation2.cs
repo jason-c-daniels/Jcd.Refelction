@@ -2,7 +2,6 @@ namespace Jcd.Reflection.Tests.Fakes;
 
 public class PlainOldImplementation2<T> : PlainOldImplementation1, IPlainOldInterface<T>
 {
-
     #region Implementation of IPlainOldInterface<T>
 
     /// <inheritdoc />
@@ -13,5 +12,4 @@ public class PlainOldImplementation2<T> : PlainOldImplementation1, IPlainOldInte
 
 public class Poi21<Y> : PlainOldImplementation2<Y>
 {
-    
 }

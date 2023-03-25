@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+
 // ReSharper disable HeapView.ObjectAllocation
 // ReSharper disable HeapView.ObjectAllocation.Possible
 
@@ -51,7 +52,7 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
     /// <param name="settings">The settings controlling enumeration</param>
     // ReSharper disable once UnusedMember.Global
     public MemberInfoEnumerator(object item,
-                                Settings settings = default) 
+                                Settings settings = default)
         : this((Type)(item is System.Type or null ? item : item.GetType()), settings)
     {
     }

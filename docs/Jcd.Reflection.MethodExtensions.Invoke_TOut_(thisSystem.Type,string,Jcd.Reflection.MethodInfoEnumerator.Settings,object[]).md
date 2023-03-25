@@ -7,6 +7,7 @@ Invokes a static method on a type, coercing the return type
 ```csharp
 public static TOut Invoke<TOut>(this System.Type type, string name, Jcd.Reflection.MethodInfoEnumerator.Settings settings, params object[] @params);
 ```
+
 #### Type parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).TOut'></a>
@@ -14,6 +15,7 @@ public static TOut Invoke<TOut>(this System.Type type, string name, Jcd.Reflecti
 `TOut`
 
 The type of the return
+
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).type'></a>
@@ -32,7 +34,8 @@ The name of the method
 
 `settings` [Settings](Jcd.Reflection.MethodInfoEnumerator.Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')
 
-The method selection settings such as [AllStaticMethodsFilter](Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter')
+The method selection settings such
+as [AllStaticMethodsFilter](Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter')
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).params'></a>
 
@@ -41,5 +44,6 @@ The method selection settings such as [AllStaticMethodsFilter](Jcd.Reflection.Me
 The params to pass
 
 #### Returns
+
 [TOut](Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this System.Type, string, Jcd.Reflection.MethodInfoEnumerator.Settings, object[]).TOut')  
 The result of the call, if any

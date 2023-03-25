@@ -1,6 +1,7 @@
 #region
 
 using System.Reflection;
+
 // ReSharper disable HeapView.BoxingAllocation
 
 #endregion

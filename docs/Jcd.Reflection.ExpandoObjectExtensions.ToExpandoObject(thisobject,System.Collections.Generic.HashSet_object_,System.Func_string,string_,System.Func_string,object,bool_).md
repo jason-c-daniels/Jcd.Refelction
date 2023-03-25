@@ -7,6 +7,7 @@ Convert an object into an ExpandoObject, tree, breaking cycles in the object gra
 ```csharp
 public static System.Dynamic.ExpandoObject ToExpandoObject(this object self, System.Collections.Generic.HashSet<object> visited=null, System.Func<string,string> keyRenamingStrategy=null, System.Func<string,object,bool> valueRetentionStrategy=null);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.ExpandoObjectExtensions.ToExpandoObject(thisobject,System.Collections.Generic.HashSet_object_,System.Func_string,string_,System.Func_string,object,bool_).self'></a>
@@ -34,5 +35,6 @@ A function to rename a key when it's deemed necessary
 a function to determine if a value is to be retained
 
 #### Returns
+
 [System.Dynamic.ExpandoObject](https://docs.microsoft.com/en-us/dotnet/api/System.Dynamic.ExpandoObject 'System.Dynamic.ExpandoObject')  
 The ExpandoObject

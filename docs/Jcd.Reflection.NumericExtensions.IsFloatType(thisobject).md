@@ -7,6 +7,7 @@ Indicates if an object is of a floating point data type.
 ```csharp
 public static bool IsFloatType(this object self);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.NumericExtensions.IsFloatType(thisobject).self'></a>
@@ -16,5 +17,6 @@ public static bool IsFloatType(this object self);
 The object to check
 
 #### Returns
+
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
 true if the object is of a floating point data type

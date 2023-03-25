@@ -1,4 +1,8 @@
+#region
+
 using Jcd.Reflection.Tests.Fakes;
+
+#endregion
 
 namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
 
@@ -14,5 +18,4 @@ public readonly struct Poii3 : IPlainOldInterface
     public string Name { get; } = nameof(Poii3);
 
     #endregion
-    
 }

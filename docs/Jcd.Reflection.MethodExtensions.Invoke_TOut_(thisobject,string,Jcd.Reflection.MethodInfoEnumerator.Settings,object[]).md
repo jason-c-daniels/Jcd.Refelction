@@ -7,6 +7,7 @@ Invoke the method on the specified object using the provided parameters
 ```csharp
 public static TOut Invoke<TOut>(this object self, string name, Jcd.Reflection.MethodInfoEnumerator.Settings settings, params object[] @params);
 ```
+
 #### Type parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).TOut'></a>
@@ -14,6 +15,7 @@ public static TOut Invoke<TOut>(this object self, string name, Jcd.Reflection.Me
 `TOut`
 
 result type
+
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).self'></a>
@@ -32,7 +34,8 @@ the name of the method to invoke
 
 `settings` [Settings](Jcd.Reflection.MethodInfoEnumerator.Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')
 
-The method selection settings such as [AllInstanceMethodsFilter](Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter')
+The method selection settings such
+as [AllInstanceMethodsFilter](Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter')
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).params'></a>
 
@@ -41,5 +44,6 @@ The method selection settings such as [AllInstanceMethodsFilter](Jcd.Reflection.
 the params for the method
 
 #### Returns
+
 [TOut](Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this object, string, Jcd.Reflection.MethodInfoEnumerator.Settings, object[]).TOut')  
 the result, if any

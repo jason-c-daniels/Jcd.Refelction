@@ -2,11 +2,13 @@
 
 ## CustomAttributeHandlingExtensions.HasAttribute<TAttribute>(this FieldInfo, bool) Method
 
-Determines if an attribute has been applied to a specific [System.Reflection.FieldInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo 'System.Reflection.FieldInfo').
+Determines if an attribute has been applied to a
+specific [System.Reflection.FieldInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo 'System.Reflection.FieldInfo').
 
 ```csharp
 public static bool HasAttribute<TAttribute>(this System.Reflection.FieldInfo fieldInfo, bool inherit=false);
 ```
+
 #### Type parameters
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute_TAttribute_(thisSystem.Reflection.FieldInfo,bool).TAttribute'></a>
@@ -14,13 +16,15 @@ public static bool HasAttribute<TAttribute>(this System.Reflection.FieldInfo fie
 `TAttribute`
 
 The type of the attribute to detect.
+
 #### Parameters
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute_TAttribute_(thisSystem.Reflection.FieldInfo,bool).fieldInfo'></a>
 
 `fieldInfo` [System.Reflection.FieldInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo 'System.Reflection.FieldInfo')
 
-The [System.Reflection.FieldInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo 'System.Reflection.FieldInfo') instance to inspect
+The [System.Reflection.FieldInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo 'System.Reflection.FieldInfo')
+instance to inspect
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute_TAttribute_(thisSystem.Reflection.FieldInfo,bool).inherit'></a>
 
@@ -29,5 +33,9 @@ The [System.Reflection.FieldInfo](https://docs.microsoft.com/en-us/dotnet/api/Sy
 inspect the inheritance hierarchy
 
 #### Returns
+
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
-[true](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool') if one or more attributes of the requested type were detected; [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool') otherwise.
+[true](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
+if one or more attributes of the requested type were
+detected; [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
+otherwise.

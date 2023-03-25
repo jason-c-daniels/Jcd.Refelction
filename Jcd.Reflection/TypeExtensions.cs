@@ -1,7 +1,12 @@
+#region
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+
+#endregion
+
 // ReSharper disable ConvertIfStatementToReturnStatement
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable HeapView.ClosureAllocation
@@ -22,8 +27,10 @@ public static class TypeExtensions
     /// <param name="allowSelfToCompareToTrueIfConcrete"></param>
     /// <typeparam name="T">The type to check inheritance from.</typeparam>
     /// <returns>True if type inherits from <typeparamref name="T"/></returns>
-    public static bool InheritsFrom<T>(this Type derivedType, bool allowSelfToCompareToTrueIfConcrete=false) => 
-        derivedType.InheritsFrom(typeof(T), allowSelfToCompareToTrueIfConcrete);
+    public static bool InheritsFrom<T>(this Type derivedType, bool allowSelfToCompareToTrueIfConcrete = false)
+    {
+        return derivedType.InheritsFrom(typeof(T), allowSelfToCompareToTrueIfConcrete);
+    }
 
     /// <summary>
     /// Checks if one type inherits from another. This will match generic inheritance as well.
@@ -37,12 +44,15 @@ public static class TypeExtensions
     /// provided the inspiration and overall algorithm for determining if a type was derived from another
     /// regardless of the genericity of the types being compared.
     /// </remarks>
-    public static bool InheritsFrom(this Type derivedType, Type parentType, bool allowSelfToCompareToTrueIfConcrete=false) =>
-        parentType.IsGenericTypeDefinition 
+    public static bool InheritsFrom(this Type derivedType, Type parentType,
+                                    bool allowSelfToCompareToTrueIfConcrete = false)
+    {
+        return parentType.IsGenericTypeDefinition
             ? derivedType.InheritsFromGenericTypeDefinition(parentType, allowSelfToCompareToTrueIfConcrete)
-            : allowSelfToCompareToTrueIfConcrete 
-                ? parentType.IsAssignableFrom(derivedType) 
+            : allowSelfToCompareToTrueIfConcrete
+                ? parentType.IsAssignableFrom(derivedType)
                 : derivedType != parentType && parentType.IsAssignableFrom(derivedType);
+    }
 
     /// <summary>
     /// Determines if the <paramref name="derivedType"/> is directly or indirectly derived from the <paramref name="genericTypeDefinition"/>
@@ -57,13 +67,15 @@ public static class TypeExtensions
     /// regardless of the genericity of the types being compared.
     /// </remarks>
     public static bool InheritsFromGenericTypeDefinition(this Type derivedType, Type genericTypeDefinition,
-                                                         bool allowSelfToCompareToTrueIfConcrete=false)
+                                                         bool allowSelfToCompareToTrueIfConcrete = false)
     {
-        if (DirectlyInheritsFromGenericTypeDefinition(derivedType, genericTypeDefinition, allowSelfToCompareToTrueIfConcrete)) 
+        if (DirectlyInheritsFromGenericTypeDefinition(derivedType, genericTypeDefinition,
+                allowSelfToCompareToTrueIfConcrete))
             return true;
 
         return derivedType.GetNonInterfaceBaseTypes()
-            .Any(x => x.DirectlyInheritsFromGenericTypeDefinition(genericTypeDefinition, allowSelfToCompareToTrueIfConcrete));
+            .Any(x => x.DirectlyInheritsFromGenericTypeDefinition(genericTypeDefinition,
+                allowSelfToCompareToTrueIfConcrete));
     }
 
     /// <summary>
@@ -79,16 +91,14 @@ public static class TypeExtensions
     /// regardless of the genericity of the types being compared.
     /// </remarks>
     public static bool DirectlyInheritsFromGenericTypeDefinition(this Type derivedType, Type genericTypeDefinition,
-                                                                 bool allowSelfToCompareToTrueIfConcrete=false)
+                                                                 bool allowSelfToCompareToTrueIfConcrete = false)
     {
         if (derivedType.IsGenericType &&
             derivedType.GetGenericTypeDefinition() == genericTypeDefinition)
-        {
             return allowSelfToCompareToTrueIfConcrete || derivedType.GetGenericTypeDefinition() != derivedType;
-        }
 
-        return (from interfaceType in derivedType.GetInterfaces() 
-                where interfaceType.IsGenericType 
+        return (from interfaceType in derivedType.GetInterfaces()
+                where interfaceType.IsGenericType
                 select interfaceType.GetGenericTypeDefinition())
             .Any(genericInterfaceTypeDefinition => genericInterfaceTypeDefinition == genericTypeDefinition);
     }
@@ -132,7 +142,7 @@ public static class TypeExtensions
         if (type.IsAbstract) return false;
         if (!allowSpecialNames && type.IsSpecialName) return false;
         if (!allowCompilerGenerated && type.IsCompilerGenerated()) return false;
-        
+
         return true;
     }
 
@@ -141,6 +151,8 @@ public static class TypeExtensions
     /// </summary>
     /// <param name="type">The type to inspect.</param>
     /// <returns>true if the type has the <see cref="CompilerGeneratedAttribute"/> attribute applied.</returns>
-    public static bool IsCompilerGenerated(this Type type) => type.HasAttribute<CompilerGeneratedAttribute>();
-    
+    public static bool IsCompilerGenerated(this Type type)
+    {
+        return type.HasAttribute<CompilerGeneratedAttribute>();
+    }
 }
