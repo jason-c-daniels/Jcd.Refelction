@@ -21,6 +21,7 @@ public class GetCustomAttributesExtensionsTests
     {
         var attrs = value.GetCustomAttributes<MyDescriptionAttribute>();
         Assert.Equal(expectedCount, attrs.Length);
+        Assert.Equal(expectedCount > 0, value.HasAttribute<MyDescriptionAttribute>());
     }
 
     [Theory]
@@ -31,6 +32,7 @@ public class GetCustomAttributesExtensionsTests
         var attrs = type.GetField(field, BindingFlags.Instance | BindingFlags.NonPublic)
             .GetCustomAttributes<MyDescriptionAttribute>();
         Assert.Equal(expectedCount, attrs.Length);
+        Assert.Equal(expectedCount > 0, type.HasAttribute<MyDescriptionAttribute>());
     }
 
     [Theory]
@@ -38,9 +40,10 @@ public class GetCustomAttributesExtensionsTests
     public void GetCustomAttributes_For_PropertyInfo_Gets_The_Attributes_When_They_Exist(
         Type type, string propName, int expectedCount)
     {
-        var attrs = type.GetProperty(propName, BindingFlags.Instance | BindingFlags.NonPublic)
-            .GetCustomAttributes<MyDescriptionAttribute>();
+        var propInfo = type.GetProperty(propName, BindingFlags.Instance | BindingFlags.NonPublic);
+        var attrs = propInfo.GetCustomAttributes<MyDescriptionAttribute>();
         Assert.Equal(expectedCount, attrs.Length);
+        Assert.Equal(expectedCount > 0, propInfo.HasAttribute<MyDescriptionAttribute>());
     }
 
     [Theory]
@@ -52,6 +55,7 @@ public class GetCustomAttributesExtensionsTests
         var mi = type.GetMethod(methodName, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
         var attrs = mi.GetCustomAttributes<MyDescriptionAttribute>();
         Assert.Equal(expectedCount, attrs.Length);
+        Assert.Equal(expectedCount > 0, mi.HasAttribute<MyDescriptionAttribute>());
     }
 
     [Theory]
@@ -61,6 +65,7 @@ public class GetCustomAttributesExtensionsTests
     {
         var attrs = type.GetCustomAttributes<MyDescriptionAttribute>();
         Assert.Equal(expectedCount, attrs.Length);
+        Assert.Equal(expectedCount > 0, type.HasAttribute<MyDescriptionAttribute>());
     }
 
     [Theory]
@@ -70,6 +75,7 @@ public class GetCustomAttributesExtensionsTests
     {
         var attrs = type.GetTypeInfo().GetCustomAttributes<MyDescriptionAttribute>();
         Assert.Equal(expectedCount, attrs.Length);
+        Assert.Equal(expectedCount > 0, type.HasAttribute<MyDescriptionAttribute>());
     }
 
     [Fact]
@@ -77,6 +83,7 @@ public class GetCustomAttributesExtensionsTests
     {
         var attrs = typeof(AttributesReflectionTestClass).Assembly.GetCustomAttributes<MyDescriptionAttribute>();
         Assert.Equal(3, attrs.Length);
+        Assert.True(typeof(AttributesReflectionTestClass).Assembly.HasAttribute<MyDescriptionAttribute>());
     }
 
     [Theory]
@@ -86,6 +93,7 @@ public class GetCustomAttributesExtensionsTests
         var module = typeof(AttributesReflectionTestClass).Assembly.GetModule(name);
         var attrs = module.GetCustomAttributes<MyDescriptionAttribute>();
         Assert.Equal(expectedCount, attrs.Length);
+        Assert.True(module.HasAttribute<MyDescriptionAttribute>());
     }
 
     [Theory]
@@ -96,6 +104,7 @@ public class GetCustomAttributesExtensionsTests
     {
         var attrs = type.GetEvent(methodName).GetCustomAttributes<MyDescriptionAttribute>();
         Assert.Equal(expectedCount, attrs.Length);
+        Assert.Equal(expectedCount > 0,type.GetEvent(methodName).HasAttribute<MyDescriptionAttribute>());
     }
 
     [Theory]
@@ -108,5 +117,6 @@ public class GetCustomAttributesExtensionsTests
         var param = method?.GetParameters().First(p => p.Name == paramName);
         var attrs = param?.GetCustomAttributes<MyDescriptionAttribute>();
         Assert.Equal(expectedCount, attrs?.Length);
+        Assert.Equal(expectedCount > 0,param?.HasAttribute<MyDescriptionAttribute>());
     }
 }
