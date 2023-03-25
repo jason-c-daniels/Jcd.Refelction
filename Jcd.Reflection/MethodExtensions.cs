@@ -131,7 +131,7 @@ namespace Jcd.Reflection
         public static MethodInfo[] FilterMethods(this object self, Func<MethodInfo, bool> filter,
                                                  MethodInfoEnumerator.Settings settings)
         {
-            Argument.IsNotNull(self, "self");
+            Argument.IsNotNull(self, nameof(self));
             return new MethodInfoEnumerator(self.GetType(), settings).Where(mi => filter == null || filter(mi))
                 .ToArray();
         }
@@ -145,7 +145,7 @@ namespace Jcd.Reflection
         /// <returns>the result, if any</returns>
         public static object Invoke(this object self, MethodInfo methodInfo, params object[] @params)
         {
-            Argument.IsNotNull(self, "self");
+            Argument.IsNotNull(self, nameof(self));
             if (@params == null) @params = new object[] { };
             return methodInfo.Invoke(self, @params);
         }
@@ -162,7 +162,7 @@ namespace Jcd.Reflection
                                     MethodInfoEnumerator.Settings settings,
                                     params object[] @params)
         {
-            Argument.IsNotNull(self, "self");
+            Argument.IsNotNull(self, nameof(self));
             return self.Invoke(self.GetMethod(name, settings), @params);
         }
 
@@ -176,7 +176,7 @@ namespace Jcd.Reflection
         public static object Invoke(this object self, string name,
                                     params object[] @params)
         {
-            Argument.IsNotNull(self, "self");
+            Argument.IsNotNull(self, nameof(self));
             return self.Invoke(name, AllInstanceMethodsFilter, @params);
         }
 
@@ -190,7 +190,7 @@ namespace Jcd.Reflection
         /// <returns></returns>
         public static TOut Invoke<TOut>(this object self, MethodInfo methodInfo, params object[] @params)
         {
-            Argument.IsNotNull(self, "self");
+            Argument.IsNotNull(self, nameof(self));
             if (@params == null) @params = new object[] { };
             return (TOut)methodInfo.Invoke(self, @params);
         }
@@ -207,7 +207,7 @@ namespace Jcd.Reflection
         public static TOut Invoke<TOut>(this object self, string name, MethodInfoEnumerator.Settings settings,
                                         params object[] @params)
         {
-            Argument.IsNotNull(self, "self");
+            Argument.IsNotNull(self, nameof(self));
             return self.Invoke<TOut>(self.GetMethod(name, settings), @params);
         }
 
@@ -221,7 +221,7 @@ namespace Jcd.Reflection
         /// <typeparam name="TOut">result type</typeparam>
         public static TOut Invoke<TOut>(this object self, string name, params object[] @params)
         {
-            Argument.IsNotNull(self, "self");
+            Argument.IsNotNull(self, nameof(self));
             return self.Invoke<TOut>(name, AllInstanceMethodsFilter, @params);
         }
 

@@ -49,10 +49,8 @@ namespace Jcd.Reflection
         /// <param name="settings">The settings controlling enumeration</param>
         // ReSharper disable once UnusedMember.Global
         public MemberInfoEnumerator(object item,
-                                    Settings settings = default) : this((Type)(item is Type || item is null
-                ? item
-                : item.GetType()),
-            settings)
+                                    Settings settings = default) 
+            : this((Type)(item is System.Type or null ? item : item.GetType()), settings)
         {
         }
 
@@ -74,11 +72,11 @@ namespace Jcd.Reflection
         public IEnumerator<MemberInfo> GetEnumerator()
         {
             if (Type == null) yield break;
-            IEnumerable<MemberInfo> member = EnumerationSettings.Flags.HasValue
+            IEnumerable<MemberInfo> memberInfos = EnumerationSettings.Flags.HasValue
                 ? Type.GetMembers(EnumerationSettings.Flags.Value)
                 : Type.GetMembers();
 
-            foreach (var mi in member)
+            foreach (var mi in memberInfos)
             {
                 var skipped = EnumerationSettings.Skip?.Invoke(mi);
                 if (skipped.HasValue && skipped.Value) continue;

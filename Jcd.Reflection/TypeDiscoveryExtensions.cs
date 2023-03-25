@@ -68,7 +68,6 @@ namespace Jcd.Reflection
             HashSet<Assembly> set = new HashSet<Assembly>();
             foreach (var assembly in assemblies)
             {
-                if (assembly is null) continue;
                 if (!set.Add(assembly)) continue;
                 foreach (var implementationType in assembly.FindImplementationsOf(type, returnTargetTypeIfConcrete))
                     yield return implementationType;

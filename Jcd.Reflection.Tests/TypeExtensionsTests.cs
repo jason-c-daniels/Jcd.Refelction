@@ -70,6 +70,7 @@ public class TypeExtensionsTests
         Assert.True(typeof(AbstractDerived<>).InheritsFrom(typeof(AbstractGenericBase<>)));
         Assert.True(typeof(IDerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>).InheritsFrom(typeof(IGenericBase<>)));
         Assert.True(typeof(NeenerImBeingDumb<>).InheritsFrom(typeof(IGenericBase<>)));
+        Assert.True(typeof(NeenerImBeingDumb<>).InheritsFrom(typeof(Int32ImplementsIGenericBase)));
         Assert.True(typeof(AbstractDerived<int>).InheritsFrom(typeof(AbstractGenericBase<int>)));
         Assert.True(typeof(ImplementsIGenericBase<>).InheritsFrom(typeof(IGenericBase<>)));
         Assert.True(typeof(S3).InheritsFrom(typeof(I<>)));
@@ -81,6 +82,7 @@ public class TypeExtensionsTests
         Assert.False(typeof(AbstractDerived<>).InheritsFrom(typeof(IGenericBase<>)));
         Assert.False(typeof(IDerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>).InheritsFrom(typeof(GenericBase<>)));
         Assert.False(typeof(NeenerImBeingDumb<>).InheritsFrom(typeof(GenericBase<>)));
+        Assert.False(typeof(NeenerImBeingDumb<>).InheritsFrom(typeof(Int64DerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase)));
         Assert.False(typeof(AbstractDerived<int>).InheritsFrom(typeof(IGenericBase<int>)));
         Assert.False(typeof(ImplementsIGenericBase<>).InheritsFrom(typeof(GenericBase<>)));
     }

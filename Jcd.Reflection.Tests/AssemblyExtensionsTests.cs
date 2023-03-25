@@ -57,41 +57,31 @@ public class AssemblyExtensionsTests
         Assert.Equal(expectedTypes1,result1);
     }
 
-    //[Fact]
-    public void Foo()
+    [Fact]
+    public void FindImplementationsOf_On_Assembly_Throws_When_Assembly_Is_Null()
     {
-        var foo = Assembly
-            .GetExecutingAssembly()
-            .FindImplementationsOf(typeof(GenericBase<>))
-            .ToArray();
-        
-        foo = Assembly
-            .GetExecutingAssembly()
-            .FindImplementationsOf(typeof(GenericBase<>),true)
-            .ToArray();
-        
-        foo = Assembly
-            .GetExecutingAssembly()
-            .FindImplementationsOf(typeof(IGenericBase<>))
-            .ToArray();
-
-        
-        foo = Assembly
-            .GetExecutingAssembly()
-            .FindImplementationsOf(typeof(AbstractGenericBase<>))
-            .ToArray();
-
-        
-        foo = Assembly
-            .GetExecutingAssembly()
-            .FindImplementationsOf(typeof(Object))
-            .ToArray();
-
-
-        foo = Assembly
-            .GetExecutingAssembly()
-            .FindImplementationsOf(typeof(ValueType))
-            .ToArray();
-
+        Assembly assembly = null;
+        Assert.Throws<ArgumentNullException>(() => assembly.FindImplementationsOf<IPlainOldInterface>());
     }
+    
+    [Fact]
+    public void FindImplementationsOf_On_Assembly_Throws_When_Type_Is_Null()
+    {
+        Assembly assembly = Assembly.GetExecutingAssembly();
+        Assert.Throws<ArgumentNullException>(() => assembly.FindImplementationsOf(null));
+    }
+    [Fact]
+    public void FindImplementationsOf_On_Assemblies_Throws_When_Assembly_Is_Null()
+    {
+        IEnumerable<Assembly> assemblies = null;
+        Assert.Throws<ArgumentNullException>(() => assemblies.FindImplementationsOf<IPlainOldInterface>().ToList());
+    }
+    
+    [Fact]
+    public void FindImplementationsOf_On_Assemblies_Throws_When_Type_Is_Null()
+    {
+        Assembly[] assemblies = { Assembly.GetExecutingAssembly(), Assembly.GetExecutingAssembly() };
+        Assert.Throws<ArgumentNullException>(() => assemblies.FindImplementationsOf(null).ToList());
+    }
+
 }
