@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Jcd.Reflection.Tests.TestHelpers;
+using Jcd.Reflection.Tests._Fakes;
+using Jcd.Reflection.Tests._Fakes.AssemblyTest;
+using Jcd.Reflection.Tests._TestHelpers;
 using Xunit;
 
 #endregion

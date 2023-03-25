@@ -25,6 +25,14 @@ A set of reflection helpers
             Console.WriteLine(val);
 ```
 
+## Special Thanks To
+
+### [Khellang on GitHub](https://github.com/khellang) for the [Scrutor](https://github.com/khellang/Scrutor) project.
+Scrutor inspired the technique I'm using for finding implementations of specific types as well as
+a couple of other handy utility methods.
+
+## Badges
+
 [![GitHub](https://img.shields.io/github/license/jason-c-daniels/Jcd.Reflection)](https://github.com/jason-c-daniels/Jcd.Reflection/blob/main/LICENSE)
 [![Build status](https://ci.appveyor.com/api/projects/status/sbmfvmr1jmcf1pic?svg=true)](https://ci.appveyor.com/project/jason-c-daniels/jcd-reflection)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/jason-c-daniels/Jcd.Reflection)](https://www.codefactor.io/repository/github/jason-c-daniels/jcd.reflection)

@@ -1,6 +1,6 @@
 ﻿#region
 
-using Jcd.Reflection.Tests.TestHelpers;
+using Jcd.Reflection.Tests._TestHelpers;
 using Xunit;
 
 #endregion

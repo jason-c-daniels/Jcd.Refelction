@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <LangVersion>8</LangVersion>
+        <LangVersion>latest</LangVersion>
         <Nullable>disable</Nullable>
     </PropertyGroup>
     
@@ -28,7 +28,7 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
     <ItemGroup>
-        <None Include="..\README.md" Pack="true" PackagePath="\"/>
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -44,16 +44,16 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Jcd.Validations" Version="1.1.7"/>
-        <PackageReference Include="Microsoft.CSharp" Version="4.7.0"/>
+        <PackageReference Include="Jcd.Validations" Version="1.1.7" />
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="icon"/>
+        <Folder Include="icon" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Remove="icon\Jason.C.Daniels.jpg"/>
+        <None Remove="icon\Jason.C.Daniels.jpg" />
         <Content Include="icon\Jason.C.Daniels.jpg" Pack="true" PackagePath="\">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
