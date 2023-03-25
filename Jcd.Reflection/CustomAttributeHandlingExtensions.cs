@@ -15,7 +15,7 @@ namespace Jcd.Reflection
     /// </summary>
     public static class CustomAttributeHandlingExtensions
     {
-        #region GetCustomAttributes
+        #region GetCustomAttributes Overloads
         
         /// <summary>
         /// Gets all attributes of a specified type on an enum value
@@ -212,7 +212,7 @@ namespace Jcd.Reflection
 
         #endregion
         
-        #region HasAttribute
+        #region HasAttribute  Overloads
         
         /// <summary>
         /// Determines if an attribute has been applied to a specific enum value in an enum.
@@ -276,53 +276,165 @@ namespace Jcd.Reflection
         public static bool HasAttribute<TAttribute>(this FieldInfo fieldInfo, bool inherit=false) => 
             fieldInfo.HasAttribute(typeof(TAttribute), inherit);
         
-        public static bool HasAttribute(this PropertyInfo fieldInfo, Type attributeType, bool inherit=false) => 
-            fieldInfo.IsDefined(attributeType, inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="PropertyInfo"/>.
+        /// </summary>
+        /// <param name="propertyInfo">The <see cref="PropertyInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <param name="attributeType">The type of the attribute to detect.</param>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute(this PropertyInfo propertyInfo, Type attributeType, bool inherit=false) => 
+            propertyInfo.IsDefined(attributeType, inherit);
         
-        public static bool HasAttribute<TAttribute>(this PropertyInfo fieldInfo, bool inherit=false) => 
-            fieldInfo.HasAttribute(typeof(TAttribute), inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="PropertyInfo"/>.
+        /// </summary>
+        /// <param name="propertyInfo">The <see cref="PropertyInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute<TAttribute>(this PropertyInfo propertyInfo, bool inherit=false) => 
+            propertyInfo.HasAttribute(typeof(TAttribute), inherit);
 
-        public static bool HasAttribute(this MethodInfo fieldInfo, Type attributeType, bool inherit=false) => 
-            fieldInfo.IsDefined(attributeType, inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="MethodInfo"/>.
+        /// </summary>
+        /// <param name="methodInfo">The <see cref="MethodInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <param name="attributeType">The type of the attribute to detect.</param>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute(this MethodInfo methodInfo, Type attributeType, bool inherit=false) => 
+            methodInfo.IsDefined(attributeType, inherit);
         
-        public static bool HasAttribute<TAttribute>(this MethodInfo fieldInfo, bool inherit=false) => 
-            fieldInfo.HasAttribute(typeof(TAttribute), inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="MethodInfo"/>.
+        /// </summary>
+        /// <param name="methodInfo">The <see cref="MethodInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute<TAttribute>(this MethodInfo methodInfo, bool inherit=false) => 
+            methodInfo.HasAttribute(typeof(TAttribute), inherit);
 
-        public static bool HasAttribute(this ParameterInfo fieldInfo, Type attributeType, bool inherit=false) => 
-            fieldInfo.IsDefined(attributeType, inherit);
-        
-        public static bool HasAttribute<TAttribute>(this ParameterInfo fieldInfo, bool inherit=false) => 
-            fieldInfo.HasAttribute(typeof(TAttribute), inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="ParameterInfo"/>.
+        /// </summary>
+        /// <param name="paramInfo">The <see cref="ParameterInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <param name="attributeType">The type of the attribute to detect.</param>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute(this ParameterInfo paramInfo, Type attributeType, bool inherit=false) => 
+            paramInfo.IsDefined(attributeType, inherit);
 
-        public static bool HasAttribute(this Module fieldInfo, Type attributeType, bool inherit=false) => 
-            fieldInfo.IsDefined(attributeType, inherit);
-        
-        public static bool HasAttribute<TAttribute>(this Module fieldInfo, bool inherit=false) => 
-            fieldInfo.HasAttribute(typeof(TAttribute), inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="MethodInfo"/>.
+        /// </summary>
+        /// <param name="paramInfo">The <see cref="MethodInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute<TAttribute>(this ParameterInfo paramInfo, bool inherit=false) => 
+            paramInfo.HasAttribute(typeof(TAttribute), inherit);
 
-        public static bool HasAttribute(this TypeInfo fieldInfo, Type attributeType, bool inherit=false) => 
-            fieldInfo.IsDefined(attributeType, inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="Module"/>.
+        /// </summary>
+        /// <param name="module">The <see cref="Module"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <param name="attributeType">The type of the attribute to detect.</param>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute(this Module module, Type attributeType, bool inherit=false) => 
+            module.IsDefined(attributeType, inherit);
         
-        public static bool HasAttribute<TAttribute>(this TypeInfo fieldInfo, bool inherit=false) => 
-            fieldInfo.HasAttribute(typeof(TAttribute), inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="Module"/>.
+        /// </summary>
+        /// <param name="module">The <see cref="Module"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute<TAttribute>(this Module module, bool inherit=false) => 
+            module.HasAttribute(typeof(TAttribute), inherit);
 
-        public static bool HasAttribute(this Assembly fieldInfo, Type attributeType, bool inherit=false) => 
-            fieldInfo.IsDefined(attributeType, inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="TypeInfo"/>.
+        /// </summary>
+        /// <param name="typeInfo">The <see cref="TypeInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <param name="attributeType">The type of the attribute to detect.</param>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute(this TypeInfo typeInfo, Type attributeType, bool inherit=false) => 
+            typeInfo.IsDefined(attributeType, inherit);
         
-        public static bool HasAttribute<TAttribute>(this Assembly fieldInfo, bool inherit=false) => 
-            fieldInfo.HasAttribute(typeof(TAttribute), inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="TypeInfo"/>.
+        /// </summary>
+        /// <param name="typeInfo">The <see cref="TypeInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute<TAttribute>(this TypeInfo typeInfo, bool inherit=false) => 
+            typeInfo.HasAttribute(typeof(TAttribute), inherit);
 
-        public static bool HasAttribute(this EventInfo fieldInfo, Type attributeType, bool inherit=false) => 
-            fieldInfo.IsDefined(attributeType, inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="Assembly"/>.
+        /// </summary>
+        /// <param name="assembly">The <see cref="Assembly"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <param name="attributeType">The type of the attribute to detect.</param>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute(this Assembly assembly, Type attributeType, bool inherit=false) => 
+            assembly.IsDefined(attributeType, inherit);
         
-        public static bool HasAttribute<TAttribute>(this EventInfo fieldInfo, bool inherit=false) => 
-            fieldInfo.HasAttribute(typeof(TAttribute), inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="Assembly"/>.
+        /// </summary>
+        /// <param name="assembly">The <see cref="Assembly"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute<TAttribute>(this Assembly assembly, bool inherit=false) => 
+            assembly.HasAttribute(typeof(TAttribute), inherit);
 
-        public static bool HasAttribute(this MemberInfo fieldInfo, Type attributeType, bool inherit=false) => 
-            fieldInfo.IsDefined(attributeType, inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="EventInfo"/>.
+        /// </summary>
+        /// <param name="eventInfo">The <see cref="EventInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <param name="attributeType">The type of the attribute to detect.</param>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute(this EventInfo eventInfo, Type attributeType, bool inherit=false) => 
+            eventInfo.IsDefined(attributeType, inherit);
         
-        public static bool HasAttribute<TAttribute>(this MemberInfo fieldInfo, bool inherit=false) => 
-            fieldInfo.HasAttribute(typeof(TAttribute), inherit);
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="EventInfo"/>.
+        /// </summary>
+        /// <param name="eventInfo">The <see cref="EventInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute<TAttribute>(this EventInfo eventInfo, bool inherit=false) => 
+            eventInfo.HasAttribute(typeof(TAttribute), inherit);
+
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="MemberInfo"/>.
+        /// </summary>
+        /// <param name="memberInfo">The <see cref="MemberInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <param name="attributeType">The type of the attribute to detect.</param>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute(this MemberInfo memberInfo, Type attributeType, bool inherit=false) => 
+            memberInfo.IsDefined(attributeType, inherit);
+        
+        /// <summary>
+        /// Determines if an attribute has been applied to a specific <see cref="MemberInfo"/>.
+        /// </summary>
+        /// <param name="memberInfo">The <see cref="MemberInfo"/> instance to inspect</param>
+        /// <param name="inherit">inspect the inheritance hierarchy</param>
+        /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+        /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+        public static bool HasAttribute<TAttribute>(this MemberInfo memberInfo, bool inherit=false) => 
+            memberInfo.HasAttribute(typeof(TAttribute), inherit);
 
         #endregion
     }
