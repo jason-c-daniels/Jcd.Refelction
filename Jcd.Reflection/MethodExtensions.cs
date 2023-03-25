@@ -72,7 +72,6 @@ public static class MethodExtensions
         return GetMethod(self, name, AllInstanceMethodsFilter);
     }
 
-
     /// <summary>
     /// Finds the first method by the provided name and returns its MethodInfo
     /// </summary>
