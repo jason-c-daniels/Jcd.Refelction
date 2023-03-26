@@ -1,6 +1,6 @@
 # Jcd.Reflection
 
-A set of reflection helpers
+A dotnetstandard2.0 library containing some commonly implemented reflection helpers.
 
 ## Examples
 
@@ -27,7 +27,8 @@ A set of reflection helpers
 
 ## Special Thanks To
 
-* [Khellang on GitHub](https://github.com/khellang) for the [Scrutor](https://github.com/khellang/Scrutor) project.
+* [Kristian Hellang on GitHub](https://github.com/khellang) for the [Scrutor](https://github.com/khellang/Scrutor)
+  project.
 
 Scrutor inspired the technique I'm using for finding implementations of specific types as well as
 a couple of other handy utility methods.
@@ -41,4 +42,4 @@ a couple of other handy utility methods.
 [![MyGet](https://img.shields.io/myget/jason-c-daniels/v/Jcd.Reflection?logo=nuget)](https://www.myget.org/feed/jason-c-daniels/package/nuget/Jcd.Reflection)
 [![Nuget](https://img.shields.io/nuget/v/Jcd.Reflection?logo=nuget)](https://www.nuget.org/packages/Jcd.Reflection)
 
-[![API Docs](https://img.shields.io/badge/Read-The%20API%20Documentation-blue?style=for-the-badge)](https://github.com/jason-c-daniels/Jcd.Reflection/blob/main/docs/Jcd_Reflection.md)
+[![API Docs](https://img.shields.io/badge/Read-The%20API%20Documentation-blue?style=for-the-badge)](https://github.com/jason-c-daniels/Jcd.Reflection/blob/main/docs/Jcd.Reflection.md)
