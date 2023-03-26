@@ -1,6 +1,9 @@
 ﻿#region
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+
+// ReSharper disable UnusedMember.Global
 
 #endregion
 
@@ -8,13 +11,13 @@ using System;
 
 namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
 
+[SuppressMessage("Performance", "CA1822:Mark members as static")]
 internal class TestClassB : TestClassA
 {
     protected static string Field7 = "hello7";
 
-    // ReSharper disable once ArrangeTypeMemberModifiers
     // ReSharper disable once InconsistentNaming
-    static string Field8 = "hello8";
+    private static string Field8 = "hello8";
     public DateTime Field6 = DateTime.Now;
 
     // ReSharper disable once UnusedMember.Global
@@ -23,7 +26,15 @@ internal class TestClassB : TestClassA
     // ReSharper disable once UnusedMember.Global
     protected static string Prop7 { get; set; } = "hello4";
 
-    // ReSharper disable once ArrangeTypeMemberModifiers
     // ReSharper disable once UnusedMember.Local
-    static string Prop8 { get; set; } = "hello5";
+    private static string Prop8 { get; set; } = "hello5";
+    
+    // ReSharper disable once UnusedMember.Local
+    public void Method1(){}
+    
+    // ReSharper disable once UnusedMember.Local
+    public void Method2(){}
+    public static void Method3(){}
+
+    private static void Method4(){}
 }

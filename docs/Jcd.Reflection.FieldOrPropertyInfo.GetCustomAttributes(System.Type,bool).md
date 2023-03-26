@@ -7,7 +7,6 @@ Gets custom attributes of a specified type for a member.
 ```csharp
 public override object[] GetCustomAttributes(System.Type attributeType, bool inherit);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.FieldOrPropertyInfo.GetCustomAttributes(System.Type,bool).attributeType'></a>
@@ -25,5 +24,4 @@ Get inherited attributes if true
 Implements [GetCustomAttributes(Type, bool)](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.InteropServices._MemberInfo.GetCustomAttributes#System_Runtime_InteropServices__MemberInfo_GetCustomAttributes_System_Type,System_Boolean_ 'System.Runtime.InteropServices._MemberInfo.GetCustomAttributes(System.Type,System.Boolean)'), [GetCustomAttributes(Type, bool)](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.ICustomAttributeProvider.GetCustomAttributes#System_Reflection_ICustomAttributeProvider_GetCustomAttributes_System_Type,System_Boolean_ 'System.Reflection.ICustomAttributeProvider.GetCustomAttributes(System.Type,System.Boolean)')
 
 #### Returns
-
 [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')

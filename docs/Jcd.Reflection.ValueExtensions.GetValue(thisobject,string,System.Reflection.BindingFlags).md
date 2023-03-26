@@ -7,7 +7,6 @@ Gets a value from a named field or property
 ```csharp
 public static object GetValue(this object self, string fieldOrPropertyName, System.Reflection.BindingFlags bindingFlags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.Public|System.Reflection.BindingFlags.NonPublic);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.ValueExtensions.GetValue(thisobject,string,System.Reflection.BindingFlags).self'></a>
@@ -29,6 +28,5 @@ the name of the item to get.
 The binding flags that help control property or field lookup
 
 #### Returns
-
 [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')  
 The value

@@ -29,7 +29,7 @@ public static class FieldInfoExtensions
         IEnumerable<FieldInfo> props = flags.HasValue ? type.GetFields(flags.Value) : type.GetFields();
         foreach (var fi in props)
         {
-            if (fi.DeclaringType?.Namespace != null && fi.DeclaringType.Namespace.StartsWith("System")) continue;
+            if (fi.DeclaringType?.FullName != null && fi.DeclaringType.FullName.StartsWith("System.")) continue;
             var skipped = skip?.Invoke(fi);
             if (skipped.HasValue && skipped.Value) continue;
             yield return fi;

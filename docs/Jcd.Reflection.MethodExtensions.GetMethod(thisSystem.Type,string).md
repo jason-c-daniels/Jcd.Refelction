@@ -7,7 +7,6 @@ Gets a methodInfo by name from a type.
 ```csharp
 public static System.Reflection.MethodInfo GetMethod(this System.Type type, string name);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.GetMethod(thisSystem.Type,string).type'></a>
@@ -23,6 +22,5 @@ the type to interrogate
 the name of the method
 
 #### Returns
-
 [System.Reflection.MethodInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MethodInfo 'System.Reflection.MethodInfo')  
 the result of the call, if any

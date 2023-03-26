@@ -7,7 +7,6 @@ Constructs a MemberInfoEnumerator from a type and settings.
 ```csharp
 public MemberInfoEnumerator(System.Type type, Jcd.Reflection.MemberInfoEnumerator.Settings settings=default(Jcd.Reflection.MemberInfoEnumerator.Settings));
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.MemberInfoEnumerator.MemberInfoEnumerator(System.Type,Jcd.Reflection.MemberInfoEnumerator.Settings).type'></a>

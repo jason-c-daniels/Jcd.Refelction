@@ -20,6 +20,18 @@ namespace Jcd.Reflection;
 public class MethodInfoEnumerator : IEnumerable<MethodInfo>
 {
     /// <summary>
+    /// Predefined skip predicate for skipping system methods.  
+    /// </summary>
+    public static readonly Func<MethodInfo, bool> SkipSystemMethods = mi =>
+        mi.DeclaringType?.FullName != null && mi.DeclaringType.FullName.StartsWith("System.");
+
+
+    /// <summary>
+    /// Default method enumeration settings. Skips system provided methods.
+    /// </summary>
+    public static readonly Settings DefaultSettings = new Settings { Flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly, Skip = SkipSystemMethods };
+    
+    /// <summary>
     /// Constructs a MethodInfoEnumerator from a type and settings.
     /// </summary>
     /// <param name="type">The type to enumerate</param>
@@ -28,7 +40,7 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
                                 Settings settings = default)
     {
         Type = type;
-        EnumerationSettings = settings;
+        EnumerationSettings = settings.IsDefault ? DefaultSettings : settings;
     }
 
     /// <summary>
@@ -63,11 +75,11 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
     public IEnumerator<MethodInfo> GetEnumerator()
     {
         if (Type == null) yield break;
-        IEnumerable<MethodInfo> member = EnumerationSettings.Flags.HasValue
+        IEnumerable<MethodInfo> methods = EnumerationSettings.Flags.HasValue
             ? Type.GetMethods(EnumerationSettings.Flags.Value)
             : Type.GetMethods();
 
-        foreach (var mi in member)
+        foreach (var mi in methods)
         {
             var skipped = EnumerationSettings.Skip?.Invoke(mi);
             if (skipped.HasValue && skipped.Value) continue;
@@ -99,5 +111,10 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
         /// </summary>
         // ReSharper disable once UnassignedField.Global
         public Func<MethodInfo, bool> Skip;
+
+        /// <summary>
+        /// Indicates if this is a default (i.e. uninitialized) instance.
+        /// </summary>
+        public bool IsDefault => !Flags.HasValue && Skip == null;
     }
 }

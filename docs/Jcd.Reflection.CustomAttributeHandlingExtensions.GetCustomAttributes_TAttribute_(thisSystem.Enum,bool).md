@@ -8,7 +8,6 @@ Gets all attributes of a specified type on an enum value
 public static TAttribute[] GetCustomAttributes<TAttribute>(this System.Enum value, bool inherit=false)
     where TAttribute : System.Attribute;
 ```
-
 #### Type parameters
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).TAttribute'></a>
@@ -16,7 +15,6 @@ public static TAttribute[] GetCustomAttributes<TAttribute>(this System.Enum valu
 `TAttribute`
 
 The type of attributes to retrieve
-
 #### Parameters
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).value'></a>
@@ -32,8 +30,5 @@ the enum value to inspect
 inspect the inheritance hierarchy
 
 #### Returns
-
 [TAttribute](Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).md#Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).TAttribute 'Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes<TAttribute>(this System.Enum, bool).TAttribute')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')  
-An array of
-located [TAttribute](Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).md#Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).TAttribute 'Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes<TAttribute>(this System.Enum, bool).TAttribute')
-instances. If none are found, an empty array is returned.
+An array of located [TAttribute](Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).md#Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).TAttribute 'Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes<TAttribute>(this System.Enum, bool).TAttribute') instances. If none are found, an empty array is returned.

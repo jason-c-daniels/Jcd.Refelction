@@ -5,13 +5,11 @@
 ```csharp
 public static TOut Invoke<TOut>(this object self, System.Reflection.MethodInfo methodInfo, params object[] @params);
 ```
-
 #### Type parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,System.Reflection.MethodInfo,object[]).TOut'></a>
 
 `TOut`
-
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,System.Reflection.MethodInfo,object[]).self'></a>
@@ -27,5 +25,4 @@ public static TOut Invoke<TOut>(this object self, System.Reflection.MethodInfo m
 `params` [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
 
 #### Returns
-
 [TOut](Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,System.Reflection.MethodInfo,object[]).md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,System.Reflection.MethodInfo,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this object, System.Reflection.MethodInfo, object[]).TOut')
