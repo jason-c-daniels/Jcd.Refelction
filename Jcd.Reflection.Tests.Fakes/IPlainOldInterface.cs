@@ -1,3 +1,5 @@
+// ReSharper disable UnusedMember.Global
+
 namespace Jcd.Reflection.Tests.Fakes;
 
 public interface IPlainOldInterface

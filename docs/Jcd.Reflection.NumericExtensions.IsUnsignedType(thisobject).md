@@ -7,6 +7,7 @@ Indicates if an object is of an unsigned data type.
 ```csharp
 public static bool IsUnsignedType(this object self);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.NumericExtensions.IsUnsignedType(thisobject).self'></a>
@@ -16,5 +17,6 @@ public static bool IsUnsignedType(this object self);
 The object to check
 
 #### Returns
+
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
 true if the object is of an unsigned data type

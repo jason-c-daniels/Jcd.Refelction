@@ -8,14 +8,14 @@ using Xunit;
 namespace Jcd.Reflection.Tests;
 
 /// <summary>
-///    Tests the validity of some numeric extensions used by the IntegerEncoder class.
+/// Tests the validity of some numeric extensions used by the IntegerEncoder class.
 /// </summary>
 public class NumericExtensionsTests
 {
     #region Public Methods
 
     /// <summary>
-    ///    Validate that IsIntegerType returns true for data which is of any integer type.
+    /// Validate that IsIntegerType returns true for data which is of any integer type.
     /// </summary>
     /// <param name="self">The data item to test.</param>
     [Theory]
@@ -34,7 +34,7 @@ public class NumericExtensionsTests
     }
 
     /// <summary>
-    ///    Validate that IsIntegerType returns false for data which is not of any integer type.
+    /// Validate that IsIntegerType returns false for data which is not of any integer type.
     /// </summary>
     /// <param name="self">The data item to test.</param>
     [Theory]
@@ -51,7 +51,7 @@ public class NumericExtensionsTests
     }
 
     /// <summary>
-    ///    Validate that IsDecimalType returns true for decimal data.
+    /// Validate that IsDecimalType returns true for decimal data.
     /// </summary>
     /// <param name="self">The data item to test.</param>
     [Theory]
@@ -62,7 +62,7 @@ public class NumericExtensionsTests
     }
 
     /// <summary>
-    ///    Validate that IsDecimalType returns false when given non-decimal data.
+    /// Validate that IsDecimalType returns false when given non-decimal data.
     /// </summary>
     /// <param name="self">that data to test</param>
     [Theory]
@@ -87,7 +87,7 @@ public class NumericExtensionsTests
     }
 
     /// <summary>
-    ///    Validate that IsFloatType returns true when given floating point data.
+    /// Validate that IsFloatType returns true when given floating point data.
     /// </summary>
     /// <param name="self">that data to test</param>
     [Theory]
@@ -103,7 +103,7 @@ public class NumericExtensionsTests
     }
 
     /// <summary>
-    ///    Validate that IsFloatType returns false when given non-floating point data.
+    /// Validate that IsFloatType returns false when given non-floating point data.
     /// </summary>
     /// <param name="self">that data to test</param>
     [Theory]
@@ -123,7 +123,7 @@ public class NumericExtensionsTests
     }
 
     /// <summary>
-    ///    Validate that IsNumericType returns false when given non-numeric data.
+    /// Validate that IsNumericType returns false when given non-numeric data.
     /// </summary>
     /// <param name="self">that data to test</param>
     [Theory]
@@ -136,7 +136,7 @@ public class NumericExtensionsTests
     }
 
     /// <summary>
-    ///    Validate that IsNumericType returns true when given numeric data.
+    /// Validate that IsNumericType returns true when given numeric data.
     /// </summary>
     /// <param name="self">that data to test</param>
     [Theory]
@@ -162,7 +162,7 @@ public class NumericExtensionsTests
     }
 
     /// <summary>
-    ///    Validate that IsSignedType returns true when given signed numeric data.
+    /// Validate that IsSignedType returns true when given signed numeric data.
     /// </summary>
     /// <param name="self">that data to test</param>
     [Theory]
@@ -184,7 +184,7 @@ public class NumericExtensionsTests
     }
 
     /// <summary>
-    ///    Validate that IsSignedType returns false when given unsigned numeric data.
+    /// Validate that IsSignedType returns false when given unsigned numeric data.
     /// </summary>
     /// <param name="self">that data to test</param>
     [Theory]
@@ -198,7 +198,7 @@ public class NumericExtensionsTests
     }
 
     /// <summary>
-    ///    Validate that IsUnsignedType returns false when given signed numeric data.
+    /// Validate that IsUnsignedType returns false when given signed numeric data.
     /// </summary>
     /// <param name="self">that data to test</param>
     [Theory]
@@ -220,7 +220,7 @@ public class NumericExtensionsTests
     }
 
     /// <summary>
-    ///    Validate that IsUnsignedType returns true when given unsigned numeric data.
+    /// Validate that IsUnsignedType returns true when given unsigned numeric data.
     /// </summary>
     /// <param name="self">that data to test</param>
     [Theory]

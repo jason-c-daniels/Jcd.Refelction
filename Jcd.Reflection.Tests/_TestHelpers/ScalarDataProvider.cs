@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Reflection;
 
+// ReSharper disable HeapView.BoxingAllocation
+
 #endregion
 
 namespace Jcd.Reflection.Tests._TestHelpers;

@@ -2,11 +2,14 @@
 
 using Jcd.Reflection.Tests.Fakes;
 
+// ReSharper disable UnusedMember.Global
+// ReSharper disable IdentifierTypo
+
 #endregion
 
 namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
 
-public struct Poii : IPlainOldInterface<string>
+public readonly struct Poii : IPlainOldInterface<string>
 {
     public Poii()
     {

@@ -2,6 +2,8 @@
 
 using Jcd.Reflection.Tests.Fakes;
 
+// ReSharper disable IdentifierTypo
+
 #endregion
 
 namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;

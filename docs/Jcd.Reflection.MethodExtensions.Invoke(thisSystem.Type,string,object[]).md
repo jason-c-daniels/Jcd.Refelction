@@ -7,6 +7,7 @@ Invokes a static method on a type
 ```csharp
 public static object Invoke(this System.Type type, string name, params object[] @params);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke(thisSystem.Type,string,object[]).type'></a>
@@ -28,5 +29,6 @@ The name of the method
 The params to pass
 
 #### Returns
+
 [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')  
 The result of the call, if any

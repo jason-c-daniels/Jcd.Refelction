@@ -1,3 +1,6 @@
+// ReSharper disable ReplaceAutoPropertyWithComputedProperty
+// ReSharper disable InconsistentNaming
+
 namespace Jcd.Reflection.Tests.Fakes;
 
 public class PlainOldImplementation2<T> : PlainOldImplementation1, IPlainOldInterface<T>

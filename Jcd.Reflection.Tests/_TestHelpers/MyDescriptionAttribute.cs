@@ -2,10 +2,11 @@
 
 using System;
 
-#endregion
-
+// ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable UnusedAutoPropertyAccessor.Global
+
+#endregion
 
 namespace Jcd.Reflection.Tests._TestHelpers;
 

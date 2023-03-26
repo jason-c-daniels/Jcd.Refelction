@@ -7,6 +7,10 @@ using Jcd.Reflection.Tests._Fakes.AssemblyTest;
 using Moq;
 using Xunit;
 
+// ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable HeapView.BoxingAllocation
+// ReSharper disable HeapView.ClosureAllocation
+
 #endregion
 
 namespace Jcd.Reflection.Tests;

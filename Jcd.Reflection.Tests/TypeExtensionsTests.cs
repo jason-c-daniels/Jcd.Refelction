@@ -4,6 +4,16 @@ using Jcd.Reflection.Tests._Fakes.TypesTest;
 using Jcd.Reflection.Tests.Fakes;
 using Xunit;
 
+// ReSharper disable UnusedMember.Global
+// ReSharper disable TypeParameterCanBeVariant
+// ReSharper disable ReplaceAutoPropertyWithComputedProperty
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedType.Local
+// ReSharper disable UnusedMember.Local
+// ReSharper disable HeapView.DelegateAllocation
+
+#pragma warning disable CS0414
+
 #endregion
 
 namespace Jcd.Reflection.Tests;
@@ -14,7 +24,7 @@ public class TypeExtensionsTests
     public void IsConcreteType_Returns_True_For_Concrete_Types()
     {
         Assert.True(
-            typeof(IDerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>).IsConcreteType());
+            typeof(DerivedFromIDerivedFromIImplementsIDerivedFromIDerivedFromIGenericBase<>).IsConcreteType());
         Assert.True(typeof(S<>).IsConcreteType());
         Assert.True(typeof(S2<>).IsConcreteType());
         Assert.True(typeof(S<int>).IsConcreteType());
@@ -32,7 +42,7 @@ public class TypeExtensionsTests
         Assert.True(typeof(AbstractDerived<>).InheritsFrom(typeof(AbstractGenericBase<>)));
         Assert.True(typeof(PlainOldImplementation1).InheritsFrom<IPlainOldInterface>());
         Assert.True(
-            typeof(IDerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>).InheritsFrom(
+            typeof(DerivedFromIDerivedFromIImplementsIDerivedFromIDerivedFromIGenericBase<>).InheritsFrom(
                 typeof(IGenericBase<>)));
         Assert.True(typeof(NeenerImBeingDumb<>).InheritsFrom(typeof(IGenericBase<>)));
         Assert.True(typeof(NeenerImBeingDumb<>).InheritsFrom(typeof(Int32ImplementsIGenericBase)));
@@ -47,12 +57,12 @@ public class TypeExtensionsTests
         Assert.False(typeof(AbstractDerived<>).InheritsFrom(typeof(IGenericBase<>)));
         Assert.False(typeof(GenericBase<>).InheritsFrom<IPlainOldInterface>());
         Assert.False(
-            typeof(IDerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>).InheritsFrom(
+            typeof(DerivedFromIDerivedFromIImplementsIDerivedFromIDerivedFromIGenericBase<>).InheritsFrom(
                 typeof(GenericBase<>)));
         Assert.False(typeof(NeenerImBeingDumb<>).InheritsFrom(typeof(GenericBase<>)));
         Assert.False(
             typeof(NeenerImBeingDumb<>).InheritsFrom(
-                typeof(Int64DerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase)));
+                typeof(Int64DerivedFromIImplementsIDerivedFromIDerivedFromIGenericBase)));
         Assert.False(typeof(AbstractDerived<int>).InheritsFrom(typeof(IGenericBase<int>)));
         Assert.False(typeof(ImplementsIGenericBase<>).InheritsFrom(typeof(GenericBase<>)));
     }

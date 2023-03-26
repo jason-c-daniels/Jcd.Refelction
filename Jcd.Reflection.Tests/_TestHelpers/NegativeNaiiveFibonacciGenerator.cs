@@ -2,12 +2,15 @@
 
 using System.Numerics;
 
+// ReSharper disable HeapView.ClosureAllocation
+// ReSharper disable HeapView.DelegateAllocation
+
 #endregion
 
 namespace Jcd.Reflection.Tests._TestHelpers;
 
 /// <summary>
-///    Generates all Fibonacci numbers equal to or greater than the minValue
+/// Generates all Fibonacci numbers equal to or greater than the minValue
 /// </summary>
 public class NegativeNaiiveFibonacciGenerator :
     CaptureAndTransitionGenerator<NegativeNaiiveFibonacciGenerator.State, BigInteger>

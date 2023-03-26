@@ -7,6 +7,7 @@ Checks if a custom attribute of the specified type exists for the member.
 ```csharp
 public override bool IsDefined(System.Type attributeType, bool inherit);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.FieldOrPropertyInfo.IsDefined(System.Type,bool).attributeType'></a>
@@ -24,4 +25,5 @@ Checks inheritance tree if true
 Implements [IsDefined(Type, bool)](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.InteropServices._MemberInfo.IsDefined#System_Runtime_InteropServices__MemberInfo_IsDefined_System_Type,System_Boolean_ 'System.Runtime.InteropServices._MemberInfo.IsDefined(System.Type,System.Boolean)'), [IsDefined(Type, bool)](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.ICustomAttributeProvider.IsDefined#System_Reflection_ICustomAttributeProvider_IsDefined_System_Type,System_Boolean_ 'System.Reflection.ICustomAttributeProvider.IsDefined(System.Type,System.Boolean)')
 
 #### Returns
+
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')

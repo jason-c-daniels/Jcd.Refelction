@@ -3,6 +3,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
+// ReSharper disable UnusedMember.Local
 // ReSharper disable UnusedMember.Global
 
 #endregion

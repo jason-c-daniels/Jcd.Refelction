@@ -13,14 +13,14 @@ using System.Reflection;
 namespace Jcd.Reflection;
 
 /// <summary>
-///    An extension method class providing numeric type information detection.
+/// An extension method class providing numeric type information detection.
 /// </summary>
 public static class NumericExtensions
 {
     #region Public Methods
 
     /// <summary>
-    ///    Indicates if an object is of an integer data type.
+    /// Indicates if an object is of an integer data type.
     /// </summary>
     /// <param name="self">The object to check</param>
     /// <returns>true if the object is of an integer data type</returns>
@@ -30,7 +30,7 @@ public static class NumericExtensions
     }
 
     /// <summary>
-    ///    Indicates if an object is of a decimal data type.
+    /// Indicates if an object is of a decimal data type.
     /// </summary>
     /// <param name="self">The object to check</param>
     /// <returns>true if the object is of a decimal data type</returns>
@@ -40,7 +40,7 @@ public static class NumericExtensions
     }
 
     /// <summary>
-    ///    Indicates if an object is of a floating point data type.
+    /// Indicates if an object is of a floating point data type.
     /// </summary>
     /// <param name="self">The object to check</param>
     /// <returns>true if the object is of a floating point data type</returns>
@@ -61,7 +61,7 @@ public static class NumericExtensions
     }
 
     /// <summary>
-    ///    Indicates if an object is of an integer data type.
+    /// Indicates if an object is of an integer data type.
     /// </summary>
     /// <param name="self">The object to check</param>
     /// <returns>true if the object is of an integer data type</returns>
@@ -87,7 +87,7 @@ public static class NumericExtensions
     }
 
     /// <summary>
-    ///    Indicates if an object is of a numeric data type.
+    /// Indicates if an object is of a numeric data type.
     /// </summary>
     /// <param name="self">The object to check</param>
     /// <returns>true if the object is of a numeric data type</returns>
@@ -116,7 +116,7 @@ public static class NumericExtensions
     }
 
     /// <summary>
-    ///    Indicates if an object is of a signed data type.
+    /// Indicates if an object is of a signed data type.
     /// </summary>
     /// <param name="self">The object to check</param>
     /// <returns>true if the object is of a signed data type</returns>
@@ -135,30 +135,15 @@ public static class NumericExtensions
             case TypeCode.Decimal:
             case TypeCode.Single:
             case TypeCode.Double:
-
                 return true;
 
-            case TypeCode.Boolean:
-            case TypeCode.Byte:
-            case TypeCode.Char:
-            case TypeCode.DateTime:
-            case TypeCode.DBNull:
-            case TypeCode.Empty:
-            case TypeCode.String:
-            case TypeCode.UInt16:
-            case TypeCode.UInt32:
-            case TypeCode.UInt64:
-
-                return false;
-
             default:
-
                 return self is BigInteger;
         }
     }
 
     /// <summary>
-    ///    Indicates if an object is of an unsigned data type.
+    /// Indicates if an object is of an unsigned data type.
     /// </summary>
     /// <param name="self">The object to check</param>
     /// <returns>true if the object is of an unsigned data type</returns>
@@ -181,7 +166,7 @@ public static class NumericExtensions
     }
 
     /// <summary>
-    /// 
+    /// Returns a set of built-in, non-primitive scalar types.
     /// </summary>
     public static readonly HashSet<Type> BuiltInNonPrimitiveScalars = new(new[]
     {
@@ -190,22 +175,22 @@ public static class NumericExtensions
     });
 
     /// <summary>
-    /// 
+    /// Indicates if a value is a scalar value.
     /// </summary>
-    /// <param name="self"></param>
-    /// <param name="nonPrimitiveScalars"></param>
-    /// <returns></returns>
+    /// <param name="self">the value to test</param>
+    /// <param name="nonPrimitiveScalars">a hashset of non-primitive scalar types to check against</param>
+    /// <returns>true if <paramref name="self"/> is scalar.</returns>
     public static bool IsScalar(this object self, HashSet<Type> nonPrimitiveScalars = null)
     {
         return self is null or Type || self.GetType().IsScalar(nonPrimitiveScalars);
     }
 
     /// <summary>
-    /// 
+    /// Indicates if a type is a scalar type.
     /// </summary>
-    /// <param name="type"></param>
-    /// <param name="nonPrimitiveScalars"></param>
-    /// <returns></returns>
+    /// <param name="type">the value to test</param>
+    /// <param name="nonPrimitiveScalars">a hashset of non-primitive scalar types to check against</param>
+    /// <returns>true if <paramref name="type"/> is scalar.</returns>
     public static bool IsScalar(this Type type, HashSet<Type> nonPrimitiveScalars = null)
     {
         if (type == typeof(Type)) return true;

@@ -7,6 +7,7 @@ Enumerate the PropertyInfo entries for a given type
 ```csharp
 public static System.Collections.Generic.IEnumerable<System.Reflection.PropertyInfo> EnumerateProperties(this System.Type type, System.Nullable<System.Reflection.BindingFlags> flags=null, System.Func<System.Reflection.PropertyInfo,bool> skip=null, bool returnSystem=false, bool returnWriteOnly=false);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.PropertyInfoExtensions.EnumerateProperties(thisSystem.Type,System.Nullable_System.Reflection.BindingFlags_,System.Func_System.Reflection.PropertyInfo,bool_,bool,bool).type'></a>
@@ -31,14 +32,17 @@ a predicate for skipping certain entries.
 
 `returnSystem` [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 
-Indicates if properties whose declaring type is in the System. namespace should be returned. Default is [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
+Indicates if properties whose declaring type is in the System. namespace should be returned. Default
+is [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
 
 <a name='Jcd.Reflection.PropertyInfoExtensions.EnumerateProperties(thisSystem.Type,System.Nullable_System.Reflection.BindingFlags_,System.Func_System.Reflection.PropertyInfo,bool_,bool,bool).returnWriteOnly'></a>
 
 `returnWriteOnly` [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 
-Indicates if properties that are write only should be returned. Default is [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
+Indicates if properties that are write only should be returned. Default
+is [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
 
 #### Returns
+
 [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[System.Reflection.PropertyInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.PropertyInfo 'System.Reflection.PropertyInfo')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
 An enumerable across PropertyInfo s

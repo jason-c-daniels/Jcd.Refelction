@@ -7,6 +7,7 @@ Enumerate the FieldInfo entries for a given type
 ```csharp
 public static System.Collections.Generic.IEnumerable<System.Reflection.FieldInfo> EnumerateFields(this System.Type type, System.Nullable<System.Reflection.BindingFlags> flags=null, System.Func<System.Reflection.FieldInfo,bool> skip=null);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.FieldInfoExtensions.EnumerateFields(thisSystem.Type,System.Nullable_System.Reflection.BindingFlags_,System.Func_System.Reflection.FieldInfo,bool_).type'></a>
@@ -28,5 +29,6 @@ The BindingFlags
 a predicate for skipping certain entries (e.g. System...)
 
 #### Returns
+
 [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[System.Reflection.FieldInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo 'System.Reflection.FieldInfo')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
 An enumerable across FieldInfo s

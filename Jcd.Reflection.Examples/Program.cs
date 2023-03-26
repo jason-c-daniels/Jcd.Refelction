@@ -2,6 +2,8 @@
 
 using System;
 
+// ReSharper disable HeapView.BoxingAllocation
+
 #endregion
 
 namespace Jcd.Reflection.Examples;

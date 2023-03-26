@@ -2,11 +2,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 #endregion
 
 namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
 
+[SuppressMessage("Performance", "CA1822:Mark members as static")]
 internal class TestClassC : TestClassB
 {
     // ReSharper disable once FieldCanBeMadeReadOnly.Global

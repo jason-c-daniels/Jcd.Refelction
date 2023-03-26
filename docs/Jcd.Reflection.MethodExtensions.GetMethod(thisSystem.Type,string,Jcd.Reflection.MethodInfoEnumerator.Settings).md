@@ -7,6 +7,7 @@ Gets a methodInfo by name from a type.
 ```csharp
 public static System.Reflection.MethodInfo GetMethod(this System.Type type, string name, Jcd.Reflection.MethodInfoEnumerator.Settings settings);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.GetMethod(thisSystem.Type,string,Jcd.Reflection.MethodInfoEnumerator.Settings).type'></a>
@@ -26,5 +27,6 @@ the name of the method
 `settings` [Settings](Jcd.Reflection.MethodInfoEnumerator.Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')
 
 #### Returns
+
 [System.Reflection.MethodInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MethodInfo 'System.Reflection.MethodInfo')  
 the result of the call, if any

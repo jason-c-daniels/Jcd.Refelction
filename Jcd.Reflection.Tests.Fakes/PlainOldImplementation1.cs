@@ -1,3 +1,5 @@
+// ReSharper disable ReplaceAutoPropertyWithComputedProperty
+
 namespace Jcd.Reflection.Tests.Fakes;
 
 public class PlainOldImplementation1 : IPlainOldInterface

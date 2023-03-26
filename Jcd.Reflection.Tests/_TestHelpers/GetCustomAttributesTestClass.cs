@@ -7,6 +7,8 @@
 using System;
 using Jcd.Reflection.Tests._TestHelpers;
 
+// ReSharper disable UnusedParameter.Global
+
 #endregion
 
 // ReSharper disable EventNeverSubscribedTo.Global

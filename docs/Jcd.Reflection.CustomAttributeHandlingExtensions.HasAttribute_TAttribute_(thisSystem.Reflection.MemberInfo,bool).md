@@ -2,11 +2,13 @@
 
 ## CustomAttributeHandlingExtensions.HasAttribute<TAttribute>(this MemberInfo, bool) Method
 
-Determines if an attribute has been applied to a specific [System.Reflection.MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MemberInfo 'System.Reflection.MemberInfo').
+Determines if an attribute has been applied to a
+specific [System.Reflection.MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MemberInfo 'System.Reflection.MemberInfo').
 
 ```csharp
 public static bool HasAttribute<TAttribute>(this System.Reflection.MemberInfo memberInfo, bool inherit=false);
 ```
+
 #### Type parameters
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute_TAttribute_(thisSystem.Reflection.MemberInfo,bool).TAttribute'></a>
@@ -14,13 +16,15 @@ public static bool HasAttribute<TAttribute>(this System.Reflection.MemberInfo me
 `TAttribute`
 
 The type of the attribute to detect.
+
 #### Parameters
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute_TAttribute_(thisSystem.Reflection.MemberInfo,bool).memberInfo'></a>
 
 `memberInfo` [System.Reflection.MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MemberInfo 'System.Reflection.MemberInfo')
 
-The [System.Reflection.MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MemberInfo 'System.Reflection.MemberInfo') instance to inspect
+The [System.Reflection.MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MemberInfo 'System.Reflection.MemberInfo')
+instance to inspect
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute_TAttribute_(thisSystem.Reflection.MemberInfo,bool).inherit'></a>
 
@@ -29,8 +33,15 @@ The [System.Reflection.MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/S
 inspect the inheritance hierarchy
 
 #### Returns
+
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
-[true](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool') if one or more attributes of the requested type were detected; [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool') otherwise.
+[true](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
+if one or more attributes of the requested type were
+detected; [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
+otherwise.
 
 ### Remarks
-Technique and name adopted from the [Scrutor Project](https://github.com/khellang/Scrutor 'https://github.com/khellang/Scrutor') by [Kristian Hellang](https://github.com/khellang 'https://github.com/khellang')
+
+Technique and name adopted from
+the [Scrutor Project](https://github.com/khellang/Scrutor 'https://github.com/khellang/Scrutor')
+by [Kristian Hellang](https://github.com/khellang 'https://github.com/khellang')

@@ -8,6 +8,7 @@ Determines if an attribute has been applied to a specific type.
 public static bool HasAttribute<TAttribute>(this System.Type type, bool inherit=false)
     where TAttribute : System.Attribute;
 ```
+
 #### Type parameters
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute_TAttribute_(thisSystem.Type,bool).TAttribute'></a>
@@ -15,6 +16,7 @@ public static bool HasAttribute<TAttribute>(this System.Type type, bool inherit=
 `TAttribute`
 
 The type of the attribute to detect.
+
 #### Parameters
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute_TAttribute_(thisSystem.Type,bool).type'></a>
@@ -30,8 +32,15 @@ The type to inspect.
 inspect the inheritance hierarchy
 
 #### Returns
+
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
-[true](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool') if one or more attributes of the requested type were detected; [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool') otherwise.
+[true](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
+if one or more attributes of the requested type were
+detected; [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
+otherwise.
 
 ### Remarks
-Technique and name adopted from the [Scrutor Project](https://github.com/khellang/Scrutor 'https://github.com/khellang/Scrutor') by [Kristian Hellang](https://github.com/khellang 'https://github.com/khellang')
+
+Technique and name adopted from
+the [Scrutor Project](https://github.com/khellang/Scrutor 'https://github.com/khellang/Scrutor')
+by [Kristian Hellang](https://github.com/khellang 'https://github.com/khellang')

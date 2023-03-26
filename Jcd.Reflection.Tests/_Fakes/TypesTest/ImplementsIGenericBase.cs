@@ -1,3 +1,5 @@
+// ReSharper disable ReplaceAutoPropertyWithComputedProperty
+
 namespace Jcd.Reflection.Tests._Fakes.TypesTest;
 
 public class ImplementsIGenericBase<T> : IGenericBase<T>

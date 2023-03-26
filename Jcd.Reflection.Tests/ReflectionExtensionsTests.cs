@@ -8,6 +8,12 @@ using Jcd.Reflection.Tests._Fakes.AssemblyTest;
 using Jcd.Reflection.Tests._TestHelpers;
 using Xunit;
 
+#pragma warning disable CS0618
+
+// ReSharper disable HeapView.BoxingAllocation
+// ReSharper disable HeapView.ClosureAllocation
+// ReSharper disable HeapView.DelegateAllocation
+
 #endregion
 
 namespace Jcd.Reflection.Tests;
@@ -387,8 +393,7 @@ public class ReflectionExtensionsTests
         //TODO: This is a bit of a hack, but it works. 
         //      Add more in depth tests later. 
         var a = new TestClassA();
-        var visited = new HashSet<object>();
-        visited.Add(a);
+        var visited = new HashSet<object> { a };
         dynamic aeo = a.ToExpandoObject(visited);
         var ado = a.ToDictionaryTree(visited);
         Assert.Equal(ado, aeo);

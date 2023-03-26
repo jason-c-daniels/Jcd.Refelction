@@ -6,6 +6,10 @@ using System.Reflection;
 using Jcd.Reflection.Tests._TestHelpers;
 using Xunit;
 
+// ReSharper disable HeapView.BoxingAllocation
+// ReSharper disable HeapView.ClosureAllocation
+// ReSharper disable HeapView.DelegateAllocation
+
 #endregion
 
 namespace Jcd.Reflection.Tests;

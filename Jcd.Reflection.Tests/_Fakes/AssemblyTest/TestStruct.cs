@@ -1,6 +1,7 @@
 // ReSharper disable UnusedMember.Local
 // ReSharper disable ConvertToAutoProperty
 // ReSharper disable UnusedMember.Global
+// ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
 
 namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
 

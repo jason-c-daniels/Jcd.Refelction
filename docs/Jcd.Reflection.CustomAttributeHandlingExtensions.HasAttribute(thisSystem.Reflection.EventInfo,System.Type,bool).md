@@ -2,18 +2,21 @@
 
 ## CustomAttributeHandlingExtensions.HasAttribute(this EventInfo, Type, bool) Method
 
-Determines if an attribute has been applied to a specific [System.Reflection.EventInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.EventInfo 'System.Reflection.EventInfo').
+Determines if an attribute has been applied to a
+specific [System.Reflection.EventInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.EventInfo 'System.Reflection.EventInfo').
 
 ```csharp
 public static bool HasAttribute(this System.Reflection.EventInfo eventInfo, System.Type attributeType, bool inherit=false);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(thisSystem.Reflection.EventInfo,System.Type,bool).eventInfo'></a>
 
 `eventInfo` [System.Reflection.EventInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.EventInfo 'System.Reflection.EventInfo')
 
-The [System.Reflection.EventInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.EventInfo 'System.Reflection.EventInfo') instance to inspect
+The [System.Reflection.EventInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.EventInfo 'System.Reflection.EventInfo')
+instance to inspect
 
 <a name='Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(thisSystem.Reflection.EventInfo,System.Type,bool).attributeType'></a>
 
@@ -28,8 +31,15 @@ The type of the attribute to detect.
 inspect the inheritance hierarchy
 
 #### Returns
+
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
-[true](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool') if one or more attributes of the requested type were detected; [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool') otherwise.
+[true](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
+if one or more attributes of the requested type were
+detected; [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool')
+otherwise.
 
 ### Remarks
-Technique and name adopted from the [Scrutor Project](https://github.com/khellang/Scrutor 'https://github.com/khellang/Scrutor') by [Kristian Hellang](https://github.com/khellang 'https://github.com/khellang')
+
+Technique and name adopted from
+the [Scrutor Project](https://github.com/khellang/Scrutor 'https://github.com/khellang/Scrutor')
+by [Kristian Hellang](https://github.com/khellang 'https://github.com/khellang')
