@@ -11,6 +11,10 @@ public static class ExpandoObjectExtensions
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106;
 ExpandoObjectExtensions
 
+### Remarks
+
+THESE EXTENSION METHODS ARE GOING AWAY SOON!
+
 | Methods                                                                                                                                                                                                                                                                                                                                                                                                                                                              |                                                                                            |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------|
 | [Append&lt;TNode&gt;(this IDictionary&lt;string,object&gt;, string, object, HashSet&lt;object&gt;, Func&lt;string,string&gt;, Func&lt;string,object,bool&gt;)](ExpandoObjectExtensions.Append.EWnSqW/it69gsSx4oO+kOg.md 'Jcd.Reflection.ExpandoObjectExtensions.Append<TNode>(this System.Collections.Generic.IDictionary<string,object>, string, object, System.Collections.Generic.HashSet<object>, System.Func<string,string>, System.Func<string,object,bool>)') |                                                                                            |
