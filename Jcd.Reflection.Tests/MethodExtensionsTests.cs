@@ -90,7 +90,7 @@ public class MethodExtensionsTests
         var result = new TestClassC().Invoke<int>("GetValue");
         Assert.Equal(10, result);
     }
-    
+
     [Fact]
     public void GetMethod_For_Existing_Method_On_Instance_Returns_The_MethodInfo()
     {

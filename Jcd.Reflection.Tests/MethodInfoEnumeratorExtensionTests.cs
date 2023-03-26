@@ -1,9 +1,13 @@
+#region
+
 using System;
 using System.Collections;
 using System.Linq;
 using System.Reflection;
 using Jcd.Reflection.Tests._Fakes.AssemblyTest;
 using Xunit;
+
+#endregion
 
 namespace Jcd.Reflection.Tests;
 
@@ -32,9 +36,9 @@ public class MethodInfoEnumeratorExtensionTests
         var sut = new MethodInfoEnumerator(obj,
             new MethodInfoEnumerator.Settings
             {
-                Flags = BindingFlags.Instance | 
-                        BindingFlags.Static | 
-                        BindingFlags.NonPublic | 
+                Flags = BindingFlags.Instance |
+                        BindingFlags.Static |
+                        BindingFlags.NonPublic |
                         BindingFlags.Public,
                 Skip = MethodInfoEnumerator.SkipSystemMethods
             });
@@ -42,51 +46,60 @@ public class MethodInfoEnumeratorExtensionTests
         // this contains inherited, non-system, methods, including getters and setters.
         Assert.Equal(16, list.Count);
     }
-    
+
     [Theory]
-    [InlineData(typeof(Poii),BindingFlags.ExactBinding,true)]
-    [InlineData(typeof(Poii2),BindingFlags.Static | BindingFlags.Instance,false)]
-    [InlineData(typeof(Poii3),BindingFlags.ExactBinding,true)]
-    [InlineData(typeof(Poii4),null,true)]
-    public void Constructor_Creates_An_Instance_With_The_Expected_Values(Type type, BindingFlags? flags, bool includeSkipFunc)
+    [InlineData(typeof(Poii), BindingFlags.ExactBinding, true)]
+    [InlineData(typeof(Poii2), BindingFlags.Static | BindingFlags.Instance, false)]
+    [InlineData(typeof(Poii3), BindingFlags.ExactBinding, true)]
+    [InlineData(typeof(Poii4), null, true)]
+    public void Constructor_Creates_An_Instance_With_The_Expected_Values(
+        Type type, BindingFlags? flags, bool includeSkipFunc)
     {
-        bool SkipFunc(MethodInfo mi) => false;
-        var settings = flags.HasValue 
-            ? new MethodInfoEnumerator.Settings
-              {
-                  Flags = flags.Value, 
-                  Skip = includeSkipFunc ? SkipFunc : null
-              } 
-            : default;
-        var sut = new MethodInfoEnumerator(type, settings);
-        Assert.Equal(type,sut.Type);
-        Assert.Equal(flags.HasValue ? settings : MethodInfoEnumerator.DefaultSettings,sut.EnumerationSettings);
-        
-        var sut2 = new MethodInfoEnumerator((object)type, settings);
-        Assert.Equal(type,sut2.Type);
-        Assert.Equal(flags.HasValue ? settings : MethodInfoEnumerator.DefaultSettings,sut2.EnumerationSettings);
-    }
-    
-    [Theory]
-    [InlineData(typeof(Poii),BindingFlags.ExactBinding,true)]
-    [InlineData(typeof(Poii2),BindingFlags.Static | BindingFlags.Instance,false)]
-    [InlineData(typeof(Poii3),BindingFlags.ExactBinding,true)]
-    [InlineData(typeof(Poii4),null,true)]
-    public void GetEnumerator_Does_Not_Throw(Type type, BindingFlags? flags, bool includeSkipFunc)
-    {
-        bool SkipFunc(MethodInfo mi) => false;
-        var settings = flags.HasValue 
+        bool SkipFunc(MethodInfo mi)
+        {
+            return false;
+        }
+
+        var settings = flags.HasValue
             ? new MethodInfoEnumerator.Settings
             {
-                Flags = flags.Value, 
+                Flags = flags.Value,
                 Skip = includeSkipFunc ? SkipFunc : null
-            } 
+            }
             : default;
         var sut = new MethodInfoEnumerator(type, settings);
-        using var enum1 = sut.GetEnumerator();           
+        Assert.Equal(type, sut.Type);
+        Assert.Equal(flags.HasValue ? settings : MethodInfoEnumerator.DefaultSettings, sut.EnumerationSettings);
+
+        var sut2 = new MethodInfoEnumerator((object)type, settings);
+        Assert.Equal(type, sut2.Type);
+        Assert.Equal(flags.HasValue ? settings : MethodInfoEnumerator.DefaultSettings, sut2.EnumerationSettings);
+    }
+
+    [Theory]
+    [InlineData(typeof(Poii), BindingFlags.ExactBinding, true)]
+    [InlineData(typeof(Poii2), BindingFlags.Static | BindingFlags.Instance, false)]
+    [InlineData(typeof(Poii3), BindingFlags.ExactBinding, true)]
+    [InlineData(typeof(Poii4), null, true)]
+    public void GetEnumerator_Does_Not_Throw(Type type, BindingFlags? flags, bool includeSkipFunc)
+    {
+        bool SkipFunc(MethodInfo mi)
+        {
+            return false;
+        }
+
+        var settings = flags.HasValue
+            ? new MethodInfoEnumerator.Settings
+            {
+                Flags = flags.Value,
+                Skip = includeSkipFunc ? SkipFunc : null
+            }
+            : default;
+        var sut = new MethodInfoEnumerator(type, settings);
+        using var enum1 = sut.GetEnumerator();
         Assert.NotNull(enum1);
-        
-        var enum2 = ((IEnumerable)sut).GetEnumerator();           
+
+        var enum2 = ((IEnumerable)sut).GetEnumerator();
         Assert.NotNull(enum2);
     }
 }

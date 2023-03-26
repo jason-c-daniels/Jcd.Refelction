@@ -21,13 +21,14 @@ using Jcd.Validations;
 
 #endregion
 
-
 namespace Jcd.Reflection;
 
 /// <summary>
 /// Extension methods for creating expando objects from POCOs or string object dictionaries
 /// </summary>
-[Obsolete("This was never fully finished and I don't have the bandwidth to finish it. It will be removed entirely in v2.0", false)]
+[Obsolete(
+    "This was never fully finished and I don't have the bandwidth to finish it. It will be removed entirely in v2.0",
+    false)]
 public static class ExpandoObjectExtensions
 {
     /// <summary>

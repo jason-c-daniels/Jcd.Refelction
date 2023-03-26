@@ -1083,6 +1083,26 @@
             A set of reflection extensions to aid in manipulating properties.
             </summary>
         </member>
+        <member name="M:Jcd.Reflection.PropertyInfoExtensions.EnumerateProperties(System.Type,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean},System.Boolean,System.Boolean)">
+            <summary>
+            Enumerate the PropertyInfo entries for a given type 
+            </summary>
+            <param name="type">The data type to reflect on</param>
+            <param name="flags">The BindingFlags</param>
+            <param name="skip">a predicate for skipping certain entries.</param>
+            <param name="returnSystem">Indicates if properties whose declaring type is in the System. namespace should be returned. Default is <see langword="false"/></param>
+            <param name="returnWriteOnly">Indicates if properties that are write only should be returned. Default is <see langword="false"/> </param>
+            <returns>An enumerable across PropertyInfo s</returns>
+        </member>
+        <member name="M:Jcd.Reflection.PropertyInfoExtensions.EnumerateProperties(System.Object,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean})">
+            <summary>
+            Enumerate the PropertyInfo entries for a given type 
+            </summary>
+            <param name="self">The data instance to reflect on</param>
+            <param name="flags">The BindingFlags</param>
+            <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
+            <returns>An enumerable across PropertyInfo s</returns>
+        </member>
         <member name="F:Jcd.Reflection.PropertyInfoExtensions.SkipSystemMembers">
             <summary>
             Predefined skip predicate for skipping system members.  
@@ -1107,26 +1127,6 @@
             <summary>
             Predefined skip predicate for skipping write only and system members.  
             </summary>
-        </member>
-        <member name="M:Jcd.Reflection.PropertyInfoExtensions.EnumerateProperties(System.Type,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean},System.Boolean,System.Boolean)">
-            <summary>
-            Enumerate the PropertyInfo entries for a given type 
-            </summary>
-            <param name="type">The data type to reflect on</param>
-            <param name="flags">The BindingFlags</param>
-            <param name="skip">a predicate for skipping certain entries.</param>
-            <param name="returnSystem">Indicates if properties whose declaring type is in the System. namespace should be returned. Default is <see langword="false"/></param>
-            <param name="returnWriteOnly">Indicates if properties that are write only should be returned. Default is <see langword="false"/> </param>
-            <returns>An enumerable across PropertyInfo s</returns>
-        </member>
-        <member name="M:Jcd.Reflection.PropertyInfoExtensions.EnumerateProperties(System.Object,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean})">
-            <summary>
-            Enumerate the PropertyInfo entries for a given type 
-            </summary>
-            <param name="self">The data instance to reflect on</param>
-            <param name="flags">The BindingFlags</param>
-            <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
-            <returns>An enumerable across PropertyInfo s</returns>
         </member>
         <member name="T:Jcd.Reflection.TypeDiscoveryExtensions">
             <summary>

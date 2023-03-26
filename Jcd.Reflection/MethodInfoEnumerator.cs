@@ -25,12 +25,12 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
     public static readonly Func<MethodInfo, bool> SkipSystemMethods = mi =>
         mi.DeclaringType?.FullName != null && mi.DeclaringType.FullName.StartsWith("System.");
 
-
     /// <summary>
     /// Default method enumeration settings. Skips system provided methods.
     /// </summary>
-    public static readonly Settings DefaultSettings = new Settings { Flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly, Skip = SkipSystemMethods };
-    
+    public static readonly Settings DefaultSettings = new()
+        { Flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly, Skip = SkipSystemMethods };
+
     /// <summary>
     /// Constructs a MethodInfoEnumerator from a type and settings.
     /// </summary>

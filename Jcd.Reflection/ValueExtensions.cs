@@ -51,7 +51,6 @@ public static class ValueExtensions
         else if (fi != null) fi.SetValue(self, value);
     }
 
-
     /// <summary>
     /// Sets a value on a field or property. 
     /// </summary>

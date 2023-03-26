@@ -27,7 +27,8 @@ A set of reflection helpers
 
 ## Special Thanks To
 
-* [Kristian Hellang on GitHub](https://github.com/khellang) for the [Scrutor](https://github.com/khellang/Scrutor) project.
+* [Kristian Hellang on GitHub](https://github.com/khellang) for the [Scrutor](https://github.com/khellang/Scrutor)
+  project.
 
 Scrutor inspired the technique I'm using for finding implementations of specific types as well as
 a couple of other handy utility methods.

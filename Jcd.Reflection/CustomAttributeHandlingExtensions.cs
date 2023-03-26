@@ -9,7 +9,6 @@ using System.Reflection;
 
 #endregion
 
-
 namespace Jcd.Reflection;
 
 /// <summary>

@@ -28,13 +28,22 @@ internal class TestClassB : TestClassA
 
     // ReSharper disable once UnusedMember.Local
     private static string Prop8 { get; set; } = "hello5";
-    
-    // ReSharper disable once UnusedMember.Local
-    public void Method1(){}
-    
-    // ReSharper disable once UnusedMember.Local
-    public void Method2(){}
-    public static void Method3(){}
 
-    private static void Method4(){}
+    // ReSharper disable once UnusedMember.Local
+    public void Method1()
+    {
+    }
+
+    // ReSharper disable once UnusedMember.Local
+    public void Method2()
+    {
+    }
+
+    public static void Method3()
+    {
+    }
+
+    private static void Method4()
+    {
+    }
 }
