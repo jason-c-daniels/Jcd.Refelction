@@ -1253,7 +1253,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">When
                 <paramref name="assembly"/>
-                cref="assembly"/> is null.
+                is null.
             </exception>
         </member>
         <member name="M:Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(System.Reflection.Assembly,System.Type,System.Boolean)">

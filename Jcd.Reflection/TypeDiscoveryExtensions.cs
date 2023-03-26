@@ -26,7 +26,7 @@ public static class TypeDiscoveryExtensions
     /// <param name="assembly">the assembly to search.</param>
     /// <param name="returnTargetTypeIfConcrete">If <typeparamref name="T"/> is in the target assembly, and it's a concrete, return it as well.</param>
     /// <returns>An <see cref="IEnumerable{Type}"/> of the implementations of <typeparam name="T"></typeparam></returns>
-    /// <exception cref="ArgumentNullException">When <paramref name="assembly"/> cref="assembly"/> is null.</exception>
+    /// <exception cref="ArgumentNullException">When <paramref name="assembly"/>  is null.</exception>
     public static IEnumerable<Type> FindImplementationsOf<T>(this Assembly assembly,
                                                              bool returnTargetTypeIfConcrete = false)
     {
