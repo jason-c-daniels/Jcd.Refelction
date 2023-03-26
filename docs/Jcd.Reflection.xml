@@ -520,6 +520,9 @@
             <summary>
                 Extension methods for creating expando objects from POCOs or string object dictionaries
             </summary>
+            <remarks>
+                THESE EXTENSION METHODS ARE GOING AWAY SOON!
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToDictionaryTree(System.Object,System.Collections.Generic.HashSet{System.Object},System.Func{System.String,System.String},System.Func{System.String,System.Object,System.Boolean})">
             <summary>
