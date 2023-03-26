@@ -7,7 +7,6 @@ Enumerate the PropertyInfo entries for a given type
 ```csharp
 public static System.Collections.Generic.IEnumerable<System.Reflection.PropertyInfo> EnumerateProperties(this object self, System.Nullable<System.Reflection.BindingFlags> flags=null, System.Func<System.Reflection.PropertyInfo,bool> skip=null);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.PropertyInfoExtensions.EnumerateProperties(thisobject,System.Nullable_System.Reflection.BindingFlags_,System.Func_System.Reflection.PropertyInfo,bool_).self'></a>
@@ -29,6 +28,5 @@ The BindingFlags
 a predicate for skipping certain entries (e.g. System...)
 
 #### Returns
-
 [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[System.Reflection.PropertyInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.PropertyInfo 'System.Reflection.PropertyInfo')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
 An enumerable across PropertyInfo s
