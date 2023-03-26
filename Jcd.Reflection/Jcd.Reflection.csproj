@@ -10,7 +10,7 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Jcd.Reflection</Title>
         <Authors>Jason C Daniels</Authors>
-        <Description>A small library containing some commonly implemented reflection helpers.</Description>
+        <Description>A dotnetstandard2.0 library containing some commonly implemented reflection helpers.</Description>
         <Copyright>2018-2023</Copyright>
         <PackageProjectUrl>https://github.com/jason-c-daniels/Jcd.Reflection</PackageProjectUrl>
         <PackageLicense>MIT</PackageLicense>
