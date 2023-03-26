@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
 // ReSharper disable HeapView.ObjectAllocation
@@ -24,7 +23,6 @@ public static class FieldInfoExtensions
     /// <param name="flags">The BindingFlags</param>
     /// <param name="skip">a predicate for skipping certain entries (e.g. System...)</param>
     /// <returns>An enumerable across FieldInfo s</returns>
-    [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
     public static IEnumerable<FieldInfo> EnumerateFields(this Type type, BindingFlags? flags = null,
                                                          Func<FieldInfo, bool> skip = null)
     {

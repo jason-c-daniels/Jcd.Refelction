@@ -80,12 +80,8 @@ public static class TypeDiscoveryExtensions
     {
         if (assemblies == null) throw new ArgumentNullException(nameof(assemblies));
         if (type == null) throw new ArgumentNullException(nameof(type));
-        var set = new HashSet<Assembly>();
-        foreach (var assembly in assemblies)
-        {
-            if (!set.Add(assembly)) continue;
-            foreach (var implementationType in assembly.FindImplementationsOf(type, returnTargetTypeIfConcrete))
-                yield return implementationType;
-        }
+        return from assembly in assemblies.Distinct()
+               from implementationType in assembly.FindImplementationsOf(type)
+               select implementationType;
     }
 }
