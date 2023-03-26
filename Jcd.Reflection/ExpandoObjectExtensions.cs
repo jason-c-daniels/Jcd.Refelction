@@ -27,6 +27,10 @@ namespace Jcd.Reflection;
 /// <summary>
 /// Extension methods for creating expando objects from POCOs or string object dictionaries
 /// </summary>
+/// <remarks>
+/// THESE EXTENSION METHODS ARE GOING AWAY SOON!
+/// </remarks>
+[Obsolete("All of these methods are going away in v2.0", false)]
 public static class ExpandoObjectExtensions
 {
     /// <summary>
