@@ -8,11 +8,11 @@ using System.Reflection;
 
 // ReSharper disable HeapView.ObjectAllocation
 // ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
 
 #endregion
 
-// ReSharper disable MemberCanBePrivate.Global
-// ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
 
 namespace Jcd.Reflection;
 

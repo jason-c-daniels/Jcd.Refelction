@@ -5,10 +5,10 @@ using System.Linq;
 using System.Reflection;
 
 // ReSharper disable UnusedMember.Global
+// ReSharper disable MemberCanBePrivate.Global
 
 #endregion
 
-// ReSharper disable MemberCanBePrivate.Global
 
 namespace Jcd.Reflection;
 
@@ -224,6 +224,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="attributeType">The type of the attribute to detect.</param>
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute(this Enum value, Type attributeType, bool inherit = false)
     {
         return value.GetCustomAttributes(attributeType, inherit).Any();
@@ -236,6 +239,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute<TAttribute>(this Enum value, bool inherit = true)
         where TAttribute : Attribute
     {
@@ -249,6 +255,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="attributeType">The type of the attribute to detect.</param>
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute(this Type type, Type attributeType, bool inherit = false)
     {
         return type.IsDefined(attributeType, inherit);
@@ -261,6 +270,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute<TAttribute>(this Type type, bool inherit = false)
         where TAttribute : Attribute
     {
@@ -274,6 +286,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="attributeType">The type of the attribute to detect.</param>
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute(this FieldInfo fieldInfo, Type attributeType, bool inherit = false)
     {
         return fieldInfo.IsDefined(attributeType, inherit);
@@ -286,6 +301,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute<TAttribute>(this FieldInfo fieldInfo, bool inherit = false)
     {
         return fieldInfo.HasAttribute(typeof(TAttribute), inherit);
@@ -298,6 +316,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <param name="attributeType">The type of the attribute to detect.</param>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute(this PropertyInfo propertyInfo, Type attributeType, bool inherit = false)
     {
         return propertyInfo.IsDefined(attributeType, inherit);
@@ -310,6 +331,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute<TAttribute>(this PropertyInfo propertyInfo, bool inherit = false)
     {
         return propertyInfo.HasAttribute(typeof(TAttribute), inherit);
@@ -322,6 +346,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <param name="attributeType">The type of the attribute to detect.</param>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute(this MethodInfo methodInfo, Type attributeType, bool inherit = false)
     {
         return methodInfo.IsDefined(attributeType, inherit);
@@ -334,6 +361,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute<TAttribute>(this MethodInfo methodInfo, bool inherit = false)
     {
         return methodInfo.HasAttribute(typeof(TAttribute), inherit);
@@ -346,6 +376,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <param name="attributeType">The type of the attribute to detect.</param>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute(this ParameterInfo paramInfo, Type attributeType, bool inherit = false)
     {
         return paramInfo.IsDefined(attributeType, inherit);
@@ -358,6 +391,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute<TAttribute>(this ParameterInfo paramInfo, bool inherit = false)
     {
         return paramInfo.HasAttribute(typeof(TAttribute), inherit);
@@ -370,6 +406,12 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <param name="attributeType">The type of the attribute to detect.</param>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute(this Module module, Type attributeType, bool inherit = false)
     {
         return module.IsDefined(attributeType, inherit);
@@ -382,6 +424,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute<TAttribute>(this Module module, bool inherit = false)
     {
         return module.HasAttribute(typeof(TAttribute), inherit);
@@ -394,6 +439,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <param name="attributeType">The type of the attribute to detect.</param>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute(this TypeInfo typeInfo, Type attributeType, bool inherit = false)
     {
         return typeInfo.IsDefined(attributeType, inherit);
@@ -406,6 +454,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute<TAttribute>(this TypeInfo typeInfo, bool inherit = false)
     {
         return typeInfo.HasAttribute(typeof(TAttribute), inherit);
@@ -418,6 +469,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <param name="attributeType">The type of the attribute to detect.</param>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute(this Assembly assembly, Type attributeType, bool inherit = false)
     {
         return assembly.IsDefined(attributeType, inherit);
@@ -430,6 +484,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute<TAttribute>(this Assembly assembly, bool inherit = false)
     {
         return assembly.HasAttribute(typeof(TAttribute), inherit);
@@ -442,6 +499,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <param name="attributeType">The type of the attribute to detect.</param>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute(this EventInfo eventInfo, Type attributeType, bool inherit = false)
     {
         return eventInfo.IsDefined(attributeType, inherit);
@@ -454,6 +514,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute<TAttribute>(this EventInfo eventInfo, bool inherit = false)
     {
         return eventInfo.HasAttribute(typeof(TAttribute), inherit);
@@ -466,6 +529,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <param name="attributeType">The type of the attribute to detect.</param>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute(this MemberInfo memberInfo, Type attributeType, bool inherit = false)
     {
         return memberInfo.IsDefined(attributeType, inherit);
@@ -478,6 +544,9 @@ public static class CustomAttributeHandlingExtensions
     /// <param name="inherit">inspect the inheritance hierarchy</param>
     /// <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
     /// <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+    /// <remarks>
+    /// Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+    /// </remarks>
     public static bool HasAttribute<TAttribute>(this MemberInfo memberInfo, bool inherit = false)
     {
         return memberInfo.HasAttribute(typeof(TAttribute), inherit);

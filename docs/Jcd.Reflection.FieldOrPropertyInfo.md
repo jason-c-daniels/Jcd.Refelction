@@ -2,6 +2,8 @@
 
 ## FieldOrPropertyInfo Class
 
+Discovers the attributes of a field or property and provides access to the metadata.
+
 ```csharp
 public class FieldOrPropertyInfo : System.Reflection.MemberInfo
 ```

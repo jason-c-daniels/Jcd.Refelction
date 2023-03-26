@@ -125,6 +125,9 @@
             <param name="attributeType">The type of the attribute to detect.</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Enum,System.Boolean)">
             <summary>
@@ -134,6 +137,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Type,System.Type,System.Boolean)">
             <summary>
@@ -143,6 +149,9 @@
             <param name="attributeType">The type of the attribute to detect.</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Type,System.Boolean)">
             <summary>
@@ -152,6 +161,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.FieldInfo,System.Type,System.Boolean)">
             <summary>
@@ -161,6 +173,9 @@
             <param name="attributeType">The type of the attribute to detect.</param>
             <param name="inherit">inspect the inheritance hierarchy</param>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.FieldInfo,System.Boolean)">
             <summary>
@@ -170,6 +185,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.PropertyInfo,System.Type,System.Boolean)">
             <summary>
@@ -179,6 +197,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <param name="attributeType">The type of the attribute to detect.</param>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.PropertyInfo,System.Boolean)">
             <summary>
@@ -188,6 +209,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.MethodInfo,System.Type,System.Boolean)">
             <summary>
@@ -197,6 +221,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <param name="attributeType">The type of the attribute to detect.</param>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.MethodInfo,System.Boolean)">
             <summary>
@@ -206,6 +233,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.ParameterInfo,System.Type,System.Boolean)">
             <summary>
@@ -215,6 +245,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <param name="attributeType">The type of the attribute to detect.</param>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.ParameterInfo,System.Boolean)">
             <summary>
@@ -224,6 +257,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.Module,System.Type,System.Boolean)">
             <summary>
@@ -233,6 +269,12 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <param name="attributeType">The type of the attribute to detect.</param>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.Module,System.Boolean)">
             <summary>
@@ -242,6 +284,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.TypeInfo,System.Type,System.Boolean)">
             <summary>
@@ -251,6 +296,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <param name="attributeType">The type of the attribute to detect.</param>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.TypeInfo,System.Boolean)">
             <summary>
@@ -260,6 +308,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.Assembly,System.Type,System.Boolean)">
             <summary>
@@ -269,6 +320,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <param name="attributeType">The type of the attribute to detect.</param>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.Assembly,System.Boolean)">
             <summary>
@@ -278,6 +332,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.EventInfo,System.Type,System.Boolean)">
             <summary>
@@ -287,6 +344,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <param name="attributeType">The type of the attribute to detect.</param>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.EventInfo,System.Boolean)">
             <summary>
@@ -296,6 +356,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.MemberInfo,System.Type,System.Boolean)">
             <summary>
@@ -305,6 +368,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <param name="attributeType">The type of the attribute to detect.</param>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.MemberInfo,System.Boolean)">
             <summary>
@@ -314,6 +380,9 @@
             <param name="inherit">inspect the inheritance hierarchy</param>
             <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
             <returns><see langword="true"/> if one or more attributes of the requested type were detected; <see langword="false"/> otherwise.</returns>
+            <remarks>
+            Technique and name adopted from the <see href="https://github.com/khellang/Scrutor">Scrutor Project</see> by <see href="https://github.com/khellang">Kristian Hellang</see>
+            </remarks>
         </member>
         <member name="T:Jcd.Reflection.ExpandoObjectExtensions">
             <summary>
@@ -539,7 +608,7 @@
         </member>
         <member name="T:Jcd.Reflection.FieldOrPropertyInfo">
             <summary>
-            
+            Discovers the attributes of a field or property and provides access to the metadata.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyInfo.#ctor(System.Reflection.MemberInfo,System.Reflection.BindingFlags)">

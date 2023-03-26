@@ -6,7 +6,7 @@
 | [ExpandoObjectExtensions](Jcd.Reflection.ExpandoObjectExtensions.md 'Jcd.Reflection.ExpandoObjectExtensions') | Extension methods for creating expando objects from POCOs or string object dictionaries |
 | [FieldInfoExtensions](Jcd.Reflection.FieldInfoExtensions.md 'Jcd.Reflection.FieldInfoExtensions') | Extension methods to aid in reflecting on fields. |
 | [FieldOrPropertyEnumerator](Jcd.Reflection.FieldOrPropertyEnumerator.md 'Jcd.Reflection.FieldOrPropertyEnumerator') | Enumerates both properties and fields on a given data type. |
-| [FieldOrPropertyInfo](Jcd.Reflection.FieldOrPropertyInfo.md 'Jcd.Reflection.FieldOrPropertyInfo') | |
+| [FieldOrPropertyInfo](Jcd.Reflection.FieldOrPropertyInfo.md 'Jcd.Reflection.FieldOrPropertyInfo') | Discovers the attributes of a field or property and provides access to the metadata. |
 | [MemberInfoEnumerator](Jcd.Reflection.MemberInfoEnumerator.md 'Jcd.Reflection.MemberInfoEnumerator') | Enumerated MemberInfos for a given object or type. |
 | [MethodExtensions](Jcd.Reflection.MethodExtensions.md 'Jcd.Reflection.MethodExtensions') | Extension methods to help invoke methods via reflection. |
 | [MethodInfoEnumerator](Jcd.Reflection.MethodInfoEnumerator.md 'Jcd.Reflection.MethodInfoEnumerator') | Enumerates the method information for a given type. |

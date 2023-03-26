@@ -16,11 +16,11 @@ using Jcd.Validations;
 // ReSharper disable HeapView.ObjectAllocation
 // ReSharper disable HeapView.PossibleBoxingAllocation
 // ReSharper disable HeapView.BoxingAllocation
+// ReSharper disable UseDeconstruction
+// ReSharper disable ConvertIfStatementToNullCoalescingAssignment
 
 #endregion
 
-// ReSharper disable UseDeconstruction
-// ReSharper disable ConvertIfStatementToNullCoalescingAssignment
 
 namespace Jcd.Reflection;
 

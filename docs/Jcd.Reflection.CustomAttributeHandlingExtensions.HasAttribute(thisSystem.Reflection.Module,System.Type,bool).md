@@ -30,3 +30,6 @@ inspect the inheritance hierarchy
 #### Returns
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
 [true](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool') if one or more attributes of the requested type were detected; [false](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool 'https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool') otherwise.
+
+### Remarks
+Technique and name adopted from the [Scrutor Project](https://github.com/khellang/Scrutor 'https://github.com/khellang/Scrutor') by [Kristian Hellang](https://github.com/khellang 'https://github.com/khellang')

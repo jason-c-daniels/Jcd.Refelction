@@ -12,7 +12,7 @@ using Jcd.Validations;
 namespace Jcd.Reflection;
 
 /// <summary>
-/// 
+/// Discovers the attributes of a field or property and provides access to the metadata.
 /// </summary>
 public class FieldOrPropertyInfo : MemberInfo
 {
@@ -33,7 +33,7 @@ public class FieldOrPropertyInfo : MemberInfo
                 (mi, _, _) => mi.MemberType == MemberTypes.Field,
                 (mi, _, _) => mi.MemberType == MemberTypes.Property
             }, memberInfo, nameof(memberInfo),
-            $"memberInfo.MemberType must be a Property or Field but was {memberInfo.MemberType}");
+            $"{nameof(memberInfo)}.MemberType must be a Property or Field but was {memberInfo.MemberType}");
         _flags = flags;
         _memberInfo = memberInfo;
     }
