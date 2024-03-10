@@ -30,13 +30,12 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
       Filter = settings;
    }
 
+   // ReSharper disable once UnusedMember.Global
    /// <summary>
    /// Constructs a MethodInfoEnumerator from an instance and settings.
    /// </summary>
    /// <param name="item">The instance to enumerate</param>
    /// <param name="settings">The settings controlling enumeration</param>
-
-   // ReSharper disable once UnusedMember.Global
    public MethodInfoEnumerator(object item, MethodInfoFilter settings = default) :
       this((Type) (item is System.Type or null
                       ? item
@@ -46,11 +45,10 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
    {
    }
 
+   // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
    /// <summary>
    /// Gets or sets the settings controlling method info enumeration
    /// </summary>
-
-   // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
    public MethodInfoFilter Filter { get; set; }
 
    /// <summary>

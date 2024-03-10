@@ -13,10 +13,9 @@ public class FieldOrPropertyInfoFilter
    /// </summary>
    public BindingFlags? Flags { get; init; } = null;
 
+   // ReSharper disable once UnassignedField.Global
    /// <summary>
    /// A predicate for skipping certain members.
    /// </summary>
-
-   // ReSharper disable once UnassignedField.Global
    public Func<FieldOrPropertyInfo, bool> Skip { get; init; } = null;
 }

@@ -47,13 +47,12 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
       Filter = settings;
    }
 
+   // ReSharper disable once UnusedMember.Global
    /// <summary>
    /// Constructs a MemberInfoEnumerator from an instance and settings.
    /// </summary>
    /// <param name="item">The instance to enumerate</param>
    /// <param name="settings">The settings controlling enumeration</param>
-
-   // ReSharper disable once UnusedMember.Global
    public MemberInfoEnumerator(object item, MemberInfoFilter settings = default)
       : this((Type) (item is System.Type or null ? item : item.GetType()), settings)
    {

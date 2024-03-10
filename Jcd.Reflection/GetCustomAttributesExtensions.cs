@@ -39,6 +39,7 @@ public static class GetCustomAttributesExtensions
       return attributes;
    }
 
+   // ReSharper disable once ReturnTypeCanBeEnumerable.Global
    /// <summary>
    /// Gets all attributes of a specified type on an enum value
    /// </summary>
@@ -46,8 +47,6 @@ public static class GetCustomAttributesExtensions
    /// <param name="attributeType">The type of attributes to retrieve.</param>
    /// <param name="inherit">inspect the inheritance hierarchy</param>
    /// <returns>An array of located <see cref="Attribute" /> instances. If none are found, an empty array is returned.</returns>
-
-   // ReSharper disable once ReturnTypeCanBeEnumerable.Global
    public static Attribute[] GetCustomAttributes(this Enum value, Type attributeType, bool inherit = false)
    {
       var type       = value.GetType();
