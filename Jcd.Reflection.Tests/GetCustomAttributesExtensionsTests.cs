@@ -32,7 +32,8 @@ public class GetCustomAttributesExtensionsTests
    }
 
    [Theory]
-   [InlineData(typeof(AttributesReflectionTestClass), "_field", 2)]
+   [InlineData(typeof(AttributesReflectionTestClass), "field",  2)]
+   [InlineData(typeof(AttributesReflectionTestClass), "field2", 1)]
    public void GetCustomAttributes_For_FieldInfo_Gets_The_Attributes_When_They_Exist(
       Type   type
     , string field

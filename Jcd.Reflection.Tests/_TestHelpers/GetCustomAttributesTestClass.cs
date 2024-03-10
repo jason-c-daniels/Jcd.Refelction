@@ -25,29 +25,33 @@ namespace Jcd.Reflection.Tests._TestHelpers;
 public class AttributesReflectionTestClass
 {
    [MyDescription("A useful field")] [MyDescription("No you don't get to know what it's used for.")]
-   private int _field;
+   private int field;
+
+   [MyDescription("A useless field")] private readonly int field2 = 12;
    #pragma warning disable 169
 
    // this warning doesn't apply to this, because there is no point in actually
    // using this field. It's here to be a target of reflection, not to be useful. 
-   private double _unusedWithNoDescription;
+   private double unusedWithNoDescription;
    #pragma warning restore 169
 
    [MyDescription("Nobody else should access this!")]
    [MyDescription("It's mine all mine!")]
    private int PrivateProperty
    {
-      get => _field;
-      set => _field = value;
+      get => field;
+      set => field = value;
    }
 
    [MyDescription("A helper method that only I know about.")]
-   private int InternalGetField() { return _field; }
+   private int InternalGetField() { return field; }
 
-   [MyDescription("This is how the world gets to know about the value of _field")]
+   [MyDescription("This is how the world gets to know about the value of field")]
    [MyDescription("The world isn't ready to do it any other way")]
    public int GetField() { return InternalGetField(); }
 
+   [MyDescription("This is how the world gets to know about the value of field2")]
+   public int GetField2() { return field2; }
    #pragma warning disable CA1822
    public void DoSomething([MyDescription("A param")] string param1, int param2)
    {

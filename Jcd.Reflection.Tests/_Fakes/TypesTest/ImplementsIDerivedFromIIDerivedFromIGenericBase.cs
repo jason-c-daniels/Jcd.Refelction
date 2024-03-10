@@ -1,8 +1,8 @@
 namespace Jcd.Reflection.Tests._Fakes.TypesTest;
 
-public class ImplementsIDerivedFromIIDerivedFromIGenericBase<T> : IDerivedFromIDerivedFromIGenericBase<T>
+public class ImplementsIDerivedFromIiDerivedFromIGenericBase<T> : IDerivedFromIDerivedFromIGenericBase<T>
 {
-   public ImplementsIDerivedFromIIDerivedFromIGenericBase(
+   public ImplementsIDerivedFromIiDerivedFromIGenericBase(
       T otherData    = default
     , T moreData     = default
     , T evenMoreData = default

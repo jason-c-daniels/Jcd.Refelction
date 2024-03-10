@@ -17,8 +17,8 @@ namespace Jcd.Reflection;
 /// </summary>
 public class FieldOrPropertyInfo : MemberInfo
 {
-   private readonly BindingFlags _flags;
-   private readonly MemberInfo   _memberInfo;
+   private readonly BindingFlags flags;
+   private readonly MemberInfo   memberInfo;
 
    /// <summary>
    /// A dual purpose MemberInfo type.
@@ -37,36 +37,36 @@ public class FieldOrPropertyInfo : MemberInfo
                        , nameof(memberInfo)
                        , $"memberInfo.MemberType must be a Property or Field but was {memberInfo.MemberType}"
                         );
-      _flags      = flags;
-      _memberInfo = memberInfo;
+      this.flags      = flags;
+      this.memberInfo = memberInfo;
    }
 
    /// <summary>
    /// Gets the type that declares the member.   
    /// </summary>
-   public override Type DeclaringType => _memberInfo.DeclaringType;
+   public override Type DeclaringType => memberInfo.DeclaringType;
 
    /// <summary>
    /// Gets the type of the member
    /// </summary>
-   public override MemberTypes MemberType => _memberInfo.MemberType;
+   public override MemberTypes MemberType => memberInfo.MemberType;
 
    /// <summary>
    /// Gets the name of the member
    /// </summary>
-   public override string Name => _memberInfo.Name;
+   public override string Name => memberInfo.Name;
 
    /// <summary>
    /// gets the reflected type of the member.
    /// </summary>
-   public override Type ReflectedType => _memberInfo.ReflectedType;
+   public override Type ReflectedType => memberInfo.ReflectedType;
 
    /// <summary>
    /// Gets custom attributes for the member.
    /// </summary>
    /// <param name="inherit">Get inherited attributes if true</param>
    /// <returns>an array of custom attributes</returns>
-   public override object[] GetCustomAttributes(bool inherit) { return _memberInfo.GetCustomAttributes(inherit); }
+   public override object[] GetCustomAttributes(bool inherit) { return memberInfo.GetCustomAttributes(inherit); }
 
    /// <summary>
    /// Gets custom attributes of a specified type for a member.
@@ -76,7 +76,7 @@ public class FieldOrPropertyInfo : MemberInfo
    /// <returns></returns>
    public override object[] GetCustomAttributes(Type attributeType, bool inherit)
    {
-      return _memberInfo.GetCustomAttributes(attributeType, inherit);
+      return memberInfo.GetCustomAttributes(attributeType, inherit);
    }
 
    /// <summary>
@@ -87,7 +87,7 @@ public class FieldOrPropertyInfo : MemberInfo
    /// <returns></returns>
    public override bool IsDefined(Type attributeType, bool inherit)
    {
-      return _memberInfo.IsDefined(attributeType, inherit);
+      return memberInfo.IsDefined(attributeType, inherit);
    }
 
    /// <summary>
@@ -108,8 +108,8 @@ public class FieldOrPropertyInfo : MemberInfo
       try
       {
          var result = MemberType == MemberTypes.Property
-                         ? DeclaringType?.GetProperty(Name, _flags)?.GetValue(obj)
-                         : DeclaringType?.GetField(Name, _flags)?.GetValue(obj);
+                         ? DeclaringType?.GetProperty(Name, flags)?.GetValue(obj)
+                         : DeclaringType?.GetField(Name, flags)?.GetValue(obj);
          errored = false;
 
          return result;
@@ -141,9 +141,9 @@ public class FieldOrPropertyInfo : MemberInfo
       try
       {
          if (MemberType == MemberTypes.Property)
-            DeclaringType?.GetProperty(Name, _flags)?.SetValue(obj, value);
+            DeclaringType?.GetProperty(Name, flags)?.SetValue(obj, value);
          else
-            DeclaringType?.GetField(Name, _flags)?.SetValue(obj, value);
+            DeclaringType?.GetField(Name, flags)?.SetValue(obj, value);
 
          errored = false;
       }

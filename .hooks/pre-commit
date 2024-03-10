@@ -49,7 +49,7 @@ fi
 # shellcheck disable=SC2093
 git diff-index --check --cached $against --
 
-bash "$(git rev-parse --show-toplevel)/fix-markdown"
+"$(git rev-parse --show-toplevel)/fix-markdown"
 git add "$(git rev-parse --show-toplevel)/docs"
 git add "$(git rev-parse --show-toplevel)/README.md"
 

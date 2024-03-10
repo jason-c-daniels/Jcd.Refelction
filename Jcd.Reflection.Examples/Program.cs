@@ -12,11 +12,11 @@ internal static class Program
    {
       var c = new TestClass();
 
-      // set the private field, _field
-      c.SetValue("_field", 10);
+      // set the private field, field
+      c.SetValue("field", 10);
 
       // now get its value.
-      var val = (int) c.GetValue("_field");
+      var val = (int) c.GetValue("field");
       Console.WriteLine(val);
 
       // Now set a private property with a backing field.

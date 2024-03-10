@@ -21,7 +21,7 @@ namespace Jcd.Reflection;
 /// </summary>
 public class FieldOrPropertyEnumerator : IEnumerable<FieldOrPropertyInfo>
 {
-   private readonly MemberInfoEnumerator _innerEnumerator;
+   private readonly MemberInfoEnumerator innerEnumerator;
 
    /// <summary>
    /// Constructs a FieldOrPropertyEnumerator from a type and settings.
@@ -32,13 +32,13 @@ public class FieldOrPropertyEnumerator : IEnumerable<FieldOrPropertyInfo>
    {
       Type                = type;
       EnumerationSettings = settings;
-      _innerEnumerator = new MemberInfoEnumerator(Type
-                                                , new MemberInfoEnumerator.Settings
-                                                  {
-                                                     Flags = settings.Flags
-                                                   , Skip  = MemberInfoEnumerator.SkipSystemAndNonDataMembers
-                                                  }
-                                                 );
+      innerEnumerator = new MemberInfoEnumerator(Type
+                                               , new MemberInfoEnumerator.Settings
+                                                 {
+                                                    Flags = settings.Flags
+                                                  , Skip  = MemberInfoEnumerator.SkipSystemAndNonDataMembers
+                                                 }
+                                                );
    }
 
    /// <summary>
@@ -68,7 +68,7 @@ public class FieldOrPropertyEnumerator : IEnumerable<FieldOrPropertyInfo>
    public IEnumerator<FieldOrPropertyInfo> GetEnumerator()
    {
       return (
-                from mi in _innerEnumerator
+                from mi in innerEnumerator
                 select new FieldOrPropertyInfo(mi
                                              , EnumerationSettings.Flags ?? BindingFlags.Public | BindingFlags.Instance
                                               )

@@ -14,7 +14,7 @@ public class TypeExtensionsTests
    [Fact]
    public void IsConcreteType_Returns_True_For_Concrete_Types()
    {
-      Assert.True(typeof(IDerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>).IsConcreteType());
+      Assert.True(typeof(DerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>).IsConcreteType());
       Assert.True(typeof(S<>).IsConcreteType());
       Assert.True(typeof(S2<>).IsConcreteType());
       Assert.True(typeof(S<int>).IsConcreteType());
@@ -31,7 +31,7 @@ public class TypeExtensionsTests
    {
       Assert.True(typeof(AbstractDerived<>).InheritsFrom(typeof(AbstractGenericBase<>)));
       Assert.True(typeof(PlainOldImplementation1).InheritsFrom<IPlainOldInterface>());
-      Assert.True(typeof(IDerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>)
+      Assert.True(typeof(DerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>)
                     .InheritsFrom(typeof(IGenericBase<>))
                  );
       Assert.True(typeof(NeenerImBeingDumb<>).InheritsFrom(typeof(IGenericBase<>)));
@@ -46,7 +46,7 @@ public class TypeExtensionsTests
    {
       Assert.False(typeof(AbstractDerived<>).InheritsFrom(typeof(IGenericBase<>)));
       Assert.False(typeof(GenericBase<>).InheritsFrom<IPlainOldInterface>());
-      Assert.False(typeof(IDerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>)
+      Assert.False(typeof(DerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>)
                      .InheritsFrom(typeof(GenericBase<>))
                   );
       Assert.False(typeof(NeenerImBeingDumb<>).InheritsFrom(typeof(GenericBase<>)));

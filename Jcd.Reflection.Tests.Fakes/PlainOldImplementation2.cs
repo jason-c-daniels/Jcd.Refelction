@@ -12,6 +12,6 @@ public class PlainOldImplementation2<T>
    #endregion
 }
 
-public class Poi21<Y> : PlainOldImplementation2<Y>
+public class Poi21<TY> : PlainOldImplementation2<TY>
 {
 }

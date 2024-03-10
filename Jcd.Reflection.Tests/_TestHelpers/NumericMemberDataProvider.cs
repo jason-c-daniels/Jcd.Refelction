@@ -5,11 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
-#endregion
-
 // ReSharper disable UnusedMember.Global
 
+#endregion
+
 namespace Jcd.Reflection.Tests._TestHelpers;
+
+#pragma warning disable CA2021
 
 /// <summary>
 /// An XUnit data provider. This one provides lists of numeric data of a various sorts.
@@ -336,3 +338,4 @@ public class NumericMemberDataProvider
          select new[] { (object) bi };
    }
 }
+#pragma warning restore CA2021

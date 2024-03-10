@@ -494,7 +494,7 @@ public class ReflectionExtensionsTests
    public void SetValue_Sets_A_Field_On_A_Struct()
    {
       var a = new TestStruct(5);
-      a.SetValue("_afield", 7);
-      Assert.Equal(7, a.GetValue("_afield"));
+      a.SetValue("afield", 7);
+      Assert.Equal(7, a.GetValue("afield"));
    }
 }
