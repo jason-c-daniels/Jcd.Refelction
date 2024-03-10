@@ -1,10 +1,8 @@
 #region
 
-using Jcd.Reflection.Tests.Fakes;
-
 #endregion
 
-namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
+namespace Jcd.Reflection.Tests.Fakes;
 
 public class Poii4 : IPlainOldInterface<int>
 {

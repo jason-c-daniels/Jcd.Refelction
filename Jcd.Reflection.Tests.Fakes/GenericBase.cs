@@ -1,4 +1,4 @@
-namespace Jcd.Reflection.Tests._Fakes.TypesTest;
+namespace Jcd.Reflection.Tests.Fakes;
 
 public class GenericBase<T>
 {

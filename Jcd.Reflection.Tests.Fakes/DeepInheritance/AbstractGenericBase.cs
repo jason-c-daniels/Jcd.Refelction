@@ -1,4 +1,4 @@
-namespace Jcd.Reflection.Tests._Fakes.TypesTest;
+namespace Jcd.Reflection.Tests.Fakes.DeepInheritance;
 
 public abstract class AbstractGenericBase<T>
 {

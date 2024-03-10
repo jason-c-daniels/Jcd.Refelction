@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
+namespace Jcd.Reflection.Tests.Fakes;
 
 internal class TestClassC : TestClassB
 {

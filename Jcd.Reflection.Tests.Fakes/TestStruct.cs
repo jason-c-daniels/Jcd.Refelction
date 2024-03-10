@@ -2,7 +2,7 @@
 // ReSharper disable ConvertToAutoProperty
 // ReSharper disable UnusedMember.Global
 
-namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
+namespace Jcd.Reflection.Tests.Fakes;
 
 public struct TestStruct
 {

@@ -2,7 +2,7 @@
 // ReSharper disable UnusedMember.Global
 
 #pragma warning disable 414
-namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
+namespace Jcd.Reflection.Tests.Fakes;
 
 internal class TestClassA
 {

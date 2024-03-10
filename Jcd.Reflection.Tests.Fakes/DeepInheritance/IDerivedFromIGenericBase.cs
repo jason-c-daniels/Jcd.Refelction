@@ -1,4 +1,4 @@
-namespace Jcd.Reflection.Tests._Fakes.TypesTest;
+namespace Jcd.Reflection.Tests.Fakes.DeepInheritance;
 
 public interface IDerivedFromIGenericBase<out T> : IGenericBase<T>
 {
