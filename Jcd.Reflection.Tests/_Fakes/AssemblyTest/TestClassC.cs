@@ -25,8 +25,8 @@ internal class TestClassC : TestClassB
    // ReSharper disable once UnusedMember.Global
    public int ExceptionalProperty
    {
-      get => throw new NotImplementedException();
-      set => throw new NotImplementedException();
+      get => throw new InvalidOperationException();
+      set => throw new InvalidOperationException();
    }
 
    // ReSharper disable once UnusedMember.Global

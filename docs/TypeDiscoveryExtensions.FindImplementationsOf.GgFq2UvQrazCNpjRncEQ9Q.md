@@ -28,10 +28,10 @@ If [T](TypeDiscoveryExtensions.FindImplementationsOf.GgFq2UvQrazCNpjRncEQ9Q.md#J
 
 #### Returns
 
-[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[System.Type](https://docs.microsoft.com/en-us/dotnet/api/System.Type 'System.Type')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
+[System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[System.Type](https://docs.microsoft.com/en-us/dotnet/api/System.Type 'System.Type')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 An [System.Collections.Generic.IEnumerable&lt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1') of the implementations of <typeparam name="T"></typeparam>
 
 #### Exceptions
 
-[System.ArgumentNullException](https://docs.microsoft.com/en-us/dotnet/api/System.ArgumentNullException 'System.ArgumentNullException')  
+[System.ArgumentNullException](https://docs.microsoft.com/en-us/dotnet/api/System.ArgumentNullException 'System.ArgumentNullException')
 When [assembly](TypeDiscoveryExtensions.FindImplementationsOf.GgFq2UvQrazCNpjRncEQ9Q.md#Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf_T_(thisSystem.Reflection.Assembly,bool).assembly 'Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf<T>(this System.Reflection.Assembly, bool).assembly')  is null.

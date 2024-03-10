@@ -29,5 +29,5 @@ settings that control method selection. [AllInstanceMethodsFilter](MethodExtensi
 
 #### Returns
 
-[System.Reflection.MethodInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MethodInfo 'System.Reflection.MethodInfo')  
+[System.Reflection.MethodInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MethodInfo 'System.Reflection.MethodInfo')
 null if none found

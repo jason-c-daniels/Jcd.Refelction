@@ -42,5 +42,5 @@ The params to pass
 
 #### Returns
 
-[TOut](MethodExtensions.Invoke.y0S+4SmT+YgSL67nVzc6Gw.md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this System.Type, string, Jcd.Reflection.MethodInfoEnumerator.Settings, object[]).TOut')  
+[TOut](MethodExtensions.Invoke.y0S+4SmT+YgSL67nVzc6Gw.md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this System.Type, string, Jcd.Reflection.MethodInfoEnumerator.Settings, object[]).TOut')
 The result of the call, if any

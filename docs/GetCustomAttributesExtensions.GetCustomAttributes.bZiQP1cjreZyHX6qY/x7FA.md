@@ -31,6 +31,6 @@ inspect the inheritance hierarchy
 
 #### Returns
 
-[TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.bZiQP1cjreZyHX6qY/x7FA.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.TypeInfo,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Reflection.TypeInfo, bool).TAttribute')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')  
-An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is  
+[TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.bZiQP1cjreZyHX6qY/x7FA.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.TypeInfo,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Reflection.TypeInfo, bool).TAttribute')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
+An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is
 returned.

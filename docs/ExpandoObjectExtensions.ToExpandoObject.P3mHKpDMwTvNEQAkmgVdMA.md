@@ -35,5 +35,5 @@ a function to determine if a value is to be retained
 
 #### Returns
 
-[System.Dynamic.ExpandoObject](https://docs.microsoft.com/en-us/dotnet/api/System.Dynamic.ExpandoObject 'System.Dynamic.ExpandoObject')  
+[System.Dynamic.ExpandoObject](https://docs.microsoft.com/en-us/dotnet/api/System.Dynamic.ExpandoObject 'System.Dynamic.ExpandoObject')
 The ExpandoObject

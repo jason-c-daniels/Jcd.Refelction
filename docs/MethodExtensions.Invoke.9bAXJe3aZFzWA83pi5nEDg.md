@@ -35,5 +35,5 @@ The params to pass
 
 #### Returns
 
-[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')  
+[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')
 The result of the call, if any

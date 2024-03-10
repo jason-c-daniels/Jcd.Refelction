@@ -17,5 +17,5 @@ the type to interrogate
 
 #### Returns
 
-[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
+[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 true if it is (via duck typing)
