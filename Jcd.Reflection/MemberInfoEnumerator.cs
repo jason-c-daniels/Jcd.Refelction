@@ -7,11 +7,10 @@ using System.Reflection;
 
 // ReSharper disable HeapView.ObjectAllocation
 // ReSharper disable HeapView.ObjectAllocation.Possible
-
-#endregion
-
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable FieldCanBeMadeReadOnly.Global
+
+#endregion
 
 namespace Jcd.Reflection;
 
@@ -42,10 +41,10 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
    /// </summary>
    /// <param name="type">The type to enumerate</param>
    /// <param name="settings">The settings controlling enumeration</param>
-   public MemberInfoEnumerator(Type type, Settings settings = default)
+   public MemberInfoEnumerator(Type type, MemberInfoFilter settings = default)
    {
-      Type                = type;
-      EnumerationSettings = settings;
+      Type   = type;
+      Filter = settings;
    }
 
    /// <summary>
@@ -55,17 +54,16 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
    /// <param name="settings">The settings controlling enumeration</param>
 
    // ReSharper disable once UnusedMember.Global
-   public MemberInfoEnumerator(object item, Settings settings = default)
+   public MemberInfoEnumerator(object item, MemberInfoFilter settings = default)
       : this((Type) (item is System.Type or null ? item : item.GetType()), settings)
    {
    }
 
+   // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
    /// <summary>
    /// Gets or sets the settings controlling member info enumeration
    /// </summary>
-
-   // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
-   public Settings EnumerationSettings { get; set; }
+   public MemberInfoFilter Filter { get; set; }
 
    /// <summary>
    /// The type whose members are enumerated.
@@ -79,13 +77,13 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
    public IEnumerator<MemberInfo> GetEnumerator()
    {
       if (Type == null) yield break;
-      IEnumerable<MemberInfo> memberInfos = EnumerationSettings.Flags.HasValue
-                                               ? Type.GetMembers(EnumerationSettings.Flags.Value)
+      IEnumerable<MemberInfo> memberInfos = Filter.Flags.HasValue
+                                               ? Type.GetMembers(Filter.Flags.Value)
                                                : Type.GetMembers();
 
       foreach (var mi in memberInfos)
       {
-         var skipped = EnumerationSettings.Skip?.Invoke(mi);
+         var skipped = Filter.Skip?.Invoke(mi);
 
          if (skipped.HasValue && skipped.Value) continue;
 
@@ -98,20 +96,4 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
    /// </summary>
    /// <returns>An enumerator</returns>
    IEnumerator IEnumerable.GetEnumerator() { return GetEnumerator(); }
-
-   /// <summary>
-   /// The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
-   /// </summary>
-   public struct Settings
-   {
-      /// <summary>
-      /// The BindingFlags for the member lookup.
-      /// </summary>
-      public BindingFlags? Flags;
-
-      /// <summary>
-      /// A predicate for skipping certain members.
-      /// </summary>
-      public Func<MemberInfo, bool> Skip;
-   }
 }

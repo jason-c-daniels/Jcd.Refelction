@@ -1,3 +1,5 @@
+#region
+
 using System;
 using System.Linq;
 using System.Reflection;
@@ -5,6 +7,8 @@ using System.Reflection;
 // ReSharper disable MemberCanBePrivate.Global
 
 namespace Jcd.Reflection;
+
+#endregion
 
 /// <summary>
 /// Various extension methods that assist in getting custom attributes of a specified type.

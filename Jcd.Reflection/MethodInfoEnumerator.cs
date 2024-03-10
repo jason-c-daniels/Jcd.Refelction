@@ -24,10 +24,10 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
    /// </summary>
    /// <param name="type">The type to enumerate</param>
    /// <param name="settings">The settings controlling enumeration</param>
-   public MethodInfoEnumerator(Type type, Settings settings = default)
+   public MethodInfoEnumerator(Type type, MethodInfoFilter settings = default)
    {
-      Type                = type;
-      EnumerationSettings = settings;
+      Type   = type;
+      Filter = settings;
    }
 
    /// <summary>
@@ -37,11 +37,12 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
    /// <param name="settings">The settings controlling enumeration</param>
 
    // ReSharper disable once UnusedMember.Global
-   public MethodInfoEnumerator(object item, Settings settings = default) : this((Type) (item is System.Type or null
-                                                                                           ? item
-                                                                                           : item.GetType())
-                                                                              , settings
-                                                                               )
+   public MethodInfoEnumerator(object item, MethodInfoFilter settings = default) :
+      this((Type) (item is System.Type or null
+                      ? item
+                      : item.GetType())
+         , settings
+          )
    {
    }
 
@@ -50,7 +51,7 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
    /// </summary>
 
    // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
-   public Settings EnumerationSettings { get; set; }
+   public MethodInfoFilter Filter { get; set; }
 
    /// <summary>
    /// The type whose methods are enumerated.
@@ -64,13 +65,13 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
    public IEnumerator<MethodInfo> GetEnumerator()
    {
       if (Type == null) yield break;
-      IEnumerable<MethodInfo> member = EnumerationSettings.Flags.HasValue
-                                          ? Type.GetMethods(EnumerationSettings.Flags.Value)
+      IEnumerable<MethodInfo> member = Filter.Flags.HasValue
+                                          ? Type.GetMethods(Filter.Flags.Value)
                                           : Type.GetMethods();
 
       foreach (var mi in member)
       {
-         var skipped = EnumerationSettings.Skip?.Invoke(mi);
+         var skipped = Filter.Skip?.Invoke(mi);
 
          if (skipped.HasValue && skipped.Value) continue;
 
@@ -83,22 +84,4 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
    /// </summary>
    /// <returns>An enumerator</returns>
    IEnumerator IEnumerable.GetEnumerator() { return GetEnumerator(); }
-
-   /// <summary>
-   /// The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
-   /// </summary>
-   public struct Settings
-   {
-      /// <summary>
-      /// The BindingFlags for the member lookup.
-      /// </summary>
-      public BindingFlags? Flags;
-
-      /// <summary>
-      /// A predicate for skipping certain members.
-      /// </summary>
-
-      // ReSharper disable once UnassignedField.Global
-      public Func<MethodInfo, bool> Skip;
-   }
 }

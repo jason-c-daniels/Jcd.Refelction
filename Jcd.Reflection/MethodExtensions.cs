@@ -23,42 +23,6 @@ namespace Jcd.Reflection;
 public static class MethodExtensions
 {
    /// <summary>
-   /// A pre-filter to select all, including inherited, instance methods.
-   /// </summary>
-   public static readonly MethodInfoEnumerator.Settings AllInstanceMethodsFilter =
-      new()
-      {
-         Flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.FlattenHierarchy
-      };
-
-   /// <summary>
-   /// A pre-filter to select all, including inherited, static methods.
-   /// </summary>
-   public static readonly MethodInfoEnumerator.Settings AllStaticMethodsFilter =
-      new()
-      {
-         Flags = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.FlattenHierarchy
-      };
-
-   /// <summary>
-   /// A pre-filter to select all but inherited instance methods.
-   /// </summary>
-   public static readonly MethodInfoEnumerator.Settings DirectInstanceMethodsFilter =
-      new()
-      {
-         Flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.FlattenHierarchy
-      };
-
-   /// <summary>
-   /// A pre-filter to select all but inherited static methods.
-   /// </summary>
-   public static readonly MethodInfoEnumerator.Settings DirectStaticMethodsFilter =
-      new()
-      {
-         Flags = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.FlattenHierarchy
-      };
-
-   /// <summary>
    /// Finds the first method by the provided name and returns its MethodInfo
    /// </summary>
    /// <param name="self">The instance to find the method on</param>
@@ -66,7 +30,7 @@ public static class MethodExtensions
    /// <returns>null if none found</returns>
    public static MethodInfo GetMethod(this object self, string name)
    {
-      return GetMethod(self, name, AllInstanceMethodsFilter);
+      return GetMethod(self, name, MethodInfoFilter.AllInstanceMethodsFilter);
    }
 
    /// <summary>
@@ -74,9 +38,9 @@ public static class MethodExtensions
    /// </summary>
    /// <param name="self">The instance to find the method on</param>
    /// <param name="name">the method name.</param>
-   /// <param name="settings">settings that control method selection. <see cref="AllInstanceMethodsFilter"/> </param>
+   /// <param name="settings">settings that control method selection. <see cref="MethodInfoFilter.AllInstanceMethodsFilter"/> </param>
    /// <returns>null if none found</returns>
-   public static MethodInfo GetMethod(this object self, string name, MethodInfoEnumerator.Settings settings)
+   public static MethodInfo GetMethod(this object self, string name, MethodInfoFilter settings)
    {
       Argument.IsNotNull(self, nameof(self));
       var type = self.GetType();
@@ -94,7 +58,7 @@ public static class MethodExtensions
    {
       Argument.IsNotNull(type, nameof(type));
 
-      return type.GetMethod(name, AllStaticMethodsFilter);
+      return type.GetMethod(name, MethodInfoFilter.AllStaticMethodsFilter);
    }
 
    /// <summary>
@@ -104,7 +68,7 @@ public static class MethodExtensions
    /// <param name="name">the name of the method</param>
    /// <param name="settings"></param>
    /// <returns>the result of the call, if any</returns>
-   public static MethodInfo GetMethod(this Type type, string name, MethodInfoEnumerator.Settings settings)
+   public static MethodInfo GetMethod(this Type type, string name, MethodInfoFilter settings)
    {
       Argument.IsNotNull(type, nameof(type));
 
@@ -119,20 +83,20 @@ public static class MethodExtensions
    /// <returns>an array of matching methods</returns>
    public static MethodInfo[] GetMethods(this object self, Func<MethodInfo, bool> filter = null)
    {
-      return GetMethods(self, AllInstanceMethodsFilter, filter);
+      return GetMethods(self, MethodInfoFilter.AllInstanceMethodsFilter, filter);
    }
 
    /// <summary>
    /// Given a filter return an array of matching MethodInfo's
    /// </summary>
    /// <param name="self">The target object of the method selection.</param>
-   /// <param name="settings">The method selection settings such as <see cref="AllInstanceMethodsFilter"/></param>
+   /// <param name="settings">The method selection settings such as <see cref="MethodInfoFilter.AllInstanceMethodsFilter"/></param>
    /// <param name="filter">a predicate to select or exclude specific methods.</param>
    /// <returns>an array of matching methods</returns>
    public static MethodInfo[] GetMethods(
-      this object                   self
-    , MethodInfoEnumerator.Settings settings
-    , Func<MethodInfo, bool>        filter = null
+      this object            self
+    , MethodInfoFilter       settings
+    , Func<MethodInfo, bool> filter = null
    )
    {
       Argument.IsNotNull(self, nameof(self));
@@ -161,14 +125,14 @@ public static class MethodExtensions
    /// </summary>
    /// <param name="self">The instance to invoke the method on</param>
    /// <param name="name">the name of the method to invoke</param>
-   /// <param name="settings">The method selection settings such as <see cref="AllInstanceMethodsFilter"/></param>
+   /// <param name="settings">The method selection settings such as <see cref="MethodInfoFilter.AllInstanceMethodsFilter"/></param>
    /// <param name="params">the params for the method</param>
    /// <returns>the result, if any</returns>
    public static object Invoke(
-      this object                   self
-    , string                        name
-    , MethodInfoEnumerator.Settings settings
-    , params object[]               @params
+      this object      self
+    , string           name
+    , MethodInfoFilter settings
+    , params object[]  @params
    )
    {
       Argument.IsNotNull(self, nameof(self));
@@ -187,7 +151,7 @@ public static class MethodExtensions
    {
       Argument.IsNotNull(self, nameof(self));
 
-      return self.Invoke(name, AllInstanceMethodsFilter, @params);
+      return self.Invoke(name, MethodInfoFilter.AllInstanceMethodsFilter, @params);
    }
 
    /// <summary>
@@ -211,15 +175,15 @@ public static class MethodExtensions
    /// </summary>
    /// <param name="self">The instance to invoke the method on</param>
    /// <param name="name">the name of the method to invoke</param>
-   /// <param name="settings">The method selection settings such as <see cref="AllInstanceMethodsFilter"/></param>
+   /// <param name="settings">The method selection settings such as <see cref="MethodInfoFilter.AllInstanceMethodsFilter"/></param>
    /// <param name="params">the params for the method</param>
    /// <returns>the result, if any</returns>
    /// <typeparam name="TOut">result type</typeparam>
    public static TOut Invoke<TOut>(
-      this object                   self
-    , string                        name
-    , MethodInfoEnumerator.Settings settings
-    , params object[]               @params
+      this object      self
+    , string           name
+    , MethodInfoFilter settings
+    , params object[]  @params
    )
    {
       Argument.IsNotNull(self, nameof(self));
@@ -239,7 +203,7 @@ public static class MethodExtensions
    {
       Argument.IsNotNull(self, nameof(self));
 
-      return self.Invoke<TOut>(name, AllInstanceMethodsFilter, @params);
+      return self.Invoke<TOut>(name, MethodInfoFilter.AllInstanceMethodsFilter, @params);
    }
 
    /// <summary>
@@ -251,7 +215,7 @@ public static class MethodExtensions
    /// <returns>The result of the call, if any</returns>
    public static object Invoke(this Type type, string name, params object[] @params)
    {
-      return type.GetMethod(name, AllStaticMethodsFilter).Invoke(type, @params);
+      return type.GetMethod(name, MethodInfoFilter.AllStaticMethodsFilter).Invoke(type, @params);
    }
 
    /// <summary>
@@ -260,13 +224,13 @@ public static class MethodExtensions
    /// <param name="type">The type containing the static method</param>
    /// <param name="name">The name of the method</param>
    /// <param name="params">The params to pass</param>
-   /// <param name="settings">The method selection settings such as <see cref="AllStaticMethodsFilter"/></param>
+   /// <param name="settings">The method selection settings such as <see cref="MethodInfoFilter.AllStaticMethodsFilter"/></param>
    /// <returns>The result of the call, if any</returns>
    public static object Invoke(
-      this Type                     type
-    , string                        name
-    , MethodInfoEnumerator.Settings settings
-    , params object[]               @params
+      this Type        type
+    , string           name
+    , MethodInfoFilter settings
+    , params object[]  @params
    )
    {
       return type.GetMethod(name, settings).Invoke(type, @params);
@@ -282,7 +246,7 @@ public static class MethodExtensions
    /// <returns>The result of the call, if any</returns>
    public static TOut Invoke<TOut>(this Type type, string name, params object[] @params)
    {
-      return (TOut) type.GetMethod(name, AllStaticMethodsFilter).Invoke(type, @params);
+      return (TOut) type.GetMethod(name, MethodInfoFilter.AllStaticMethodsFilter).Invoke(type, @params);
    }
 
    /// <summary>
@@ -291,14 +255,14 @@ public static class MethodExtensions
    /// <param name="type">The type containing the static method</param>
    /// <param name="name">The name of the method</param>
    /// <param name="params">The params to pass</param>
-   /// <param name="settings">The method selection settings such as <see cref="AllStaticMethodsFilter"/></param>
+   /// <param name="settings">The method selection settings such as <see cref="MethodInfoFilter.AllStaticMethodsFilter"/></param>
    /// <typeparam name="TOut">The type of the return</typeparam>
    /// <returns>The result of the call, if any</returns>
    public static TOut Invoke<TOut>(
-      this Type                     type
-    , string                        name
-    , MethodInfoEnumerator.Settings settings
-    , params object[]               @params
+      this Type        type
+    , string           name
+    , MethodInfoFilter settings
+    , params object[]  @params
    )
    {
       return (TOut) type.GetMethod(name, settings).Invoke(type, @params);

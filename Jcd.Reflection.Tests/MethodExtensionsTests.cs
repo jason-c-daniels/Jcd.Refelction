@@ -72,7 +72,7 @@ public class MethodExtensionsTests
    public void Invoke_On_Instance_Executes_Method_With_Result3()
    {
       var result = typeof(TestClassC).Invoke<int>("Sub"
-                                                , new MethodInfoEnumerator.Settings
+                                                , new MethodInfoFilter
                                                   {
                                                      Flags = BindingFlags.Static
                                                            | BindingFlags.Public
@@ -88,7 +88,7 @@ public class MethodExtensionsTests
    public void Invoke_On_Instance_Executes_Method_With_Result4()
    {
       var result = typeof(TestClassC).Invoke("Sub"
-                                           , new MethodInfoEnumerator.Settings
+                                           , new MethodInfoFilter
                                              {
                                                 Flags = BindingFlags.Static
                                                       | BindingFlags.Public

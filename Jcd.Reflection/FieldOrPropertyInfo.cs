@@ -13,7 +13,7 @@ using Jcd.Validations;
 namespace Jcd.Reflection;
 
 /// <summary>
-/// 
+/// A dual purpose MemberInfo type for either a field or a property.
 /// </summary>
 public class FieldOrPropertyInfo : MemberInfo
 {
@@ -21,7 +21,7 @@ public class FieldOrPropertyInfo : MemberInfo
    private readonly MemberInfo   memberInfo;
 
    /// <summary>
-   /// A dual purpose MemberInfo type.
+   /// Constructs a <see cref="FieldOrPropertyInfo"/>
    /// </summary>
    /// <param name="memberInfo">The member info on which this instance is based.</param>
    /// <param name="flags">the binding flags</param>

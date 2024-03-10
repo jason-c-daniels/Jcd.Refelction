@@ -4,143 +4,6 @@
         <name>Jcd.Reflection</name>
     </assembly>
     <members>
-        <member name="T:Jcd.Reflection.ExpandoObjectExtensions">
-            <summary>
-            Extension methods for creating expando objects from POCOs or string object dictionaries
-            </summary>
-            <remarks>
-            THESE EXTENSION METHODS ARE GOING AWAY SOON!
-            </remarks>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToDictionaryTree(System.Object,System.Collections.Generic.HashSet{System.Object},System.Func{System.String,System.String},System.Func{System.String,System.Object,System.Boolean})">
-            <summary>
-            Decomposes an object graph into a string-object dictionary tree. Cycles are not preserved.
-            </summary>
-            <param name="self">The object to decompose</param>
-            <param name="visited">A hashset of visited objects</param>
-            <param name="keyRenamingStrategy">A function to rename a key when it's deemed necessary</param>
-            <param name="valueRetentionStrategy">a function to determine if a value is to be retained</param>
-            <returns>The dictionary</returns>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToExpandoObject(System.Object,System.Collections.Generic.HashSet{System.Object},System.Func{System.String,System.String},System.Func{System.String,System.Object,System.Boolean})">
-            <summary>
-            Convert an object into an ExpandoObject, tree, breaking cycles in the object graph.
-            </summary>
-            <param name="self">the object to convert</param>
-            <param name="visited">A hashset of visited objects</param>
-            <param name="keyRenamingStrategy">A function to rename a key when it's deemed necessary</param>
-            <param name="valueRetentionStrategy">a function to determine if a value is to be retained</param>
-            <returns>The ExpandoObject</returns>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.DefaultExpandoKeyRenamingStrategy(System.String)">
-            <summary>
-            </summary>
-            <param name="k"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.DefaultExpandoValueRetentionStrategy(System.Object)">
-            <summary>
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToDictionaryTree``1(System.Object,System.Collections.Generic.HashSet{System.Object},System.Func{System.String,System.String},System.Func{System.String,System.Object,System.Boolean})">
-            <summary>
-            </summary>
-            <param name="self"></param>
-            <param name="visited"></param>
-            <param name="keyRenamingStrategy"></param>
-            <param name="valueRetentionStrategy"></param>
-            <typeparam name="TNode"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.AppendDictionary``1(System.Collections.Generic.HashSet{System.Object},System.Func{System.String,System.String},System.Func{System.String,System.Object,System.Boolean},System.Collections.IDictionary,``0)">
-            <summary>
-            </summary>
-            <param name="visited"></param>
-            <param name="keyRenamingStrategy"></param>
-            <param name="valueRetentionStrategy"></param>
-            <param name="dictionary1"></param>
-            <param name="root"></param>
-            <typeparam name="TNode"></typeparam>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.AppendObject``1(System.Object,System.Collections.Generic.HashSet{System.Object},System.Func{System.String,System.String},System.Func{System.String,System.Object,System.Boolean},``0)">
-            <summary>
-            </summary>
-            <param name="self"></param>
-            <param name="visited"></param>
-            <param name="keyRenamingStrategy"></param>
-            <param name="valueRetentionStrategy"></param>
-            <param name="root"></param>
-            <typeparam name="TNode"></typeparam>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.AppendEnumerable``1(System.Collections.Generic.HashSet{System.Object},System.Func{System.String,System.String},System.Func{System.String,System.Object,System.Boolean},System.Collections.IEnumerable,``0,System.Object@)">
-            <summary>
-            </summary>
-            <param name="visited"></param>
-            <param name="keyRenamingStrategy"></param>
-            <param name="valueRetentionStrategy"></param>
-            <param name="enumerable"></param>
-            <param name="root"></param>
-            <param name="array"></param>
-            <typeparam name="TNode"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.BuildName(System.String,System.Text.StringBuilder,System.Char)">
-            <summary>
-            </summary>
-            <param name="k"></param>
-            <param name="sb"></param>
-            <param name="pc"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.Append``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,System.Object,System.Collections.Generic.HashSet{System.Object},System.Func{System.String,System.String},System.Func{System.String,System.Object,System.Boolean})">
-            <summary>
-            </summary>
-            <param name="dictionary"></param>
-            <param name="key"></param>
-            <param name="val"></param>
-            <param name="visited"></param>
-            <param name="keyRenamingStrategy"></param>
-            <param name="valueRetentionStrategy"></param>
-            <typeparam name="TNode"></typeparam>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToPropertyInfoValuePairs(System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo},System.Object)">
-            <summary>
-            Creates a set of PropertyInfo to (current) value pairs for a given object.
-            </summary>
-            <param name="items"></param>
-            <param name="item"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToNameValuePairs(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Reflection.PropertyInfo,System.Object}})">
-            <summary>
-            For a set of PropertyInfo to object pairs return a name to value pair.
-            </summary>
-            <param name="items"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToFieldInfoValuePairs(System.Collections.Generic.IEnumerable{System.Reflection.FieldInfo},System.Object)">
-            <summary>
-            </summary>
-            <param name="items"></param>
-            <param name="item"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToNameValuePairs(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Reflection.FieldInfo,System.Object}})">
-            <summary>
-            Creates a set of FieldInfo to (current) value pairs for a given object.
-            </summary>
-            <param name="items"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Jcd.Reflection.ExpandoObjectExtensions.IsKeyValuePair(System.Type)">
-            <summary>
-            Determines if a type is a KeyValuePair
-            </summary>
-            <param name="type">the type to interrogate</param>
-            <returns>true if it is (via duck typing)</returns>
-        </member>
         <member name="T:Jcd.Reflection.FieldInfoExtensions">
             <summary>
             Extension methods to aid in reflecting on fields.
@@ -169,21 +32,23 @@
             Enumerates both properties and fields on a given data type.
             </summary>
         </member>
-        <member name="M:Jcd.Reflection.FieldOrPropertyEnumerator.#ctor(System.Type,Jcd.Reflection.FieldOrPropertyEnumerator.Settings)">
+       <member
+          name="M:Jcd.Reflection.FieldOrPropertyEnumerator.#ctor(System.Type,Jcd.Reflection.FieldOrPropertyInfoFilter)">
             <summary>
             Constructs a FieldOrPropertyEnumerator from a type and settings.
             </summary>
             <param name="type">The data type to reflect on</param>
-            <param name="settings">the settings controlling enumeration</param>
+          <param name="fieldOrPropertyInfoFilter">the settings controlling enumeration</param>
         </member>
-        <member name="M:Jcd.Reflection.FieldOrPropertyEnumerator.#ctor(System.Object,Jcd.Reflection.FieldOrPropertyEnumerator.Settings)">
+       <member
+          name="M:Jcd.Reflection.FieldOrPropertyEnumerator.#ctor(System.Object,Jcd.Reflection.FieldOrPropertyInfoFilter)">
             <summary>
             Constructs a FieldOrPropertyEnumerator from an object instance and settings.
             </summary>
             <param name="item">The object instance to reflect on</param>
-            <param name="settings">the settings controlling enumeration</param>
+          <param name="fieldOrPropertyInfoFilter">the settings controlling enumeration</param>
         </member>
-        <member name="P:Jcd.Reflection.FieldOrPropertyEnumerator.EnumerationSettings">
+       <member name="P:Jcd.Reflection.FieldOrPropertyEnumerator.Filter">
             <summary>
             Gets or sets the settings that control enumeration. 
             </summary>
@@ -205,29 +70,15 @@
             </summary>
             <returns>An enumerator for the FieldOrPropertyInfo's</returns>
         </member>
-        <member name="T:Jcd.Reflection.FieldOrPropertyEnumerator.Settings">
-            <summary>
-            The settings indicating "how" to enumerate. (i.e. BindingFlags and a predicate for skipping members)
-            </summary>
-        </member>
-        <member name="F:Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Flags">
-            <summary>
-            The BindingFlags for the member lookup.
-            </summary>
-        </member>
-        <member name="F:Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Skip">
-            <summary>
-            A predicate for skipping certain members.
-            </summary>
-        </member>
         <member name="T:Jcd.Reflection.FieldOrPropertyInfo">
             <summary>
-            
+               A dual purpose MemberInfo type for either a field or a property.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyInfo.#ctor(System.Reflection.MemberInfo,System.Reflection.BindingFlags)">
             <summary>
-            A dual purpose MemberInfo type.
+               Constructs a
+               <see cref="T:Jcd.Reflection.FieldOrPropertyInfo"/>
             </summary>
             <param name="memberInfo">The member info on which this instance is based.</param>
             <param name="flags">the binding flags</param>
@@ -305,6 +156,21 @@
             <param name="value">The value to set.</param>
             <param name="errored">true if an exception occurred during the set.</param>
         </member>
+       <member name="T:Jcd.Reflection.FieldOrPropertyInfoFilter">
+          <summary>
+             The settings indicating "how" to enumerate. (i.e. BindingFlags and a predicate for skipping members)
+          </summary>
+       </member>
+       <member name="P:Jcd.Reflection.FieldOrPropertyInfoFilter.Flags">
+          <summary>
+             The BindingFlags for the member lookup.
+          </summary>
+       </member>
+       <member name="P:Jcd.Reflection.FieldOrPropertyInfoFilter.Skip">
+          <summary>
+             A predicate for skipping certain members.
+          </summary>
+       </member>
         <member name="T:Jcd.Reflection.GetCustomAttributesExtensions">
             <summary>
             Various extension methods that assist in getting custom attributes of a specified type.
@@ -669,21 +535,21 @@
             Predefined skip predicate for skipping system members.  
             </summary>
         </member>
-        <member name="M:Jcd.Reflection.MemberInfoEnumerator.#ctor(System.Type,Jcd.Reflection.MemberInfoEnumerator.Settings)">
+       <member name="M:Jcd.Reflection.MemberInfoEnumerator.#ctor(System.Type,Jcd.Reflection.MemberInfoFilter)">
             <summary>
             Constructs a MemberInfoEnumerator from a type and settings.
             </summary>
             <param name="type">The type to enumerate</param>
             <param name="settings">The settings controlling enumeration</param>
         </member>
-        <member name="M:Jcd.Reflection.MemberInfoEnumerator.#ctor(System.Object,Jcd.Reflection.MemberInfoEnumerator.Settings)">
+       <member name="M:Jcd.Reflection.MemberInfoEnumerator.#ctor(System.Object,Jcd.Reflection.MemberInfoFilter)">
             <summary>
             Constructs a MemberInfoEnumerator from an instance and settings.
             </summary>
             <param name="item">The instance to enumerate</param>
             <param name="settings">The settings controlling enumeration</param>
         </member>
-        <member name="P:Jcd.Reflection.MemberInfoEnumerator.EnumerationSettings">
+       <member name="P:Jcd.Reflection.MemberInfoEnumerator.Filter">
             <summary>
             Gets or sets the settings controlling member info enumeration
             </summary>
@@ -705,44 +571,44 @@
             </summary>
             <returns>An enumerator</returns>
         </member>
-        <member name="T:Jcd.Reflection.MemberInfoEnumerator.Settings">
+       <member name="T:Jcd.Reflection.MemberInfoFilter">
             <summary>
             The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
             </summary>
         </member>
-        <member name="F:Jcd.Reflection.MemberInfoEnumerator.Settings.Flags">
+       <member name="F:Jcd.Reflection.MemberInfoFilter.AllInstanceMethodsFilter">
             <summary>
-            The BindingFlags for the member lookup.
+               Selects all public instance methods including inherited methods.
             </summary>
         </member>
-        <member name="F:Jcd.Reflection.MemberInfoEnumerator.Settings.Skip">
+       <member name="F:Jcd.Reflection.MemberInfoFilter.AllStaticMethodsFilter">
             <summary>
-            A predicate for skipping certain members.
+               Selects all static methods including inherited static.
             </summary>
         </member>
-        <member name="T:Jcd.Reflection.MethodExtensions">
+       <member name="F:Jcd.Reflection.MemberInfoFilter.DirectInstanceMethodsFilter">
             <summary>
-            Extension methods to help invoke methods via reflection.
+               Selects all directly declared instance methods.
             </summary>
         </member>
-        <member name="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter">
+       <member name="F:Jcd.Reflection.MemberInfoFilter.DirectStaticMethodsFilter">
             <summary>
-            A pre-filter to select all, including inherited, instance methods.
+               Selects all directly declared static methods.
             </summary>
         </member>
-        <member name="F:Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter">
+       <member name="P:Jcd.Reflection.MemberInfoFilter.Flags">
             <summary>
-            A pre-filter to select all, including inherited, static methods.
+               The BindingFlags for the member lookup.
             </summary>
         </member>
-        <member name="F:Jcd.Reflection.MethodExtensions.DirectInstanceMethodsFilter">
+       <member name="P:Jcd.Reflection.MemberInfoFilter.Skip">
             <summary>
-            A pre-filter to select all but inherited instance methods.
+               A predicate for skipping certain members.
             </summary>
         </member>
-        <member name="F:Jcd.Reflection.MethodExtensions.DirectStaticMethodsFilter">
+       <member name="T:Jcd.Reflection.MethodExtensions">
             <summary>
-            A pre-filter to select all but inherited static methods.
+               Extension methods to help invoke methods via reflection.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Object,System.String)">
@@ -753,13 +619,16 @@
             <param name="name">the method name.</param>
             <returns>null if none found</returns>
         </member>
-        <member name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Object,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings)">
+       <member
+          name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Object,System.String,Jcd.Reflection.MethodInfoFilter)">
             <summary>
             Finds the first method by the provided name and returns its MethodInfo
             </summary>
             <param name="self">The instance to find the method on</param>
             <param name="name">the method name.</param>
-            <param name="settings">settings that control method selection. <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/> </param>
+          <param name="settings">settings that control method selection.
+             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllInstanceMethodsFilter"/>
+          </param>
             <returns>null if none found</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Type,System.String)">
@@ -770,7 +639,8 @@
             <param name="name">the name of the method</param>
             <returns>the result of the call, if any</returns>
         </member>
-        <member name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Type,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings)">
+       <member
+          name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Type,System.String,Jcd.Reflection.MethodInfoFilter)">
             <summary>
             Gets a methodInfo by name from a type. 
             </summary>
@@ -787,12 +657,15 @@
             <param name="filter">a predicate to select or exclude specific methods.</param>
             <returns>an array of matching methods</returns>
         </member>
-        <member name="M:Jcd.Reflection.MethodExtensions.GetMethods(System.Object,Jcd.Reflection.MethodInfoEnumerator.Settings,System.Func{System.Reflection.MethodInfo,System.Boolean})">
+       <member
+          name="M:Jcd.Reflection.MethodExtensions.GetMethods(System.Object,Jcd.Reflection.MethodInfoFilter,System.Func{System.Reflection.MethodInfo,System.Boolean})">
             <summary>
             Given a filter return an array of matching MethodInfo's
             </summary>
             <param name="self">The target object of the method selection.</param>
-            <param name="settings">The method selection settings such as <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/></param>
+          <param name="settings">The method selection settings such as
+             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllInstanceMethodsFilter"/>
+          </param>
             <param name="filter">a predicate to select or exclude specific methods.</param>
             <returns>an array of matching methods</returns>
         </member>
@@ -805,13 +678,16 @@
             <param name="params">the params for the method</param>
             <returns>the result, if any</returns>
         </member>
-        <member name="M:Jcd.Reflection.MethodExtensions.Invoke(System.Object,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings,System.Object[])">
+       <member
+          name="M:Jcd.Reflection.MethodExtensions.Invoke(System.Object,System.String,Jcd.Reflection.MethodInfoFilter,System.Object[])">
             <summary>
             Invoke the method on the specified object using the provided parameters
             </summary>
             <param name="self">The instance to invoke the method on</param>
             <param name="name">the name of the method to invoke</param>
-            <param name="settings">The method selection settings such as <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/></param>
+          <param name="settings">The method selection settings such as
+             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllInstanceMethodsFilter"/>
+          </param>
             <param name="params">the params for the method</param>
             <returns>the result, if any</returns>
         </member>
@@ -834,13 +710,16 @@
             <typeparam name="TOut"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Jcd.Reflection.MethodExtensions.Invoke``1(System.Object,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings,System.Object[])">
+       <member
+          name="M:Jcd.Reflection.MethodExtensions.Invoke``1(System.Object,System.String,Jcd.Reflection.MethodInfoFilter,System.Object[])">
             <summary>
             Invoke the method on the specified object using the provided parameters
             </summary>
             <param name="self">The instance to invoke the method on</param>
             <param name="name">the name of the method to invoke</param>
-            <param name="settings">The method selection settings such as <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/></param>
+          <param name="settings">The method selection settings such as
+             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllInstanceMethodsFilter"/>
+          </param>
             <param name="params">the params for the method</param>
             <returns>the result, if any</returns>
             <typeparam name="TOut">result type</typeparam>
@@ -864,14 +743,17 @@
             <param name="params">The params to pass</param>
             <returns>The result of the call, if any</returns>
         </member>
-        <member name="M:Jcd.Reflection.MethodExtensions.Invoke(System.Type,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings,System.Object[])">
+       <member
+          name="M:Jcd.Reflection.MethodExtensions.Invoke(System.Type,System.String,Jcd.Reflection.MethodInfoFilter,System.Object[])">
             <summary>
             Invokes a static method on a type 
             </summary>
             <param name="type">The type containing the static method</param>
             <param name="name">The name of the method</param>
             <param name="params">The params to pass</param>
-            <param name="settings">The method selection settings such as <see cref="F:Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter"/></param>
+          <param name="settings">The method selection settings such as
+             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllStaticMethodsFilter"/>
+          </param>
             <returns>The result of the call, if any</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke``1(System.Type,System.String,System.Object[])">
@@ -884,14 +766,17 @@
             <typeparam name="TOut">The type of the return</typeparam>
             <returns>The result of the call, if any</returns>
         </member>
-        <member name="M:Jcd.Reflection.MethodExtensions.Invoke``1(System.Type,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings,System.Object[])">
+       <member
+          name="M:Jcd.Reflection.MethodExtensions.Invoke``1(System.Type,System.String,Jcd.Reflection.MethodInfoFilter,System.Object[])">
             <summary>
             Invokes a static method on a type, coercing the return type 
             </summary>
             <param name="type">The type containing the static method</param>
             <param name="name">The name of the method</param>
             <param name="params">The params to pass</param>
-            <param name="settings">The method selection settings such as <see cref="F:Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter"/></param>
+          <param name="settings">The method selection settings such as
+             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllStaticMethodsFilter"/>
+          </param>
             <typeparam name="TOut">The type of the return</typeparam>
             <returns>The result of the call, if any</returns>
         </member>
@@ -900,21 +785,21 @@
             Enumerates the method information for a given type. 
             </summary>
         </member>
-        <member name="M:Jcd.Reflection.MethodInfoEnumerator.#ctor(System.Type,Jcd.Reflection.MethodInfoEnumerator.Settings)">
+       <member name="M:Jcd.Reflection.MethodInfoEnumerator.#ctor(System.Type,Jcd.Reflection.MethodInfoFilter)">
             <summary>
             Constructs a MethodInfoEnumerator from a type and settings.
             </summary>
             <param name="type">The type to enumerate</param>
             <param name="settings">The settings controlling enumeration</param>
         </member>
-        <member name="M:Jcd.Reflection.MethodInfoEnumerator.#ctor(System.Object,Jcd.Reflection.MethodInfoEnumerator.Settings)">
+       <member name="M:Jcd.Reflection.MethodInfoEnumerator.#ctor(System.Object,Jcd.Reflection.MethodInfoFilter)">
             <summary>
             Constructs a MethodInfoEnumerator from an instance and settings.
             </summary>
             <param name="item">The instance to enumerate</param>
             <param name="settings">The settings controlling enumeration</param>
         </member>
-        <member name="P:Jcd.Reflection.MethodInfoEnumerator.EnumerationSettings">
+       <member name="P:Jcd.Reflection.MethodInfoEnumerator.Filter">
             <summary>
             Gets or sets the settings controlling method info enumeration
             </summary>
@@ -936,17 +821,37 @@
             </summary>
             <returns>An enumerator</returns>
         </member>
-        <member name="T:Jcd.Reflection.MethodInfoEnumerator.Settings">
+       <member name="T:Jcd.Reflection.MethodInfoFilter">
             <summary>
             The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
             </summary>
         </member>
-        <member name="F:Jcd.Reflection.MethodInfoEnumerator.Settings.Flags">
+       <member name="F:Jcd.Reflection.MethodInfoFilter.AllInstanceMethodsFilter">
+          <summary>
+             Selects all public instance methods including inherited methods.
+          </summary>
+       </member>
+       <member name="F:Jcd.Reflection.MethodInfoFilter.AllStaticMethodsFilter">
+          <summary>
+             Selects all static methods including inherited static.
+          </summary>
+       </member>
+       <member name="F:Jcd.Reflection.MethodInfoFilter.DirectInstanceMethodsFilter">
+          <summary>
+             Selects all directly declared instance methods.
+          </summary>
+       </member>
+       <member name="F:Jcd.Reflection.MethodInfoFilter.DirectStaticMethodsFilter">
+          <summary>
+             Selects all directly declared static methods.
+          </summary>
+       </member>
+       <member name="P:Jcd.Reflection.MethodInfoFilter.Flags">
             <summary>
             The BindingFlags for the member lookup.
             </summary>
         </member>
-        <member name="F:Jcd.Reflection.MethodInfoEnumerator.Settings.Skip">
+       <member name="P:Jcd.Reflection.MethodInfoFilter.Skip">
             <summary>
             A predicate for skipping certain members.
             </summary>

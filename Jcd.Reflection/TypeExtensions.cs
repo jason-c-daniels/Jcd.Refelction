@@ -74,13 +74,11 @@ public static class TypeExtensions
     , bool      allowSelfToCompareToTrueIfConcrete = false
    )
    {
-      if (DirectlyInheritsFromGenericTypeDefinition(derivedType
-                                                  , genericTypeDefinition
-                                                  , allowSelfToCompareToTrueIfConcrete
-                                                   ))
-         return true;
-
-      return derivedType.GetNonInterfaceBaseTypes()
+      return DirectlyInheritsFromGenericTypeDefinition(derivedType
+                                                     , genericTypeDefinition
+                                                     , allowSelfToCompareToTrueIfConcrete
+                                                      )
+          || derivedType.GetNonInterfaceBaseTypes()
                         .Any(x => x.DirectlyInheritsFromGenericTypeDefinition(genericTypeDefinition
                                                                             , allowSelfToCompareToTrueIfConcrete
                                                                              )
@@ -105,14 +103,13 @@ public static class TypeExtensions
     , bool      allowSelfToCompareToTrueIfConcrete = false
    )
    {
-      if (derivedType.IsGenericType && derivedType.GetGenericTypeDefinition() == genericTypeDefinition)
-         return allowSelfToCompareToTrueIfConcrete || derivedType.GetGenericTypeDefinition() != derivedType;
-
-      return (
-                from interfaceType in derivedType.GetInterfaces()
-                where interfaceType.IsGenericType
-                select interfaceType.GetGenericTypeDefinition())
-        .Any(genericInterfaceTypeDefinition => genericInterfaceTypeDefinition == genericTypeDefinition);
+      return derivedType.IsGenericType && derivedType.GetGenericTypeDefinition()               == genericTypeDefinition
+                ? allowSelfToCompareToTrueIfConcrete || derivedType.GetGenericTypeDefinition() != derivedType
+                : (
+                     from interfaceType in derivedType.GetInterfaces()
+                     where interfaceType.IsGenericType
+                     select interfaceType.GetGenericTypeDefinition())
+               .Any(genericInterfaceTypeDefinition => genericInterfaceTypeDefinition == genericTypeDefinition);
    }
 
    /// <summary>

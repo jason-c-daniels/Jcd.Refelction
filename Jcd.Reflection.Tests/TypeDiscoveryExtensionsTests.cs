@@ -20,17 +20,21 @@ public class TypeDiscoveryExtensionsTests
    [Fact]
    public void FindImplementationsOf_On_A_Single_Assembly_Returns_The_Expected_Types()
    {
-      var expectedTypes1 = new List<Type>(new[] { typeof(Poii), typeof(Poii2), typeof(Poii3), typeof(Poii4) });
+      var expectedTypes1 = new List<Type>(new[]
+                                          {
+                                             typeof(Poii)
+                                           , typeof(Poii2)
+                                           , typeof(Poii3)
+                                           , typeof(Poii4)
+                                           , typeof(PlainOldImplementation1)
+                                           , typeof(PlainOldImplementation2<>)
+                                           , typeof(Poi21<>)
+                                          }
+                                         );
       expectedTypes1.Sort((x, y) => string.Compare(x.FullName, y.FullName, StringComparison.InvariantCulture));
-      var result1 = Assembly.GetExecutingAssembly().FindImplementationsOf<IPlainOldInterface>().ToList();
+      var result1 = typeof(IPlainOldInterface).Assembly.FindImplementationsOf<IPlainOldInterface>().ToList();
       result1.Sort((x, y) => string.Compare(x.FullName, y.FullName, StringComparison.InvariantCulture));
       Assert.Equal(expectedTypes1, result1);
-
-      var expectedTypes2 = new List<Type>(new[] { typeof(PlainOldImplementation2<>), typeof(Poi21<>) });
-      expectedTypes2.Sort((x, y) => string.Compare(x.FullName, y.FullName, StringComparison.InvariantCulture));
-      var result2 = typeof(IPlainOldInterface).Assembly.FindImplementationsOf(typeof(IPlainOldInterface<>)).ToList();
-      result2.Sort((x, y) => string.Compare(x.FullName, y.FullName, StringComparison.InvariantCulture));
-      Assert.Equal(expectedTypes2, result2);
    }
 
    [Fact]

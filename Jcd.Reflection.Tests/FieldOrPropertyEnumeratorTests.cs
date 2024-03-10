@@ -34,7 +34,7 @@ public class FieldOrPropertyEnumeratorTests
    {
       var obj = new TestClassB();
       var sut = new FieldOrPropertyEnumerator(obj
-                                            , new FieldOrPropertyEnumerator.Settings
+                                            , new FieldOrPropertyInfoFilter
                                               {
                                                  Flags = BindingFlags.Instance
                                                        | BindingFlags.Static

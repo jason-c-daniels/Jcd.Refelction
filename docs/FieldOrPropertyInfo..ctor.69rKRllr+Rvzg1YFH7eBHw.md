@@ -2,7 +2,7 @@
 
 ## FieldOrPropertyInfo(MemberInfo, BindingFlags) Constructor
 
-A dual purpose MemberInfo type.
+Constructs a [FieldOrPropertyInfo](FieldOrPropertyInfo.md 'Jcd.Reflection.FieldOrPropertyInfo')
 
 ```csharp
 public FieldOrPropertyInfo(System.Reflection.MemberInfo memberInfo, System.Reflection.BindingFlags flags);

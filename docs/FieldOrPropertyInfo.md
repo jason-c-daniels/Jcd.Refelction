@@ -2,15 +2,17 @@
 
 ## FieldOrPropertyInfo Class
 
+A dual purpose MemberInfo type for either a field or a property.
+
 ```csharp
 public class FieldOrPropertyInfo : System.Reflection.MemberInfo
 ```
 
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; [System.Reflection.MemberInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MemberInfo 'System.Reflection.MemberInfo') &#129106; FieldOrPropertyInfo
 
-| Constructors | |
-| :--- | :--- |
-| [FieldOrPropertyInfo(MemberInfo, BindingFlags)](FieldOrPropertyInfo..ctor.69rKRllr+Rvzg1YFH7eBHw.md 'Jcd.Reflection.FieldOrPropertyInfo.FieldOrPropertyInfo(System.Reflection.MemberInfo, System.Reflection.BindingFlags)') | A dual purpose MemberInfo type. |
+| Constructors                                                                                                                                                                                                                |                                                                                                 |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------|
+| [FieldOrPropertyInfo(MemberInfo, BindingFlags)](FieldOrPropertyInfo..ctor.69rKRllr+Rvzg1YFH7eBHw.md 'Jcd.Reflection.FieldOrPropertyInfo.FieldOrPropertyInfo(System.Reflection.MemberInfo, System.Reflection.BindingFlags)') | Constructs a [FieldOrPropertyInfo](FieldOrPropertyInfo.md 'Jcd.Reflection.FieldOrPropertyInfo') |
 
 | Properties | |
 | :--- | :--- |
