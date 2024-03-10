@@ -35,5 +35,6 @@ The name of the method
 The params to pass
 
 #### Returns
-[TOut](MethodExtensions.Invoke.422Ko/zy5HGFAmhmRDu7Sg.md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this System.Type, string, object[]).TOut')
+
+[TOut](MethodExtensions.Invoke.422Ko/zy5HGFAmhmRDu7Sg.md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this System.Type, string, object[]).TOut')  
 The result of the call, if any

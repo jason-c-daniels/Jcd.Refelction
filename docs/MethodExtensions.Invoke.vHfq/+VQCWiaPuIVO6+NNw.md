@@ -34,5 +34,6 @@ The method selection settings such as [AllInstanceMethodsFilter](MethodExtension
 the params for the method
 
 #### Returns
-[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')
+
+[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')  
 the result, if any

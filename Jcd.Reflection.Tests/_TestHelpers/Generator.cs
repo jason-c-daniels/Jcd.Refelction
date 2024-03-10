@@ -2,6 +2,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+
 using Jcd.Validations;
 
 #endregion
@@ -24,77 +25,74 @@ namespace Jcd.Reflection.Tests._TestHelpers;
 /// <typeparam name="TState">The type of the state data</typeparam>
 /// <typeparam name="TResult">The type of the transition result data.</typeparam>
 public class CaptureAndTransitionGenerator<TState, TResult> : IEnumerable<TResult>
-    where TState : class
+   where TState : class
 {
-    #region Public Delegates
+   #region Public Delegates
 
-    /// <summary>
-    /// The state transition function signature.
-    /// </summary>
-    /// <param name="state">The data to manipulate</param>
-    /// <param name="continue">A flag indicating if there are more states to transition to.</param>
-    /// <returns>The result of the state transition operation</returns>
-    public delegate TResult StateTransitionFunction(TState state, out bool @continue);
+   /// <summary>
+   /// The state transition function signature.
+   /// </summary>
+   /// <param name="state">The data to manipulate</param>
+   /// <param name="continue">A flag indicating if there are more states to transition to.</param>
+   /// <returns>The result of the state transition operation</returns>
+   public delegate TResult StateTransitionFunction(TState state, out bool @continue);
 
-    #endregion Public Delegates
+   #endregion Public Delegates
 
-    #region Public Constructors
+   #region Public Constructors
 
-    /// <summary>
-    /// Constructs a state transition based IEnumerable data generator.
-    /// </summary>
-    /// <param name="initial">The initial state.</param>
-    /// <param name="transitionFunction">The state transition function.</param>
-    public CaptureAndTransitionGenerator(TState initial, StateTransitionFunction transitionFunction)
-    {
-        Argument.IsNotNull(transitionFunction);
-        CurrentState = initial;
-        TransitionFunction = transitionFunction;
-    }
+   /// <summary>
+   /// Constructs a state transition based IEnumerable data generator.
+   /// </summary>
+   /// <param name="initial">The initial state.</param>
+   /// <param name="transitionFunction">The state transition function.</param>
+   public CaptureAndTransitionGenerator(TState initial, StateTransitionFunction transitionFunction)
+   {
+      Argument.IsNotNull(transitionFunction);
+      CurrentState       = initial;
+      TransitionFunction = transitionFunction;
+   }
 
-    #endregion Public Constructors
+   #endregion Public Constructors
 
-    #region Protected Fields
+   #region Protected Fields
 
-    /// <summary>
-    /// The current, internal state.
-    /// </summary>
-    protected readonly TState CurrentState;
+   /// <summary>
+   /// The current, internal state.
+   /// </summary>
+   protected readonly TState CurrentState;
 
-    /// <summary>
-    /// The state transition function.
-    /// </summary>
-    // ReSharper disable once MemberCanBePrivate.Global
-    protected readonly StateTransitionFunction TransitionFunction;
+   /// <summary>
+   /// The state transition function.
+   /// </summary>
 
-    #endregion Protected Fields
+   // ReSharper disable once MemberCanBePrivate.Global
+   protected readonly StateTransitionFunction TransitionFunction;
 
-    #region Public Methods
+   #endregion Protected Fields
 
-    /// <summary>
-    /// Retrieves an enumerator that yields data from calling transitionFunction. This is
-    /// guaranteed to be called once for the initial state.
-    /// </summary>
-    /// <returns>The result of transitionFunction</returns>
-    public IEnumerator<TResult> GetEnumerator()
-    {
-        bool @continue;
+   #region Public Methods
 
-        do
-        {
-            yield return TransitionFunction(CurrentState, out @continue);
-        } while (@continue);
-    }
+   /// <summary>
+   /// Retrieves an enumerator that yields data from calling transitionFunction. This is
+   /// guaranteed to be called once for the initial state.
+   /// </summary>
+   /// <returns>The result of transitionFunction</returns>
+   public IEnumerator<TResult> GetEnumerator()
+   {
+      bool @continue;
 
-    /// <summary>
-    /// Retrieves an enumerator that yields data from calling transitionFunction(state, out
-    /// @continue). This is guaranteed to be called once for the initial state.
-    /// </summary>
-    /// <returns>The result of transitionFunction(state, out @continue)</returns>
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
+      do
+         yield return TransitionFunction(CurrentState, out @continue);
+      while (@continue);
+   }
 
-    #endregion Public Methods
+   /// <summary>
+   /// Retrieves an enumerator that yields data from calling transitionFunction(state, out
+   /// @continue). This is guaranteed to be called once for the initial state.
+   /// </summary>
+   /// <returns>The result of transitionFunction(state, out @continue)</returns>
+   IEnumerator IEnumerable.GetEnumerator() { return GetEnumerator(); }
+
+   #endregion Public Methods
 }

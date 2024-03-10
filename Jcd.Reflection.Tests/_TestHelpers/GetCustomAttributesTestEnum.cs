@@ -4,12 +4,11 @@ namespace Jcd.Reflection.Tests._TestHelpers;
 [MyDescription("It's pretty banal otherwise.")]
 public enum AttributesEnum
 {
-    // First doesn't get a description.
-    First,
+   // First doesn't get a description.
+   First
+ , [MyDescription("The description for Second")]
+   Second
 
-    [MyDescription("The description for Second")]
-    Second,
-
-    [MyDescription("The description for Third")] [MyDescription("Another description for Third")]
-    Third
+ , [MyDescription("The description for Third")] [MyDescription("Another description for Third")]
+   Third
 }

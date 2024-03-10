@@ -35,5 +35,6 @@ the name of the method to invoke
 the params for the method
 
 #### Returns
-[TOut](MethodExtensions.Invoke.uM44HzwJAE1c6U8D/OskwQ.md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this object, string, object[]).TOut')
+
+[TOut](MethodExtensions.Invoke.uM44HzwJAE1c6U8D/OskwQ.md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this object, string, object[]).TOut')  
 the result, if any

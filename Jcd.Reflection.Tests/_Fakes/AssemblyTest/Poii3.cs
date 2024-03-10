@@ -8,14 +8,12 @@ namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
 
 public readonly struct Poii3 : IPlainOldInterface
 {
-    public Poii3()
-    {
-    }
+   public Poii3() { }
 
-    #region Implementation of IPlainOldInterface
+   #region Implementation of IPlainOldInterface
 
-    /// <inheritdoc />
-    public string Name { get; } = nameof(Poii3);
+   /// <inheritdoc />
+   public string Name { get; } = nameof(Poii3);
 
-    #endregion
+   #endregion
 }

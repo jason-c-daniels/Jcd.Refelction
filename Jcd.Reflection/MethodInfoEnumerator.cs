@@ -19,85 +19,86 @@ namespace Jcd.Reflection;
 /// </summary>
 public class MethodInfoEnumerator : IEnumerable<MethodInfo>
 {
-    /// <summary>
-    /// Constructs a MethodInfoEnumerator from a type and settings.
-    /// </summary>
-    /// <param name="type">The type to enumerate</param>
-    /// <param name="settings">The settings controlling enumeration</param>
-    public MethodInfoEnumerator(Type type,
-                                Settings settings = default)
-    {
-        Type = type;
-        EnumerationSettings = settings;
-    }
+   /// <summary>
+   /// Constructs a MethodInfoEnumerator from a type and settings.
+   /// </summary>
+   /// <param name="type">The type to enumerate</param>
+   /// <param name="settings">The settings controlling enumeration</param>
+   public MethodInfoEnumerator(Type type, Settings settings = default)
+   {
+      Type                = type;
+      EnumerationSettings = settings;
+   }
 
-    /// <summary>
-    /// Constructs a MethodInfoEnumerator from an instance and settings.
-    /// </summary>
-    /// <param name="item">The instance to enumerate</param>
-    /// <param name="settings">The settings controlling enumeration</param>
-    // ReSharper disable once UnusedMember.Global
-    public MethodInfoEnumerator(object item,
-                                Settings settings = default) : this((Type)(item is System.Type or null
-            ? item
-            : item.GetType()),
-        settings)
-    {
-    }
+   /// <summary>
+   /// Constructs a MethodInfoEnumerator from an instance and settings.
+   /// </summary>
+   /// <param name="item">The instance to enumerate</param>
+   /// <param name="settings">The settings controlling enumeration</param>
 
-    /// <summary>
-    /// Gets or sets the settings controlling method info enumeration
-    /// </summary>
-    // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
-    public Settings EnumerationSettings { get; set; }
+   // ReSharper disable once UnusedMember.Global
+   public MethodInfoEnumerator(object item, Settings settings = default) : this((Type) (item is System.Type or null
+                                                                                           ? item
+                                                                                           : item.GetType())
+                                                                              , settings
+                                                                               )
+   {
+   }
 
-    /// <summary>
-    /// The type whose methods are enumerated.
-    /// </summary>
-    public Type Type { get; }
+   /// <summary>
+   /// Gets or sets the settings controlling method info enumeration
+   /// </summary>
 
-    /// <summary>
-    /// Gets an enumerator for the MethodInfos enumerated
-    /// </summary>
-    /// <returns>An enumerator</returns>
-    public IEnumerator<MethodInfo> GetEnumerator()
-    {
-        if (Type == null) yield break;
-        IEnumerable<MethodInfo> member = EnumerationSettings.Flags.HasValue
-            ? Type.GetMethods(EnumerationSettings.Flags.Value)
-            : Type.GetMethods();
+   // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
+   public Settings EnumerationSettings { get; set; }
 
-        foreach (var mi in member)
-        {
-            var skipped = EnumerationSettings.Skip?.Invoke(mi);
-            if (skipped.HasValue && skipped.Value) continue;
-            yield return mi;
-        }
-    }
+   /// <summary>
+   /// The type whose methods are enumerated.
+   /// </summary>
+   public Type Type { get; }
 
-    /// <summary>
-    /// Gets an enumerator for the MethodInfos enumerated
-    /// </summary>
-    /// <returns>An enumerator</returns>
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
+   /// <summary>
+   /// Gets an enumerator for the MethodInfos enumerated
+   /// </summary>
+   /// <returns>An enumerator</returns>
+   public IEnumerator<MethodInfo> GetEnumerator()
+   {
+      if (Type == null) yield break;
+      IEnumerable<MethodInfo> member = EnumerationSettings.Flags.HasValue
+                                          ? Type.GetMethods(EnumerationSettings.Flags.Value)
+                                          : Type.GetMethods();
 
-    /// <summary>
-    /// The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
-    /// </summary>
-    public struct Settings
-    {
-        /// <summary>
-        /// The BindingFlags for the member lookup.
-        /// </summary>
-        public BindingFlags? Flags;
+      foreach (var mi in member)
+      {
+         var skipped = EnumerationSettings.Skip?.Invoke(mi);
 
-        /// <summary>
-        /// A predicate for skipping certain members.
-        /// </summary>
-        // ReSharper disable once UnassignedField.Global
-        public Func<MethodInfo, bool> Skip;
-    }
+         if (skipped.HasValue && skipped.Value) continue;
+
+         yield return mi;
+      }
+   }
+
+   /// <summary>
+   /// Gets an enumerator for the MethodInfos enumerated
+   /// </summary>
+   /// <returns>An enumerator</returns>
+   IEnumerator IEnumerable.GetEnumerator() { return GetEnumerator(); }
+
+   /// <summary>
+   /// The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
+   /// </summary>
+   public struct Settings
+   {
+      /// <summary>
+      /// The BindingFlags for the member lookup.
+      /// </summary>
+      public BindingFlags? Flags;
+
+      /// <summary>
+      /// A predicate for skipping certain members.
+      /// </summary>
+
+      // ReSharper disable once UnassignedField.Global
+      public Func<MethodInfo, bool> Skip;
+   }
 }

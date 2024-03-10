@@ -2,10 +2,10 @@ namespace Jcd.Reflection.Tests.Fakes;
 
 public class PlainOldImplementation1 : IPlainOldInterface
 {
-    #region Implementation of IPlainOldInterface
+   #region Implementation of IPlainOldInterface
 
-    /// <inheritdoc />
-    public string Name { get; } = nameof(PlainOldImplementation1);
+   /// <inheritdoc />
+   public string Name { get; } = nameof(PlainOldImplementation1);
 
-    #endregion
+   #endregion
 }

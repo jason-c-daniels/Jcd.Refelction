@@ -2,32 +2,35 @@ namespace Jcd.Reflection.Tests._Fakes.TypesTest;
 
 public class ImplementsIDerivedFromIIDerivedFromIGenericBase<T> : IDerivedFromIDerivedFromIGenericBase<T>
 {
-    public ImplementsIDerivedFromIIDerivedFromIGenericBase(T otherData = default, T moreData = default,
-                                                           T evenMoreData = default)
-    {
-        OtherData = otherData;
-        MoreData = moreData;
-        EvenMoreData = evenMoreData;
-    }
+   public ImplementsIDerivedFromIIDerivedFromIGenericBase(
+      T otherData    = default
+    , T moreData     = default
+    , T evenMoreData = default
+   )
+   {
+      OtherData    = otherData;
+      MoreData     = moreData;
+      EvenMoreData = evenMoreData;
+   }
 
-    #region Implementation of IGenericBase<out T>
+   #region Implementation of IGenericBase<out T>
 
-    /// <inheritdoc />
-    public T OtherData { get; }
+   /// <inheritdoc />
+   public T OtherData { get; }
 
-    #endregion
+   #endregion
 
-    #region Implementation of IDerivedFromGenericBase<out T>
+   #region Implementation of IDerivedFromGenericBase<out T>
 
-    /// <inheritdoc />
-    public T MoreData { get; }
+   /// <inheritdoc />
+   public T MoreData { get; }
 
-    #endregion
+   #endregion
 
-    #region Implementation of IDerivedFromDerivedFromGenericBase<out T>
+   #region Implementation of IDerivedFromDerivedFromGenericBase<out T>
 
-    /// <inheritdoc />
-    public T EvenMoreData { get; }
+   /// <inheritdoc />
+   public T EvenMoreData { get; }
 
-    #endregion
+   #endregion
 }

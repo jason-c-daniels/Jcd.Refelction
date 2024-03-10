@@ -30,6 +30,9 @@ the enum value to inspect
 inspect the inheritance hierarchy
 
 #### Returns
-[TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.6Q6L+HjwN2hS9Vu6DOOSPg.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Enum, bool).TAttribute')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
-An array of located [TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.6Q6L+HjwN2hS9Vu6DOOSPg.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Enum, bool).TAttribute') instances. If none are found, an empty array is
+
+[TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.6Q6L+HjwN2hS9Vu6DOOSPg.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Enum, bool).TAttribute')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')  
+An array of
+located [TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.6Q6L+HjwN2hS9Vu6DOOSPg.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Enum,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Enum, bool).TAttribute')
+instances. If none are found, an empty array is  
 returned.

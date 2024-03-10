@@ -8,21 +8,19 @@ namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
 
 public struct Poii : IPlainOldInterface<string>
 {
-    public Poii()
-    {
-    }
+   public Poii() { }
 
-    #region Implementation of IPlainOldInterface
+   #region Implementation of IPlainOldInterface
 
-    /// <inheritdoc />
-    public string Name { get; } = nameof(Poii);
+   /// <inheritdoc />
+   public string Name { get; } = nameof(Poii);
 
-    #endregion
+   #endregion
 
-    #region Implementation of IPlainOldInterface<out string>
+   #region Implementation of IPlainOldInterface<out string>
 
-    /// <inheritdoc />
-    public string Data { get; } = string.Empty;
+   /// <inheritdoc />
+   public string Data { get; } = string.Empty;
 
-    #endregion
+   #endregion
 }

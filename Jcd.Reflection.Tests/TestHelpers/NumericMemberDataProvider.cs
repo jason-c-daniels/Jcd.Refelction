@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
 
@@ -10,6 +11,9 @@ namespace Jcd.Reflection.Tests.TestHelpers;
 /// <summary>
 /// An XUnit data provider. This one provides lists of numeric data of a various sorts.
 /// </summary>
+[SuppressMessage("Reliability"
+               , "CA2021:Do not call Enumerable.Cast<T> or Enumerable.OfType<T> with incompatible types"
+                )]
 public class NumericMemberDataProvider
 {
    /// <summary>

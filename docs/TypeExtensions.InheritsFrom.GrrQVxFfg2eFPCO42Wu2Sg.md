@@ -27,5 +27,6 @@ The type to check inheritance on.
 `allowSelfToCompareToTrueIfConcrete` [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 
 #### Returns
-[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
+
+[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
 True if type inherits from [T](TypeExtensions.InheritsFrom.GrrQVxFfg2eFPCO42Wu2Sg.md#Jcd.Reflection.TypeExtensions.InheritsFrom_T_(thisSystem.Type,bool).T 'Jcd.Reflection.TypeExtensions.InheritsFrom<T>(this System.Type, bool).T')

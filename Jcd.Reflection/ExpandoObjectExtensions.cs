@@ -31,7 +31,7 @@ namespace Jcd.Reflection;
 /// <remarks>
 /// THESE EXTENSION METHODS ARE GOING AWAY SOON!
 /// </remarks>
-[Obsolete("All of these methods are going away in v2.0", false)]
+[Obsolete("All of these methods are going away after v2.0", false)]
 public static class ExpandoObjectExtensions
 {
    /// <summary>

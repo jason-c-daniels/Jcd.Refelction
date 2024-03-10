@@ -6,19 +6,19 @@ namespace Jcd.Reflection.Tests._Fakes.AssemblyTest;
 
 public struct TestStruct
 {
-    private int _afield;
+   private int _afield;
 
-    public int AProp { get; set; }
+   public int AProp { get; set; }
 
-    private int AFieldAccessor
-    {
-        get => _afield;
-        set => _afield = value;
-    }
+   private int AFieldAccessor
+   {
+      get => _afield;
+      set => _afield = value;
+   }
 
-    public TestStruct(int afield, int aProp = 0)
-    {
-        _afield = afield;
-        AProp = aProp;
-    }
+   public TestStruct(int afield, int aProp = 0)
+   {
+      _afield = afield;
+      AProp   = aProp;
+   }
 }

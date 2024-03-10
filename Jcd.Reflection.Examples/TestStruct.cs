@@ -5,16 +5,13 @@ namespace Jcd.Reflection.Examples;
 
 public struct TestStruct
 {
-    private int _hidden;
+   private int _hidden;
 
-    public TestStruct(int hidden)
-    {
-        _hidden = hidden;
-    }
+   public TestStruct(int hidden) { _hidden = hidden; }
 
-    public int Revealed
-    {
-        get => _hidden;
-        set => _hidden = value;
-    }
+   public int Revealed
+   {
+      get => _hidden;
+      set => _hidden = value;
+   }
 }

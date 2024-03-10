@@ -2,10 +2,10 @@ namespace Jcd.Reflection.Tests.Fakes;
 
 public interface IPlainOldInterface
 {
-    string Name { get; }
+   string Name { get; }
 }
 
 public interface IPlainOldInterface<out T> : IPlainOldInterface
 {
-    T Data { get; }
+   T Data { get; }
 }
