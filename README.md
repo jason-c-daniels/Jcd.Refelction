@@ -2,26 +2,7 @@
 
 A _dotnetstandard2.0_ library containing some commonly implemented reflection helpers.
 
-## Version History
-
-### v2.0 Breaking Changes
-
-Version 2.0 comes with a significant number of breaking changes for advanced use cases. These are listed below
-
-- `ExpandoObjectExtensions` was removed. It wasn't functioning as planned. An overhaul of the approach is needed.
-- All overloads of `FilterMethods` were renamed to `GetMethods`
-- The filter parameter was moved to the last parameter on an overload of `GetMethods` (formerly `FilterMethods`).
-- Renamed `EnumerationSettings` to `Filter` in `MemberInfoEnumerator`, `FieldOrPropertyEnumerator`,
-  and `MethodInfoEnumerator`
-- Moved and renamed type from `MethodInfoEnumerator.Settings` to `MethodInfoFilter`.
-- Moved predefined instances of  `MethodInfoEnumerator.Settings` from `MethodInfoEnumerator` to `MethodInfoFilter`.
-- Moved and renamed type from `MemberInfoEnumerator.Settings` to `MemberInfoFilter`.
-- Moved and renamed type from `FieldOrPropertyEnumerator.Settings` to `FieldOrPropertyInfoFilter`.
-- `MethodInfoFilter` fields are now readonly, requiring a call to `new` to create new instances.
-- `MemberInfoFilter` fields are now readonly, requiring a call to `new` to create new instances.
-- `FieldOrPropertyInfoFilter` fields are now readonly, requiring a call to `new` to create new instances.
-- Extension methods `GetCusomAttributes` and `HasAttribute` were moved into classes named after the underlying method.
-  This will only break non-extension invocations.
+v2.0 has many breaking changes. See the [Version History](#version-history) for details.
 
 ## Examples
 
@@ -64,3 +45,26 @@ a couple of other handy utility methods.
 [![Nuget](https://img.shields.io/nuget/v/Jcd.Reflection?logo=nuget)](https://www.nuget.org/packages/Jcd.Reflection)
 
 [![API Docs](https://img.shields.io/badge/Read-The%20API%20Documentation-blue?style=for-the-badge)](https://github.com/jason-c-daniels/Jcd.Reflection/blob/main/docs/Jcd.Reflection.md)
+
+## Version History
+
+### v2.0 Breaking Changes
+
+Version 2.0 comes with a significant number of breaking changes for advanced use cases. These are listed below
+
+- `ExpandoObjectExtensions` was removed. It wasn't functioning as planned. An overhaul of the approach is needed.
+- All overloads of `FilterMethods` were renamed to `GetMethods`
+- The filter parameter was moved to the last parameter on an overload of `GetMethods` (formerly `FilterMethods`).
+- Renamed `EnumerationSettings` to `Filter` in `MemberInfoEnumerator`, `FieldOrPropertyEnumerator`,
+  and `MethodInfoEnumerator`
+- Moved and renamed type from `MethodInfoEnumerator.Settings` to `MethodInfoFilter`.
+- Moved predefined instances of  `MethodInfoEnumerator.Settings` from `MethodInfoEnumerator` to `MethodInfoFilter`.
+- Moved and renamed type from `MemberInfoEnumerator.Settings` to `MemberInfoFilter`.
+- Moved and renamed type from `FieldOrPropertyEnumerator.Settings` to `FieldOrPropertyInfoFilter`.
+- `MethodInfoFilter`, `MemberInfoFilter`, `FieldOrPropertyInfoFilter` fields are now get-only properties, requiring a
+  call to `new` to create new instances.
+- To facilitate the use of init properties on `MethodInfoFilter`, `MemberInfoFilter`, `FieldOrPropertyInfoFilter`
+  types, a custom `IsExternalInit` is required of target frameworks not supporting it. See this project's source code
+  for an example ([`IsExternalInit.cs`](Jcd.Reflection/MethodExtensions.cs)).
+- Extension methods `GetCusomAttributes` and `HasAttribute` were moved into classes named after the underlying method.
+  This will only break non-extension invocations.
