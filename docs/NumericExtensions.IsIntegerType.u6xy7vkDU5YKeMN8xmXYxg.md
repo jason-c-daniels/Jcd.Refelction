@@ -16,5 +16,5 @@ public static bool IsIntegerType(this object self);
 The object to check
 
 #### Returns
-[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
+[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 true if the object is of an integer data type

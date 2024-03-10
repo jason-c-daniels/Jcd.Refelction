@@ -16,7 +16,5 @@ public static bool IsCompilerGenerated(this System.Type type);
 The type to inspect.
 
 #### Returns
-[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
-true if the type has
-the [System.Runtime.CompilerServices.CompilerGeneratedAttribute](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.CompilerServices.CompilerGeneratedAttribute 'System.Runtime.CompilerServices.CompilerGeneratedAttribute')
-attribute applied.
+[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
+true if the type has the [System.Runtime.CompilerServices.CompilerGeneratedAttribute](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.CompilerServices.CompilerGeneratedAttribute 'System.Runtime.CompilerServices.CompilerGeneratedAttribute') attribute applied.

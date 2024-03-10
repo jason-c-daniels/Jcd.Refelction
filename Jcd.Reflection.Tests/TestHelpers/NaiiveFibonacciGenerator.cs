@@ -3,7 +3,7 @@
 namespace Jcd.Reflection.Tests.TestHelpers;
 
 /// <summary>
-///    Generates all Fibonacci numbers equal to or less than the maxValue
+/// Generates all Fibonacci numbers equal to or less than the maxValue
 /// </summary>
 public class NaiiveFibonacciGenerator : CaptureAndTransitionGenerator<NaiiveFibonacciGenerator.State, BigInteger>
 {

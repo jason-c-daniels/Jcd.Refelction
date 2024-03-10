@@ -16,11 +16,11 @@ A dotnetstandard2.0 library containing some commonly implemented reflection help
             // now get its value.
             var val = (int)c.GetValue("_field");
             Console.WriteLine(val);
-            
+
             // Now set a private property with a backing field.
             c.SetValue("PrivateProperty",20);
-            
-            // Now call a private helper method that returns the value from the backing field. 
+
+            // Now call a private helper method that returns the value from the backing field.
             val = c.Invoke<int>("InternalGetField");
             Console.WriteLine(val);
 ```

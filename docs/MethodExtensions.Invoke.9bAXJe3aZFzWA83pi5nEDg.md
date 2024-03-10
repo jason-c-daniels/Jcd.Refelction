@@ -25,8 +25,7 @@ The name of the method
 
 `settings` [Settings](MethodInfoEnumerator.Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')
 
-The method selection settings such
-as [AllStaticMethodsFilter](MethodExtensions.AllStaticMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter')
+The method selection settings such as [AllStaticMethodsFilter](MethodExtensions.AllStaticMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter')
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke(thisSystem.Type,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).params'></a>
 
@@ -35,5 +34,5 @@ as [AllStaticMethodsFilter](MethodExtensions.AllStaticMethodsFilter.md 'Jcd.Refl
 The params to pass
 
 #### Returns
-[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')  
+[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')
 The result of the call, if any

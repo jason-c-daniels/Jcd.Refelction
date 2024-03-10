@@ -8,7 +8,7 @@ The settings indicating "how" to enumerate. (i.e. BindingFlags and a predicate f
 public struct FieldOrPropertyEnumerator.Settings
 ```
 
-| Fields                                                                                                         |                                           |
-|:---------------------------------------------------------------------------------------------------------------|:------------------------------------------|
-| [Flags](FieldOrPropertyEnumerator.Settings.Flags.md 'Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Flags') | The BindingFlags for the member lookup.   |
-| [Skip](FieldOrPropertyEnumerator.Settings.Skip.md 'Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Skip')    | A predicate for skipping certain members. |
+| Fields | |
+| :--- | :--- |
+| [Flags](FieldOrPropertyEnumerator.Settings.Flags.md 'Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Flags') | The BindingFlags for the member lookup. |
+| [Skip](FieldOrPropertyEnumerator.Settings.Skip.md 'Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Skip') | A predicate for skipping certain members. |

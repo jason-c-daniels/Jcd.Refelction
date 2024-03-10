@@ -6,12 +6,12 @@ using System.Reflection;
 namespace Jcd.Reflection.Tests.TestHelpers;
 
 /// <summary>
-///    An XUnit data provider. This one provides lists of numeric data of a various sorts.
+/// An XUnit data provider. This one provides lists of numeric data of a various sorts.
 /// </summary>
 public class ScalarDataProvider
 {
    /// <summary>
-   ///    Provides a set of BigIntegers
+   /// Provides a set of BigIntegers
    /// </summary>
    public static IEnumerable<object[]> AllScalars()
    {

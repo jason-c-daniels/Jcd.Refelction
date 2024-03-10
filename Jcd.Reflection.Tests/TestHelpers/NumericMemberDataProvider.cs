@@ -8,12 +8,12 @@ using System.Numerics;
 namespace Jcd.Reflection.Tests.TestHelpers;
 
 /// <summary>
-///    An XUnit data provider. This one provides lists of numeric data of a various sorts.
+/// An XUnit data provider. This one provides lists of numeric data of a various sorts.
 /// </summary>
 public class NumericMemberDataProvider
 {
    /// <summary>
-   ///    Provides a set of BigIntegers
+   /// Provides a set of BigIntegers
    /// </summary>
    public static IEnumerable<object[]> BigIntegerList()
    {
@@ -29,7 +29,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Bytes
+   /// Provides a set of Bytes
    /// </summary>
    public static IEnumerable<object[]> ByteList()
    {
@@ -43,7 +43,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Decimals
+   /// Provides a set of Decimals
    /// </summary>
    public static IEnumerable<object[]> DecimalList()
    {
@@ -57,7 +57,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Doubles
+   /// Provides a set of Doubles
    /// </summary>
    public static IEnumerable<object[]> DoublePrecisionFloatList()
    {
@@ -71,7 +71,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Int16s
+   /// Provides a set of Int16s
    /// </summary>
    public static IEnumerable<object[]> Int16List()
    {
@@ -85,7 +85,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Int32s
+   /// Provides a set of Int32s
    /// </summary>
    public static IEnumerable<object[]> Int32List()
    {
@@ -99,7 +99,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Int64s
+   /// Provides a set of Int64s
    /// </summary>
    public static IEnumerable<object[]> Int64List()
    {
@@ -113,7 +113,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of non-numeric data.
+   /// Provides a set of non-numeric data.
    /// </summary>
    public static IEnumerable<object[]> NonNumbersCollection()
    {
@@ -123,7 +123,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of signed bytes
+   /// Provides a set of signed bytes
    /// </summary>
    public static IEnumerable<object[]> SByteList()
    {
@@ -137,7 +137,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Singles
+   /// Provides a set of Singles
    /// </summary>
    public static IEnumerable<object[]> SinglePrecisionFloatList()
    {
@@ -151,7 +151,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of UInt16s
+   /// Provides a set of UInt16s
    /// </summary>
    public static IEnumerable<object[]> UInt16List()
    {
@@ -165,7 +165,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of UInt32s
+   /// Provides a set of UInt32s
    /// </summary>
    public static IEnumerable<object[]> UInt32List()
    {
@@ -179,7 +179,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of UInt64s
+   /// Provides a set of UInt64s
    /// </summary>
    public static IEnumerable<object[]> UInt64List()
    {
@@ -193,7 +193,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of BigIntegers from the fibonacci sequence,
+   /// Provides a set of BigIntegers from the fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> FibonacciBigIntegerList()
    {
@@ -203,7 +203,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of UInt64s from the fibonacci sequence,
+   /// Provides a set of UInt64s from the fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> FibonacciUInt64List()
    {
@@ -213,7 +213,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Int64s from the fibonacci sequence,
+   /// Provides a set of Int64s from the fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> FibonacciInt64List()
    {
@@ -223,7 +223,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of UInt32s from the fibonacci sequence,
+   /// Provides a set of UInt32s from the fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> FibonacciUInt32List()
    {
@@ -233,7 +233,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Int32s from the fibonacci sequence,
+   /// Provides a set of Int32s from the fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> FibonacciInt32List()
    {
@@ -243,7 +243,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of UInt16s from the fibonacci sequence,
+   /// Provides a set of UInt16s from the fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> FibonacciUInt16List()
    {
@@ -253,7 +253,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Int16s from the fibonacci sequence,
+   /// Provides a set of Int16s from the fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> FibonacciInt16List()
    {
@@ -263,7 +263,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Bytes from the fibonacci sequence,
+   /// Provides a set of Bytes from the fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> FibonacciByteList()
    {
@@ -273,7 +273,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of SBytes from the fibonacci sequence,
+   /// Provides a set of SBytes from the fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> FibonacciSByteList()
    {
@@ -283,7 +283,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of SBytes from the negative fibonacci sequence,
+   /// Provides a set of SBytes from the negative fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> NegativeFibonacciSByteList()
    {
@@ -293,7 +293,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Int16s from the negative fibonacci sequence,
+   /// Provides a set of Int16s from the negative fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> NegativeFibonacciInt16List()
    {
@@ -303,7 +303,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Int32s from the negative fibonacci sequence,
+   /// Provides a set of Int32s from the negative fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> NegativeFibonacciInt32List()
    {
@@ -313,7 +313,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of Int64s from the negative fibonacci sequence,
+   /// Provides a set of Int64s from the negative fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> NegativeFibonacciInt64List()
    {
@@ -323,7 +323,7 @@ public class NumericMemberDataProvider
    }
 
    /// <summary>
-   ///    Provides a set of BigIntegers from the negative fibonacci sequence,
+   /// Provides a set of BigIntegers from the negative fibonacci sequence,
    /// </summary>
    public static IEnumerable<object[]> NegativeFibonacciBigIntegerList()
    {

@@ -10,12 +10,12 @@ using System.Text;
 namespace Jcd.Reflection.Tests._TestHelpers;
 
 /// <summary>
-///    A validation helper. BigInteger formats hex numbers inconsistent from other int types (Zero Pads)
+/// A validation helper. BigInteger formats hex numbers inconsistent from other int types (Zero Pads)
 /// </summary>
 public static class StringExtensions
 {
     /// <summary>
-    ///    Removes leading zeros from a given bit of text.
+    /// Removes leading zeros from a given bit of text.
     /// </summary>
     /// <param name="text">The text to remove leading zeros from.</param>
     public static string TrimLeadingZeros(this string text)

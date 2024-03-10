@@ -32,8 +32,7 @@ the name of the method to invoke
 
 `settings` [Settings](MethodInfoEnumerator.Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')
 
-The method selection settings such
-as [AllInstanceMethodsFilter](MethodExtensions.AllInstanceMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter')
+The method selection settings such as [AllInstanceMethodsFilter](MethodExtensions.AllInstanceMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter')
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).params'></a>
 
@@ -42,5 +41,5 @@ as [AllInstanceMethodsFilter](MethodExtensions.AllInstanceMethodsFilter.md 'Jcd.
 the params for the method
 
 #### Returns
-[TOut](MethodExtensions.Invoke.WbkA24WCoRqJ4MoS49dP8Q.md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this object, string, Jcd.Reflection.MethodInfoEnumerator.Settings, object[]).TOut')  
+[TOut](MethodExtensions.Invoke.WbkA24WCoRqJ4MoS49dP8Q.md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,Jcd.Reflection.MethodInfoEnumerator.Settings,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this object, string, Jcd.Reflection.MethodInfoEnumerator.Settings, object[]).TOut')
 the result, if any

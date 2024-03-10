@@ -28,5 +28,5 @@ the name of the item to get.
 The binding flags that help control property or field lookup
 
 #### Returns
-[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')  
+[System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')
 The value

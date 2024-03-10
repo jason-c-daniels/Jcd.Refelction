@@ -8,7 +8,6 @@ Gets all attributes of a specified type on a module
 public static TAttribute[] GetCustomAttributes<TAttribute>(this System.Reflection.Module module, bool inherit=false)
     where TAttribute : System.Attribute;
 ```
-
 #### Type parameters
 
 <a name='Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.Module,bool).TAttribute'></a>
@@ -16,7 +15,6 @@ public static TAttribute[] GetCustomAttributes<TAttribute>(this System.Reflectio
 `TAttribute`
 
 The type of attributes to retrieve
-
 #### Parameters
 
 <a name='Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.Module,bool).module'></a>
@@ -32,6 +30,6 @@ the module to inspect
 inspect the inheritance hierarchy
 
 #### Returns
-
-[TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.HP36Ycg4WkHa2eAgopkxCw.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.Module,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Reflection.Module, bool).TAttribute')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')  
-An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is returned.
+[TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.HP36Ycg4WkHa2eAgopkxCw.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.Module,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Reflection.Module, bool).TAttribute')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
+An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is
+returned.

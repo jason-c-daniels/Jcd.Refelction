@@ -35,7 +35,7 @@ namespace Jcd.Reflection;
 public static class ExpandoObjectExtensions
 {
    /// <summary>
-   ///    Decomposes an object graph into a string-object dictionary tree. Cycles are not preserved.
+   /// Decomposes an object graph into a string-object dictionary tree. Cycles are not preserved.
    /// </summary>
    /// <param name="self">The object to decompose</param>
    /// <param name="visited">A hashset of visited objects</param>
@@ -57,7 +57,7 @@ public static class ExpandoObjectExtensions
    }
 
    /// <summary>
-   ///    Convert an object into an ExpandoObject, tree, breaking cycles in the object graph.
+   /// Convert an object into an ExpandoObject, tree, breaking cycles in the object graph.
    /// </summary>
    /// <param name="self">the object to convert</param>
    /// <param name="visited">A hashset of visited objects</param>
@@ -363,7 +363,7 @@ public static class ExpandoObjectExtensions
    }
 
    /// <summary>
-   ///    Creates a set of PropertyInfo to (current) value pairs for a given object.
+   /// Creates a set of PropertyInfo to (current) value pairs for a given object.
    /// </summary>
    /// <param name="items"></param>
    /// <param name="item"></param>
@@ -396,7 +396,7 @@ public static class ExpandoObjectExtensions
    }
 
    /// <summary>
-   ///    For a set of PropertyInfo to object pairs return a name to value pair.
+   /// For a set of PropertyInfo to object pairs return a name to value pair.
    /// </summary>
    /// <param name="items"></param>
    /// <returns></returns>
@@ -436,7 +436,7 @@ public static class ExpandoObjectExtensions
    }
 
    /// <summary>
-   ///    Creates a set of FieldInfo to (current) value pairs for a given object.
+   /// Creates a set of FieldInfo to (current) value pairs for a given object.
    /// </summary>
    /// <param name="items"></param>
    /// <returns></returns>
@@ -453,7 +453,7 @@ public static class ExpandoObjectExtensions
    }
 
    /// <summary>
-   ///    Determines if a type is a KeyValuePair
+   /// Determines if a type is a KeyValuePair
    /// </summary>
    /// <param name="type">the type to interrogate</param>
    /// <returns>true if it is (via duck typing)</returns>
