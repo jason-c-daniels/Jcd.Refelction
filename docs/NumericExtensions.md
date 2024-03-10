@@ -11,9 +11,9 @@ public static class NumericExtensions
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106;
 NumericExtensions
 
-| Fields                                                                                                                                      |     |
-|:--------------------------------------------------------------------------------------------------------------------------------------------|:----|
-| [BuiltInNonPrimitiveScalars](NumericExtensions.BuiltInNonPrimitiveScalars.md 'Jcd.Reflection.NumericExtensions.BuiltInNonPrimitiveScalars') |     |
+| Fields                                                                                                                                      | |
+|:--------------------------------------------------------------------------------------------------------------------------------------------|:-|
+| [BuiltInNonPrimitiveScalars](NumericExtensions.BuiltInNonPrimitiveScalars.md 'Jcd.Reflection.NumericExtensions.BuiltInNonPrimitiveScalars') | |
 
 | Methods                                                                                                                                                                                                         |                                                          |
 |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------|

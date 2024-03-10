@@ -6,13 +6,11 @@
 private static void AppendDictionary<TNode>(System.Collections.Generic.HashSet<object> visited, System.Func<string,string> keyRenamingStrategy, System.Func<string,object,bool> valueRetentionStrategy, System.Collections.IDictionary dictionary1, TNode root)
     where TNode : System.Collections.Generic.IDictionary<string, object>, new();
 ```
-
 #### Type parameters
 
 <a name='Jcd.Reflection.ExpandoObjectExtensions.AppendDictionary_TNode_(System.Collections.Generic.HashSet_object_,System.Func_string,string_,System.Func_string,object,bool_,System.Collections.IDictionary,TNode).TNode'></a>
 
 `TNode`
-
 #### Parameters
 
 <a name='Jcd.Reflection.ExpandoObjectExtensions.AppendDictionary_TNode_(System.Collections.Generic.HashSet_object_,System.Func_string,string_,System.Func_string,object,bool_,System.Collections.IDictionary,TNode).visited'></a>

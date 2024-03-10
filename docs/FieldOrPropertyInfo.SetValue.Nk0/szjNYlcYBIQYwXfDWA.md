@@ -7,7 +7,6 @@ Sets a value on an object.
 ```csharp
 public void SetValue(object obj, object value);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.FieldOrPropertyInfo.SetValue(object,object).obj'></a>

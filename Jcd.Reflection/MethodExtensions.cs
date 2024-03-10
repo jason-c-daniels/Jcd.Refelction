@@ -3,6 +3,7 @@
 using System;
 using System.Linq;
 using System.Reflection;
+
 using Jcd.Validations;
 
 // ReSharper disable HeapView.ClosureAllocation
@@ -79,7 +80,7 @@ public static class MethodExtensions
     /// <param name="name">the method name.</param>
     /// <param name="settings">settings that control method selection. <see cref="AllInstanceMethodsFilter"/> </param>
     /// <returns>null if none found</returns>
-    public static MethodInfo GetMethod(this object self, string name,
+    public static MethodInfo GetMethod(this object                   self, string name,
                                        MethodInfoEnumerator.Settings settings)
     {
         Argument.IsNotNull(self, nameof(self));
@@ -118,20 +119,23 @@ public static class MethodExtensions
     /// <param name="self">The target object of the method selection.</param>
     /// <param name="filter">a predicate to select or exclude specific methods.</param>
     /// <returns>an array of matching methods</returns>
-    public static MethodInfo[] FilterMethods(this object self, Func<MethodInfo, bool> filter)
+    public static MethodInfo[] GetMethods(this object self, Func<MethodInfo, bool> filter = null)
     {
-        return FilterMethods(self, filter, AllInstanceMethodsFilter);
+       return GetMethods(self, AllInstanceMethodsFilter, filter);
     }
 
     /// <summary>
     /// Given a filter return an array of matching MethodInfo's
     /// </summary>
     /// <param name="self">The target object of the method selection.</param>
-    /// <param name="filter">a predicate to select or exclude specific methods.</param>
     /// <param name="settings">The method selection settings such as <see cref="AllInstanceMethodsFilter"/></param>
+    /// <param name="filter">a predicate to select or exclude specific methods.</param>
     /// <returns>an array of matching methods</returns>
-    public static MethodInfo[] FilterMethods(this object self, Func<MethodInfo, bool> filter,
-                                             MethodInfoEnumerator.Settings settings)
+    public static MethodInfo[] GetMethods(
+       this object                   self
+     , MethodInfoEnumerator.Settings settings
+     , Func<MethodInfo, bool>        filter = null
+    )
     {
         Argument.IsNotNull(self, nameof(self));
         return new MethodInfoEnumerator(self.GetType(), settings).Where(mi => filter == null || filter(mi))
@@ -160,9 +164,9 @@ public static class MethodExtensions
     /// <param name="settings">The method selection settings such as <see cref="AllInstanceMethodsFilter"/></param>
     /// <param name="params">the params for the method</param>
     /// <returns>the result, if any</returns>
-    public static object Invoke(this object self, string name,
+    public static object Invoke(this object                   self, string name,
                                 MethodInfoEnumerator.Settings settings,
-                                params object[] @params)
+                                params object[]               @params)
     {
         Argument.IsNotNull(self, nameof(self));
         return self.Invoke(self.GetMethod(name, settings), @params);
@@ -206,7 +210,7 @@ public static class MethodExtensions
     /// <param name="params">the params for the method</param>
     /// <returns>the result, if any</returns>
     /// <typeparam name="TOut">result type</typeparam>
-    public static TOut Invoke<TOut>(this object self, string name, MethodInfoEnumerator.Settings settings,
+    public static TOut Invoke<TOut>(this   object   self, string name, MethodInfoEnumerator.Settings settings,
                                     params object[] @params)
     {
         Argument.IsNotNull(self, nameof(self));
@@ -247,7 +251,7 @@ public static class MethodExtensions
     /// <param name="params">The params to pass</param>
     /// <param name="settings">The method selection settings such as <see cref="AllStaticMethodsFilter"/></param>
     /// <returns>The result of the call, if any</returns>
-    public static object Invoke(this Type type, string name, MethodInfoEnumerator.Settings settings,
+    public static object Invoke(this   Type     type, string name, MethodInfoEnumerator.Settings settings,
                                 params object[] @params)
     {
         return type.GetMethod(name, settings).Invoke(type, @params);
@@ -275,7 +279,7 @@ public static class MethodExtensions
     /// <param name="settings">The method selection settings such as <see cref="AllStaticMethodsFilter"/></param>
     /// <typeparam name="TOut">The type of the return</typeparam>
     /// <returns>The result of the call, if any</returns>
-    public static TOut Invoke<TOut>(this Type type, string name, MethodInfoEnumerator.Settings settings,
+    public static TOut Invoke<TOut>(this   Type     type, string name, MethodInfoEnumerator.Settings settings,
                                     params object[] @params)
     {
         return (TOut)type.GetMethod(name, settings).Invoke(type, @params);

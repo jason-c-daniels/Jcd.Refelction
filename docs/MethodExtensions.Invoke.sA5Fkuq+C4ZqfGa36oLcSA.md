@@ -7,7 +7,6 @@ Invoke the method on the specified object using the provided parameters
 ```csharp
 public static object Invoke(this object self, string name, params object[] @params);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke(thisobject,string,object[]).self'></a>
@@ -29,6 +28,5 @@ the name of the method to invoke
 the params for the method
 
 #### Returns
-
 [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')  
 the result, if any

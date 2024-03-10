@@ -7,7 +7,6 @@ Gets implementations of the specified type from an assembly.
 ```csharp
 public static System.Collections.Generic.IEnumerable<System.Type> FindImplementationsOf(this System.Reflection.Assembly assembly, System.Type type, bool returnTargetTypeIfConcrete=false);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(thisSystem.Reflection.Assembly,System.Type,bool).assembly'></a>
@@ -30,7 +29,6 @@ If [type](TypeDiscoveryExtensions.FindImplementationsOf.R3VhT91dxhl7EJJKf9h+tg.m
 is in the target assembly, and it's a concrete, return it as well.
 
 #### Returns
-
 [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[System.Type](https://docs.microsoft.com/en-us/dotnet/api/System.Type 'System.Type')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
 An [System.Collections.Generic.IEnumerable&lt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 of the implementations

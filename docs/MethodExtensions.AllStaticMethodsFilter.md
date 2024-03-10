@@ -9,5 +9,4 @@ public static readonly Settings AllStaticMethodsFilter;
 ```
 
 #### Field Value
-
 [Settings](MethodInfoEnumerator.Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')

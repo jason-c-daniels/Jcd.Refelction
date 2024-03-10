@@ -14,14 +14,15 @@
         <Copyright>2018-2023</Copyright>
         <PackageProjectUrl>https://github.com/jason-c-daniels/Jcd.Reflection</PackageProjectUrl>
         <PackageLicense>MIT</PackageLicense>
+       <PackageLicenseUrl>https://github.com/jason-c-daniels/Jcd.Reflection/blob/main/LICENSE</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/jason-c-daniels/Jcd.Reflection</RepositoryUrl>
         <RepositoryType>GitHub</RepositoryType>
         <PackageTags>reflection csharp c#</PackageTags>
-        <PackageVersion>1.0.2</PackageVersion>
-        <AssemblyVersion>1.0.2</AssemblyVersion>
-        <FileVersion>1.0.2</FileVersion>
+       <PackageVersion>2.0.0</PackageVersion>
+       <AssemblyVersion>2.0.0</AssemblyVersion>
+       <FileVersion>2.0.0</FileVersion>
         <PackageIcon>Jason.C.Daniels.jpg</PackageIcon>
-        <PackageReleaseNotes>Misc. updates.</PackageReleaseNotes>
+       <PackageReleaseNotes>refactored extension method class names</PackageReleaseNotes>
         <DefaultDocumentationFileNameFactory>NameAndMd5Mix</DefaultDocumentationFileNameFactory>
     </PropertyGroup>
 

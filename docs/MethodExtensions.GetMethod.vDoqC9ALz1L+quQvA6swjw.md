@@ -7,7 +7,6 @@ Finds the first method by the provided name and returns its MethodInfo
 ```csharp
 public static System.Reflection.MethodInfo GetMethod(this object self, string name, Jcd.Reflection.MethodInfoEnumerator.Settings settings);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.GetMethod(thisobject,string,Jcd.Reflection.MethodInfoEnumerator.Settings).self'></a>
@@ -30,6 +29,5 @@ settings that control method
 selection. [AllInstanceMethodsFilter](MethodExtensions.AllInstanceMethodsFilter.md 'Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter')
 
 #### Returns
-
 [System.Reflection.MethodInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MethodInfo 'System.Reflection.MethodInfo')  
 null if none found

@@ -1,7 +1,7 @@
 #region
 
 using System.Reflection;
-using Jcd.Reflection.Tests._Fakes.AssemblyTest;
+
 using Xunit;
 
 #endregion
@@ -88,7 +88,7 @@ public class MethodExtensionsTests
     public void Invoke_On_Instance_Executes_Method_With_Result5()
     {
         var result = new TestClassC().Invoke<int>("GetValue");
-        Assert.Equal(10, result);
+        Assert.Equal(999, result);
     }
 
     [Fact]

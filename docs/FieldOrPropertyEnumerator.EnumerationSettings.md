@@ -9,5 +9,4 @@ public Jcd.Reflection.FieldOrPropertyEnumerator.Settings EnumerationSettings { g
 ```
 
 #### Property Value
-
 [Settings](FieldOrPropertyEnumerator.Settings.md 'Jcd.Reflection.FieldOrPropertyEnumerator.Settings')

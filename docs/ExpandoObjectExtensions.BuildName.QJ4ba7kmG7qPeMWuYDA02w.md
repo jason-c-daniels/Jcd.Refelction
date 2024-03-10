@@ -5,7 +5,6 @@
 ```csharp
 private static char BuildName(string k, System.Text.StringBuilder sb, char pc);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.ExpandoObjectExtensions.BuildName(string,System.Text.StringBuilder,char).k'></a>
@@ -21,5 +20,4 @@ private static char BuildName(string k, System.Text.StringBuilder sb, char pc);
 `pc` [System.Char](https://docs.microsoft.com/en-us/dotnet/api/System.Char 'System.Char')
 
 #### Returns
-
 [System.Char](https://docs.microsoft.com/en-us/dotnet/api/System.Char 'System.Char')

@@ -4,529 +4,17 @@
         <name>Jcd.Reflection</name>
     </assembly>
     <members>
-        <member name="T:Jcd.Reflection.CustomAttributeHandlingExtensions">
-            <summary>
-                Various extension methods that assist in getting custom attributes of a specified type.
-            </summary>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Enum,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on an enum value
-            </summary>
-            <param name="value">the enum value to inspect</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located
-                <typeparamref name="TAttribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes(System.Enum,System.Type,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on an enum value
-            </summary>
-            <param name="value">the enum value to inspect</param>
-            <param name="attributeType">The type of attributes to retrieve.</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <returns>An array of located
-                <see cref="T:System.Attribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.FieldInfo,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on a FieldInfo
-            </summary>
-            <param name="fieldInfo">the field to inspect</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located
-                <typeparamre name="TAttribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.PropertyInfo,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on a PropertyInfo
-            </summary>
-            <param name="propertyInfo">the property to inspect</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located
-                <typeparamre name="TAttribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.MethodInfo,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on a MethodInfo
-            </summary>
-            <param name="methodInfo">the method to inspect</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located
-                <typeparamre name="TAttribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Type,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on a type
-            </summary>
-            <param name="type">the type to inspect</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located
-                <typeparamre name="TAttribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.ParameterInfo,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on a parameter
-            </summary>
-            <param name="paramInfo">the parameter to inspect</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located
-                <typeparamre name="TAttribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.Module,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on a module
-            </summary>
-            <param name="module">the module to inspect</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located
-                <typeparamre name="TAttribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.TypeInfo,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on a TypeInfo
-            </summary>
-            <param name="typeInfo">the typeInfo to inspect</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located
-                <typeparamre name="TAttribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.Assembly,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on an assembly
-            </summary>
-            <param name="assembly">the assembly to inspect</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located
-                <typeparamre name="TAttribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.EventInfo,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on a parameter
-            </summary>
-            <param name="eventInfo">the eventINfo to inspect</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located
-                <typeparamre name="TAttribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.GetCustomAttributes``1(System.Reflection.MemberInfo,System.Boolean)">
-            <summary>
-                Gets all attributes of a specified type on a MemberInfo
-            </summary>
-            <param name="memberInfo">the MemberInfo to inspect</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
-            <returns>An array of located
-                <typeparamref name="TAttribute"/>
-                instances. If none are found, an empty array is returned.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Enum,System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific enum value in an enum.
-            </summary>
-            <param name="value">The enum value to inspect.</param>
-            <param name="attributeType">The type of the attribute to detect.</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Enum,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific enum value in an enum.
-            </summary>
-            <param name="value">The enum value to inspect.</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Type,System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific type.
-            </summary>
-            <param name="type">The type to inspect</param>
-            <param name="attributeType">The type of the attribute to detect.</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific type.
-            </summary>
-            <param name="type">The type to inspect.</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.FieldInfo,System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.FieldInfo"/>.
-            </summary>
-            <param name="fieldInfo">The
-                <see cref="T:System.Reflection.FieldInfo"/>
-                instance to inspect
-            </param>
-            <param name="attributeType">The type of the attribute to detect.</param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.FieldInfo,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.FieldInfo"/>.
-            </summary>
-            <param name="fieldInfo">The
-                <see cref="T:System.Reflection.FieldInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.PropertyInfo,System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.PropertyInfo"/>.
-            </summary>
-            <param name="propertyInfo">The
-                <see cref="T:System.Reflection.PropertyInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <param name="attributeType">The type of the attribute to detect.</param>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.PropertyInfo,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.PropertyInfo"/>.
-            </summary>
-            <param name="propertyInfo">The
-                <see cref="T:System.Reflection.PropertyInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.MethodInfo,System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.MethodInfo"/>.
-            </summary>
-            <param name="methodInfo">The
-                <see cref="T:System.Reflection.MethodInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <param name="attributeType">The type of the attribute to detect.</param>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.MethodInfo,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.MethodInfo"/>.
-            </summary>
-            <param name="methodInfo">The
-                <see cref="T:System.Reflection.MethodInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.ParameterInfo,System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.ParameterInfo"/>
-                .
-            </summary>
-            <param name="paramInfo">The
-                <see cref="T:System.Reflection.ParameterInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <param name="attributeType">The type of the attribute to detect.</param>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.ParameterInfo,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.MethodInfo"/>.
-            </summary>
-            <param name="paramInfo">The
-                <see cref="T:System.Reflection.MethodInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.Module,System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.Module"/>.
-            </summary>
-            <param name="module">The
-                <see cref="T:System.Reflection.Module"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <param name="attributeType">The type of the attribute to detect.</param>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.Module,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.Module"/>.
-            </summary>
-            <param name="module">The
-                <see cref="T:System.Reflection.Module"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.TypeInfo,System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.TypeInfo"/>.
-            </summary>
-            <param name="typeInfo">The
-                <see cref="T:System.Reflection.TypeInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <param name="attributeType">The type of the attribute to detect.</param>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.TypeInfo,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.TypeInfo"/>.
-            </summary>
-            <param name="typeInfo">The
-                <see cref="T:System.Reflection.TypeInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.Assembly,System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.Assembly"/>.
-            </summary>
-            <param name="assembly">The
-                <see cref="T:System.Reflection.Assembly"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <param name="attributeType">The type of the attribute to detect.</param>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.Assembly,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.Assembly"/>.
-            </summary>
-            <param name="assembly">The
-                <see cref="T:System.Reflection.Assembly"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.EventInfo,System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.EventInfo"/>.
-            </summary>
-            <param name="eventInfo">The
-                <see cref="T:System.Reflection.EventInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <param name="attributeType">The type of the attribute to detect.</param>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.EventInfo,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.EventInfo"/>.
-            </summary>
-            <param name="eventInfo">The
-                <see cref="T:System.Reflection.EventInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute(System.Reflection.MemberInfo,System.Type,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.MemberInfo"/>.
-            </summary>
-            <param name="memberInfo">The
-                <see cref="T:System.Reflection.MemberInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <param name="attributeType">The type of the attribute to detect.</param>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
-        <member name="M:Jcd.Reflection.CustomAttributeHandlingExtensions.HasAttribute``1(System.Reflection.MemberInfo,System.Boolean)">
-            <summary>
-                Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.MemberInfo"/>.
-            </summary>
-            <param name="memberInfo">The
-                <see cref="T:System.Reflection.MemberInfo"/>
-                instance to inspect
-            </param>
-            <param name="inherit">inspect the inheritance hierarchy</param>
-            <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
-            <returns>
-                <see langword="true"/>
-                if one or more attributes of the requested type were detected;
-                <see langword="false"/>
-                otherwise.
-            </returns>
-        </member>
         <member name="T:Jcd.Reflection.ExpandoObjectExtensions">
             <summary>
-                Extension methods for creating expando objects from POCOs or string object dictionaries
+               Extension methods for creating expando objects from POCOs or string object dictionaries
             </summary>
             <remarks>
-                THESE EXTENSION METHODS ARE GOING AWAY SOON!
+               THESE EXTENSION METHODS ARE GOING AWAY SOON!
             </remarks>
         </member>
         <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToDictionaryTree(System.Object,System.Collections.Generic.HashSet{System.Object},System.Func{System.String,System.String},System.Func{System.String,System.Object,System.Boolean})">
             <summary>
-                Decomposes an object graph into a string-object dictionary tree. Cycles are not preserved.
+               Decomposes an object graph into a string-object dictionary tree. Cycles are not preserved.
             </summary>
             <param name="self">The object to decompose</param>
             <param name="visited">A hashset of visited objects</param>
@@ -536,7 +24,7 @@
         </member>
         <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToExpandoObject(System.Object,System.Collections.Generic.HashSet{System.Object},System.Func{System.String,System.String},System.Func{System.String,System.Object,System.Boolean})">
             <summary>
-                Convert an object into an ExpandoObject, tree, breaking cycles in the object graph.
+               Convert an object into an ExpandoObject, tree, breaking cycles in the object graph.
             </summary>
             <param name="self">the object to convert</param>
             <param name="visited">A hashset of visited objects</param>
@@ -627,7 +115,7 @@
         </member>
         <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToPropertyInfoValuePairs(System.Collections.Generic.IEnumerable{System.Reflection.PropertyInfo},System.Object)">
             <summary>
-                Creates a set of PropertyInfo to (current) value pairs for a given object.
+               Creates a set of PropertyInfo to (current) value pairs for a given object.
             </summary>
             <param name="items"></param>
             <param name="item"></param>
@@ -635,7 +123,7 @@
         </member>
         <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToNameValuePairs(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Reflection.PropertyInfo,System.Object}})">
             <summary>
-                For a set of PropertyInfo to object pairs return a name to value pair.
+               For a set of PropertyInfo to object pairs return a name to value pair.
             </summary>
             <param name="items"></param>
             <returns></returns>
@@ -650,26 +138,26 @@
         </member>
         <member name="M:Jcd.Reflection.ExpandoObjectExtensions.ToNameValuePairs(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Reflection.FieldInfo,System.Object}})">
             <summary>
-                Creates a set of FieldInfo to (current) value pairs for a given object.
+               Creates a set of FieldInfo to (current) value pairs for a given object.
             </summary>
             <param name="items"></param>
             <returns></returns>
         </member>
         <member name="M:Jcd.Reflection.ExpandoObjectExtensions.IsKeyValuePair(System.Type)">
             <summary>
-                Determines if a type is a KeyValuePair
+               Determines if a type is a KeyValuePair
             </summary>
             <param name="type">the type to interrogate</param>
             <returns>true if it is (via duck typing)</returns>
         </member>
         <member name="T:Jcd.Reflection.FieldInfoExtensions">
             <summary>
-                Extension methods to aid in reflecting on fields.
+               Extension methods to aid in reflecting on fields.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.FieldInfoExtensions.EnumerateFields(System.Type,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.FieldInfo,System.Boolean})">
             <summary>
-                Enumerate the FieldInfo entries for a given type
+               Enumerate the FieldInfo entries for a given type
             </summary>
             <param name="type">The data type to reflect on</param>
             <param name="flags">The BindingFlags</param>
@@ -678,7 +166,7 @@
         </member>
         <member name="M:Jcd.Reflection.FieldInfoExtensions.EnumerateFields(System.Object,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.FieldInfo,System.Boolean})">
             <summary>
-                Enumerate the FieldInfo entries for a given instance
+               Enumerate the FieldInfo entries for a given instance
             </summary>
             <param name="self">The data instance to reflect on</param>
             <param name="flags">The BindingFlags</param>
@@ -687,58 +175,58 @@
         </member>
         <member name="T:Jcd.Reflection.FieldOrPropertyEnumerator">
             <summary>
-                Enumerates both properties and fields on a given data type.
+               Enumerates both properties and fields on a given data type.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyEnumerator.#ctor(System.Type,Jcd.Reflection.FieldOrPropertyEnumerator.Settings)">
             <summary>
-                Constructs a FieldOrPropertyEnumerator from a type and settings.
+               Constructs a FieldOrPropertyEnumerator from a type and settings.
             </summary>
             <param name="type">The data type to reflect on</param>
             <param name="settings">the settings controlling enumeration</param>
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyEnumerator.#ctor(System.Object,Jcd.Reflection.FieldOrPropertyEnumerator.Settings)">
             <summary>
-                Constructs a FieldOrPropertyEnumerator from an object instance and settings.
+               Constructs a FieldOrPropertyEnumerator from an object instance and settings.
             </summary>
             <param name="item">The object instance to reflect on</param>
             <param name="settings">the settings controlling enumeration</param>
         </member>
         <member name="P:Jcd.Reflection.FieldOrPropertyEnumerator.EnumerationSettings">
             <summary>
-                Gets or sets the settings that control enumeration.
+               Gets or sets the settings that control enumeration.
             </summary>
         </member>
         <member name="P:Jcd.Reflection.FieldOrPropertyEnumerator.Type">
             <summary>
-                The data type being reflected on.
+               The data type being reflected on.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyEnumerator.GetEnumerator">
             <summary>
-                Enumerates the FieldOrPropertyInfo entries for the given type.
+               Enumerates the FieldOrPropertyInfo entries for the given type.
             </summary>
             <returns>An enumerator of FieldOrPropertyInfo's</returns>
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyEnumerator.System#Collections#IEnumerable#GetEnumerator">
             <summary>
-                Enumerates the FieldOrPropertyInfo entries for the given type.
+               Enumerates the FieldOrPropertyInfo entries for the given type.
             </summary>
             <returns>An enumerator for the FieldOrPropertyInfo's</returns>
         </member>
         <member name="T:Jcd.Reflection.FieldOrPropertyEnumerator.Settings">
             <summary>
-                The settings indicating "how" to enumerate. (i.e. BindingFlags and a predicate for skipping members)
+               The settings indicating "how" to enumerate. (i.e. BindingFlags and a predicate for skipping members)
             </summary>
         </member>
         <member name="F:Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Flags">
             <summary>
-                The BindingFlags for the member lookup.
+               The BindingFlags for the member lookup.
             </summary>
         </member>
         <member name="F:Jcd.Reflection.FieldOrPropertyEnumerator.Settings.Skip">
             <summary>
-                A predicate for skipping certain members.
+               A predicate for skipping certain members.
             </summary>
         </member>
         <member name="T:Jcd.Reflection.FieldOrPropertyInfo">
@@ -748,41 +236,41 @@
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyInfo.#ctor(System.Reflection.MemberInfo,System.Reflection.BindingFlags)">
             <summary>
-                A dual purpose MemberInfo type.
+               A dual purpose MemberInfo type.
             </summary>
             <param name="memberInfo">The member info on which this instance is based.</param>
             <param name="flags">the binding flags</param>
         </member>
         <member name="P:Jcd.Reflection.FieldOrPropertyInfo.DeclaringType">
             <summary>
-                Gets the type that declares the member.
+               Gets the type that declares the member.
             </summary>
         </member>
         <member name="P:Jcd.Reflection.FieldOrPropertyInfo.MemberType">
             <summary>
-                Gets the type of the member
+               Gets the type of the member
             </summary>
         </member>
         <member name="P:Jcd.Reflection.FieldOrPropertyInfo.Name">
             <summary>
-                Gets the name of the member
+               Gets the name of the member
             </summary>
         </member>
         <member name="P:Jcd.Reflection.FieldOrPropertyInfo.ReflectedType">
             <summary>
-                gets the reflected type of the member.
+               gets the reflected type of the member.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyInfo.GetCustomAttributes(System.Boolean)">
             <summary>
-                Gets custom attributes for the member.
+               Gets custom attributes for the member.
             </summary>
             <param name="inherit">Get inherited attributes if true</param>
             <returns>an array of custom attributes</returns>
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyInfo.GetCustomAttributes(System.Type,System.Boolean)">
             <summary>
-                Gets custom attributes of a specified type for a member.
+               Gets custom attributes of a specified type for a member.
             </summary>
             <param name="attributeType">The data type for the custom attribute</param>
             <param name="inherit">Get inherited attributes if true</param>
@@ -790,7 +278,7 @@
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyInfo.IsDefined(System.Type,System.Boolean)">
             <summary>
-                Checks if a custom attribute of the specified type exists for the member.
+               Checks if a custom attribute of the specified type exists for the member.
             </summary>
             <param name="attributeType">The data type for the custom attribute</param>
             <param name="inherit">Checks inheritance tree if true</param>
@@ -798,14 +286,14 @@
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyInfo.GetValue(System.Object)">
             <summary>
-                Gets the value from the object.
+               Gets the value from the object.
             </summary>
             <param name="obj">the object to get the value from</param>
             <returns>the retrieved value</returns>
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyInfo.GetValue(System.Object,System.Boolean@)">
             <summary>
-                Gets a value from an object, and indicates if an error occurred during that process.
+               Gets a value from an object, and indicates if an error occurred during that process.
             </summary>
             <param name="obj">the object to get the value from</param>
             <param name="errored">true if an exception occurred during the get.</param>
@@ -813,114 +301,657 @@
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyInfo.SetValue(System.Object,System.Object)">
             <summary>
-                Sets a value on an object.
+               Sets a value on an object.
             </summary>
             <param name="obj">The object to manipulate</param>
             <param name="value">The value to set.</param>
         </member>
         <member name="M:Jcd.Reflection.FieldOrPropertyInfo.SetValue(System.Object,System.Object,System.Boolean@)">
             <summary>
-                Sets a value on an object.
+               Sets a value on an object.
             </summary>
             <param name="obj">The object to manipulate</param>
             <param name="value">The value to set.</param>
             <param name="errored">true if an exception occurred during the set.</param>
         </member>
+       <member name="T:Jcd.Reflection.GetCustomAttributesExtensions">
+          <summary>
+             Various extension methods that assist in getting custom attributes of a specified type.
+          </summary>
+       </member>
+       <member name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes``1(System.Enum,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on an enum value
+          </summary>
+          <param name="value">the enum value to inspect</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
+          <returns>An array of located
+             <typeparamref name="TAttribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes(System.Enum,System.Type,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on an enum value
+          </summary>
+          <param name="value">the enum value to inspect</param>
+          <param name="attributeType">The type of attributes to retrieve.</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <returns>An array of located
+             <see cref="T:System.Attribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes``1(System.Reflection.FieldInfo,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on a FieldInfo
+          </summary>
+          <param name="fieldInfo">the field to inspect</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
+          <returns>An array of located
+             <typeparamre name="TAttribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes``1(System.Reflection.PropertyInfo,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on a PropertyInfo
+          </summary>
+          <param name="propertyInfo">the property to inspect</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
+          <returns>An array of located
+             <typeparamre name="TAttribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes``1(System.Reflection.MethodInfo,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on a MethodInfo
+          </summary>
+          <param name="methodInfo">the method to inspect</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
+          <returns>An array of located
+             <typeparamre name="TAttribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes``1(System.Type,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on a type
+          </summary>
+          <param name="type">the type to inspect</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
+          <returns>An array of located
+             <typeparamre name="TAttribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes``1(System.Reflection.ParameterInfo,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on a parameter
+          </summary>
+          <param name="paramInfo">the parameter to inspect</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
+          <returns>An array of located
+             <typeparamre name="TAttribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes``1(System.Reflection.Module,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on a module
+          </summary>
+          <param name="module">the module to inspect</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
+          <returns>An array of located
+             <typeparamre name="TAttribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes``1(System.Reflection.TypeInfo,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on a TypeInfo
+          </summary>
+          <param name="typeInfo">the typeInfo to inspect</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
+          <returns>An array of located
+             <typeparamre name="TAttribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes``1(System.Reflection.Assembly,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on an assembly
+          </summary>
+          <param name="assembly">the assembly to inspect</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
+          <returns>An array of located
+             <typeparamre name="TAttribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes``1(System.Reflection.EventInfo,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on a parameter
+          </summary>
+          <param name="eventInfo">the eventINfo to inspect</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
+          <returns>An array of located
+             <typeparamre name="TAttribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes``1(System.Reflection.MemberInfo,System.Boolean)">
+          <summary>
+             Gets all attributes of a specified type on a MemberInfo
+          </summary>
+          <param name="memberInfo">the MemberInfo to inspect</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of attributes to retrieve</typeparam>
+          <returns>An array of located
+             <typeparamref name="TAttribute"/>
+             instances. If none are found, an empty array is returned.
+          </returns>
+       </member>
+       <member name="T:Jcd.Reflection.HasAttributeExtensions">
+          <summary>
+             Various extension methods that assist in getting custom attributes of a specified type.
+          </summary>
+       </member>
+       <member name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute(System.Enum,System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific enum value in an enum.
+          </summary>
+          <param name="value">The enum value to inspect.</param>
+          <param name="attributeType">The type of the attribute to detect.</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute``1(System.Enum,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific enum value in an enum.
+          </summary>
+          <param name="value">The enum value to inspect.</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute(System.Type,System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific type.
+          </summary>
+          <param name="type">The type to inspect</param>
+          <param name="attributeType">The type of the attribute to detect.</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute``1(System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific type.
+          </summary>
+          <param name="type">The type to inspect.</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute(System.Reflection.FieldInfo,System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.FieldInfo"/>.
+          </summary>
+          <param name="fieldInfo">The
+             <see cref="T:System.Reflection.FieldInfo"/>
+             instance to inspect
+          </param>
+          <param name="attributeType">The type of the attribute to detect.</param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute``1(System.Reflection.FieldInfo,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.FieldInfo"/>.
+          </summary>
+          <param name="fieldInfo">The
+             <see cref="T:System.Reflection.FieldInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute(System.Reflection.PropertyInfo,System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.PropertyInfo"/>.
+          </summary>
+          <param name="propertyInfo">The
+             <see cref="T:System.Reflection.PropertyInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <param name="attributeType">The type of the attribute to detect.</param>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute``1(System.Reflection.PropertyInfo,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.PropertyInfo"/>.
+          </summary>
+          <param name="propertyInfo">The
+             <see cref="T:System.Reflection.PropertyInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute(System.Reflection.MethodInfo,System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.MethodInfo"/>.
+          </summary>
+          <param name="methodInfo">The
+             <see cref="T:System.Reflection.MethodInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <param name="attributeType">The type of the attribute to detect.</param>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute``1(System.Reflection.MethodInfo,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.MethodInfo"/>.
+          </summary>
+          <param name="methodInfo">The
+             <see cref="T:System.Reflection.MethodInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute(System.Reflection.ParameterInfo,System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.ParameterInfo"/>.
+          </summary>
+          <param name="paramInfo">The
+             <see cref="T:System.Reflection.ParameterInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <param name="attributeType">The type of the attribute to detect.</param>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute``1(System.Reflection.ParameterInfo,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.MethodInfo"/>.
+          </summary>
+          <param name="paramInfo">The
+             <see cref="T:System.Reflection.MethodInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute(System.Reflection.Module,System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.Module"/>.
+          </summary>
+          <param name="module">The
+             <see cref="T:System.Reflection.Module"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <param name="attributeType">The type of the attribute to detect.</param>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute``1(System.Reflection.Module,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.Module"/>.
+          </summary>
+          <param name="module">The
+             <see cref="T:System.Reflection.Module"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute(System.Reflection.TypeInfo,System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.TypeInfo"/>.
+          </summary>
+          <param name="typeInfo">The
+             <see cref="T:System.Reflection.TypeInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <param name="attributeType">The type of the attribute to detect.</param>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute``1(System.Reflection.TypeInfo,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.TypeInfo"/>.
+          </summary>
+          <param name="typeInfo">The
+             <see cref="T:System.Reflection.TypeInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute(System.Reflection.Assembly,System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.Assembly"/>.
+          </summary>
+          <param name="assembly">The
+             <see cref="T:System.Reflection.Assembly"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <param name="attributeType">The type of the attribute to detect.</param>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute``1(System.Reflection.Assembly,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.Assembly"/>.
+          </summary>
+          <param name="assembly">The
+             <see cref="T:System.Reflection.Assembly"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute(System.Reflection.EventInfo,System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.EventInfo"/>.
+          </summary>
+          <param name="eventInfo">The
+             <see cref="T:System.Reflection.EventInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <param name="attributeType">The type of the attribute to detect.</param>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute``1(System.Reflection.EventInfo,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.EventInfo"/>.
+          </summary>
+          <param name="eventInfo">The
+             <see cref="T:System.Reflection.EventInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute(System.Reflection.MemberInfo,System.Type,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.MemberInfo"/>.
+          </summary>
+          <param name="memberInfo">The
+             <see cref="T:System.Reflection.MemberInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <param name="attributeType">The type of the attribute to detect.</param>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
+       <member
+          name="M:Jcd.Reflection.HasAttributeExtensions.HasAttribute``1(System.Reflection.MemberInfo,System.Boolean)">
+          <summary>
+             Determines if an attribute has been applied to a specific<see cref="T:System.Reflection.MemberInfo"/>.
+          </summary>
+          <param name="memberInfo">The
+             <see cref="T:System.Reflection.MemberInfo"/>
+             instance to inspect
+          </param>
+          <param name="inherit">inspect the inheritance hierarchy</param>
+          <typeparam name="TAttribute">The type of the attribute to detect.</typeparam>
+          <returns>
+             <see langword="true"/>
+             if one or more attributes of the requested type were detected;
+             <see langword="false"/>
+             otherwise.
+          </returns>
+       </member>
         <member name="T:Jcd.Reflection.MemberInfoEnumerator">
             <summary>
-                Enumerated MemberInfos for a given object or type.
+               Enumerated MemberInfos for a given object or type.
             </summary>
         </member>
         <member name="F:Jcd.Reflection.MemberInfoEnumerator.SkipSystemMembers">
             <summary>
-                Predefined skip predicate for skipping system members.
+               Predefined skip predicate for skipping system members.
             </summary>
         </member>
         <member name="F:Jcd.Reflection.MemberInfoEnumerator.SkipSystemAndNonDataMembers">
             <summary>
-                Predefined skip predicate for skipping system members.
+               Predefined skip predicate for skipping system members.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.MemberInfoEnumerator.#ctor(System.Type,Jcd.Reflection.MemberInfoEnumerator.Settings)">
             <summary>
-                Constructs a MemberInfoEnumerator from a type and settings.
+               Constructs a MemberInfoEnumerator from a type and settings.
             </summary>
             <param name="type">The type to enumerate</param>
             <param name="settings">The settings controlling enumeration</param>
         </member>
         <member name="M:Jcd.Reflection.MemberInfoEnumerator.#ctor(System.Object,Jcd.Reflection.MemberInfoEnumerator.Settings)">
             <summary>
-                Constructs a MemberInfoEnumerator from an instance and settings.
+               Constructs a MemberInfoEnumerator from an instance and settings.
             </summary>
             <param name="item">The instance to enumerate</param>
             <param name="settings">The settings controlling enumeration</param>
         </member>
         <member name="P:Jcd.Reflection.MemberInfoEnumerator.EnumerationSettings">
             <summary>
-                Gets or sets the settings controlling member info enumeration
+               Gets or sets the settings controlling member info enumeration
             </summary>
         </member>
         <member name="P:Jcd.Reflection.MemberInfoEnumerator.Type">
             <summary>
-                The type whose members are enumerated.
+               The type whose members are enumerated.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.MemberInfoEnumerator.GetEnumerator">
             <summary>
-                Gets the enumerator
+               Gets the enumerator
             </summary>
             <returns>An enumerator</returns>
         </member>
         <member name="M:Jcd.Reflection.MemberInfoEnumerator.System#Collections#IEnumerable#GetEnumerator">
             <summary>
-                Gets an enumerator
+               Gets an enumerator
             </summary>
             <returns>An enumerator</returns>
         </member>
         <member name="T:Jcd.Reflection.MemberInfoEnumerator.Settings">
             <summary>
-                The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for
-                skipping?)
+               The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for
+               skipping?)
             </summary>
         </member>
         <member name="F:Jcd.Reflection.MemberInfoEnumerator.Settings.Flags">
             <summary>
-                The BindingFlags for the member lookup.
+               The BindingFlags for the member lookup.
             </summary>
         </member>
         <member name="F:Jcd.Reflection.MemberInfoEnumerator.Settings.Skip">
             <summary>
-                A predicate for skipping certain members.
+               A predicate for skipping certain members.
             </summary>
         </member>
         <member name="T:Jcd.Reflection.MethodExtensions">
             <summary>
-                Extension methods to help invoke methods via reflection.
+               Extension methods to help invoke methods via reflection.
             </summary>
         </member>
         <member name="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter">
             <summary>
-                A pre-filter to select all, including inherited, instance methods.
+               A pre-filter to select all, including inherited, instance methods.
             </summary>
         </member>
         <member name="F:Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter">
             <summary>
-                A pre-filter to select all, including inherited, static methods.
+               A pre-filter to select all, including inherited, static methods.
             </summary>
         </member>
         <member name="F:Jcd.Reflection.MethodExtensions.DirectInstanceMethodsFilter">
             <summary>
-                A pre-filter to select all but inherited instance methods.
+               A pre-filter to select all but inherited instance methods.
             </summary>
         </member>
         <member name="F:Jcd.Reflection.MethodExtensions.DirectStaticMethodsFilter">
             <summary>
-                A pre-filter to select all but inherited static methods.
+               A pre-filter to select all but inherited static methods.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Object,System.String)">
             <summary>
-                Finds the first method by the provided name and returns its MethodInfo
+               Finds the first method by the provided name and returns its MethodInfo
             </summary>
             <param name="self">The instance to find the method on</param>
             <param name="name">the method name.</param>
@@ -928,18 +959,18 @@
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Object,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings)">
             <summary>
-                Finds the first method by the provided name and returns its MethodInfo
+               Finds the first method by the provided name and returns its MethodInfo
             </summary>
             <param name="self">The instance to find the method on</param>
             <param name="name">the method name.</param>
-            <param name="settings">settings that control method selection.
-                <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/>
-            </param>
+           <param name="settings">settings that control method selection.
+              <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/>
+           </param>
             <returns>null if none found</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Type,System.String)">
             <summary>
-                Gets a methodInfo by name from a type.
+               Gets a methodInfo by name from a type.
             </summary>
             <param name="type">the type to interrogate</param>
             <param name="name">the name of the method</param>
@@ -947,35 +978,37 @@
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.GetMethod(System.Type,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings)">
             <summary>
-                Gets a methodInfo by name from a type.
+               Gets a methodInfo by name from a type.
             </summary>
             <param name="type">the type to interrogate</param>
             <param name="name">the name of the method</param>
             <param name="settings"></param>
             <returns>the result of the call, if any</returns>
         </member>
-        <member name="M:Jcd.Reflection.MethodExtensions.FilterMethods(System.Object,System.Func{System.Reflection.MethodInfo,System.Boolean})">
+       <member
+          name="M:Jcd.Reflection.MethodExtensions.GetMethods(System.Object,System.Func{System.Reflection.MethodInfo,System.Boolean})">
             <summary>
-                Given a filter return an array of matching MethodInfo's
+               Given a filter return an array of matching MethodInfo's
             </summary>
             <param name="self">The target object of the method selection.</param>
             <param name="filter">a predicate to select or exclude specific methods.</param>
             <returns>an array of matching methods</returns>
         </member>
-        <member name="M:Jcd.Reflection.MethodExtensions.FilterMethods(System.Object,System.Func{System.Reflection.MethodInfo,System.Boolean},Jcd.Reflection.MethodInfoEnumerator.Settings)">
+       <member
+          name="M:Jcd.Reflection.MethodExtensions.GetMethods(System.Object,Jcd.Reflection.MethodInfoEnumerator.Settings,System.Func{System.Reflection.MethodInfo,System.Boolean})">
             <summary>
-                Given a filter return an array of matching MethodInfo's
+               Given a filter return an array of matching MethodInfo's
             </summary>
             <param name="self">The target object of the method selection.</param>
+          <param name="settings">The method selection settings such as
+             <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/>
+          </param>
             <param name="filter">a predicate to select or exclude specific methods.</param>
-            <param name="settings">The method selection settings such as
-                <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/>
-            </param>
             <returns>an array of matching methods</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke(System.Object,System.Reflection.MethodInfo,System.Object[])">
             <summary>
-                Invoke the method on the specified object using the provided parameters
+               Invoke the method on the specified object using the provided parameters
             </summary>
             <param name="self">The instance to invoke the method on</param>
             <param name="methodInfo">the method to invoke</param>
@@ -984,19 +1017,19 @@
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke(System.Object,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings,System.Object[])">
             <summary>
-                Invoke the method on the specified object using the provided parameters
+               Invoke the method on the specified object using the provided parameters
             </summary>
             <param name="self">The instance to invoke the method on</param>
             <param name="name">the name of the method to invoke</param>
-            <param name="settings">The method selection settings such as
-                <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/>
-            </param>
+           <param name="settings">The method selection settings such as
+              <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/>
+           </param>
             <param name="params">the params for the method</param>
             <returns>the result, if any</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke(System.Object,System.String,System.Object[])">
             <summary>
-                Invoke the method on the specified object using the provided parameters
+               Invoke the method on the specified object using the provided parameters
             </summary>
             <param name="self">The instance to invoke the method on</param>
             <param name="name">the name of the method to invoke</param>
@@ -1015,20 +1048,20 @@
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke``1(System.Object,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings,System.Object[])">
             <summary>
-                Invoke the method on the specified object using the provided parameters
+               Invoke the method on the specified object using the provided parameters
             </summary>
             <param name="self">The instance to invoke the method on</param>
             <param name="name">the name of the method to invoke</param>
-            <param name="settings">The method selection settings such as
-                <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/>
-            </param>
+           <param name="settings">The method selection settings such as
+              <see cref="F:Jcd.Reflection.MethodExtensions.AllInstanceMethodsFilter"/>
+           </param>
             <param name="params">the params for the method</param>
             <returns>the result, if any</returns>
             <typeparam name="TOut">result type</typeparam>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke``1(System.Object,System.String,System.Object[])">
             <summary>
-                Invoke the method on the specified object using the provided parameters
+               Invoke the method on the specified object using the provided parameters
             </summary>
             <param name="self">The instance to invoke the method on</param>
             <param name="name">the name of the method to invoke</param>
@@ -1038,7 +1071,7 @@
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke(System.Type,System.String,System.Object[])">
             <summary>
-                Invokes a static method on a type
+               Invokes a static method on a type
             </summary>
             <param name="type">The type containing the static method</param>
             <param name="name">The name of the method</param>
@@ -1047,19 +1080,19 @@
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke(System.Type,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings,System.Object[])">
             <summary>
-                Invokes a static method on a type
+               Invokes a static method on a type
             </summary>
             <param name="type">The type containing the static method</param>
             <param name="name">The name of the method</param>
             <param name="params">The params to pass</param>
-            <param name="settings">The method selection settings such as
-                <see cref="F:Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter"/>
-            </param>
+           <param name="settings">The method selection settings such as
+              <see cref="F:Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter"/>
+           </param>
             <returns>The result of the call, if any</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke``1(System.Type,System.String,System.Object[])">
             <summary>
-                Invokes a static method on a type, coercing the return type
+               Invokes a static method on a type, coercing the return type
             </summary>
             <param name="type">The type containing the static method</param>
             <param name="name">The name of the method</param>
@@ -1069,124 +1102,124 @@
         </member>
         <member name="M:Jcd.Reflection.MethodExtensions.Invoke``1(System.Type,System.String,Jcd.Reflection.MethodInfoEnumerator.Settings,System.Object[])">
             <summary>
-                Invokes a static method on a type, coercing the return type
+               Invokes a static method on a type, coercing the return type
             </summary>
             <param name="type">The type containing the static method</param>
             <param name="name">The name of the method</param>
             <param name="params">The params to pass</param>
-            <param name="settings">The method selection settings such as
-                <see cref="F:Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter"/>
-            </param>
+           <param name="settings">The method selection settings such as
+              <see cref="F:Jcd.Reflection.MethodExtensions.AllStaticMethodsFilter"/>
+           </param>
             <typeparam name="TOut">The type of the return</typeparam>
             <returns>The result of the call, if any</returns>
         </member>
         <member name="T:Jcd.Reflection.MethodInfoEnumerator">
             <summary>
-                Enumerates the method information for a given type.
+               Enumerates the method information for a given type.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.MethodInfoEnumerator.#ctor(System.Type,Jcd.Reflection.MethodInfoEnumerator.Settings)">
             <summary>
-                Constructs a MethodInfoEnumerator from a type and settings.
+               Constructs a MethodInfoEnumerator from a type and settings.
             </summary>
             <param name="type">The type to enumerate</param>
             <param name="settings">The settings controlling enumeration</param>
         </member>
         <member name="M:Jcd.Reflection.MethodInfoEnumerator.#ctor(System.Object,Jcd.Reflection.MethodInfoEnumerator.Settings)">
             <summary>
-                Constructs a MethodInfoEnumerator from an instance and settings.
+               Constructs a MethodInfoEnumerator from an instance and settings.
             </summary>
             <param name="item">The instance to enumerate</param>
             <param name="settings">The settings controlling enumeration</param>
         </member>
         <member name="P:Jcd.Reflection.MethodInfoEnumerator.EnumerationSettings">
             <summary>
-                Gets or sets the settings controlling method info enumeration
+               Gets or sets the settings controlling method info enumeration
             </summary>
         </member>
         <member name="P:Jcd.Reflection.MethodInfoEnumerator.Type">
             <summary>
-                The type whose methods are enumerated.
+               The type whose methods are enumerated.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.MethodInfoEnumerator.GetEnumerator">
             <summary>
-                Gets an enumerator for the MethodInfos enumerated
+               Gets an enumerator for the MethodInfos enumerated
             </summary>
             <returns>An enumerator</returns>
         </member>
         <member name="M:Jcd.Reflection.MethodInfoEnumerator.System#Collections#IEnumerable#GetEnumerator">
             <summary>
-                Gets an enumerator for the MethodInfos enumerated
+               Gets an enumerator for the MethodInfos enumerated
             </summary>
             <returns>An enumerator</returns>
         </member>
         <member name="T:Jcd.Reflection.MethodInfoEnumerator.Settings">
             <summary>
-                The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for
-                skipping?)
+               The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for
+               skipping?)
             </summary>
         </member>
         <member name="F:Jcd.Reflection.MethodInfoEnumerator.Settings.Flags">
             <summary>
-                The BindingFlags for the member lookup.
+               The BindingFlags for the member lookup.
             </summary>
         </member>
         <member name="F:Jcd.Reflection.MethodInfoEnumerator.Settings.Skip">
             <summary>
-                A predicate for skipping certain members.
+               A predicate for skipping certain members.
             </summary>
         </member>
         <member name="T:Jcd.Reflection.NumericExtensions">
             <summary>
-                An extension method class providing numeric type information detection.
+               An extension method class providing numeric type information detection.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.NumericExtensions.IsBigIntegerType(System.Object)">
             <summary>
-                Indicates if an object is of an integer data type.
+               Indicates if an object is of an integer data type.
             </summary>
             <param name="self">The object to check</param>
             <returns>true if the object is of an integer data type</returns>
         </member>
         <member name="M:Jcd.Reflection.NumericExtensions.IsDecimalType(System.Object)">
             <summary>
-                Indicates if an object is of a decimal data type.
+               Indicates if an object is of a decimal data type.
             </summary>
             <param name="self">The object to check</param>
             <returns>true if the object is of a decimal data type</returns>
         </member>
         <member name="M:Jcd.Reflection.NumericExtensions.IsFloatType(System.Object)">
             <summary>
-                Indicates if an object is of a floating point data type.
+               Indicates if an object is of a floating point data type.
             </summary>
             <param name="self">The object to check</param>
             <returns>true if the object is of a floating point data type</returns>
         </member>
         <member name="M:Jcd.Reflection.NumericExtensions.IsIntegerType(System.Object)">
             <summary>
-                Indicates if an object is of an integer data type.
+               Indicates if an object is of an integer data type.
             </summary>
             <param name="self">The object to check</param>
             <returns>true if the object is of an integer data type</returns>
         </member>
         <member name="M:Jcd.Reflection.NumericExtensions.IsNumericType(System.Object)">
             <summary>
-                Indicates if an object is of a numeric data type.
+               Indicates if an object is of a numeric data type.
             </summary>
             <param name="self">The object to check</param>
             <returns>true if the object is of a numeric data type</returns>
         </member>
         <member name="M:Jcd.Reflection.NumericExtensions.IsSignedType(System.Object)">
             <summary>
-                Indicates if an object is of a signed data type.
+               Indicates if an object is of a signed data type.
             </summary>
             <param name="self">The object to check</param>
             <returns>true if the object is of a signed data type</returns>
         </member>
         <member name="M:Jcd.Reflection.NumericExtensions.IsUnsignedType(System.Object)">
             <summary>
-                Indicates if an object is of an unsigned data type.
+               Indicates if an object is of an unsigned data type.
             </summary>
             <param name="self">The object to check</param>
             <returns>true if the object is of an unsigned data type</returns>
@@ -1214,12 +1247,12 @@
         </member>
         <member name="T:Jcd.Reflection.PropertyInfoExtensions">
             <summary>
-                A set of reflection extensions to aid in manipulating properties.
+               A set of reflection extensions to aid in manipulating properties.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.PropertyInfoExtensions.EnumerateProperties(System.Type,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean})">
             <summary>
-                Enumerate the PropertyInfo entries for a given type
+               Enumerate the PropertyInfo entries for a given type
             </summary>
             <param name="type">The data type to reflect on</param>
             <param name="flags">The BindingFlags</param>
@@ -1228,7 +1261,7 @@
         </member>
         <member name="M:Jcd.Reflection.PropertyInfoExtensions.EnumerateProperties(System.Object,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean})">
             <summary>
-                Enumerate the PropertyInfo entries for a given type
+               Enumerate the PropertyInfo entries for a given type
             </summary>
             <param name="self">The data instance to reflect on</param>
             <param name="flags">The BindingFlags</param>
@@ -1237,209 +1270,207 @@
         </member>
         <member name="T:Jcd.Reflection.TypeDiscoveryExtensions">
             <summary>
-                Some extension methods used for finding types within one or more assemblies.
+               Some extension methods used for finding types within one or more assemblies.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf``1(System.Reflection.Assembly,System.Boolean)">
             <summary>
-                Gets implementations of the specified type from an assembly.
+               Gets implementations of the specified type from an assembly.
             </summary>
             <param name="assembly">the assembly to search.</param>
-            <param name="returnTargetTypeIfConcrete">If
-                <typeparamref name="T"/>
-                is in the target assembly, and it's a concrete, return it as well.
-            </param>
-            <returns>An
-                <see cref="T:System.Collections.Generic.IEnumerable`1"/>
-                of the implementations of
-                <typeparam name="T"></typeparam>
-            </returns>
-            <exception cref="T:System.ArgumentNullException">When
-                <paramref name="assembly"/>
-                is null.
-            </exception>
+           <param name="returnTargetTypeIfConcrete">If
+              <typeparamref name="T"/>
+              is in the target assembly, and it's a concrete, return it as well.
+           </param>
+           <returns>An
+              <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+              of the implementations of
+              <typeparam name="T"></typeparam>
+           </returns>
+           <exception cref="T:System.ArgumentNullException">When
+              <paramref name="assembly"/>
+              is null.
+           </exception>
         </member>
         <member name="M:Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(System.Reflection.Assembly,System.Type,System.Boolean)">
             <summary>
-                Gets implementations of the specified type from an assembly.
+               Gets implementations of the specified type from an assembly.
             </summary>
             <param name="assembly">the assembly to search.</param>
             <param name="type">The type to find implementations of.</param>
-            <param name="returnTargetTypeIfConcrete">If
-                <paramref name="type"/>
-                is in the target assembly, and it's a concrete, return it as well.
-            </param>
-            <returns>An
-                <see cref="T:System.Collections.Generic.IEnumerable`1"/>
-                of the implementations of
-                <paramref name="type"/>
-            </returns>
-            <exception cref="T:System.ArgumentNullException">When either
-                <paramref name="assembly"/>
-                or
-                <paramref name="type"/>
-                is null.
-            </exception>
+           <param name="returnTargetTypeIfConcrete">If
+              <paramref name="type"/>
+              is in the target assembly, and it's a concrete, return it as well.
+           </param>
+           <returns>An
+              <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+              of the implementations of
+              <paramref name="type"/>
+           </returns>
+           <exception cref="T:System.ArgumentNullException">When either
+              <paramref name="assembly"/>
+              or
+              <paramref name="type"/>
+              is null.
+           </exception>
         </member>
         <member name="M:Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf``1(System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Boolean)">
             <summary>
-                Gets implementations of the specified type from a collection of assemblies.
+               Gets implementations of the specified type from a collection of assemblies.
             </summary>
             <param name="assemblies">The collection of assemblies to search.</param>
-            <param name="returnTargetTypeIfConcrete">If
-                <typeparamref name="T"/>
-                is in the target assembly, and it's a concrete, return it as well.
-            </param>
-            <returns>An
-                <see cref="T:System.Collections.Generic.IEnumerable`1"/>
-                of the implementations of
-                <typeparamref name="T"/>
-            </returns>
-            <exception cref="T:System.ArgumentNullException">When
-                <paramref name="assemblies"/>
-                is null.
-            </exception>
+           <param name="returnTargetTypeIfConcrete">If
+              <typeparamref name="T"/>
+              is in the target assembly, and it's a concrete, return it as well.
+           </param>
+           <returns>An
+              <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+              of the implementations of
+              <typeparamref name="T"/>
+           </returns>
+           <exception cref="T:System.ArgumentNullException">When
+              <paramref name="assemblies"/>
+              is null.
+           </exception>
         </member>
         <member name="M:Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Type,System.Boolean)">
             <summary>
-                Gets implementations of the specified type from a collection of assemblies.
+               Gets implementations of the specified type from a collection of assemblies.
             </summary>
             <param name="assemblies">The collection of assemblies to search.</param>
             <param name="type">The type to find implementations of.</param>
-            <param name="returnTargetTypeIfConcrete">If
-                <paramref name="type"/>
-                is in the target assembly, and it's a concrete, return it as well.
-            </param>
-            <returns>An
-                <see cref="T:System.Collections.Generic.IEnumerable`1"/>
-                of the implementations of
-                <paramref name="type"/>
-            </returns>
+           <param name="returnTargetTypeIfConcrete">If
+              <paramref name="type"/>
+              is in the target assembly, and it's a concrete, return it as well.
+           </param>
+           <returns>An
+              <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+              of the implementations of
+              <paramref name="type"/>
+           </returns>
             <exception cref="T:System.ArgumentNullException">When either assembly or type is null.</exception>
         </member>
         <member name="T:Jcd.Reflection.TypeExtensions">
             <summary>
-                Provides extension methods for
-                <see cref="T:System.Type"/>
-                interactions.
+               Provides extension methods for
+               <see cref="T:System.Type"/>
+               interactions.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.TypeExtensions.InheritsFrom``1(System.Type,System.Boolean)">
             <summary>
-                Checks if one type inherits from another. This will match generic inheritance as well.
+               Checks if one type inherits from another. This will match generic inheritance as well.
             </summary>
             <param name="derivedType">The type to check inheritance on.</param>
             <param name="allowSelfToCompareToTrueIfConcrete"></param>
             <typeparam name="T">The type to check inheritance from.</typeparam>
-            <returns>True if type inherits from
-                <typeparamref name="T"/>
-            </returns>
+           <returns>True if type inherits from
+              <typeparamref name="T"/>
+           </returns>
         </member>
         <member name="M:Jcd.Reflection.TypeExtensions.InheritsFrom(System.Type,System.Type,System.Boolean)">
             <summary>
-                Checks if one type inherits from another. This will match generic inheritance as well.
+               Checks if one type inherits from another. This will match generic inheritance as well.
             </summary>
             <param name="derivedType">The type to check inheritance on.</param>
             <param name="parentType">The type to check for inheritance against.</param>
-            <param name="allowSelfToCompareToTrueIfConcrete">if</param>
-            <returns>True if type inherits from
-                <paramref name="parentType"/>
-            </returns>
+           <param name="allowSelfToCompareToTrueIfConcrete">if</param>
+           <returns>True if type inherits from
+              <paramref name="parentType"/>
+           </returns>
             <remarks>
-                The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project, on GitHub, by Kristian
-                Hellang
-                provided the inspiration and overall algorithm for determining if a type was derived from another
-                regardless of the genericity of the types being compared.
+               The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project, on GitHub, by Kristian Hellang
+               provided the inspiration and overall algorithm for determining if a type was derived from another
+               regardless of the genericity of the types being compared.
             </remarks>
         </member>
         <member name="M:Jcd.Reflection.TypeExtensions.InheritsFromGenericTypeDefinition(System.Type,System.Type,System.Boolean)">
             <summary>
-                Determines if the
-                <paramref name="derivedType"/>
-                is directly or indirectly derived from the
-                <paramref name="genericTypeDefinition"/>
+               Determines if the
+               <paramref name="derivedType"/>
+               is directly or indirectly derived from the
+               <paramref name="genericTypeDefinition"/>
             </summary>
             <param name="derivedType">The type to inspect.</param>
             <param name="genericTypeDefinition">The generic type definition to compare against.</param>
-            <param name="allowSelfToCompareToTrueIfConcrete">Allows true to be returned if derivedType is exactly the
-                generic type.
-            </param>
-            <returns>
-                <see langword="true"/>
-                if the derivedType is a direct descendant;
-                <see langword="false"/>
-            </returns>
+           <param name="allowSelfToCompareToTrueIfConcrete">Allows true to be returned if derivedType is exactly the
+              generic type.
+           </param>
+           <returns>
+              <see langword="true"/>
+              if the derivedType is a direct descendant;
+              <see langword="false"/>
+           </returns>
             <remarks>
-                The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project, on GitHub, by Kristian
-                Hellang
-                provided the inspiration and overall algorithm for determining if a type was derived from another
-                regardless of the genericity of the types being compared.
+               The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project, on GitHub, by Kristian Hellang
+               provided the inspiration and overall algorithm for determining if a type was derived from another
+               regardless of the genericity of the types being compared.
             </remarks>
         </member>
         <member name="M:Jcd.Reflection.TypeExtensions.DirectlyInheritsFromGenericTypeDefinition(System.Type,System.Type,System.Boolean)">
             <summary>
-                Determines if the
-                <paramref name="derivedType"/>
-                is directly derived from the
-                <paramref name="genericTypeDefinition"/>
+               Determines if the
+               <paramref name="derivedType"/>
+               is directly derived from the
+               <paramref name="genericTypeDefinition"/>
             </summary>
             <param name="derivedType">The type to inspect.</param>
             <param name="genericTypeDefinition">The generic type definition to compare against.</param>
-            <param name="allowSelfToCompareToTrueIfConcrete">Allows true to be returned if derivedType is exactly the
-                generic type.
-            </param>
-            <returns>
-                <see langword="true"/>
-                if the derivedType is a direct descendant;
-                <see langword="false"/>
-            </returns>
+           <param name="allowSelfToCompareToTrueIfConcrete">Allows true to be returned if derivedType is exactly the
+              generic type.
+           </param>
+           <returns>
+              <see langword="true"/>
+              if the derivedType is a direct descendant;
+              <see langword="false"/>
+           </returns>
             <remarks>
-                The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project by khellang on GitHub
-                provided the inspiration and overall algorithm for determining if a type was derived from another
-                regardless of the genericity of the types being compared.
+               The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project by khellang on GitHub
+               provided the inspiration and overall algorithm for determining if a type was derived from another
+               regardless of the genericity of the types being compared.
             </remarks>
         </member>
         <member name="M:Jcd.Reflection.TypeExtensions.GetNonInterfaceBaseTypes(System.Type)">
             <summary>
-                Retrieves an array of the non-interface base types for the
-                passed in type.
+               Retrieves an array of the non-interface base types for the
+               passed in type.
             </summary>
             <param name="type">the type to retrieve base types from.</param>
             <returns>an array of the non-interface base types</returns>
         </member>
         <member name="M:Jcd.Reflection.TypeExtensions.IsConcreteType(System.Type,System.Boolean,System.Boolean)">
             <summary>
-                Determines if a type is a concrete type.
+               Determines if a type is a concrete type.
             </summary>
             <param name="type">the type to inspect.</param>
             <param name="allowCompilerGenerated">Allows types that are compiler generated to return true.</param>
             <param name="allowSpecialNames">Allow types with special names to return true.</param>
             <returns>true if the type is concrete.</returns>
             <remarks>
-                This method does not account for the public/internal/private nature of the type.
-                It only answers the concrete question. (Can something, directly instantiate it,
-                that might be another class in a different assembly. You are using reflection,
-                after all.)
+               This method does not account for the public/internal/private nature of the type.
+               It only answers the concrete question. (Can something, directly instantiate it,
+               that might be another class in a different assembly. You are using reflection,
+               after all.)
             </remarks>
         </member>
         <member name="M:Jcd.Reflection.TypeExtensions.IsCompilerGenerated(System.Type)">
             <summary>
-                Indicates if the type is compiler generated.
+               Indicates if the type is compiler generated.
             </summary>
             <param name="type">The type to inspect.</param>
-            <returns>true if the type has the
-                <see cref="T:System.Runtime.CompilerServices.CompilerGeneratedAttribute"/>
-                attribute applied.
-            </returns>
+           <returns>true if the type has the
+              <see cref="T:System.Runtime.CompilerServices.CompilerGeneratedAttribute"/>
+              attribute applied.
+           </returns>
         </member>
         <member name="T:Jcd.Reflection.ValueExtensions">
             <summary>
-                GetValue and SetValue implementations.
+               GetValue and SetValue implementations.
             </summary>
         </member>
         <member name="M:Jcd.Reflection.ValueExtensions.GetValue(System.Object,System.String,System.Reflection.BindingFlags)">
             <summary>
-                Gets a value from a named field or property
+               Gets a value from a named field or property
             </summary>
             <param name="self">the instance to retrieve the vale from</param>
             <param name="fieldOrPropertyName">the name of the item to get.</param>
@@ -1448,7 +1479,7 @@
         </member>
         <member name="M:Jcd.Reflection.ValueExtensions.SetValue``1(``0,System.String,System.Object,System.Reflection.BindingFlags)">
             <summary>
-                Sets a value on a field or property
+               Sets a value on a field or property
             </summary>
             <param name="self">The instance to set the value on</param>
             <param name="fieldOrPropertyName">the name of the field or property to set</param>
@@ -1458,7 +1489,7 @@
         </member>
         <member name="M:Jcd.Reflection.ValueExtensions.SetValue``1(``0@,System.String,System.Object,System.Reflection.BindingFlags)">
             <summary>
-                Sets a value on a field or property.
+               Sets a value on a field or property.
             </summary>
             <param name="self">The instance to set the value on</param>
             <param name="fieldOrPropertyName">the name of the field or property to set</param>

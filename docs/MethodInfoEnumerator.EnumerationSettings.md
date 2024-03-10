@@ -9,5 +9,4 @@ public Jcd.Reflection.MethodInfoEnumerator.Settings EnumerationSettings { get; s
 ```
 
 #### Property Value
-
 [Settings](MethodInfoEnumerator.Settings.md 'Jcd.Reflection.MethodInfoEnumerator.Settings')

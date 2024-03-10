@@ -5,7 +5,6 @@
 ```csharp
 private static bool DefaultExpandoValueRetentionStrategy(object value);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.ExpandoObjectExtensions.DefaultExpandoValueRetentionStrategy(object).value'></a>
@@ -13,5 +12,4 @@ private static bool DefaultExpandoValueRetentionStrategy(object value);
 `value` [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')
 
 #### Returns
-
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')

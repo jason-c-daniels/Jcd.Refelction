@@ -7,13 +7,11 @@ Gets implementations of the specified type from a collection of assemblies.
 ```csharp
 public static System.Collections.Generic.IEnumerable<System.Type> FindImplementationsOf<T>(this System.Collections.Generic.IEnumerable<System.Reflection.Assembly> assemblies, bool returnTargetTypeIfConcrete=false);
 ```
-
 #### Type parameters
 
 <a name='Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf_T_(thisSystem.Collections.Generic.IEnumerable_System.Reflection.Assembly_,bool).T'></a>
 
 `T`
-
 #### Parameters
 
 <a name='Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf_T_(thisSystem.Collections.Generic.IEnumerable_System.Reflection.Assembly_,bool).assemblies'></a>
@@ -30,7 +28,6 @@ If [T](TypeDiscoveryExtensions.FindImplementationsOf.fsRoaGQ6gC5JhZ5e6N4tqg.md#J
 is in the target assembly, and it's a concrete, return it as well.
 
 #### Returns
-
 [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[System.Type](https://docs.microsoft.com/en-us/dotnet/api/System.Type 'System.Type')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
 An [System.Collections.Generic.IEnumerable&lt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 of the implementations

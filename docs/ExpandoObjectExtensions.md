@@ -12,7 +12,6 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 ExpandoObjectExtensions
 
 ### Remarks
-
 THESE EXTENSION METHODS ARE GOING AWAY SOON!
 
 | Methods                                                                                                                                                                                                                                                                                                                                                                                                                                                              |                                                                                            |
