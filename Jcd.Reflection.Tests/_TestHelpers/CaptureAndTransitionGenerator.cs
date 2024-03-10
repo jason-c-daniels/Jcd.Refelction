@@ -62,11 +62,10 @@ public class CaptureAndTransitionGenerator<TState, TResult> : IEnumerable<TResul
    /// </summary>
    protected readonly TState CurrentState;
 
+   // ReSharper disable once MemberCanBePrivate.Global
    /// <summary>
    /// The state transition function.
    /// </summary>
-
-   // ReSharper disable once MemberCanBePrivate.Global
    protected readonly StateTransitionFunction TransitionFunction;
 
    #endregion Protected Fields
