@@ -65,6 +65,6 @@ Version 2.0 comes with a significant number of breaking changes for advanced use
   call to `new` to create new instances.
 - To facilitate the use of init properties on `MethodInfoFilter`, `MemberInfoFilter`, `FieldOrPropertyInfoFilter`
   types, a custom `IsExternalInit` is required of target frameworks not supporting it. See this project's source code
-  for an example ([`IsExternalInit.cs`](Jcd.Reflection/MethodExtensions.cs)).
+  for an example ([`IsExternalInit.cs`](Jcd.Reflection/IsExternalInit.cs)).
 - Extension methods `GetCusomAttributes` and `HasAttribute` were moved into classes named after the underlying method.
   This will only break non-extension invocations.
