@@ -7,7 +7,6 @@ Invokes a static method on a type, coercing the return type
 ```csharp
 public static TOut Invoke<TOut>(this System.Type type, string name, Jcd.Reflection.MethodInfoFilter settings, params object[] @params);
 ```
-
 #### Type parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,Jcd.Reflection.MethodInfoFilter,object[]).TOut'></a>
@@ -15,7 +14,6 @@ public static TOut Invoke<TOut>(this System.Type type, string name, Jcd.Reflecti
 `TOut`
 
 The type of the return
-
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,Jcd.Reflection.MethodInfoFilter,object[]).type'></a>

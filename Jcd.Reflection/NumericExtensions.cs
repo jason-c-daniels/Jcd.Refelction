@@ -109,6 +109,36 @@ public static class NumericExtensions
       }
    }
 
+   private static readonly HashSet<Type> signedTypes =
+   [
+      ..new[]
+        {
+           typeof(sbyte)
+         , typeof(short)
+         , typeof(int)
+         , typeof(long)
+         , typeof(decimal)
+         , typeof(float)
+         , typeof(double)
+         , typeof(BigInteger)
+        }
+   ];
+
+   private static readonly HashSet<Type> unsignedTypes =
+   [
+      ..new[]
+        {
+           typeof(bool)
+         , typeof(byte)
+         , typeof(char)
+         , typeof(DateTime)
+         , typeof(string)
+         , typeof(uint)
+         , typeof(ushort)
+         , typeof(ulong)
+        }
+   ];
+   
    /// <summary>
    /// Indicates if an object is of a signed data type.
    /// </summary>
@@ -116,39 +146,7 @@ public static class NumericExtensions
    /// <returns>true if the object is of a signed data type</returns>
    public static bool IsSignedType(this object self)
    {
-      var type = self.GetType();
-      var tc   = Type.GetTypeCode(type);
-
-      // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-      switch (tc)
-      {
-         case TypeCode.SByte:
-         case TypeCode.Int16:
-         case TypeCode.Int32:
-         case TypeCode.Int64:
-         case TypeCode.Decimal:
-         case TypeCode.Single:
-         case TypeCode.Double:
-
-            return true;
-
-         case TypeCode.Boolean:
-         case TypeCode.Byte:
-         case TypeCode.Char:
-         case TypeCode.DateTime:
-         case TypeCode.DBNull:
-         case TypeCode.Empty:
-         case TypeCode.String:
-         case TypeCode.UInt16:
-         case TypeCode.UInt32:
-         case TypeCode.UInt64:
-
-            return false;
-
-         default:
-
-            return self is BigInteger;
-      }
+      return signedTypes.Contains(self.GetType());
    }
 
    /// <summary>
@@ -158,24 +156,16 @@ public static class NumericExtensions
    /// <returns>true if the object is of an unsigned data type</returns>
    public static bool IsUnsignedType(this object self)
    {
-      // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-      switch (Type.GetTypeCode(self.GetType()))
-      {
-         case TypeCode.Byte:
-         case TypeCode.UInt16:
-         case TypeCode.UInt32:
-         case TypeCode.UInt64:
+      var type = self.GetType();
 
-            return true;
+      if (unsignedTypes.Contains(type)) return true;
+      var tc = Type.GetTypeCode(self.GetType());
 
-         default:
-
-            return false;
-      }
+      return tc is TypeCode.DBNull or TypeCode.Empty;
    }
 
    /// <summary>
-   /// 
+   ///  
    /// </summary>
    public static readonly HashSet<Type> BuiltInNonPrimitiveScalars = new(new[]
                                                                          {

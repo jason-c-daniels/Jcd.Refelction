@@ -10,10 +10,10 @@ public struct MemberInfoFilter
 
 | Fields                                                                                                                                       |                                                                  |
 |:---------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------|
-| [AllInstanceMethodsFilter](MemberInfoFilter.AllInstanceMethodsFilter.md 'Jcd.Reflection.MemberInfoFilter.AllInstanceMethodsFilter')          | Selects all public instance methods including inherited methods. |
-| [AllStaticMethodsFilter](MemberInfoFilter.AllStaticMethodsFilter.md 'Jcd.Reflection.MemberInfoFilter.AllStaticMethodsFilter')                | Selects all static methods including inherited static.           |
+| [AllInstanceMembersFilter](MemberInfoFilter.AllInstanceMembersFilter.md 'Jcd.Reflection.MemberInfoFilter.AllInstanceMembersFilter')          | Selects all public instance methods including inherited methods. |
+| [AllStaticMembersFilter](MemberInfoFilter.AllStaticMembersFilter.md 'Jcd.Reflection.MemberInfoFilter.AllStaticMembersFilter')                | Selects all static methods including inherited static.           |
 | [DirectInstanceMethodsFilter](MemberInfoFilter.DirectInstanceMethodsFilter.md 'Jcd.Reflection.MemberInfoFilter.DirectInstanceMethodsFilter') | Selects all directly declared instance methods.                  |
-| [DirectStaticMethodsFilter](MemberInfoFilter.DirectStaticMethodsFilter.md 'Jcd.Reflection.MemberInfoFilter.DirectStaticMethodsFilter')       | Selects all directly declared static methods.                    |
+| [DirectStaticMembersFilter](MemberInfoFilter.DirectStaticMembersFilter.md 'Jcd.Reflection.MemberInfoFilter.DirectStaticMembersFilter')       | Selects all directly declared static methods.                    |
 
 | Properties                                                                 |                                           |
 |:---------------------------------------------------------------------------|:------------------------------------------|

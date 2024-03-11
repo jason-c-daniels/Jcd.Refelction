@@ -9,5 +9,4 @@ public static readonly MethodInfoFilter DirectStaticMethodsFilter;
 ```
 
 #### Field Value
-
 [MethodInfoFilter](MethodInfoFilter.md 'Jcd.Reflection.MethodInfoFilter')

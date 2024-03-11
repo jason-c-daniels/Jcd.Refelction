@@ -7,7 +7,6 @@ Invoke the method on the specified object using the provided parameters
 ```csharp
 public static TOut Invoke<TOut>(this object self, string name, Jcd.Reflection.MethodInfoFilter settings, params object[] @params);
 ```
-
 #### Type parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,Jcd.Reflection.MethodInfoFilter,object[]).TOut'></a>
@@ -15,7 +14,6 @@ public static TOut Invoke<TOut>(this object self, string name, Jcd.Reflection.Me
 `TOut`
 
 result type
-
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,Jcd.Reflection.MethodInfoFilter,object[]).self'></a>

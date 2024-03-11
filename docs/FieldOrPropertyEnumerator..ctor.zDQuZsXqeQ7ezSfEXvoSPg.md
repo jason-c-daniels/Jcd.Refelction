@@ -7,7 +7,6 @@ Constructs a FieldOrPropertyEnumerator from an object instance and settings.
 ```csharp
 public FieldOrPropertyEnumerator(object item, Jcd.Reflection.FieldOrPropertyInfoFilter fieldOrPropertyInfoFilter=null);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.FieldOrPropertyEnumerator.FieldOrPropertyEnumerator(object,Jcd.Reflection.FieldOrPropertyInfoFilter).item'></a>

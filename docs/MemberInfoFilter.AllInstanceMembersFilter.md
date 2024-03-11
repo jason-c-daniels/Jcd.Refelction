@@ -1,11 +1,11 @@
 ### [Jcd.Reflection](Jcd.Reflection.md 'Jcd.Reflection').[MemberInfoFilter](MemberInfoFilter.md 'Jcd.Reflection.MemberInfoFilter')
 
-## MemberInfoFilter.DirectStaticMethodsFilter Field
+## MemberInfoFilter.AllInstanceMembersFilter Field
 
-Selects all directly declared static methods.
+Selects all public instance methods including inherited methods.
 
 ```csharp
-public static readonly MemberInfoFilter DirectStaticMethodsFilter;
+public static readonly MemberInfoFilter AllInstanceMembersFilter;
 ```
 
 #### Field Value

@@ -576,12 +576,12 @@
             The settings controlling how to enumerate (e.g. what binding flags to use, special predicate for skipping?)
             </summary>
         </member>
-       <member name="F:Jcd.Reflection.MemberInfoFilter.AllInstanceMethodsFilter">
+       <member name="F:Jcd.Reflection.MemberInfoFilter.AllInstanceMembersFilter">
             <summary>
                Selects all public instance methods including inherited methods.
             </summary>
         </member>
-       <member name="F:Jcd.Reflection.MemberInfoFilter.AllStaticMethodsFilter">
+       <member name="F:Jcd.Reflection.MemberInfoFilter.AllStaticMembersFilter">
             <summary>
                Selects all static methods including inherited static.
             </summary>
@@ -591,7 +591,7 @@
                Selects all directly declared instance methods.
             </summary>
         </member>
-       <member name="F:Jcd.Reflection.MemberInfoFilter.DirectStaticMethodsFilter">
+       <member name="F:Jcd.Reflection.MemberInfoFilter.DirectStaticMembersFilter">
             <summary>
                Selects all directly declared static methods.
             </summary>
@@ -912,7 +912,7 @@
         </member>
         <member name="F:Jcd.Reflection.NumericExtensions.BuiltInNonPrimitiveScalars">
             <summary>
-            
+
             </summary>
         </member>
         <member name="M:Jcd.Reflection.NumericExtensions.IsScalar(System.Object,System.Collections.Generic.HashSet{System.Type})">

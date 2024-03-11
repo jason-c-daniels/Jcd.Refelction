@@ -9,5 +9,4 @@ public Jcd.Reflection.MemberInfoFilter Filter { get; set; }
 ```
 
 #### Property Value
-
 [MemberInfoFilter](MemberInfoFilter.md 'Jcd.Reflection.MemberInfoFilter')

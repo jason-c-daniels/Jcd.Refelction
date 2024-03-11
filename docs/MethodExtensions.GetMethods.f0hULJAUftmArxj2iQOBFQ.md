@@ -7,7 +7,6 @@ Given a filter return an array of matching MethodInfo's
 ```csharp
 public static System.Reflection.MethodInfo[] GetMethods(this object self, Jcd.Reflection.MethodInfoFilter settings, System.Func<System.Reflection.MethodInfo,bool> filter=null);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.GetMethods(thisobject,Jcd.Reflection.MethodInfoFilter,System.Func_System.Reflection.MethodInfo,bool_).self'></a>
