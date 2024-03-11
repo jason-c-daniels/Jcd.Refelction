@@ -8,11 +8,10 @@ using System.Reflection;
 
 // ReSharper disable HeapView.ObjectAllocation
 // ReSharper disable HeapView.DelegateAllocation
-
-#endregion
-
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
+
+#endregion
 
 namespace Jcd.Reflection;
 
@@ -21,80 +20,66 @@ namespace Jcd.Reflection;
 /// </summary>
 public class FieldOrPropertyEnumerator : IEnumerable<FieldOrPropertyInfo>
 {
-    private readonly MemberInfoEnumerator _innerEnumerator;
+   private readonly MemberInfoEnumerator innerEnumerator;
 
-    /// <summary>
-    /// Constructs a FieldOrPropertyEnumerator from a type and settings.
-    /// </summary>
-    /// <param name="type">The data type to reflect on</param>
-    /// <param name="settings">the settings controlling enumeration</param>
-    public FieldOrPropertyEnumerator(Type type, Settings settings = default)
-    {
-        Type = type;
-        EnumerationSettings = settings;
-        _innerEnumerator = new MemberInfoEnumerator(Type,
-            new MemberInfoEnumerator.Settings
-                { Flags = settings.Flags, Skip = MemberInfoEnumerator.SkipSystemAndNonDataMembers });
-    }
+   /// <summary>
+   /// Constructs a FieldOrPropertyEnumerator from a type and settings.
+   /// </summary>
+   /// <param name="type">The data type to reflect on</param>
+   /// <param name="fieldOrPropertyInfoFilter">the settings controlling enumeration</param>
+   public FieldOrPropertyEnumerator(Type type, FieldOrPropertyInfoFilter fieldOrPropertyInfoFilter = default)
+   {
+      Type   = type;
+      Filter = fieldOrPropertyInfoFilter;
+      innerEnumerator = new MemberInfoEnumerator(Type
+                                               , new MemberInfoFilter()
+                                                 {
+                                                    Flags = fieldOrPropertyInfoFilter?.Flags
+                                                  , Skip  = MemberInfoEnumerator.SkipSystemAndNonDataMembers
+                                                 }
+                                                );
+   }
 
-    /// <summary>
-    /// Constructs a FieldOrPropertyEnumerator from an object instance and settings.
-    /// </summary>
-    /// <param name="item">The object instance to reflect on</param>
-    /// <param name="settings">the settings controlling enumeration</param>
-    public FieldOrPropertyEnumerator(object item, Settings settings = default)
-        : this((Type)(item is System.Type or null ? item : item.GetType()), settings)
-    {
-    }
+   /// <summary>
+   /// Constructs a FieldOrPropertyEnumerator from an object instance and settings.
+   /// </summary>
+   /// <param name="item">The object instance to reflect on</param>
+   /// <param name="fieldOrPropertyInfoFilter">the settings controlling enumeration</param>
+   public FieldOrPropertyEnumerator(object item, FieldOrPropertyInfoFilter fieldOrPropertyInfoFilter = default)
+      : this((Type) (item is System.Type or null ? item : item.GetType()), fieldOrPropertyInfoFilter)
+   {
+   }
 
-    /// <summary>
-    /// Gets or sets the settings that control enumeration. 
-    /// </summary>
-    public Settings EnumerationSettings { get; set; }
+   /// <summary>
+   /// Gets or sets the settings that control enumeration. 
+   /// </summary>
+   public FieldOrPropertyInfoFilter Filter { get; set; }
 
-    /// <summary>
-    /// The data type being reflected on. 
-    /// </summary>
-    public Type Type { get; }
+   /// <summary>
+   /// The data type being reflected on. 
+   /// </summary>
+   public Type Type { get; }
 
-    /// <summary>
-    /// Enumerates the FieldOrPropertyInfo entries for the given type.
-    /// </summary>
-    /// <returns>An enumerator of FieldOrPropertyInfo's</returns>
-    public IEnumerator<FieldOrPropertyInfo> GetEnumerator()
-    {
-        return (from mi in _innerEnumerator
-                select new FieldOrPropertyInfo(mi,
-                    EnumerationSettings.Flags ?? BindingFlags.Public | BindingFlags.Instance)
+   /// <summary>
+   /// Enumerates the FieldOrPropertyInfo entries for the given type.
+   /// </summary>
+   /// <returns>An enumerator of FieldOrPropertyInfo's</returns>
+   public IEnumerator<FieldOrPropertyInfo> GetEnumerator()
+   {
+      return (
+                from mi in innerEnumerator
+                select new FieldOrPropertyInfo(mi
+                                             , Filter?.Flags ?? BindingFlags.Public | BindingFlags.Instance
+                                              )
                 into fpi
-                let skipped = EnumerationSettings.Skip?.Invoke(fpi)
+                let skipped = Filter?.Skip?.Invoke(fpi)
                 where !skipped.HasValue || !skipped.Value
                 select fpi).GetEnumerator();
-    }
+   }
 
-    /// <summary>
-    /// Enumerates the FieldOrPropertyInfo entries for the given type.
-    /// </summary>
-    /// <returns>An enumerator for the FieldOrPropertyInfo's</returns>
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
-
-    /// <summary>
-    /// The settings indicating "how" to enumerate. (i.e. BindingFlags and a predicate for skipping members)
-    /// </summary>
-    public struct Settings
-    {
-        /// <summary>
-        /// The BindingFlags for the member lookup.
-        /// </summary>
-        public BindingFlags? Flags;
-
-        /// <summary>
-        /// A predicate for skipping certain members.
-        /// </summary>
-        // ReSharper disable once UnassignedField.Global
-        public Func<FieldOrPropertyInfo, bool> Skip;
-    }
+   /// <summary>
+   /// Enumerates the FieldOrPropertyInfo entries for the given type.
+   /// </summary>
+   /// <returns>An enumerator for the FieldOrPropertyInfo's</returns>
+   IEnumerator IEnumerable.GetEnumerator() { return GetEnumerator(); }
 }

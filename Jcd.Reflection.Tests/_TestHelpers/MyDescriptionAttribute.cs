@@ -12,10 +12,7 @@ namespace Jcd.Reflection.Tests._TestHelpers;
 [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
 public class MyDescriptionAttribute : Attribute
 {
-    public MyDescriptionAttribute(string description)
-    {
-        Description = description;
-    }
+   public MyDescriptionAttribute(string description) { Description = description; }
 
-    public string Description { get; set; }
+   public string Description { get; set; }
 }

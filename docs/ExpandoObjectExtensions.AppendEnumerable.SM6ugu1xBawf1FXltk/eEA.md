@@ -6,13 +6,11 @@
 private static bool AppendEnumerable<TNode>(System.Collections.Generic.HashSet<object> visited, System.Func<string,string> keyRenamingStrategy, System.Func<string,object,bool> valueRetentionStrategy, System.Collections.IEnumerable enumerable, TNode root, out dynamic array)
     where TNode : System.Collections.Generic.IDictionary<string, object>, new();
 ```
-
 #### Type parameters
 
 <a name='Jcd.Reflection.ExpandoObjectExtensions.AppendEnumerable_TNode_(System.Collections.Generic.HashSet_object_,System.Func_string,string_,System.Func_string,object,bool_,System.Collections.IEnumerable,TNode,dynamic).TNode'></a>
 
 `TNode`
-
 #### Parameters
 
 <a name='Jcd.Reflection.ExpandoObjectExtensions.AppendEnumerable_TNode_(System.Collections.Generic.HashSet_object_,System.Func_string,string_,System.Func_string,object,bool_,System.Collections.IEnumerable,TNode,dynamic).visited'></a>
@@ -40,5 +38,4 @@ private static bool AppendEnumerable<TNode>(System.Collections.Generic.HashSet<o
 `array` [dynamic](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/using-type-dynamic 'https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/using-type-dynamic')
 
 #### Returns
-
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')

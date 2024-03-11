@@ -20,27 +20,21 @@ namespace Jcd.Reflection.Examples;
 [MyDescription("A useful Class")]
 public class TestClass
 {
-    [MyDescription("A useful field")] [MyDescription("No you don't get to know what it's used for.")]
-    private int _field;
+   [MyDescription("A useful field")] [MyDescription("No you don't get to know what it's used for.")]
+   private int field;
 
-    [MyDescription("Nobody else should access this!")]
-    [MyDescription("It's mine all mine!")]
-    private int PrivateProperty
-    {
-        get => _field;
-        set => _field = value;
-    }
+   [MyDescription("Nobody else should access this!")]
+   [MyDescription("It's mine all mine!")]
+   private int PrivateProperty
+   {
+      get => field;
+      set => field = value;
+   }
 
-    [MyDescription("A helper method that only I know about.")]
-    private int InternalGetField()
-    {
-        return _field;
-    }
+   [MyDescription("A helper method that only I know about.")]
+   private int InternalGetField() { return field; }
 
-    [MyDescription("This is how the world gets to know about the value of _field")]
-    [MyDescription("The world isn't ready to do it any other way")]
-    public int GetField()
-    {
-        return InternalGetField();
-    }
+   [MyDescription("This is how the world gets to know about the value of field")]
+   [MyDescription("The world isn't ready to do it any other way")]
+   public int GetField() { return InternalGetField(); }
 }

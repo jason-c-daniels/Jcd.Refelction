@@ -12,5 +12,5 @@ Implements [GetEnumerator()](https://docs.microsoft.com/en-us/dotnet/api/System.
 
 #### Returns
 
-[System.Collections.Generic.IEnumerator&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerator-1 'System.Collections.Generic.IEnumerator`1')[FieldOrPropertyInfo](FieldOrPropertyInfo.md 'Jcd.Reflection.FieldOrPropertyInfo')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerator-1 'System.Collections.Generic.IEnumerator`1')  
+[System.Collections.Generic.IEnumerator&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerator-1 'System.Collections.Generic.IEnumerator`1')[FieldOrPropertyInfo](FieldOrPropertyInfo.md 'Jcd.Reflection.FieldOrPropertyInfo')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerator-1 'System.Collections.Generic.IEnumerator`1')
 An enumerator of FieldOrPropertyInfo's
