@@ -46,7 +46,7 @@
          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
          <PrivateAssets>all</PrivateAssets>
       </PackageReference>
-      <PackageReference Include="Jcd.Validations" Version="1.1.7"/>
+      <PackageReference Include="Jcd.Validations" Version="1.2.0"/>
       <PackageReference Include="Microsoft.CSharp" Version="4.7.0"/>
    </ItemGroup>
 

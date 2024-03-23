@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-#endregion
-
 // ReSharper disable ConvertIfStatementToReturnStatement
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable HeapView.ClosureAllocation
 // ReSharper disable HeapView.DelegateAllocation
 // ReSharper disable UnusedMember.Global
+
+#endregion
 
 namespace Jcd.Reflection;
 
