@@ -17,5 +17,5 @@ public class FieldOrPropertyInfoFilter
    /// <summary>
    /// A predicate for skipping certain members.
    /// </summary>
-   public Func<FieldOrPropertyInfo, bool> Skip { get; init; } = null;
+   public Func<FieldOrPropertyInfo, bool> Skip { get; init; }
 }

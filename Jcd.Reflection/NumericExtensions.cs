@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
 
@@ -109,45 +108,36 @@ public static class NumericExtensions
       }
    }
 
-   private static readonly HashSet<Type> signedTypes =
+   private static readonly HashSet<Type> SignedTypes =
    [
-      ..new[]
-        {
-           typeof(sbyte)
-         , typeof(short)
-         , typeof(int)
-         , typeof(long)
-         , typeof(decimal)
-         , typeof(float)
-         , typeof(double)
-         , typeof(BigInteger)
-        }
+      typeof(sbyte)
+    , typeof(short)
+    , typeof(int)
+    , typeof(long)
+    , typeof(decimal)
+    , typeof(float)
+    , typeof(double)
+    , typeof(BigInteger)
    ];
 
-   private static readonly HashSet<Type> unsignedTypes =
+   private static readonly HashSet<Type> UnsignedTypes =
    [
-      ..new[]
-        {
-           typeof(bool)
-         , typeof(byte)
-         , typeof(char)
-         , typeof(DateTime)
-         , typeof(string)
-         , typeof(uint)
-         , typeof(ushort)
-         , typeof(ulong)
-        }
+      typeof(bool)
+    , typeof(byte)
+    , typeof(char)
+    , typeof(DateTime)
+    , typeof(string)
+    , typeof(uint)
+    , typeof(ushort)
+    , typeof(ulong)
    ];
-   
+
    /// <summary>
    /// Indicates if an object is of a signed data type.
    /// </summary>
    /// <param name="self">The object to check</param>
    /// <returns>true if the object is of a signed data type</returns>
-   public static bool IsSignedType(this object self)
-   {
-      return signedTypes.Contains(self.GetType());
-   }
+   public static bool IsSignedType(this object self) { return SignedTypes.Contains(self.GetType()); }
 
    /// <summary>
    /// Indicates if an object is of an unsigned data type.
@@ -158,7 +148,7 @@ public static class NumericExtensions
    {
       var type = self.GetType();
 
-      if (unsignedTypes.Contains(type)) return true;
+      if (UnsignedTypes.Contains(type)) return true;
       var tc = Type.GetTypeCode(self.GetType());
 
       return tc is TypeCode.DBNull or TypeCode.Empty;
@@ -199,13 +189,16 @@ public static class NumericExtensions
    public static bool IsScalar(this Type type, HashSet<Type> nonPrimitiveScalars = null)
    {
       if (type == typeof(Type)) return true;
-      nonPrimitiveScalars = nonPrimitiveScalars == null
-                               ? BuiltInNonPrimitiveScalars
-                               : new HashSet<Type>(nonPrimitiveScalars.Union(BuiltInNonPrimitiveScalars));
+
+      if (BuiltInNonPrimitiveScalars.Contains(type))
+         return true;
+
+      if (nonPrimitiveScalars != null && nonPrimitiveScalars.Contains(type))
+         return true;
 
       var ti = type.GetTypeInfo();
 
-      return ti.IsEnum || ti.IsPrimitive || nonPrimitiveScalars.Contains(type);
+      return ti.IsEnum || ti.IsPrimitive;
    }
 
    #endregion Public Methods
