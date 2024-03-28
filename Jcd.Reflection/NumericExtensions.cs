@@ -5,9 +5,11 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Reflection;
 
-#endregion
-
+// ReSharper disable HeapView.ObjectAllocation.Evident
+// ReSharper disable HeapView.ObjectAllocation
 // ReSharper disable MemberCanBePrivate.Global
+
+#endregion
 
 namespace Jcd.Reflection;
 
@@ -149,25 +151,22 @@ public static class NumericExtensions
       var type = self.GetType();
 
       if (UnsignedTypes.Contains(type)) return true;
+
       var tc = Type.GetTypeCode(self.GetType());
 
       return tc is TypeCode.DBNull or TypeCode.Empty;
    }
 
-   /// <summary>
-   ///  
-   /// </summary>
-   public static readonly HashSet<Type> BuiltInNonPrimitiveScalars = new(new[]
-                                                                         {
-                                                                            typeof(DateTime)
-                                                                          , typeof(DateTimeOffset)
-                                                                          , typeof(TimeSpan)
-                                                                          , typeof(Uri)
-                                                                          , typeof(Guid)
-                                                                          , typeof(string)
-                                                                          , typeof(BigInteger)
-                                                                         }
-                                                                        );
+   private static readonly HashSet<Type> BuiltInNonPrimitiveScalars =
+   [
+      typeof(DateTime)
+    , typeof(DateTimeOffset)
+    , typeof(TimeSpan)
+    , typeof(Uri)
+    , typeof(Guid)
+    , typeof(string)
+    , typeof(BigInteger)
+   ];
 
    /// <summary>
    /// 

@@ -28,6 +28,5 @@ The type of attributes to retrieve.
 inspect the inheritance hierarchy
 
 #### Returns
-
 [System.Attribute](https://docs.microsoft.com/en-us/dotnet/api/System.Attribute 'System.Attribute')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
 An array of located [System.Attribute](https://docs.microsoft.com/en-us/dotnet/api/System.Attribute 'System.Attribute') instances. If none are found, an empty array is returned.

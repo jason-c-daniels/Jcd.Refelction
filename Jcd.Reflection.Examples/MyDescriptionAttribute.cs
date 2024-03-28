@@ -10,9 +10,7 @@ using System;
 namespace Jcd.Reflection.Examples;
 
 [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-public class MyDescriptionAttribute : Attribute
+public class MyDescriptionAttribute(string description) : Attribute
 {
-   public MyDescriptionAttribute(string description) { Description = description; }
-
-   public string Description { get; set; }
+   public string Description { get; set; } = description;
 }

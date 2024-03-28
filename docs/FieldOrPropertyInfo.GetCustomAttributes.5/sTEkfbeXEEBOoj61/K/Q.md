@@ -15,9 +15,8 @@ public override object[] GetCustomAttributes(bool inherit);
 
 Get inherited attributes if true
 
-Implements [GetCustomAttributes(bool)](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.InteropServices._MemberInfo.GetCustomAttributes#System_Runtime_InteropServices__MemberInfo_GetCustomAttributes_System_Boolean_ 'System.Runtime.InteropServices._MemberInfo.GetCustomAttributes(System.Boolean)'), [GetCustomAttributes(bool)](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.ICustomAttributeProvider.GetCustomAttributes#System_Reflection_ICustomAttributeProvider_GetCustomAttributes_System_Boolean_ 'System.Reflection.ICustomAttributeProvider.GetCustomAttributes(System.Boolean)')
+Implements [GetCustomAttributes(bool)](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.ICustomAttributeProvider.GetCustomAttributes#System_Reflection_ICustomAttributeProvider_GetCustomAttributes_System_Boolean_ 'System.Reflection.ICustomAttributeProvider.GetCustomAttributes(System.Boolean)')
 
 #### Returns
-
 [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
 an array of custom attributes

@@ -28,12 +28,10 @@ Allows types that are compiler generated to return true.
 Allow types with special names to return true.
 
 #### Returns
-
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 true if the type is concrete.
 
 ### Remarks
-
 This method does not account for the public/internal/private nature of the type.
 It only answers the concrete question. (Can something, directly instantiate it,
 that might be another class in a different assembly. You are using reflection,

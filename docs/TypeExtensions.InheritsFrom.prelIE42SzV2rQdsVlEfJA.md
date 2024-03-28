@@ -28,7 +28,6 @@ The type to check for inheritance against.
 if
 
 #### Returns
-
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 True if type inherits from [parentType](TypeExtensions.InheritsFrom.prelIE42SzV2rQdsVlEfJA.md#Jcd.Reflection.TypeExtensions.InheritsFrom(thisSystem.Type,System.Type,bool).parentType 'Jcd.Reflection.TypeExtensions.InheritsFrom(this System.Type, System.Type, bool).parentType')
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Reflection;
 
+// ReSharper disable UnusedAutoPropertyAccessor.Global
+
 namespace Jcd.Reflection;
 
 /// <summary>
@@ -11,7 +13,7 @@ public class FieldOrPropertyInfoFilter
    /// <summary>
    /// The BindingFlags for the member lookup.
    /// </summary>
-   public BindingFlags? Flags { get; init; } = null;
+   public BindingFlags? Flags { get; init; }
 
    // ReSharper disable once UnassignedField.Global
    /// <summary>

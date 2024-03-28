@@ -30,6 +30,7 @@ public static class ValueExtensions
       var pi = t.GetProperty(fieldOrPropertyName, bindingFlags);
 
       if (pi != null) return pi.GetValue(self);
+
       var fi = t.GetField(fieldOrPropertyName, bindingFlags);
 
       return fi != null ? fi.GetValue(self) : null;
@@ -54,7 +55,8 @@ public static class ValueExtensions
       var t  = self.GetType();
       var pi = t.GetProperty(fieldOrPropertyName, bindingFlags);
       var fi = t.GetField(fieldOrPropertyName, bindingFlags);
-      if (pi      != null) pi.SetValue(self, value);
+      if (pi != null)
+         pi.SetValue(self, value);
       else if (fi != null) fi.SetValue(self, value);
    }
 
@@ -78,8 +80,10 @@ public static class ValueExtensions
       var    t    = data.GetType();
       var    pi   = t.GetProperty(fieldOrPropertyName, bindingFlags);
       var    fi   = t.GetField(fieldOrPropertyName, bindingFlags);
-      if (pi      != null) pi.SetValue(data, value);
+      if (pi != null)
+         pi.SetValue(data, value);
       else if (fi != null) fi.SetValue(data, value);
+
       self = (T) data; // now capture the modified value
    }
 }

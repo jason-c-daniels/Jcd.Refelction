@@ -42,6 +42,5 @@ as [AllInstanceMethodsFilter](MethodInfoFilter.AllInstanceMethodsFilter.md 'Jcd.
 the params for the method
 
 #### Returns
-
 [TOut](MethodExtensions.Invoke.4f9CAXUbIaW19vJQ+n6vRg.md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisobject,string,Jcd.Reflection.MethodInfoFilter,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this object, string, Jcd.Reflection.MethodInfoFilter, object[]).TOut')
 the result, if any

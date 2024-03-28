@@ -21,7 +21,7 @@ The data type for the custom attribute
 
 Checks inheritance tree if true
 
-Implements [IsDefined(Type, bool)](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.InteropServices._MemberInfo.IsDefined#System_Runtime_InteropServices__MemberInfo_IsDefined_System_Type,System_Boolean_ 'System.Runtime.InteropServices._MemberInfo.IsDefined(System.Type,System.Boolean)'), [IsDefined(Type, bool)](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.ICustomAttributeProvider.IsDefined#System_Reflection_ICustomAttributeProvider_IsDefined_System_Type,System_Boolean_ 'System.Reflection.ICustomAttributeProvider.IsDefined(System.Type,System.Boolean)')
+Implements [IsDefined(Type, bool)](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.ICustomAttributeProvider.IsDefined#System_Reflection_ICustomAttributeProvider_IsDefined_System_Type,System_Boolean_ 'System.Reflection.ICustomAttributeProvider.IsDefined(System.Type,System.Boolean)')
 
 #### Returns
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')

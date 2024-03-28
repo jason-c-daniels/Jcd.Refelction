@@ -8,6 +8,9 @@ using Jcd.Validations;
 
 // ReSharper disable HeapView.ClosureAllocation
 // ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable HeapView.ObjectAllocation
+// ReSharper disable HeapView.ObjectAllocation.Evident
+// ReSharper disable HeapView.ObjectAllocation.Possible
 
 #endregion
 
@@ -115,7 +118,7 @@ public static class MethodExtensions
    public static object Invoke(this object self, MethodInfo methodInfo, params object[] @params)
    {
       Argument.IsNotNull(self, nameof(self));
-      if (@params == null) @params = new object[] { };
+      if (@params == null) @params = [];
 
       return methodInfo.Invoke(self, @params);
    }
@@ -165,7 +168,7 @@ public static class MethodExtensions
    public static TOut Invoke<TOut>(this object self, MethodInfo methodInfo, params object[] @params)
    {
       Argument.IsNotNull(self, nameof(self));
-      if (@params == null) @params = new object[] { };
+      if (@params == null) @params = [];
 
       return (TOut) methodInfo.Invoke(self, @params);
    }

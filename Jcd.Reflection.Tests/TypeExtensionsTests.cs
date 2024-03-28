@@ -1,7 +1,6 @@
 #region
 
 using Jcd.Reflection.Tests.Fakes;
-using Jcd.Reflection.Tests.Fakes;
 using Jcd.Reflection.Tests.Fakes.DeepInheritance;
 
 using Xunit;

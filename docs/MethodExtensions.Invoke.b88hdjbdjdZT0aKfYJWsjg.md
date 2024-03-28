@@ -42,6 +42,5 @@ as [AllStaticMethodsFilter](MethodInfoFilter.AllStaticMethodsFilter.md 'Jcd.Refl
 The params to pass
 
 #### Returns
-
 [TOut](MethodExtensions.Invoke.b88hdjbdjdZT0aKfYJWsjg.md#Jcd.Reflection.MethodExtensions.Invoke_TOut_(thisSystem.Type,string,Jcd.Reflection.MethodInfoFilter,object[]).TOut 'Jcd.Reflection.MethodExtensions.Invoke<TOut>(this System.Type, string, Jcd.Reflection.MethodInfoFilter, object[]).TOut')
 The result of the call, if any

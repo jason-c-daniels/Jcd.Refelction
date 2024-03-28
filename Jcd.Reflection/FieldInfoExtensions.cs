@@ -36,6 +36,7 @@ public static class FieldInfoExtensions
       foreach (var fi in props)
       {
          if (fi.DeclaringType?.FullName != null && fi.DeclaringType.FullName.StartsWith("System.")) continue;
+
          var skipped = skip?.Invoke(fi);
 
          if (skipped.HasValue && skipped.Value) continue;

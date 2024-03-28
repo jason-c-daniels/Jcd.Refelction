@@ -76,6 +76,7 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
    public IEnumerator<MemberInfo> GetEnumerator()
    {
       if (Type == null) yield break;
+
       IEnumerable<MemberInfo> memberInfos = Filter.Flags.HasValue
                                                ? Type.GetMembers(Filter.Flags.Value)
                                                : Type.GetMembers();

@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-#endregion
-
+// ReSharper disable HeapView.ObjectAllocation.Evident
 // ReSharper disable ConvertIfStatementToReturnStatement
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable HeapView.ClosureAllocation
 // ReSharper disable HeapView.DelegateAllocation
 // ReSharper disable UnusedMember.Global
+
+#endregion
 
 namespace Jcd.Reflection;
 
@@ -152,7 +153,9 @@ public static class TypeExtensions
    )
    {
       if (type.IsAbstract) return false;
-      if (!allowSpecialNames      && type.IsSpecialName) return false;
+
+      if (!allowSpecialNames && type.IsSpecialName) return false;
+
       if (!allowCompilerGenerated && type.IsCompilerGenerated()) return false;
 
       return true;

@@ -8,7 +8,5 @@ Gets the type of the member
 public override System.Reflection.MemberTypes MemberType { get; }
 ```
 
-Implements [MemberType](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.InteropServices._MemberInfo.MemberType 'System.Runtime.InteropServices._MemberInfo.MemberType')
-
 #### Property Value
 [System.Reflection.MemberTypes](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MemberTypes 'System.Reflection.MemberTypes')
