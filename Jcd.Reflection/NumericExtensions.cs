@@ -174,7 +174,7 @@ public static class NumericExtensions
    /// <param name="self"></param>
    /// <param name="nonPrimitiveScalars"></param>
    /// <returns></returns>
-   public static bool IsScalar(this object self, IReadOnlyCollection<Type> nonPrimitiveScalars = null)
+   public static bool IsScalar(this object self, HashSet<Type> nonPrimitiveScalars = null)
    {
       return self is null or Type || self.GetType().IsScalar(nonPrimitiveScalars);
    }
@@ -185,7 +185,7 @@ public static class NumericExtensions
    /// <param name="type"></param>
    /// <param name="nonPrimitiveScalars"></param>
    /// <returns></returns>
-   public static bool IsScalar(this Type type, IReadOnlyCollection<Type> nonPrimitiveScalars = null)
+   public static bool IsScalar(this Type type, HashSet<Type> nonPrimitiveScalars = null)
    {
       if (type == typeof(Type)) return true;
 
