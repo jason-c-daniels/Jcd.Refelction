@@ -75,7 +75,9 @@ public class FieldOrPropertyEnumerator : IEnumerable<FieldOrPropertyInfo>
                 into fpi
                 let skipped = Filter?.Skip?.Invoke(fpi)
                 where !skipped.HasValue || !skipped.Value
-                select fpi).GetEnumerator();
+                select fpi
+             )
+        .GetEnumerator();
    }
 
    /// <summary>

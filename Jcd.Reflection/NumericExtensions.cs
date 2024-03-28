@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
 
@@ -190,9 +189,11 @@ public static class NumericExtensions
    {
       if (type == typeof(Type)) return true;
 
-      if (BuiltInNonPrimitiveScalars.Contains(type)) return true;
+      if (BuiltInNonPrimitiveScalars.Contains(type))
+         return true;
 
-      if (nonPrimitiveScalars != null && nonPrimitiveScalars.Contains(type)) return true;
+      if (nonPrimitiveScalars != null && nonPrimitiveScalars.Contains(type))
+         return true;
 
       var ti = type.GetTypeInfo();
 
