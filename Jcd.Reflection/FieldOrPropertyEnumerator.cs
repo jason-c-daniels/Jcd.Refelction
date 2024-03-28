@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
+// ReSharper disable HeapView.ObjectAllocation.Evident
 // ReSharper disable HeapView.ObjectAllocation
 // ReSharper disable HeapView.DelegateAllocation
 // ReSharper disable MemberCanBePrivate.Global
@@ -32,7 +33,7 @@ public class FieldOrPropertyEnumerator : IEnumerable<FieldOrPropertyInfo>
       Type   = type;
       Filter = fieldOrPropertyInfoFilter;
       innerEnumerator = new MemberInfoEnumerator(Type
-                                               , new MemberInfoFilter()
+                                               , new MemberInfoFilter
                                                  {
                                                     Flags = fieldOrPropertyInfoFilter?.Flags
                                                   , Skip  = MemberInfoEnumerator.SkipSystemAndNonDataMembers

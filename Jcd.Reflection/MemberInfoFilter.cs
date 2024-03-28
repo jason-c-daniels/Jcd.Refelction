@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Reflection;
 
+// ReSharper disable UnusedMember.Global
+
 namespace Jcd.Reflection;
 
 /// <summary>

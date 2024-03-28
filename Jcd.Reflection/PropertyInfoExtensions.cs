@@ -37,7 +37,9 @@ public static class PropertyInfoExtensions
       foreach (var pi in props)
       {
          if (!pi.CanRead) continue;
+
          if (pi.DeclaringType?.FullName != null && pi.DeclaringType.FullName.StartsWith("System.")) continue;
+
          var skipped = skip?.Invoke(pi);
 
          if (skipped.HasValue && skipped.Value) continue;

@@ -6,9 +6,11 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 
-#endregion
-
+// ReSharper disable HeapView.ObjectAllocation.Evident
+// ReSharper disable HeapView.ObjectAllocation
 // ReSharper disable MemberCanBePrivate.Global
+
+#endregion
 
 namespace Jcd.Reflection;
 
@@ -109,45 +111,36 @@ public static class NumericExtensions
       }
    }
 
-   private static readonly HashSet<Type> signedTypes =
+   private static readonly HashSet<Type> SignedTypes =
    [
-      ..new[]
-        {
-           typeof(sbyte)
-         , typeof(short)
-         , typeof(int)
-         , typeof(long)
-         , typeof(decimal)
-         , typeof(float)
-         , typeof(double)
-         , typeof(BigInteger)
-        }
+      typeof(sbyte)
+    , typeof(short)
+    , typeof(int)
+    , typeof(long)
+    , typeof(decimal)
+    , typeof(float)
+    , typeof(double)
+    , typeof(BigInteger)
    ];
 
-   private static readonly HashSet<Type> unsignedTypes =
+   private static readonly HashSet<Type> UnsignedTypes =
    [
-      ..new[]
-        {
-           typeof(bool)
-         , typeof(byte)
-         , typeof(char)
-         , typeof(DateTime)
-         , typeof(string)
-         , typeof(uint)
-         , typeof(ushort)
-         , typeof(ulong)
-        }
+      typeof(bool)
+    , typeof(byte)
+    , typeof(char)
+    , typeof(DateTime)
+    , typeof(string)
+    , typeof(uint)
+    , typeof(ushort)
+    , typeof(ulong)
    ];
-   
+
    /// <summary>
    /// Indicates if an object is of a signed data type.
    /// </summary>
    /// <param name="self">The object to check</param>
    /// <returns>true if the object is of a signed data type</returns>
-   public static bool IsSignedType(this object self)
-   {
-      return signedTypes.Contains(self.GetType());
-   }
+   public static bool IsSignedType(this object self) { return SignedTypes.Contains(self.GetType()); }
 
    /// <summary>
    /// Indicates if an object is of an unsigned data type.
@@ -158,26 +151,23 @@ public static class NumericExtensions
    {
       var type = self.GetType();
 
-      if (unsignedTypes.Contains(type)) return true;
+      if (UnsignedTypes.Contains(type)) return true;
+
       var tc = Type.GetTypeCode(self.GetType());
 
       return tc is TypeCode.DBNull or TypeCode.Empty;
    }
 
-   /// <summary>
-   ///  
-   /// </summary>
-   public static readonly HashSet<Type> BuiltInNonPrimitiveScalars = new(new[]
-                                                                         {
-                                                                            typeof(DateTime)
-                                                                          , typeof(DateTimeOffset)
-                                                                          , typeof(TimeSpan)
-                                                                          , typeof(Uri)
-                                                                          , typeof(Guid)
-                                                                          , typeof(string)
-                                                                          , typeof(BigInteger)
-                                                                         }
-                                                                        );
+   private static readonly HashSet<Type> BuiltInNonPrimitiveScalars =
+   [
+      typeof(DateTime)
+    , typeof(DateTimeOffset)
+    , typeof(TimeSpan)
+    , typeof(Uri)
+    , typeof(Guid)
+    , typeof(string)
+    , typeof(BigInteger)
+   ];
 
    /// <summary>
    /// 
@@ -185,7 +175,7 @@ public static class NumericExtensions
    /// <param name="self"></param>
    /// <param name="nonPrimitiveScalars"></param>
    /// <returns></returns>
-   public static bool IsScalar(this object self, HashSet<Type> nonPrimitiveScalars = null)
+   public static bool IsScalar(this object self, IReadOnlyCollection<Type> nonPrimitiveScalars = null)
    {
       return self is null or Type || self.GetType().IsScalar(nonPrimitiveScalars);
    }
@@ -196,16 +186,17 @@ public static class NumericExtensions
    /// <param name="type"></param>
    /// <param name="nonPrimitiveScalars"></param>
    /// <returns></returns>
-   public static bool IsScalar(this Type type, HashSet<Type> nonPrimitiveScalars = null)
+   public static bool IsScalar(this Type type, IReadOnlyCollection<Type> nonPrimitiveScalars = null)
    {
       if (type == typeof(Type)) return true;
-      nonPrimitiveScalars = nonPrimitiveScalars == null
-                               ? BuiltInNonPrimitiveScalars
-                               : new HashSet<Type>(nonPrimitiveScalars.Union(BuiltInNonPrimitiveScalars));
+
+      if (BuiltInNonPrimitiveScalars.Contains(type)) return true;
+
+      if (nonPrimitiveScalars != null && nonPrimitiveScalars.Contains(type)) return true;
 
       var ti = type.GetTypeInfo();
 
-      return ti.IsEnum || ti.IsPrimitive || nonPrimitiveScalars.Contains(type);
+      return ti.IsEnum || ti.IsPrimitive;
    }
 
    #endregion Public Methods

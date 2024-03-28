@@ -30,7 +30,6 @@ the property to inspect
 inspect the inheritance hierarchy
 
 #### Returns
-
 [TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.mFIosZcN6esilMYlpGy9Vw.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.PropertyInfo,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Reflection.PropertyInfo, bool).TAttribute')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
 An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is
 returned.

@@ -10,6 +10,7 @@ using System.Reflection;
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable HeapView.ClosureAllocation
 // ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable HeapView.ObjectAllocation.Evident
 // ReSharper disable HeapView.ObjectAllocation.Possible
 // ReSharper disable HeapView.ObjectAllocation
 
@@ -50,7 +51,8 @@ public static class TypeDiscoveryExtensions
    )
    {
       if (assembly == null) throw new ArgumentNullException(nameof(assembly));
-      if (type     == null) throw new ArgumentNullException(nameof(type));
+
+      if (type == null) throw new ArgumentNullException(nameof(type));
 
       return
          from t in assembly.GetTypes()
@@ -89,7 +91,9 @@ public static class TypeDiscoveryExtensions
    )
    {
       if (assemblies == null) throw new ArgumentNullException(nameof(assemblies));
-      if (type       == null) throw new ArgumentNullException(nameof(type));
+
+      if (type == null) throw new ArgumentNullException(nameof(type));
+
       var set = new HashSet<Assembly>();
 
       foreach (var assembly in assemblies)

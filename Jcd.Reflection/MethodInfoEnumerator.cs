@@ -63,6 +63,7 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
    public IEnumerator<MethodInfo> GetEnumerator()
    {
       if (Type == null) yield break;
+
       IEnumerable<MethodInfo> member = Filter.Flags.HasValue
                                           ? Type.GetMethods(Filter.Flags.Value)
                                           : Type.GetMethods();

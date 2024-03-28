@@ -910,12 +910,8 @@
             <param name="self">The object to check</param>
             <returns>true if the object is of an unsigned data type</returns>
         </member>
-        <member name="F:Jcd.Reflection.NumericExtensions.BuiltInNonPrimitiveScalars">
-            <summary>
-
-            </summary>
-        </member>
-        <member name="M:Jcd.Reflection.NumericExtensions.IsScalar(System.Object,System.Collections.Generic.HashSet{System.Type})">
+       <member
+          name="M:Jcd.Reflection.NumericExtensions.IsScalar(System.Object,System.Collections.Generic.IReadOnlyCollection{System.Type})">
             <summary>
             
             </summary>
@@ -923,7 +919,8 @@
             <param name="nonPrimitiveScalars"></param>
             <returns></returns>
         </member>
-        <member name="M:Jcd.Reflection.NumericExtensions.IsScalar(System.Type,System.Collections.Generic.HashSet{System.Type})">
+       <member
+          name="M:Jcd.Reflection.NumericExtensions.IsScalar(System.Type,System.Collections.Generic.IReadOnlyCollection{System.Type})">
             <summary>
             
             </summary>

@@ -8,7 +8,5 @@ Gets the name of the member
 public override string Name { get; }
 ```
 
-Implements [Name](https://docs.microsoft.com/en-us/dotnet/api/System.Runtime.InteropServices._MemberInfo.Name 'System.Runtime.InteropServices._MemberInfo.Name')
-
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')

@@ -28,7 +28,6 @@ The type to find implementations of.
 If [type](TypeDiscoveryExtensions.FindImplementationsOf.3RmCyofz6c+Tzo32LkV1pw.md#Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(thisSystem.Collections.Generic.IEnumerable_System.Reflection.Assembly_,System.Type,bool).type 'Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(this System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Type, bool).type') is in the target assembly, and it's a concrete, return it as well.
 
 #### Returns
-
 [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[System.Type](https://docs.microsoft.com/en-us/dotnet/api/System.Type 'System.Type')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
 An [System.Collections.Generic.IEnumerable&lt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1') of the implementations of [type](TypeDiscoveryExtensions.FindImplementationsOf.3RmCyofz6c+Tzo32LkV1pw.md#Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(thisSystem.Collections.Generic.IEnumerable_System.Reflection.Assembly_,System.Type,bool).type 'Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(this System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Type, bool).type')
 

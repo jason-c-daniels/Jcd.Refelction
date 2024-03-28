@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
+// ReSharper disable UnusedAutoPropertyAccessor.Global
 // ReSharper disable UnusedMember.Global
 
 namespace Jcd.Reflection;

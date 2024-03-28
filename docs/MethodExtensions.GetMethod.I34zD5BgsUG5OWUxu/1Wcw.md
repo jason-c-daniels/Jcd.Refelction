@@ -26,6 +26,5 @@ the name of the method
 `settings` [MethodInfoFilter](MethodInfoFilter.md 'Jcd.Reflection.MethodInfoFilter')
 
 #### Returns
-
 [System.Reflection.MethodInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MethodInfo 'System.Reflection.MethodInfo')
 the result of the call, if any
