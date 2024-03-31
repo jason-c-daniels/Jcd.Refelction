@@ -8,6 +8,7 @@ Gets all attributes of a specified type on a MemberInfo
 public static TAttribute[] GetCustomAttributes<TAttribute>(this System.Reflection.MemberInfo memberInfo, bool inherit=false)
     where TAttribute : System.Attribute;
 ```
+
 #### Type parameters
 
 <a name='Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.MemberInfo,bool).TAttribute'></a>
@@ -15,6 +16,7 @@ public static TAttribute[] GetCustomAttributes<TAttribute>(this System.Reflectio
 `TAttribute`
 
 The type of attributes to retrieve
+
 #### Parameters
 
 <a name='Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.MemberInfo,bool).memberInfo'></a>
@@ -30,6 +32,7 @@ the MemberInfo to inspect
 inspect the inheritance hierarchy
 
 #### Returns
+
 [TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.lDcdLoLl134C9/uZPyD+VQ.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.MemberInfo,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Reflection.MemberInfo, bool).TAttribute')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
 An array of
 located [TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.lDcdLoLl134C9/uZPyD+VQ.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.MemberInfo,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Reflection.MemberInfo, bool).TAttribute')

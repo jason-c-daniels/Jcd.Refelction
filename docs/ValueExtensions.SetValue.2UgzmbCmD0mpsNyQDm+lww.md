@@ -8,6 +8,7 @@ Sets a value on a field or property.
 public static void SetValue<T>(this ref T self, string fieldOrPropertyName, object value, System.Reflection.BindingFlags bindingFlags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.Public|System.Reflection.BindingFlags.NonPublic)
     where T : struct, System.ValueType, System.ValueType;
 ```
+
 #### Type parameters
 
 <a name='Jcd.Reflection.ValueExtensions.SetValue_T_(thisT,string,object,System.Reflection.BindingFlags).T'></a>
@@ -15,6 +16,7 @@ public static void SetValue<T>(this ref T self, string fieldOrPropertyName, obje
 `T`
 
 The type of data being modified.
+
 #### Parameters
 
 <a name='Jcd.Reflection.ValueExtensions.SetValue_T_(thisT,string,object,System.Reflection.BindingFlags).self'></a>

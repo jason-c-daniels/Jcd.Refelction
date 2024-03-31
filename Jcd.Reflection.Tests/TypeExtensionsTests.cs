@@ -5,6 +5,13 @@ using Jcd.Reflection.Tests.Fakes.DeepInheritance;
 
 using Xunit;
 
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable TypeParameterCanBeVariant
+// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedMember.Local
+// ReSharper disable UnusedType.Local
+#pragma warning disable CS0414 // Field is assigned but its value is never used
+
 #endregion
 
 namespace Jcd.Reflection.Tests;
@@ -58,15 +65,11 @@ public class TypeExtensionsTests
       Assert.False(typeof(ImplementsIGenericBase<>).InheritsFrom(typeof(GenericBase<>)));
    }
 
-   private class PrivateNestedType
-   {
-   }
+   private class PrivateNestedType;
 
    public class NestedType
    {
-      public class AnotherNestedType
-      {
-      }
+      public class AnotherNestedType;
    }
 
    public struct S<T>
@@ -95,7 +98,7 @@ public class TypeExtensionsTests
       #region Implementation of I<int>
 
       /// <inheritdoc />
-      public int F { get; } = default;
+      public int F => default;
 
       #endregion
    }

@@ -6,6 +6,13 @@ using Jcd.Reflection.Tests.Fakes;
 
 using Xunit;
 
+// ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable HeapView.ObjectAllocation
+// ReSharper disable HeapView.ClosureAllocation
+// ReSharper disable InconsistentNaming
+// ReSharper disable HeapView.BoxingAllocation
+// ReSharper disable HeapView.ObjectAllocation.Evident
+
 #endregion
 
 namespace Jcd.Reflection.Tests;

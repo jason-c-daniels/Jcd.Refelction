@@ -2,6 +2,8 @@
 
 using System.Text;
 
+// ReSharper disable HeapView.ObjectAllocation.Evident
+
 #endregion
 
 // ReSharper disable UnusedType.Global

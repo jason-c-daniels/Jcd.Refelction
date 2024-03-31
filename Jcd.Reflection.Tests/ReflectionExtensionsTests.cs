@@ -10,6 +10,13 @@ using Jcd.Reflection.Tests.Fakes;
 
 using Xunit;
 
+// ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable HeapView.ObjectAllocation
+// ReSharper disable HeapView.ClosureAllocation
+// ReSharper disable InconsistentNaming
+// ReSharper disable HeapView.ObjectAllocation.Evident
+// ReSharper disable HeapView.BoxingAllocation
+
 #endregion
 
 namespace Jcd.Reflection.Tests;
@@ -225,10 +232,10 @@ public class ReflectionExtensionsTests
    [Fact]
    public void IsScalar_WhenTypeNotIsScalarButExistsAsCustomScalar_ReturnsTrue()
    {
-      Assert.True(new TestClassA().IsScalar(new HashSet<Type>(new[] { typeof(TestClassA) })));
+      Assert.True(new TestClassA().IsScalar([typeof(TestClassA)]));
 
       // Idiot testing to ensure we didn't nuke the other scalar objects. Which might have been the case earlier. Okay it was the case.
-      Assert.True(DateTime.Now.IsScalar(new HashSet<Type>(new[] { typeof(TestClassA) })));
+      Assert.True(DateTime.Now.IsScalar([typeof(TestClassA)]));
    }
 
    /// <summary>
@@ -238,7 +245,7 @@ public class ReflectionExtensionsTests
    public void GetPropertyOrFieldValue_WhenObjectDoesntHavePropertyOrFieldWithTheName_ReturnsNull()
    {
       var kvp = new KeyValuePair<string, string>();
-      var _   = new { Key = "key", Value = "value", Pair = "Pear" };
+      _ = new { Key = "key", Value = "value", Pair = "Pear" };
       Assert.Null(kvp.GetValue("Nada"));
    }
 

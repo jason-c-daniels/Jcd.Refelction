@@ -1,5 +1,8 @@
 #region
 
+// ReSharper disable RedundantTypeDeclarationBody
+// ReSharper disable IdentifierTypo
+
 #endregion
 
 namespace Jcd.Reflection.Tests.Fakes;

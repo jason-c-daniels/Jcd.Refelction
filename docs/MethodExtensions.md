@@ -8,7 +8,8 @@ Extension methods to help invoke methods via reflection.
 public static class MethodExtensions
 ```
 
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106; MethodExtensions
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &#129106;
+MethodExtensions
 
 | Methods                                                                                                                                                                                                                                                                    |                                                                         |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|

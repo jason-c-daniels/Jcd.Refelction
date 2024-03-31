@@ -5,6 +5,7 @@
 ```csharp
 private static string DefaultExpandoKeyRenamingStrategy(string k);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.ExpandoObjectExtensions.DefaultExpandoKeyRenamingStrategy(string).k'></a>
@@ -12,4 +13,5 @@ private static string DefaultExpandoKeyRenamingStrategy(string k);
 `k` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')
 
 #### Returns
+
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')

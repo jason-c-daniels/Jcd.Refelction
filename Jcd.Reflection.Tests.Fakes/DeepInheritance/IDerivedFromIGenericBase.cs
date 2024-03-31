@@ -1,3 +1,5 @@
+// ReSharper disable UnusedMember.Global
+
 namespace Jcd.Reflection.Tests.Fakes.DeepInheritance;
 
 public interface IDerivedFromIGenericBase<out T> : IGenericBase<T>

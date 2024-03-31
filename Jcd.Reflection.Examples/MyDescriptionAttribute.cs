@@ -2,6 +2,8 @@
 
 using System;
 
+// ReSharper disable UnusedMember.Global
+
 #endregion
 
 // ReSharper disable MemberCanBePrivate.Global

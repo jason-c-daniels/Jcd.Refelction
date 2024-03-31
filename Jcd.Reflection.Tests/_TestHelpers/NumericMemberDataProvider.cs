@@ -5,6 +5,8 @@ using System.Numerics;
 
 using Xunit;
 
+// ReSharper disable HeapView.ObjectAllocation
+
 // ReSharper disable HeapView.ObjectAllocation.Evident
 // ReSharper disable UnusedMember.Global
 
@@ -33,10 +35,7 @@ public class NumericMemberDataProvider
    /// <summary>
    /// Provides a set of Bytes
    /// </summary>
-   public static TheoryData<byte> ByteList()
-   {
-      return new TheoryData<byte>([byte.MaxValue, byte.MinValue, 1, 2]);
-   }
+   public static TheoryData<byte> ByteList() { return new TheoryData<byte>([byte.MaxValue, byte.MinValue, 1, 2]); }
 
    /// <summary>
    /// Provides a set of Decimals
@@ -57,42 +56,32 @@ public class NumericMemberDataProvider
    /// <summary>
    /// Provides a set of Int16s
    /// </summary>
-   public static TheoryData<short> Int16List()
-   {
-      return new TheoryData<short>([short.MaxValue, short.MinValue, 1, 2]);
-   }
+   public static TheoryData<short> Int16List() { return new TheoryData<short>([short.MaxValue, short.MinValue, 1, 2]); }
 
    /// <summary>
    /// Provides a set of Int32s
    /// </summary>
-   public static TheoryData<int> Int32List()
-   {
-      return new TheoryData<int>([int.MaxValue, int.MinValue, 1, 2]);
-   }
+   public static TheoryData<int> Int32List() { return new TheoryData<int>([int.MaxValue, int.MinValue, 1, 2]); }
 
    /// <summary>
    /// Provides a set of Int64s
    /// </summary>
-   public static TheoryData<long> Int64List()
-   {
-      return new TheoryData<long>([long.MaxValue, long.MinValue, 1, 2]);
-   }
+   public static TheoryData<long> Int64List() { return new TheoryData<long>([long.MaxValue, long.MinValue, 1, 2]); }
 
    /// <summary>
    /// Provides a set of non-numeric data.
    /// </summary>
    public static TheoryData<object> NonNumbersCollection()
    {
+      #pragma warning disable CA1861
       return new TheoryData<object>([new object(), new[] { 1, 2, 3 }, new Exception()]);
+      #pragma warning restore CA1861
    }
 
    /// <summary>
    /// Provides a set of signed bytes
    /// </summary>
-   public static TheoryData<sbyte> SByteList()
-   {
-      return new TheoryData<sbyte>([sbyte.MaxValue, sbyte.MinValue, 1, 2]);
-   }
+   public static TheoryData<sbyte> SByteList() { return new TheoryData<sbyte>([sbyte.MaxValue, sbyte.MinValue, 1, 2]); }
 
    /// <summary>
    /// Provides a set of Singles
@@ -113,10 +102,7 @@ public class NumericMemberDataProvider
    /// <summary>
    /// Provides a set of UInt32s
    /// </summary>
-   public static TheoryData<uint> UInt32List()
-   {
-      return new TheoryData<uint>([uint.MaxValue, uint.MinValue, 1, 2]);
-   }
+   public static TheoryData<uint> UInt32List() { return new TheoryData<uint>([uint.MaxValue, uint.MinValue, 1, 2]); }
 
    /// <summary>
    /// Provides a set of UInt64s

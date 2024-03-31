@@ -7,6 +7,7 @@ Constructs a FieldOrPropertyEnumerator from a type and settings.
 ```csharp
 public FieldOrPropertyEnumerator(System.Type type, Jcd.Reflection.FieldOrPropertyInfoFilter fieldOrPropertyInfoFilter=null);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.FieldOrPropertyEnumerator.FieldOrPropertyEnumerator(System.Type,Jcd.Reflection.FieldOrPropertyInfoFilter).type'></a>

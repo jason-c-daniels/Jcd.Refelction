@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 using Jcd.Validations;
 
+// ReSharper disable HeapView.ObjectAllocation
+
 #endregion
 
 // ReSharper disable MemberCanBeProtected.Global

@@ -10,6 +10,13 @@ using Moq;
 
 using Xunit;
 
+// ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable HeapView.ObjectAllocation
+// ReSharper disable HeapView.ClosureAllocation
+// ReSharper disable InconsistentNaming
+// ReSharper disable HeapView.BoxingAllocation
+// ReSharper disable HeapView.ObjectAllocation.Evident
+
 #endregion
 
 namespace Jcd.Reflection.Tests;
@@ -57,7 +64,7 @@ public class FieldOrPropertyInfoTests
    {
       var mi = new Mock<MemberInfo>();
       mi.SetupGet(s => s.MemberType).Returns(type);
-      var _ = new FieldOrPropertyInfo(mi.Object, BindingFlags.Public | BindingFlags.Instance);
+      _ = new FieldOrPropertyInfo(mi.Object, BindingFlags.Public | BindingFlags.Instance);
    }
 
    /// <summary>

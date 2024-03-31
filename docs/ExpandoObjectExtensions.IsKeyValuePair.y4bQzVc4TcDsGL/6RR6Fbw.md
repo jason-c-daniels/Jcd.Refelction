@@ -7,6 +7,7 @@ Determines if a type is a KeyValuePair
 ```csharp
 public static bool IsKeyValuePair(this System.Type type);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.ExpandoObjectExtensions.IsKeyValuePair(thisSystem.Type).type'></a>

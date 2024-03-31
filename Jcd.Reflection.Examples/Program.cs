@@ -5,6 +5,10 @@ using System;
 using Jcd.Reflection;
 using Jcd.Reflection.Examples;
 
+// ReSharper disable HeapView.ObjectAllocation.Evident
+// ReSharper disable HeapView.BoxingAllocation
+// ReSharper disable UnusedVariable
+
 #endregion
 
 var c = new TestClass();

@@ -34,7 +34,8 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
                                                                                   // ReSharper disable once ArrangeRedundantParentheses
                                                                                   SkipSystemMembers(mi)
                                                                                || (mi.MemberType != MemberTypes.Field
-                                                                                && mi.MemberType != MemberTypes.Property);
+                                                                                && mi.MemberType
+                                                                                != MemberTypes.Property);
 
    /// <summary>
    /// Constructs a MemberInfoEnumerator from a type and settings.
