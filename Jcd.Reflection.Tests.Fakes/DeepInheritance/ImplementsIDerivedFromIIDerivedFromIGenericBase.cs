@@ -1,36 +1,33 @@
+// ReSharper disable MemberCanBeProtected.Global
+
 namespace Jcd.Reflection.Tests.Fakes.DeepInheritance;
 
-public class ImplementsIDerivedFromIiDerivedFromIGenericBase<T> : IDerivedFromIDerivedFromIGenericBase<T>
+public class ImplementsIDerivedFromIiDerivedFromIGenericBase<T>
+(
+   T otherData    = default
+ , T moreData     = default
+ , T evenMoreData = default
+)
+   : IDerivedFromIDerivedFromIGenericBase<T>
 {
-   public ImplementsIDerivedFromIiDerivedFromIGenericBase(
-      T otherData    = default
-    , T moreData     = default
-    , T evenMoreData = default
-   )
-   {
-      OtherData    = otherData;
-      MoreData     = moreData;
-      EvenMoreData = evenMoreData;
-   }
-
    #region Implementation of IGenericBase<out T>
 
    /// <inheritdoc />
-   public T OtherData { get; }
+   public T OtherData { get; } = otherData;
 
    #endregion
 
    #region Implementation of IDerivedFromGenericBase<out T>
 
    /// <inheritdoc />
-   public T MoreData { get; }
+   public T MoreData { get; } = moreData;
 
    #endregion
 
    #region Implementation of IDerivedFromDerivedFromGenericBase<out T>
 
    /// <inheritdoc />
-   public T EvenMoreData { get; }
+   public T EvenMoreData { get; } = evenMoreData;
 
    #endregion
 }

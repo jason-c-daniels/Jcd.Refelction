@@ -9,9 +9,13 @@ using Jcd.Reflection.Tests.Fakes;
 
 using Xunit;
 
-#endregion
-
+// ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable HeapView.ObjectAllocation
+// ReSharper disable HeapView.ClosureAllocation
 // ReSharper disable InconsistentNaming
+// ReSharper disable HeapView.ObjectAllocation.Evident
+
+#endregion
 
 namespace Jcd.Reflection.Tests;
 
@@ -87,7 +91,7 @@ public class TypeDiscoveryExtensionsTests
    [Fact]
    public void FindImplementationsOf_On_Assemblies_Throws_When_Type_Is_Null()
    {
-      Assembly[] assemblies = { Assembly.GetExecutingAssembly(), Assembly.GetExecutingAssembly() };
+      Assembly[] assemblies = [Assembly.GetExecutingAssembly(), Assembly.GetExecutingAssembly()];
       Assert.Throws<ArgumentNullException>(() => assemblies.FindImplementationsOf(null).ToList());
    }
 }

@@ -6,6 +6,13 @@ using Jcd.Reflection.Tests.Fakes;
 
 using Xunit;
 
+// ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable HeapView.ObjectAllocation
+// ReSharper disable HeapView.ClosureAllocation
+// ReSharper disable InconsistentNaming
+// ReSharper disable HeapView.BoxingAllocation
+// ReSharper disable HeapView.ObjectAllocation.Evident
+
 #endregion
 
 namespace Jcd.Reflection.Tests;
@@ -45,6 +52,8 @@ public class MethodExtensionsTests
    {
       var result = new TestClassC().Invoke("op_Add", 7, 4);
       Assert.Equal(11, result);
+      result = new TestClassC().Invoke("GetValue", null);
+      Assert.Equal(10, result);
    }
 
    [Fact]
@@ -105,6 +114,8 @@ public class MethodExtensionsTests
    {
       var result = new TestClassC().Invoke<int>("GetValue");
       Assert.Equal(10, result);
+      result = new TestClassC().Invoke<int>("GetValue", null);
+      Assert.Equal(10, result);
    }
 
    [Fact]
@@ -119,5 +130,14 @@ public class MethodExtensionsTests
    {
       var result = new TestClassC().GetMethod("NotMyMethod");
       Assert.Null(result);
+      result = MethodExtensions.GetMethod(typeof(TestClassC), "NotMyMethod");
+      Assert.Null(result);
+      var o = new TestClassC();
+      result = o.GetMethod("NotMyMethod");
+      Assert.Null(result);
+      var results = o.GetMethods(x => x.Name == "NotMyMethod");
+      Assert.Empty(results);
+      results = o.GetMethods(MethodInfoFilter.AllInstanceMethodsFilter, x => x.Name == "NotMyMethod");
+      Assert.Empty(results);
    }
 }

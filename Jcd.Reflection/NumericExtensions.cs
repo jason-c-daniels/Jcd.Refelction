@@ -32,7 +32,7 @@ public static class NumericExtensions
    /// </summary>
    /// <param name="self">The object to check</param>
    /// <returns>true if the object is of a decimal data type</returns>
-   public static bool IsDecimalType(this object self) { return Type.GetTypeCode(self.GetType()) == TypeCode.Decimal; }
+   public static bool IsDecimalType(this object self) { return Type.GetTypeCode(self?.GetType()) == TypeCode.Decimal; }
 
    /// <summary>
    /// Indicates if an object is of a floating point data type.
@@ -42,7 +42,7 @@ public static class NumericExtensions
    public static bool IsFloatType(this object self)
    {
       // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-      switch (Type.GetTypeCode(self.GetType()))
+      switch (Type.GetTypeCode(self?.GetType()))
       {
          case TypeCode.Double:
          case TypeCode.Single:
@@ -63,7 +63,7 @@ public static class NumericExtensions
    public static bool IsIntegerType(this object self)
    {
       // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-      switch (Type.GetTypeCode(self.GetType()))
+      switch (Type.GetTypeCode(self?.GetType()))
       {
          case TypeCode.Byte:
          case TypeCode.SByte:
@@ -89,7 +89,7 @@ public static class NumericExtensions
    public static bool IsNumericType(this object self)
    {
       // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-      switch (Type.GetTypeCode(self.GetType()))
+      switch (Type.GetTypeCode(self?.GetType()))
       {
          case TypeCode.Byte:
          case TypeCode.SByte:
@@ -139,7 +139,15 @@ public static class NumericExtensions
    /// </summary>
    /// <param name="self">The object to check</param>
    /// <returns>true if the object is of a signed data type</returns>
-   public static bool IsSignedType(this object self) { return SignedTypes.Contains(self.GetType()); }
+   public static bool IsSignedType(this object self)
+   {
+      if (self is null)
+      {
+         return false;
+      }
+
+      return SignedTypes.Contains(self?.GetType());
+   }
 
    /// <summary>
    /// Indicates if an object is of an unsigned data type.
@@ -148,9 +156,17 @@ public static class NumericExtensions
    /// <returns>true if the object is of an unsigned data type</returns>
    public static bool IsUnsignedType(this object self)
    {
+      if (self is null)
+      {
+         return false;
+      }
+
       var type = self.GetType();
 
-      if (UnsignedTypes.Contains(type)) return true;
+      if (UnsignedTypes.Contains(type))
+      {
+         return true;
+      }
 
       var tc = Type.GetTypeCode(self.GetType());
 
@@ -169,31 +185,36 @@ public static class NumericExtensions
    ];
 
    /// <summary>
-   /// 
    /// </summary>
    /// <param name="self"></param>
    /// <param name="nonPrimitiveScalars"></param>
    /// <returns></returns>
-   public static bool IsScalar(this object self, HashSet<Type> nonPrimitiveScalars = null)
+   public static bool IsScalar(this object self, ICollection<Type> nonPrimitiveScalars = null)
    {
       return self is null or Type || self.GetType().IsScalar(nonPrimitiveScalars);
    }
 
    /// <summary>
-   /// 
    /// </summary>
    /// <param name="type"></param>
    /// <param name="nonPrimitiveScalars"></param>
    /// <returns></returns>
-   public static bool IsScalar(this Type type, HashSet<Type> nonPrimitiveScalars = null)
+   public static bool IsScalar(this Type type, ICollection<Type> nonPrimitiveScalars = null)
    {
-      if (type == typeof(Type)) return true;
+      if (type == typeof(Type))
+      {
+         return true;
+      }
 
       if (BuiltInNonPrimitiveScalars.Contains(type))
+      {
          return true;
+      }
 
       if (nonPrimitiveScalars != null && nonPrimitiveScalars.Contains(type))
+      {
          return true;
+      }
 
       var ti = type.GetTypeInfo();
 

@@ -2,6 +2,8 @@
 
 using System.Reflection;
 
+using Jcd.Validations;
+
 // ReSharper disable HeapView.BoxingAllocation
 
 #endregion
@@ -26,10 +28,15 @@ public static class ValueExtensions
     , BindingFlags bindingFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance
    )
    {
+      Argument.IsNotNull(self, nameof(self));
+
       var t  = self.GetType();
       var pi = t.GetProperty(fieldOrPropertyName, bindingFlags);
 
-      if (pi != null) return pi.GetValue(self);
+      if (pi != null)
+      {
+         return pi.GetValue(self);
+      }
 
       var fi = t.GetField(fieldOrPropertyName, bindingFlags);
 
@@ -37,7 +44,7 @@ public static class ValueExtensions
    }
 
    /// <summary>
-   /// Sets a value on a field or property 
+   /// Sets a value on a field or property
    /// </summary>
    /// <param name="self">The instance to set the value on</param>
    /// <param name="fieldOrPropertyName">the name of the field or property to set</param>
@@ -52,16 +59,23 @@ public static class ValueExtensions
    )
       where T : class
    {
+      Argument.IsNotNull(self, nameof(self));
       var t  = self.GetType();
       var pi = t.GetProperty(fieldOrPropertyName, bindingFlags);
       var fi = t.GetField(fieldOrPropertyName, bindingFlags);
+
       if (pi != null)
+      {
          pi.SetValue(self, value);
-      else if (fi != null) fi.SetValue(self, value);
+      }
+      else if (fi != null)
+      {
+         fi.SetValue(self, value);
+      }
    }
 
    /// <summary>
-   /// Sets a value on a field or property. 
+   /// Sets a value on a field or property.
    /// </summary>
    /// <param name="self">The instance to set the value on</param>
    /// <param name="fieldOrPropertyName">the name of the field or property to set</param>
@@ -80,9 +94,15 @@ public static class ValueExtensions
       var    t    = data.GetType();
       var    pi   = t.GetProperty(fieldOrPropertyName, bindingFlags);
       var    fi   = t.GetField(fieldOrPropertyName, bindingFlags);
+
       if (pi != null)
+      {
          pi.SetValue(data, value);
-      else if (fi != null) fi.SetValue(data, value);
+      }
+      else if (fi != null)
+      {
+         fi.SetValue(data, value);
+      }
 
       self = (T) data; // now capture the modified value
    }

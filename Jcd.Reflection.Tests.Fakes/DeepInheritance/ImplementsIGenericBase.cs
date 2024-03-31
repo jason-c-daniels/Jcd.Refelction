@@ -5,7 +5,7 @@ public class ImplementsIGenericBase<T> : IGenericBase<T>
    #region Implementation of IGenericBase<out T>
 
    /// <inheritdoc />
-   public T OtherData { get; } = default;
+   public T OtherData => default;
 
    #endregion
 }

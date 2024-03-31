@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
+using Jcd.Validations;
+
 // ReSharper disable HeapView.ObjectAllocation
 // ReSharper disable HeapView.ObjectAllocation.Possible
 
@@ -18,7 +20,7 @@ namespace Jcd.Reflection;
 public static class FieldInfoExtensions
 {
    /// <summary>
-   /// Enumerate the FieldInfo entries for a given type 
+   /// Enumerate the FieldInfo entries for a given type
    /// </summary>
    /// <param name="type">The data type to reflect on</param>
    /// <param name="flags">The BindingFlags</param>
@@ -31,22 +33,30 @@ public static class FieldInfoExtensions
     , Func<FieldInfo, bool> skip  = null
    )
    {
-      IEnumerable<FieldInfo> props = flags.HasValue ? type.GetFields(flags.Value) : type.GetFields();
+      Argument.IsNotNull(type, nameof(type));
+      IEnumerable<FieldInfo> fields = flags.HasValue ? type.GetFields(flags.Value) : type.GetFields();
 
-      foreach (var fi in props)
+      foreach (var fi in fields)
       {
-         if (fi.DeclaringType?.FullName != null && fi.DeclaringType.FullName.StartsWith("System.")) continue;
+         if (fi.DeclaringType?.FullName != null
+          && fi.DeclaringType.FullName.StartsWith("System.", StringComparison.InvariantCulture))
+         {
+            continue;
+         }
 
          var skipped = skip?.Invoke(fi);
 
-         if (skipped.HasValue && skipped.Value) continue;
+         if (skipped.HasValue && skipped.Value)
+         {
+            continue;
+         }
 
          yield return fi;
       }
    }
 
    /// <summary>
-   /// Enumerate the FieldInfo entries for a given instance 
+   /// Enumerate the FieldInfo entries for a given instance
    /// </summary>
    /// <param name="self">The data instance to reflect on</param>
    /// <param name="flags">The BindingFlags</param>
@@ -58,6 +68,11 @@ public static class FieldInfoExtensions
     , Func<FieldInfo, bool> skip  = null
    )
    {
+      if (self is null)
+      {
+         return [];
+      }
+
       return self.IsScalar() ? null : self.GetType().EnumerateFields(flags, skip);
    }
 }

@@ -5,8 +5,13 @@ using System.Linq;
 using System.Reflection;
 
 using Jcd.Reflection.Tests._TestHelpers;
+using Jcd.Reflection.Tests.Fakes.DeepInheritance;
 
 using Xunit;
+
+// ReSharper disable HeapView.BoxingAllocation
+// ReSharper disable HeapView.ClosureAllocation
+// ReSharper disable HeapView.DelegateAllocation
 
 #endregion
 
@@ -34,13 +39,14 @@ public class GetCustomAttributesExtensionsTests
    [Theory]
    [InlineData(typeof(AttributesReflectionTestClass), "field",  2)]
    [InlineData(typeof(AttributesReflectionTestClass), "field2", 1)]
+   [InlineData(typeof(NeenerImBeingDumb<long>),       "Not",    0)]
    public void GetCustomAttributes_For_FieldInfo_Gets_The_Attributes_When_They_Exist(
       Type   type
     , string field
     , int    expectedCount
    )
    {
-      var fi = type.GetField(field, BindingFlags.Instance | BindingFlags.NonPublic);
+      var fi = type.GetField(field, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
       var attrs = fi
         .GetCustomAttributes<MyDescriptionAttribute>();
       Assert.Equal(expectedCount,     attrs.Length);
@@ -50,13 +56,14 @@ public class GetCustomAttributesExtensionsTests
 
    [Theory]
    [InlineData(typeof(AttributesReflectionTestClass), "PrivateProperty", 2)]
+   [InlineData(typeof(NeenerImBeingDumb<byte>),       "Cob",             0)]
    public void GetCustomAttributes_For_PropertyInfo_Gets_The_Attributes_When_They_Exist(
       Type   type
     , string propName
     , int    expectedCount
    )
    {
-      var propInfo = type.GetProperty(propName, BindingFlags.Instance | BindingFlags.NonPublic);
+      var propInfo = type.GetProperty(propName, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
       var attrs    = propInfo.GetCustomAttributes<MyDescriptionAttribute>();
       Assert.Equal(expectedCount,     attrs.Length);
       Assert.Equal(expectedCount > 0, propInfo.HasAttribute<MyDescriptionAttribute>());
@@ -65,13 +72,35 @@ public class GetCustomAttributesExtensionsTests
    [Theory]
    [InlineData(typeof(AttributesReflectionTestClass), "InternalGetField", 1)]
    [InlineData(typeof(AttributesReflectionTestClass), "GetField",         2)]
+   [InlineData(typeof(NeenerImBeingDumb<int>),        "GetCorn",          0)]
    public void GetCustomAttributes_For_MethodInfo_Gets_The_Attributes_When_They_Exist(
       Type   type
     , string methodName
     , int    expectedCount
    )
    {
-      var mi    = type.GetMethod(methodName, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+      var mi = type.GetMethod(methodName
+                            , BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static
+                             );
+      var attrs = mi.GetCustomAttributes<MyDescriptionAttribute>();
+      Assert.Equal(expectedCount,     attrs.Length);
+      Assert.Equal(expectedCount > 0, mi.HasAttribute<MyDescriptionAttribute>());
+   }
+
+   [Theory]
+   [InlineData(typeof(AttributesReflectionTestClass), "InternalGetField", 1)]
+   [InlineData(typeof(AttributesReflectionTestClass), "GetField",         2)]
+   [InlineData(typeof(NeenerImBeingDumb<int>),        "GetCorn",          0)]
+   public void GetCustomAttributes_For_MemberInfo_Gets_The_Attributes_When_They_Exist(
+      Type   type
+    , string methodName
+    , int    expectedCount
+   )
+   {
+      var mi = type.GetMember(methodName
+                            , BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static
+                             )
+                   .First();
       var attrs = mi.GetCustomAttributes<MyDescriptionAttribute>();
       Assert.Equal(expectedCount,     attrs.Length);
       Assert.Equal(expectedCount > 0, mi.HasAttribute<MyDescriptionAttribute>());
@@ -80,6 +109,7 @@ public class GetCustomAttributesExtensionsTests
    [Theory]
    [InlineData(typeof(AttributesReflectionTestClass), 2)]
    [InlineData(typeof(AttributesEnum),                2)]
+   [InlineData(typeof(NaiiveFibonacciGenerator),      0)]
    public void GetCustomAttributes_For_Type_Gets_The_Attributes_When_They_Exist(Type type, int expectedCount)
    {
       var attrs = type.GetCustomAttributes<MyDescriptionAttribute>();
@@ -90,6 +120,7 @@ public class GetCustomAttributesExtensionsTests
    [Theory]
    [InlineData(typeof(AttributesReflectionTestClass), 2)]
    [InlineData(typeof(AttributesEnum),                2)]
+   [InlineData(typeof(NaiiveFibonacciGenerator),      0)]
    public void GetCustomAttributes_For_TypeInfo_Gets_The_Attributes_When_They_Exist(Type type, int expectedCount)
    {
       var ti    = type.GetTypeInfo();

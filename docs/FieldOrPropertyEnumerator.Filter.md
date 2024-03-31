@@ -9,4 +9,5 @@ public Jcd.Reflection.FieldOrPropertyInfoFilter Filter { get; set; }
 ```
 
 #### Property Value
+
 [FieldOrPropertyInfoFilter](FieldOrPropertyInfoFilter.md 'Jcd.Reflection.FieldOrPropertyInfoFilter')

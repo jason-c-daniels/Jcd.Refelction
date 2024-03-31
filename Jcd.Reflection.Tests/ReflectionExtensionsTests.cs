@@ -10,6 +10,13 @@ using Jcd.Reflection.Tests.Fakes;
 
 using Xunit;
 
+// ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable HeapView.ObjectAllocation
+// ReSharper disable HeapView.ClosureAllocation
+// ReSharper disable InconsistentNaming
+// ReSharper disable HeapView.ObjectAllocation.Evident
+// ReSharper disable HeapView.BoxingAllocation
+
 #endregion
 
 namespace Jcd.Reflection.Tests;
@@ -17,7 +24,8 @@ namespace Jcd.Reflection.Tests;
 public class ReflectionExtensionsTests
 {
    /// <summary>
-   /// Validate that EnumerateProperties enumerates public instance properties, inherited, when called with default parameters.
+   /// Validate that EnumerateProperties enumerates public instance properties, inherited, when called with default
+   /// parameters.
    /// </summary>
    [Fact]
    public void EnumeratePropertiesOnType_WhenCalledWithDefaultParameters_EnumeratesPublicInstanceProperties()
@@ -55,7 +63,8 @@ public class ReflectionExtensionsTests
    }
 
    /// <summary>
-   /// Validate that EnumerateProperties enumerates public instance properties, inherited, when called with default parameters.
+   /// Validate that EnumerateProperties enumerates public instance properties, inherited, when called with default
+   /// parameters.
    /// </summary>
    [Fact]
    public void EnumeratePropertiesOnObject_WhenCalledWithDefaultParameters_EnumeratesPublicInstanceProperties()
@@ -103,6 +112,43 @@ public class ReflectionExtensionsTests
    }
 
    /// <summary>
+   /// Validate that EnumerateFields enumerates public instance properties, inherited, when called with default parameters.
+   /// </summary>
+   [Fact]
+   public void EnumerateFields_On_Int32_With_Default_Parameters_Returns_Empty_Collection()
+   {
+      var fields = typeof(int).EnumerateFields().ToList();
+      Assert.Empty(fields);
+   }
+
+   /// <summary>
+   /// Validate that EnumerateFields enumerates public instance properties, inherited, when called with default parameters.
+   /// </summary>
+   [Fact]
+   public void EnumerateFields_On_Null_With_Default_Parameters_Returns_Empty_Collection()
+   {
+      var fields = ((object) null).EnumerateFields().ToList();
+      Assert.Empty(fields);
+   }
+
+   /// <summary>
+   /// Validate that EnumerateFields enumerates public instance properties, inherited, when called with default parameters.
+   /// </summary>
+   [Theory]
+   [InlineData(null)]
+   [InlineData(BindingFlags.Public
+             | BindingFlags.Instance
+             | BindingFlags.Static
+             | BindingFlags.FlattenHierarchy
+             | BindingFlags.NonPublic
+              )]
+   public void EnumerateFields_On_Int32_With_BindingFlags_Returns_Empty_Collection(BindingFlags? flags)
+   {
+      var fields = typeof(int).EnumerateFields(flags).ToList();
+      Assert.Empty(fields);
+   }
+
+   /// <summary>
    /// Validate that EnumerateFields enumerates public instance properties and skips according to skip function.
    /// </summary>
    [Fact]
@@ -132,7 +178,8 @@ public class ReflectionExtensionsTests
    }
 
    /// <summary>
-   /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip backing fields.
+   /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip
+   /// backing fields.
    /// </summary>
    [Fact]
    public void EnumerateFieldsOnType_WhenBindingsSetToReturnAll_EnumeratesAllFieldsExceptBacking()
@@ -189,7 +236,8 @@ public class ReflectionExtensionsTests
    }
 
    /// <summary>
-   /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip backing fields.
+   /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip
+   /// backing fields.
    /// </summary>
    [Fact]
    public void EnumerateFieldsOnObject_WhenBindingsSetToReturnAll_EnumeratesAllFieldsExceptBacking()
@@ -225,25 +273,25 @@ public class ReflectionExtensionsTests
    [Fact]
    public void IsScalar_WhenTypeNotIsScalarButExistsAsCustomScalar_ReturnsTrue()
    {
-      Assert.True(new TestClassA().IsScalar(new HashSet<Type>(new[] { typeof(TestClassA) })));
+      Assert.True(new TestClassA().IsScalar([typeof(TestClassA)]));
 
       // Idiot testing to ensure we didn't nuke the other scalar objects. Which might have been the case earlier. Okay it was the case.
-      Assert.True(DateTime.Now.IsScalar(new HashSet<Type>(new[] { typeof(TestClassA) })));
+      Assert.True(DateTime.Now.IsScalar([typeof(TestClassA)]));
    }
 
    /// <summary>
-   /// Validate that GetPropertyOrFieldValue Returns the value When object has property or field with the name. 
+   /// Validate that GetPropertyOrFieldValue Returns the value When object has property or field with the name.
    /// </summary>
    [Fact]
    public void GetPropertyOrFieldValue_WhenObjectDoesntHavePropertyOrFieldWithTheName_ReturnsNull()
    {
       var kvp = new KeyValuePair<string, string>();
-      var _   = new { Key = "key", Value = "value", Pair = "Pear" };
+      _ = new { Key = "key", Value = "value", Pair = "Pear" };
       Assert.Null(kvp.GetValue("Nada"));
    }
 
    /// <summary>
-   /// Validate that GetPropertyOrFieldValue Returns the value When object has property or field with the name. 
+   /// Validate that GetPropertyOrFieldValue Returns the value When object has property or field with the name.
    /// </summary>
    [Fact]
    public void GetPropertyOrFieldValue_WhenObjectHasPropertyOrFieldWithTheName_ReturnsValue()
@@ -314,6 +362,4 @@ public class ReflectionExtensionsTests
       a.SetValue("afield", 7);
       Assert.Equal(7, a.GetValue("afield"));
    }
-   #if moar_testing
-   #endif
 }

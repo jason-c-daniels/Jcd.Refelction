@@ -7,6 +7,7 @@ Checks if one type inherits from another. This will match generic inheritance as
 ```csharp
 public static bool InheritsFrom<T>(this System.Type derivedType, bool allowSelfToCompareToTrueIfConcrete=false);
 ```
+
 #### Type parameters
 
 <a name='Jcd.Reflection.TypeExtensions.InheritsFrom_T_(thisSystem.Type,bool).T'></a>
@@ -14,6 +15,7 @@ public static bool InheritsFrom<T>(this System.Type derivedType, bool allowSelfT
 `T`
 
 The type to check inheritance from.
+
 #### Parameters
 
 <a name='Jcd.Reflection.TypeExtensions.InheritsFrom_T_(thisSystem.Type,bool).derivedType'></a>
@@ -27,5 +29,7 @@ The type to check inheritance on.
 `allowSelfToCompareToTrueIfConcrete` [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 
 #### Returns
+
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
-True if type inherits from [T](TypeExtensions.InheritsFrom.GrrQVxFfg2eFPCO42Wu2Sg.md#Jcd.Reflection.TypeExtensions.InheritsFrom_T_(thisSystem.Type,bool).T 'Jcd.Reflection.TypeExtensions.InheritsFrom<T>(this System.Type, bool).T')
+True if type inherits
+from [T](TypeExtensions.InheritsFrom.GrrQVxFfg2eFPCO42Wu2Sg.md#Jcd.Reflection.TypeExtensions.InheritsFrom_T_(thisSystem.Type,bool).T 'Jcd.Reflection.TypeExtensions.InheritsFrom<T>(this System.Type, bool).T')

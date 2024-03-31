@@ -9,4 +9,5 @@ public override System.Reflection.MemberTypes MemberType { get; }
 ```
 
 #### Property Value
+
 [System.Reflection.MemberTypes](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MemberTypes 'System.Reflection.MemberTypes')

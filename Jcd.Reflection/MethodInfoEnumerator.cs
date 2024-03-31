@@ -15,7 +15,7 @@ using System.Reflection;
 namespace Jcd.Reflection;
 
 /// <summary>
-/// Enumerates the method information for a given type. 
+/// Enumerates the method information for a given type.
 /// </summary>
 public class MethodInfoEnumerator : IEnumerable<MethodInfo>
 {
@@ -62,7 +62,10 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
    /// <returns>An enumerator</returns>
    public IEnumerator<MethodInfo> GetEnumerator()
    {
-      if (Type == null) yield break;
+      if (Type == null)
+      {
+         yield break;
+      }
 
       IEnumerable<MethodInfo> member = Filter.Flags.HasValue
                                           ? Type.GetMethods(Filter.Flags.Value)
@@ -72,7 +75,10 @@ public class MethodInfoEnumerator : IEnumerable<MethodInfo>
       {
          var skipped = Filter.Skip?.Invoke(mi);
 
-         if (skipped.HasValue && skipped.Value) continue;
+         if (skipped.HasValue && skipped.Value)
+         {
+            continue;
+         }
 
          yield return mi;
       }

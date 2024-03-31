@@ -2,6 +2,8 @@
 
 using System;
 
+// ReSharper disable UnusedMember.Global
+
 #endregion
 
 #pragma warning disable 414

@@ -1,5 +1,9 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Reflection;
+
+#endregion
 
 // ReSharper disable UnusedMember.Global
 
@@ -36,7 +40,11 @@ public struct MemberInfoFilter
    public static readonly MemberInfoFilter DirectInstanceMethodsFilter =
       new()
       {
-         Flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.FlattenHierarchy
+         Flags = BindingFlags.Instance
+               | BindingFlags.DeclaredOnly
+               | BindingFlags.NonPublic
+               | BindingFlags.Public
+               | BindingFlags.FlattenHierarchy
       };
 
    /// <summary>
@@ -45,7 +53,11 @@ public struct MemberInfoFilter
    public static readonly MemberInfoFilter DirectStaticMembersFilter =
       new()
       {
-         Flags = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.FlattenHierarchy
+         Flags = BindingFlags.Static
+               | BindingFlags.DeclaredOnly
+               | BindingFlags.NonPublic
+               | BindingFlags.Public
+               | BindingFlags.FlattenHierarchy
       };
 
    #endregion

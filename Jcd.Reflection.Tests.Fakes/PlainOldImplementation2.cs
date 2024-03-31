@@ -7,7 +7,7 @@ public class PlainOldImplementation2<T>
    #region Implementation of IPlainOldInterface<T>
 
    /// <inheritdoc />
-   public T Data { get; } = default;
+   public T Data => default;
 
    #endregion
 }

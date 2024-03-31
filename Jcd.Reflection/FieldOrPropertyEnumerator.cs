@@ -52,12 +52,12 @@ public class FieldOrPropertyEnumerator : IEnumerable<FieldOrPropertyInfo>
    }
 
    /// <summary>
-   /// Gets or sets the settings that control enumeration. 
+   /// Gets or sets the settings that control enumeration.
    /// </summary>
    public FieldOrPropertyInfoFilter Filter { get; set; }
 
    /// <summary>
-   /// The data type being reflected on. 
+   /// The data type being reflected on.
    /// </summary>
    public Type Type { get; }
 

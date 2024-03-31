@@ -10,6 +10,13 @@ using Moq;
 
 using Xunit;
 
+// ReSharper disable HeapView.DelegateAllocation
+// ReSharper disable HeapView.ObjectAllocation
+// ReSharper disable HeapView.ClosureAllocation
+// ReSharper disable InconsistentNaming
+// ReSharper disable HeapView.BoxingAllocation
+// ReSharper disable HeapView.ObjectAllocation.Evident
+
 #endregion
 
 namespace Jcd.Reflection.Tests;
@@ -17,7 +24,7 @@ namespace Jcd.Reflection.Tests;
 public class FieldOrPropertyInfoTests
 {
    /// <summary>
-   /// Validate that Constructor Throws ArgumentNullException When memberInfoIsNull. 
+   /// Validate that Constructor Throws ArgumentNullException When memberInfoIsNull.
    /// </summary>
    [Fact]
    public void Constructor_WhenMemberInfoIsNull_ThrowsArgumentNullException()
@@ -28,7 +35,7 @@ public class FieldOrPropertyInfoTests
    }
 
    /// <summary>
-   /// Validate that Constructor Throws ArgumentException when non-property or non-field MemberInfo passed. 
+   /// Validate that Constructor Throws ArgumentException when non-property or non-field MemberInfo passed.
    /// </summary>
    [Theory]
    [InlineData(MemberTypes.Constructor)]
@@ -48,7 +55,7 @@ public class FieldOrPropertyInfoTests
    }
 
    /// <summary>
-   /// Validate that Constructor does not throw any exception when property or field MemberInfo passed. 
+   /// Validate that Constructor does not throw any exception when property or field MemberInfo passed.
    /// </summary>
    [Theory]
    [InlineData(MemberTypes.Field)]
@@ -57,7 +64,7 @@ public class FieldOrPropertyInfoTests
    {
       var mi = new Mock<MemberInfo>();
       mi.SetupGet(s => s.MemberType).Returns(type);
-      var _ = new FieldOrPropertyInfo(mi.Object, BindingFlags.Public | BindingFlags.Instance);
+      _ = new FieldOrPropertyInfo(mi.Object, BindingFlags.Public | BindingFlags.Instance);
    }
 
    /// <summary>

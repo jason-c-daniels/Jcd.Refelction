@@ -1,4 +1,8 @@
-﻿using System.ComponentModel;
+﻿#region
+
+using System.ComponentModel;
+
+#endregion
 
 // ReSharper disable UnusedType.Global
 // ReSharper disable once CheckNamespace

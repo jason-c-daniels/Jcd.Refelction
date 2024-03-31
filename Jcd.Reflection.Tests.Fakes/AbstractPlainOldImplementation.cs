@@ -5,14 +5,14 @@ public abstract class AbstractPlainOldImplementation<T> : IPlainOldInterface<T>
    #region Implementation of IPlainOldInterface<T>
 
    /// <inheritdoc />
-   public T Data { get; } = default;
+   public T Data => default;
 
    #endregion
 
    #region Implementation of IPlainOldInterface
 
    /// <inheritdoc />
-   public string Name { get; } = nameof(AbstractPlainOldImplementation<T>);
+   public string Name => nameof(AbstractPlainOldImplementation<T>);
 
    #endregion
 }

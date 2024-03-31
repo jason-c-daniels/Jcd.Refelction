@@ -1,3 +1,5 @@
+// ReSharper disable UnusedType.Global
+
 namespace Jcd.Reflection.Tests.Fakes.DeepInheritance;
 
 public abstract class ImplementsIDerivedFromIGenericBase<T> : IDerivedFromIGenericBase<T>
@@ -5,14 +7,14 @@ public abstract class ImplementsIDerivedFromIGenericBase<T> : IDerivedFromIGener
    #region Implementation of IGenericBase<out T>
 
    /// <inheritdoc />
-   public T OtherData { get; } = default;
+   public T OtherData => default;
 
    #endregion
 
    #region Implementation of IDerivedFromGenericBase<out T>
 
    /// <inheritdoc />
-   public T MoreData { get; } = default;
+   public T MoreData => default;
 
    #endregion
 }

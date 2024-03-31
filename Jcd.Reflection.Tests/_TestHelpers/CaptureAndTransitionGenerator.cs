@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 using Jcd.Validations;
 
+// ReSharper disable HeapView.ObjectAllocation
+
 #endregion
 
 // ReSharper disable MemberCanBeProtected.Global
@@ -82,7 +84,9 @@ public class CaptureAndTransitionGenerator<TState, TResult> : IEnumerable<TResul
       bool @continue;
 
       do
+      {
          yield return TransitionFunction(CurrentState, out @continue);
+      }
       while (@continue);
    }
 

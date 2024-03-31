@@ -2,6 +2,8 @@
 
 using System.Text;
 
+// ReSharper disable HeapView.ObjectAllocation.Evident
+
 #endregion
 
 // ReSharper disable UnusedType.Global
@@ -27,10 +29,16 @@ public static class StringExtensions
       {
          isLeadingZero = isLeadingZero && c == '0';
 
-         if (!isLeadingZero) sb.Append(c);
+         if (!isLeadingZero)
+         {
+            sb.Append(c);
+         }
       }
 
-      if (sb.Length == 0 && text.Length > 0) sb.Append('0');
+      if (sb.Length == 0 && text.Length > 0)
+      {
+         sb.Append('0');
+      }
 
       return sb.ToString();
    }

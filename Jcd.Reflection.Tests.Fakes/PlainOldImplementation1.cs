@@ -5,7 +5,7 @@ public class PlainOldImplementation1 : IPlainOldInterface
    #region Implementation of IPlainOldInterface
 
    /// <inheritdoc />
-   public string Name { get; } = nameof(PlainOldImplementation1);
+   public string Name => nameof(PlainOldImplementation1);
 
    #endregion
 }

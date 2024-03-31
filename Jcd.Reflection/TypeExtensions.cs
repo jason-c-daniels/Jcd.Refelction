@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
+using Jcd.Validations;
+
 // ReSharper disable HeapView.ObjectAllocation.Evident
 // ReSharper disable ConvertIfStatementToReturnStatement
 // ReSharper disable MemberCanBePrivate.Global
@@ -17,7 +19,7 @@ using System.Runtime.CompilerServices;
 namespace Jcd.Reflection;
 
 /// <summary>
-/// Provides extension methods for <see cref="Type"/> interactions.
+/// Provides extension methods for <see cref="Type" /> interactions.
 /// </summary>
 public static class TypeExtensions
 {
@@ -27,10 +29,10 @@ public static class TypeExtensions
    /// <param name="derivedType">The type to check inheritance on.</param>
    /// <param name="allowSelfToCompareToTrueIfConcrete"></param>
    /// <typeparam name="T">The type to check inheritance from.</typeparam>
-   /// <returns>True if type inherits from <typeparamref name="T"/></returns>
+   /// <returns>True if type inherits from <typeparamref name="T" /></returns>
    public static bool InheritsFrom<T>(this Type derivedType, bool allowSelfToCompareToTrueIfConcrete = false)
    {
-      return derivedType.InheritsFrom(typeof(T), allowSelfToCompareToTrueIfConcrete);
+      return derivedType?.InheritsFrom(typeof(T), allowSelfToCompareToTrueIfConcrete) ?? false;
    }
 
    /// <summary>
@@ -39,9 +41,9 @@ public static class TypeExtensions
    /// <param name="derivedType">The type to check inheritance on.</param>
    /// <param name="parentType">The type to check for inheritance against.</param>
    /// <param name="allowSelfToCompareToTrueIfConcrete">if </param>
-   /// <returns>True if type inherits from <paramref name="parentType"/></returns>
+   /// <returns>True if type inherits from <paramref name="parentType" /></returns>
    /// <remarks>
-   /// The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project, on GitHub, by Kristian Hellang 
+   /// The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project, on GitHub, by Kristian Hellang
    /// provided the inspiration and overall algorithm for determining if a type was derived from another
    /// regardless of the genericity of the types being compared.
    /// </remarks>
@@ -51,21 +53,28 @@ public static class TypeExtensions
     , bool      allowSelfToCompareToTrueIfConcrete = false
    )
    {
-      return parentType.IsGenericTypeDefinition ?
-                derivedType.InheritsFromGenericTypeDefinition(parentType, allowSelfToCompareToTrueIfConcrete) :
-                allowSelfToCompareToTrueIfConcrete ? parentType.IsAssignableFrom(derivedType) :
-                   derivedType != parentType && parentType.IsAssignableFrom(derivedType);
+      Argument.IsNotNull(parentType, nameof(parentType));
+
+      if (parentType.IsGenericTypeDefinition)
+      {
+         return derivedType?.InheritsFromGenericTypeDefinition(parentType, allowSelfToCompareToTrueIfConcrete) ?? false;
+      }
+
+      return allowSelfToCompareToTrueIfConcrete
+                ? parentType.IsAssignableFrom(derivedType)
+                : derivedType != parentType && parentType.IsAssignableFrom(derivedType);
    }
 
    /// <summary>
-   /// Determines if the <paramref name="derivedType"/> is directly or indirectly derived from the <paramref name="genericTypeDefinition"/>
+   /// Determines if the <paramref name="derivedType" /> is directly or indirectly derived from the
+   /// <paramref name="genericTypeDefinition" />
    /// </summary>
    /// <param name="derivedType">The type to inspect.</param>
    /// <param name="genericTypeDefinition">The generic type definition to compare against.</param>
    /// <param name="allowSelfToCompareToTrueIfConcrete">Allows true to be returned if derivedType is exactly the generic type.</param>
-   /// <returns><see langword="true"/> if the derivedType is a direct descendant; <see langword="false"/></returns>
+   /// <returns><see langword="true" /> if the derivedType is a direct descendant; <see langword="false" /></returns>
    /// <remarks>
-   /// The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project, on GitHub, by Kristian Hellang 
+   /// The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project, on GitHub, by Kristian Hellang
    /// provided the inspiration and overall algorithm for determining if a type was derived from another
    /// regardless of the genericity of the types being compared.
    /// </remarks>
@@ -87,12 +96,13 @@ public static class TypeExtensions
    }
 
    /// <summary>
-   /// Determines if the <paramref name="derivedType"/> is directly derived from the <paramref name="genericTypeDefinition"/>
+   /// Determines if the <paramref name="derivedType" /> is directly derived from the
+   /// <paramref name="genericTypeDefinition" />
    /// </summary>
    /// <param name="derivedType">The type to inspect.</param>
    /// <param name="genericTypeDefinition">The generic type definition to compare against.</param>
    /// <param name="allowSelfToCompareToTrueIfConcrete">Allows true to be returned if derivedType is exactly the generic type.</param>
-   /// <returns><see langword="true"/> if the derivedType is a direct descendant; <see langword="false"/></returns>
+   /// <returns><see langword="true" /> if the derivedType is a direct descendant; <see langword="false" /></returns>
    /// <remarks>
    /// The <see href="https://github.com/khellang/Scrutor">Scrutor</see> project by khellang on GitHub
    /// provided the inspiration and overall algorithm for determining if a type was derived from another
@@ -104,6 +114,11 @@ public static class TypeExtensions
     , bool      allowSelfToCompareToTrueIfConcrete = false
    )
    {
+      if (derivedType is null)
+      {
+         return false;
+      }
+
       return derivedType.IsGenericType && derivedType.GetGenericTypeDefinition()               == genericTypeDefinition
                 ? allowSelfToCompareToTrueIfConcrete || derivedType.GetGenericTypeDefinition() != derivedType
                 : (
@@ -121,6 +136,7 @@ public static class TypeExtensions
    /// <returns>an array of the non-interface base types</returns>
    public static IEnumerable<Type> GetNonInterfaceBaseTypes(this Type type)
    {
+      Argument.IsNotNull(type, nameof(type));
       var types       = new List<Type>();
       var currentType = type;
 
@@ -134,7 +150,7 @@ public static class TypeExtensions
    }
 
    /// <summary>
-   /// Determines if a type is a concrete type. 
+   /// Determines if a type is a concrete type.
    /// </summary>
    /// <param name="type">the type to inspect.</param>
    /// <param name="allowCompilerGenerated">Allows types that are compiler generated to return true.</param>
@@ -144,7 +160,7 @@ public static class TypeExtensions
    /// This method does not account for the public/internal/private nature of the type.
    /// It only answers the concrete question. (Can something, directly instantiate it,
    /// that might be another class in a different assembly. You are using reflection,
-   /// after all.) 
+   /// after all.)
    /// </remarks>
    public static bool IsConcreteType(
       this Type type
@@ -152,11 +168,22 @@ public static class TypeExtensions
     , bool      allowSpecialNames      = false
    )
    {
-      if (type.IsAbstract) return false;
+      Argument.IsNotNull(type, nameof(type));
 
-      if (!allowSpecialNames && type.IsSpecialName) return false;
+      if (type.IsAbstract)
+      {
+         return false;
+      }
 
-      if (!allowCompilerGenerated && type.IsCompilerGenerated()) return false;
+      if (!allowSpecialNames && type.IsSpecialName)
+      {
+         return false;
+      }
+
+      if (!allowCompilerGenerated && type.IsCompilerGenerated())
+      {
+         return false;
+      }
 
       return true;
    }
@@ -165,6 +192,11 @@ public static class TypeExtensions
    /// Indicates if the type is compiler generated.
    /// </summary>
    /// <param name="type">The type to inspect.</param>
-   /// <returns>true if the type has the <see cref="CompilerGeneratedAttribute"/> attribute applied.</returns>
-   public static bool IsCompilerGenerated(this Type type) { return type.HasAttribute<CompilerGeneratedAttribute>(); }
+   /// <returns>true if the type has the <see cref="CompilerGeneratedAttribute" /> attribute applied.</returns>
+   public static bool IsCompilerGenerated(this Type type)
+   {
+      Argument.IsNotNull(type, nameof(type));
+
+      return type.HasAttribute<CompilerGeneratedAttribute>();
+   }
 }
