@@ -126,5 +126,14 @@ public class MethodExtensionsTests
    {
       var result = new TestClassC().GetMethod("NotMyMethod");
       Assert.Null(result);
+      result = MethodExtensions.GetMethod(typeof(TestClassC), "NotMyMethod");
+      Assert.Null(result);
+      var o = new TestClassC();
+      result = o.GetMethod("NotMyMethod");
+      Assert.Null(result);
+      var results = o.GetMethods(x => x.Name == "NotMyMethod");
+      Assert.Empty(results);
+      results = o.GetMethods(MethodInfoFilter.AllInstanceMethodsFilter, x => x.Name == "NotMyMethod");
+      Assert.Empty(results);
    }
 }

@@ -34,9 +34,9 @@ public static class FieldInfoExtensions
    )
    {
       Argument.IsNotNull(type, nameof(type));
-      IEnumerable<FieldInfo> props = flags.HasValue ? type.GetFields(flags.Value) : type.GetFields();
+      IEnumerable<FieldInfo> fields = flags.HasValue ? type.GetFields(flags.Value) : type.GetFields();
 
-      foreach (var fi in props)
+      foreach (var fi in fields)
       {
          if (fi.DeclaringType?.FullName != null
           && fi.DeclaringType.FullName.StartsWith("System.", StringComparison.InvariantCulture))

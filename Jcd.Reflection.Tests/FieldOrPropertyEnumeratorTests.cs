@@ -1,5 +1,7 @@
 ﻿#region
 
+using System;
+using System.Collections;
 using System.Linq;
 using System.Reflection;
 
@@ -51,5 +53,21 @@ public class FieldOrPropertyEnumeratorTests
                                              );
       var list = sut.ToList();
       Assert.Equal(15, list.Count);
+      sut  = new FieldOrPropertyEnumerator(obj, FieldOrPropertyInfoFilter.AllInstanceMethodsFilter);
+      list = sut.ToList();
+      Assert.Equal(9, list.Count);
+      sut  = new FieldOrPropertyEnumerator(obj, FieldOrPropertyInfoFilter.AllStaticMethodsFilter);
+      list = sut.ToList();
+      Assert.Equal(8, list.Count);
+      sut  = new FieldOrPropertyEnumerator(obj, FieldOrPropertyInfoFilter.DirectInstanceMethodsFilter);
+      list = sut.ToList();
+      Assert.Equal(9, list.Count);
+      sut  = new FieldOrPropertyEnumerator(obj, FieldOrPropertyInfoFilter.DirectStaticMethodsFilter);
+      list = sut.ToList();
+      Assert.Equal(8, list.Count);
+
+      // force coverage on IEnumerable.GetEnumerator
+      var       disp    = ((IEnumerable) sut).GetEnumerator();
+      using var unknown = disp as IDisposable;
    }
 }

@@ -164,6 +164,26 @@
             The settings indicating "how" to enumerate. (i.e. BindingFlags and a predicate for skipping members)
          </summary>
       </member>
+      <member name="F:Jcd.Reflection.FieldOrPropertyInfoFilter.AllInstanceMethodsFilter">
+         <summary>
+            Selects all public instance methods including inherited methods.
+         </summary>
+      </member>
+      <member name="F:Jcd.Reflection.FieldOrPropertyInfoFilter.AllStaticMethodsFilter">
+         <summary>
+            Selects all static methods including inherited static.
+         </summary>
+      </member>
+      <member name="F:Jcd.Reflection.FieldOrPropertyInfoFilter.DirectInstanceMethodsFilter">
+         <summary>
+            Selects all directly declared instance methods.
+         </summary>
+      </member>
+      <member name="F:Jcd.Reflection.FieldOrPropertyInfoFilter.DirectStaticMethodsFilter">
+         <summary>
+            Selects all directly declared static methods.
+         </summary>
+      </member>
       <member name="P:Jcd.Reflection.FieldOrPropertyInfoFilter.Flags">
          <summary>
             The BindingFlags for the member lookup.

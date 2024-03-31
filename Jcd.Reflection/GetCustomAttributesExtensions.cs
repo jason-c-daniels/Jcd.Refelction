@@ -36,17 +36,7 @@ public static class GetCustomAttributesExtensions
    public static TAttribute[] GetCustomAttributes<TAttribute>(this Enum value, bool inherit = false)
       where TAttribute : Attribute
    {
-      Argument.IsNotNull(value, nameof(value));
-      var type       = value.GetType();
-      var memberInfo = type.GetMember(Enum.GetName(type, value) ?? value.ToString()).FirstOrDefault();
-      var attributes = memberInfo?.GetCustomAttributes<TAttribute>(inherit).ToArray();
-
-      if (attributes is null || !attributes.Any())
-      {
-         return Array.Empty<TAttribute>();
-      }
-
-      return attributes;
+      return value.GetCustomAttributes(typeof(TAttribute), inherit).OfType<TAttribute>().ToArray();
    }
 
    // ReSharper disable once ReturnTypeCanBeEnumerable.Global

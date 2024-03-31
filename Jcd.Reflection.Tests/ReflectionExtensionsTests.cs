@@ -112,6 +112,43 @@ public class ReflectionExtensionsTests
    }
 
    /// <summary>
+   /// Validate that EnumerateFields enumerates public instance properties, inherited, when called with default parameters.
+   /// </summary>
+   [Fact]
+   public void EnumerateFields_On_Int32_With_Default_Parameters_Returns_Empty_Collection()
+   {
+      var fields = typeof(int).EnumerateFields().ToList();
+      Assert.Empty(fields);
+   }
+
+   /// <summary>
+   /// Validate that EnumerateFields enumerates public instance properties, inherited, when called with default parameters.
+   /// </summary>
+   [Fact]
+   public void EnumerateFields_On_Null_With_Default_Parameters_Returns_Empty_Collection()
+   {
+      var fields = ((object) null).EnumerateFields().ToList();
+      Assert.Empty(fields);
+   }
+
+   /// <summary>
+   /// Validate that EnumerateFields enumerates public instance properties, inherited, when called with default parameters.
+   /// </summary>
+   [Theory]
+   [InlineData(null)]
+   [InlineData(BindingFlags.Public
+             | BindingFlags.Instance
+             | BindingFlags.Static
+             | BindingFlags.FlattenHierarchy
+             | BindingFlags.NonPublic
+              )]
+   public void EnumerateFields_On_Int32_With_BindingFlags_Returns_Empty_Collection(BindingFlags? flags)
+   {
+      var fields = typeof(int).EnumerateFields(flags).ToList();
+      Assert.Empty(fields);
+   }
+
+   /// <summary>
    /// Validate that EnumerateFields enumerates public instance properties and skips according to skip function.
    /// </summary>
    [Fact]
@@ -325,6 +362,4 @@ public class ReflectionExtensionsTests
       a.SetValue("afield", 7);
       Assert.Equal(7, a.GetValue("afield"));
    }
-   #if moar_testing
-   #endif
 }
