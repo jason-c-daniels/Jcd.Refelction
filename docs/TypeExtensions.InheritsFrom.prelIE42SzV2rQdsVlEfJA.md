@@ -7,7 +7,6 @@ Checks if one type inherits from another. This will match generic inheritance as
 ```csharp
 public static bool InheritsFrom(this System.Type derivedType, System.Type parentType, bool allowSelfToCompareToTrueIfConcrete=false);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.TypeExtensions.InheritsFrom(thisSystem.Type,System.Type,bool).derivedType'></a>
@@ -29,14 +28,10 @@ The type to check for inheritance against.
 if
 
 #### Returns
-
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
-True if type inherits
-from [parentType](TypeExtensions.InheritsFrom.prelIE42SzV2rQdsVlEfJA.md#Jcd.Reflection.TypeExtensions.InheritsFrom(thisSystem.Type,System.Type,bool).parentType 'Jcd.Reflection.TypeExtensions.InheritsFrom(this System.Type, System.Type, bool).parentType')
+True if type inherits from [parentType](TypeExtensions.InheritsFrom.prelIE42SzV2rQdsVlEfJA.md#Jcd.Reflection.TypeExtensions.InheritsFrom(thisSystem.Type,System.Type,bool).parentType 'Jcd.Reflection.TypeExtensions.InheritsFrom(this System.Type, System.Type, bool).parentType')
 
 ### Remarks
-
-The [Scrutor](https://github.com/khellang/Scrutor 'https://github.com/khellang/Scrutor') project, on GitHub, by Kristian
-Hellang
+The [Scrutor](https://github.com/khellang/Scrutor 'https://github.com/khellang/Scrutor') project, on GitHub, by Kristian Hellang
 provided the inspiration and overall algorithm for determining if a type was derived from another
 regardless of the genericity of the types being compared.

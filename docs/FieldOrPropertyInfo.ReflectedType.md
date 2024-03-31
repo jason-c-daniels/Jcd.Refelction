@@ -9,5 +9,4 @@ public override System.Type ReflectedType { get; }
 ```
 
 #### Property Value
-
 [System.Type](https://docs.microsoft.com/en-us/dotnet/api/System.Type 'System.Type')

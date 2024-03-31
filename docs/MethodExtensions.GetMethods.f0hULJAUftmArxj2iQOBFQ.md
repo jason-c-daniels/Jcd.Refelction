@@ -7,7 +7,6 @@ Given a filter return an array of matching MethodInfo's
 ```csharp
 public static System.Reflection.MethodInfo[] GetMethods(this object self, Jcd.Reflection.MethodInfoFilter settings, System.Func<System.Reflection.MethodInfo,bool> filter=null);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.MethodExtensions.GetMethods(thisobject,Jcd.Reflection.MethodInfoFilter,System.Func_System.Reflection.MethodInfo,bool_).self'></a>
@@ -20,8 +19,7 @@ The target object of the method selection.
 
 `settings` [MethodInfoFilter](MethodInfoFilter.md 'Jcd.Reflection.MethodInfoFilter')
 
-The method selection settings such
-as [AllInstanceMethodsFilter](MethodInfoFilter.AllInstanceMethodsFilter.md 'Jcd.Reflection.MethodInfoFilter.AllInstanceMethodsFilter')
+The method selection settings such as [AllInstanceMethodsFilter](MethodInfoFilter.AllInstanceMethodsFilter.md 'Jcd.Reflection.MethodInfoFilter.AllInstanceMethodsFilter')
 
 <a name='Jcd.Reflection.MethodExtensions.GetMethods(thisobject,Jcd.Reflection.MethodInfoFilter,System.Func_System.Reflection.MethodInfo,bool_).filter'></a>
 
@@ -30,6 +28,5 @@ as [AllInstanceMethodsFilter](MethodInfoFilter.AllInstanceMethodsFilter.md 'Jcd.
 a predicate to select or exclude specific methods.
 
 #### Returns
-
 [System.Reflection.MethodInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MethodInfo 'System.Reflection.MethodInfo')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
 an array of matching methods

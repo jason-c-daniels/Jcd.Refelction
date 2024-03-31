@@ -8,7 +8,6 @@ Gets all attributes of a specified type on a parameter
 public static TAttribute[] GetCustomAttributes<TAttribute>(this System.Reflection.ParameterInfo paramInfo, bool inherit=false)
     where TAttribute : System.Attribute;
 ```
-
 #### Type parameters
 
 <a name='Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.ParameterInfo,bool).TAttribute'></a>
@@ -16,7 +15,6 @@ public static TAttribute[] GetCustomAttributes<TAttribute>(this System.Reflectio
 `TAttribute`
 
 The type of attributes to retrieve
-
 #### Parameters
 
 <a name='Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.ParameterInfo,bool).paramInfo'></a>
@@ -32,7 +30,6 @@ the parameter to inspect
 inspect the inheritance hierarchy
 
 #### Returns
-
 [TAttribute](GetCustomAttributesExtensions.GetCustomAttributes.Iw8lKgsNNvDpkymkveQdkg.md#Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes_TAttribute_(thisSystem.Reflection.ParameterInfo,bool).TAttribute 'Jcd.Reflection.GetCustomAttributesExtensions.GetCustomAttributes<TAttribute>(this System.Reflection.ParameterInfo, bool).TAttribute')[[]](https://docs.microsoft.com/en-us/dotnet/api/System.Array 'System.Array')
 An array of located <typeparamre name="TAttribute"/> instances. If none are found, an empty array is
 returned.

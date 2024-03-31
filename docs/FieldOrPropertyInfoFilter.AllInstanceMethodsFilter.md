@@ -9,5 +9,4 @@ public static readonly FieldOrPropertyInfoFilter AllInstanceMethodsFilter;
 ```
 
 #### Field Value
-
 [FieldOrPropertyInfoFilter](FieldOrPropertyInfoFilter.md 'Jcd.Reflection.FieldOrPropertyInfoFilter')

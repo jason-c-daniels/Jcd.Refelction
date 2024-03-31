@@ -7,7 +7,6 @@ Indicates if an object is of a decimal data type.
 ```csharp
 public static bool IsDecimalType(this object self);
 ```
-
 #### Parameters
 
 <a name='Jcd.Reflection.NumericExtensions.IsDecimalType(thisobject).self'></a>
@@ -17,6 +16,5 @@ public static bool IsDecimalType(this object self);
 The object to check
 
 #### Returns
-
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 true if the object is of a decimal data type

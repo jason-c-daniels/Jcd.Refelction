@@ -9,5 +9,4 @@ public static readonly MemberInfoFilter AllStaticMembersFilter;
 ```
 
 #### Field Value
-
 [MemberInfoFilter](MemberInfoFilter.md 'Jcd.Reflection.MemberInfoFilter')

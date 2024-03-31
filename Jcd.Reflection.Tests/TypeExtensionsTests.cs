@@ -1,5 +1,7 @@
 #region
 
+using System;
+
 using Jcd.Reflection.Tests.Fakes;
 using Jcd.Reflection.Tests.Fakes.DeepInheritance;
 
@@ -31,6 +33,7 @@ public class TypeExtensionsTests
       Assert.True(typeof(PrivateNestedType).IsConcreteType());
       Assert.True(typeof(NeenerImBeingDumb<>).IsConcreteType());
       Assert.True(typeof(NeenerImBeingDumb<int>).IsConcreteType());
+      Assert.True(typeof(NeenerImBeingDumb<int>).IsConcreteType(true, true));
    }
 
    [Fact]
@@ -63,6 +66,25 @@ public class TypeExtensionsTests
                   );
       Assert.False(typeof(AbstractDerived<int>).InheritsFrom(typeof(IGenericBase<int>)));
       Assert.False(typeof(ImplementsIGenericBase<>).InheritsFrom(typeof(GenericBase<>)));
+      Assert.False(typeof(ImplementsIGenericBase<>).InheritsFrom(typeof(GenericBase<>), true));
+      Assert.False(((Type) null).InheritsFrom(typeof(I<>)));
+   }
+
+   [Fact]
+   public void DirectlyInheritsFromGenericTypeDefinition_Returns_False_For_Types_Not_Derived_From_Provided_Type()
+   {
+      Assert.False(typeof(AbstractDerived<>).DirectlyInheritsFromGenericTypeDefinition(typeof(IGenericBase<>)));
+      Assert.False(typeof(DerivedFromIiDerivedFromIImplementsIDerivedFromIiDerivedFromIGenericBase<>)
+                     .DirectlyInheritsFromGenericTypeDefinition(typeof(GenericBase<>))
+                  );
+      Assert.False(typeof(NeenerImBeingDumb<>).DirectlyInheritsFromGenericTypeDefinition(typeof(GenericBase<>)));
+      Assert.False(typeof(AbstractDerived<int>).DirectlyInheritsFromGenericTypeDefinition(typeof(IGenericBase<int>)));
+      Assert.False(typeof(ImplementsIGenericBase<>).DirectlyInheritsFromGenericTypeDefinition(typeof(GenericBase<>)));
+      Assert.False(typeof(ImplementsIGenericBase<>).DirectlyInheritsFromGenericTypeDefinition(typeof(GenericBase<>)
+                                                                                            , true
+                                                                                             )
+                  );
+      Assert.False(((Type) null).DirectlyInheritsFromGenericTypeDefinition(typeof(I<>)));
    }
 
    private class PrivateNestedType;

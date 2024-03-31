@@ -52,6 +52,8 @@ public class MethodExtensionsTests
    {
       var result = new TestClassC().Invoke("op_Add", 7, 4);
       Assert.Equal(11, result);
+      result = new TestClassC().Invoke("GetValue", null);
+      Assert.Equal(10, result);
    }
 
    [Fact]
@@ -111,6 +113,8 @@ public class MethodExtensionsTests
    public void Invoke_On_Instance_Executes_Method_With_Result5()
    {
       var result = new TestClassC().Invoke<int>("GetValue");
+      Assert.Equal(10, result);
+      result = new TestClassC().Invoke<int>("GetValue", null);
       Assert.Equal(10, result);
    }
 
