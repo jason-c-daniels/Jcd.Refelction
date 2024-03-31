@@ -22,19 +22,19 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
    /// <summary>
    /// Predefined skip predicate for skipping system members.  
    /// </summary>
-   public static Func<MemberInfo, bool> SkipSystemMembers = mi =>
-                                                               mi.DeclaringType?.FullName != null
-                                                            && mi.DeclaringType.FullName.StartsWith("System.");
+   public static readonly Func<MemberInfo, bool> SkipSystemMembers = mi =>
+                                                                        mi.DeclaringType?.FullName != null
+                                                                     && mi.DeclaringType.FullName.StartsWith("System.");
 
    /// <summary>
    /// Predefined skip predicate for skipping system members.  
    /// </summary>
-   public static Func<MemberInfo, bool> SkipSystemAndNonDataMembers = mi =>
+   public static readonly Func<MemberInfo, bool> SkipSystemAndNonDataMembers = mi =>
 
-                                                                         // ReSharper disable once ArrangeRedundantParentheses
-                                                                         SkipSystemMembers(mi)
-                                                                      || (mi.MemberType != MemberTypes.Field
-                                                                       && mi.MemberType != MemberTypes.Property);
+                                                                                  // ReSharper disable once ArrangeRedundantParentheses
+                                                                                  SkipSystemMembers(mi)
+                                                                               || (mi.MemberType != MemberTypes.Field
+                                                                                && mi.MemberType != MemberTypes.Property);
 
    /// <summary>
    /// Constructs a MemberInfoEnumerator from a type and settings.
