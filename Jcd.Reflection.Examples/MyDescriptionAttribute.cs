@@ -12,7 +12,7 @@ using System;
 namespace Jcd.Reflection.Examples;
 
 [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-public class MyDescriptionAttribute(string description) : Attribute
+public sealed class MyDescriptionAttribute(string description) : Attribute
 {
    public string Description { get; set; } = description;
 }

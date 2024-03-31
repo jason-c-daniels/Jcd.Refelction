@@ -4,6 +4,8 @@ using System;
 using System.Linq;
 using System.Reflection;
 
+using Jcd.Validations;
+
 // ReSharper disable UnusedMember.Global
 
 #endregion
@@ -62,6 +64,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute(this Type type, Type attributeType, bool inherit = false)
    {
+      Argument.IsNotNull(type, nameof(type));
       return type.IsDefined(attributeType, inherit);
    }
 
@@ -78,6 +81,7 @@ public static class HasAttributeExtensions
    public static bool HasAttribute<TAttribute>(this Type type, bool inherit = false)
       where TAttribute : Attribute
    {
+      Argument.IsNotNull(type, nameof(type));
       return type.HasAttribute(typeof(TAttribute), inherit);
    }
 
@@ -93,6 +97,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute(this FieldInfo fieldInfo, Type attributeType, bool inherit = false)
    {
+      Argument.IsNotNull(fieldInfo, nameof(fieldInfo));
       return fieldInfo.IsDefined(attributeType, inherit);
    }
 
@@ -108,6 +113,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute<TAttribute>(this FieldInfo fieldInfo, bool inherit = false)
    {
+      Argument.IsNotNull(fieldInfo, nameof(fieldInfo));
       return fieldInfo.HasAttribute(typeof(TAttribute), inherit);
    }
 
@@ -123,6 +129,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute(this PropertyInfo propertyInfo, Type attributeType, bool inherit = false)
    {
+      Argument.IsNotNull(propertyInfo, nameof(propertyInfo));
       return propertyInfo.IsDefined(attributeType, inherit);
    }
 
@@ -138,6 +145,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute<TAttribute>(this PropertyInfo propertyInfo, bool inherit = false)
    {
+      Argument.IsNotNull(propertyInfo, nameof(propertyInfo));
       return propertyInfo.HasAttribute(typeof(TAttribute), inherit);
    }
 
@@ -153,6 +161,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute(this MethodInfo methodInfo, Type attributeType, bool inherit = false)
    {
+      Argument.IsNotNull(methodInfo, nameof(methodInfo));
       return methodInfo.IsDefined(attributeType, inherit);
    }
 
@@ -168,6 +177,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute<TAttribute>(this MethodInfo methodInfo, bool inherit = false)
    {
+      Argument.IsNotNull(methodInfo, nameof(methodInfo));
       return methodInfo.HasAttribute(typeof(TAttribute), inherit);
    }
 
@@ -183,6 +193,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute(this ParameterInfo paramInfo, Type attributeType, bool inherit = false)
    {
+      Argument.IsNotNull(paramInfo, nameof(paramInfo));
       return paramInfo.IsDefined(attributeType, inherit);
    }
 
@@ -198,6 +209,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute<TAttribute>(this ParameterInfo paramInfo, bool inherit = false)
    {
+      Argument.IsNotNull(paramInfo, nameof(paramInfo));
       return paramInfo.HasAttribute(typeof(TAttribute), inherit);
    }
 
@@ -213,6 +225,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute(this Module module, Type attributeType, bool inherit = false)
    {
+      Argument.IsNotNull(module, nameof(module));      
       return module.IsDefined(attributeType, inherit);
    }
 
@@ -228,6 +241,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute<TAttribute>(this Module module, bool inherit = false)
    {
+      Argument.IsNotNull(module, nameof(module));
       return module.HasAttribute(typeof(TAttribute), inherit);
    }
 
@@ -243,6 +257,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute(this TypeInfo typeInfo, Type attributeType, bool inherit = false)
    {
+      Argument.IsNotNull(typeInfo, nameof(typeInfo));
       return typeInfo.IsDefined(attributeType, inherit);
    }
 
@@ -258,6 +273,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute<TAttribute>(this TypeInfo typeInfo, bool inherit = false)
    {
+      Argument.IsNotNull(typeInfo, nameof(typeInfo));
       return typeInfo.HasAttribute(typeof(TAttribute), inherit);
    }
 
@@ -273,6 +289,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute(this Assembly assembly, Type attributeType, bool inherit = false)
    {
+      Argument.IsNotNull(assembly, nameof(assembly));
       return assembly.IsDefined(attributeType, inherit);
    }
 
@@ -288,6 +305,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute<TAttribute>(this Assembly assembly, bool inherit = false)
    {
+      Argument.IsNotNull(assembly, nameof(assembly));
       return assembly.HasAttribute(typeof(TAttribute), inherit);
    }
 
@@ -303,6 +321,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute(this EventInfo eventInfo, Type attributeType, bool inherit = false)
    {
+      Argument.IsNotNull(eventInfo, nameof(eventInfo));
       return eventInfo.IsDefined(attributeType, inherit);
    }
 
@@ -318,6 +337,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute<TAttribute>(this EventInfo eventInfo, bool inherit = false)
    {
+      Argument.IsNotNull(eventInfo, nameof(eventInfo));
       return eventInfo.HasAttribute(typeof(TAttribute), inherit);
    }
 
@@ -333,6 +353,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute(this MemberInfo memberInfo, Type attributeType, bool inherit = false)
    {
+      Argument.IsNotNull(memberInfo, nameof(memberInfo));
       return memberInfo.IsDefined(attributeType, inherit);
    }
 
@@ -348,6 +369,7 @@ public static class HasAttributeExtensions
    /// </returns>
    public static bool HasAttribute<TAttribute>(this MemberInfo memberInfo, bool inherit = false)
    {
+      Argument.IsNotNull(memberInfo, nameof(memberInfo));
       return memberInfo.HasAttribute(typeof(TAttribute), inherit);
    }
 
