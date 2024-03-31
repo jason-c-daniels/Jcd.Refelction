@@ -24,7 +24,8 @@ namespace Jcd.Reflection.Tests;
 public class ReflectionExtensionsTests
 {
    /// <summary>
-   /// Validate that EnumerateProperties enumerates public instance properties, inherited, when called with default parameters.
+   /// Validate that EnumerateProperties enumerates public instance properties, inherited, when called with default
+   /// parameters.
    /// </summary>
    [Fact]
    public void EnumeratePropertiesOnType_WhenCalledWithDefaultParameters_EnumeratesPublicInstanceProperties()
@@ -62,7 +63,8 @@ public class ReflectionExtensionsTests
    }
 
    /// <summary>
-   /// Validate that EnumerateProperties enumerates public instance properties, inherited, when called with default parameters.
+   /// Validate that EnumerateProperties enumerates public instance properties, inherited, when called with default
+   /// parameters.
    /// </summary>
    [Fact]
    public void EnumeratePropertiesOnObject_WhenCalledWithDefaultParameters_EnumeratesPublicInstanceProperties()
@@ -139,7 +141,8 @@ public class ReflectionExtensionsTests
    }
 
    /// <summary>
-   /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip backing fields.
+   /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip
+   /// backing fields.
    /// </summary>
    [Fact]
    public void EnumerateFieldsOnType_WhenBindingsSetToReturnAll_EnumeratesAllFieldsExceptBacking()
@@ -196,7 +199,8 @@ public class ReflectionExtensionsTests
    }
 
    /// <summary>
-   /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip backing fields.
+   /// Validate that EnumerateFields Enumerates AllFields When BindingsSetToReturnAll, except private base class, skip
+   /// backing fields.
    /// </summary>
    [Fact]
    public void EnumerateFieldsOnObject_WhenBindingsSetToReturnAll_EnumeratesAllFieldsExceptBacking()
@@ -239,7 +243,7 @@ public class ReflectionExtensionsTests
    }
 
    /// <summary>
-   /// Validate that GetPropertyOrFieldValue Returns the value When object has property or field with the name. 
+   /// Validate that GetPropertyOrFieldValue Returns the value When object has property or field with the name.
    /// </summary>
    [Fact]
    public void GetPropertyOrFieldValue_WhenObjectDoesntHavePropertyOrFieldWithTheName_ReturnsNull()
@@ -250,7 +254,7 @@ public class ReflectionExtensionsTests
    }
 
    /// <summary>
-   /// Validate that GetPropertyOrFieldValue Returns the value When object has property or field with the name. 
+   /// Validate that GetPropertyOrFieldValue Returns the value When object has property or field with the name.
    /// </summary>
    [Fact]
    public void GetPropertyOrFieldValue_WhenObjectHasPropertyOrFieldWithTheName_ReturnsValue()

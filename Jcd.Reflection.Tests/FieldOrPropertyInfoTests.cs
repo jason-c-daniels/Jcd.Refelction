@@ -24,7 +24,7 @@ namespace Jcd.Reflection.Tests;
 public class FieldOrPropertyInfoTests
 {
    /// <summary>
-   /// Validate that Constructor Throws ArgumentNullException When memberInfoIsNull. 
+   /// Validate that Constructor Throws ArgumentNullException When memberInfoIsNull.
    /// </summary>
    [Fact]
    public void Constructor_WhenMemberInfoIsNull_ThrowsArgumentNullException()
@@ -35,7 +35,7 @@ public class FieldOrPropertyInfoTests
    }
 
    /// <summary>
-   /// Validate that Constructor Throws ArgumentException when non-property or non-field MemberInfo passed. 
+   /// Validate that Constructor Throws ArgumentException when non-property or non-field MemberInfo passed.
    /// </summary>
    [Theory]
    [InlineData(MemberTypes.Constructor)]
@@ -55,7 +55,7 @@ public class FieldOrPropertyInfoTests
    }
 
    /// <summary>
-   /// Validate that Constructor does not throw any exception when property or field MemberInfo passed. 
+   /// Validate that Constructor does not throw any exception when property or field MemberInfo passed.
    /// </summary>
    [Theory]
    [InlineData(MemberTypes.Field)]

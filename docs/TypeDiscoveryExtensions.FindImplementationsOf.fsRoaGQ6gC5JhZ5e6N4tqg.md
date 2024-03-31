@@ -27,7 +27,8 @@ The collection of assemblies to search.
 `returnTargetTypeIfConcrete` [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 
 If [T](TypeDiscoveryExtensions.FindImplementationsOf.fsRoaGQ6gC5JhZ5e6N4tqg.md#Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf_T_(thisSystem.Collections.Generic.IEnumerable_System.Reflection.Assembly_,bool).T 'Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf<T>(this System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, bool).T')
-is in the target assembly, and it's a concrete, return it as well.
+is in the target assembly, and it's a concrete,
+return it as well.
 
 #### Returns
 

@@ -27,10 +27,9 @@ namespace Jcd.Reflection.Tests._TestHelpers;
 [MyDescription("A useful Class")]
 public class AttributesReflectionTestClass
 {
+   [MyDescription("A useless field")] private readonly int field2 = 12;
    [MyDescription("A useful field")] [MyDescription("No you don't get to know what it's used for.")]
    private int field;
-
-   [MyDescription("A useless field")] private readonly int field2 = 12;
    #pragma warning disable 169
 
    // this warning doesn't apply to this, because there is no point in actually

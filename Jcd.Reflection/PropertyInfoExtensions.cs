@@ -20,7 +20,7 @@ namespace Jcd.Reflection;
 public static class PropertyInfoExtensions
 {
    /// <summary>
-   /// Enumerate the PropertyInfo entries for a given type 
+   /// Enumerate the PropertyInfo entries for a given type
    /// </summary>
    /// <param name="type">The data type to reflect on</param>
    /// <param name="flags">The BindingFlags</param>
@@ -36,20 +36,29 @@ public static class PropertyInfoExtensions
 
       foreach (var pi in props)
       {
-         if (!pi.CanRead) continue;
+         if (!pi.CanRead)
+         {
+            continue;
+         }
 
-         if (pi.DeclaringType?.FullName != null && pi.DeclaringType.FullName.StartsWith("System.")) continue;
+         if (pi.DeclaringType?.FullName != null && pi.DeclaringType.FullName.StartsWith("System."))
+         {
+            continue;
+         }
 
          var skipped = skip?.Invoke(pi);
 
-         if (skipped.HasValue && skipped.Value) continue;
+         if (skipped.HasValue && skipped.Value)
+         {
+            continue;
+         }
 
          yield return pi;
       }
    }
 
    /// <summary>
-   /// Enumerate the PropertyInfo entries for a given type 
+   /// Enumerate the PropertyInfo entries for a given type
    /// </summary>
    /// <param name="self">The data instance to reflect on</param>
    /// <param name="flags">The BindingFlags</param>

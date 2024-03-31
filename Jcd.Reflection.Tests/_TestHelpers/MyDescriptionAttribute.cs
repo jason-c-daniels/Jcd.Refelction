@@ -10,7 +10,7 @@ using System;
 namespace Jcd.Reflection.Tests._TestHelpers;
 
 [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-public class MyDescriptionAttribute : Attribute
+public sealed class MyDescriptionAttribute : Attribute
 {
    public MyDescriptionAttribute(string description) { Description = description; }
 

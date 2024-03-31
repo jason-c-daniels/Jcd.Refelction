@@ -27,7 +27,8 @@ The type to find implementations of.
 `returnTargetTypeIfConcrete` [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 
 If [type](TypeDiscoveryExtensions.FindImplementationsOf.R3VhT91dxhl7EJJKf9h+tg.md#Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(thisSystem.Reflection.Assembly,System.Type,bool).type 'Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(this System.Reflection.Assembly, System.Type, bool).type')
-is in the target assembly, and it's a concrete, return it as well.
+is in the target assembly, and it's a concrete,
+return it as well.
 
 #### Returns
 

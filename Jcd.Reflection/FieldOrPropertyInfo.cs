@@ -22,7 +22,7 @@ public class FieldOrPropertyInfo : MemberInfo
    private readonly MemberInfo   memberInfo;
 
    /// <summary>
-   /// Constructs a <see cref="FieldOrPropertyInfo"/>
+   /// Constructs a <see cref="FieldOrPropertyInfo" />
    /// </summary>
    /// <param name="memberInfo">The member info on which this instance is based.</param>
    /// <param name="flags">the binding flags</param>
@@ -43,7 +43,7 @@ public class FieldOrPropertyInfo : MemberInfo
    }
 
    /// <summary>
-   /// Gets the type that declares the member.   
+   /// Gets the type that declares the member.
    /// </summary>
    public override Type DeclaringType => memberInfo.DeclaringType;
 
@@ -81,7 +81,7 @@ public class FieldOrPropertyInfo : MemberInfo
    }
 
    /// <summary>
-   /// Checks if a custom attribute of the specified type exists for the member. 
+   /// Checks if a custom attribute of the specified type exists for the member.
    /// </summary>
    /// <param name="attributeType">The data type for the custom attribute</param>
    /// <param name="inherit">Checks inheritance tree if true</param>
@@ -92,14 +92,14 @@ public class FieldOrPropertyInfo : MemberInfo
    }
 
    /// <summary>
-   /// Gets the value from the object. 
+   /// Gets the value from the object.
    /// </summary>
    /// <param name="obj">the object to get the value from</param>
    /// <returns>the retrieved value</returns>
    public object GetValue(object obj) { return GetValue(obj, out _); }
 
    /// <summary>
-   /// Gets a value from an object, and indicates if an error occurred during that process. 
+   /// Gets a value from an object, and indicates if an error occurred during that process.
    /// </summary>
    /// <param name="obj">the object to get the value from</param>
    /// <param name="errored">true if an exception occurred during the get.</param>
@@ -125,14 +125,14 @@ public class FieldOrPropertyInfo : MemberInfo
    }
 
    /// <summary>
-   /// Sets a value on an object. 
+   /// Sets a value on an object.
    /// </summary>
    /// <param name="obj">The object to manipulate</param>
    /// <param name="value">The value to set.</param>
    public void SetValue(object obj, object value) { SetValue(obj, value, out _); }
 
    /// <summary>
-   /// Sets a value on an object. 
+   /// Sets a value on an object.
    /// </summary>
    /// <param name="obj">The object to manipulate</param>
    /// <param name="value">The value to set.</param>
@@ -142,9 +142,13 @@ public class FieldOrPropertyInfo : MemberInfo
       try
       {
          if (MemberType == MemberTypes.Property)
+         {
             DeclaringType?.GetProperty(Name, flags)?.SetValue(obj, value);
+         }
          else
+         {
             DeclaringType?.GetField(Name, flags)?.SetValue(obj, value);
+         }
 
          errored = false;
       }

@@ -84,7 +84,9 @@ public class CaptureAndTransitionGenerator<TState, TResult> : IEnumerable<TResul
       bool @continue;
 
       do
+      {
          yield return TransitionFunction(CurrentState, out @continue);
+      }
       while (@continue);
    }
 

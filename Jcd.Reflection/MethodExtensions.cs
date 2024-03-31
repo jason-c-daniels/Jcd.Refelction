@@ -12,6 +12,8 @@ using Jcd.Validations;
 // ReSharper disable HeapView.ObjectAllocation.Evident
 // ReSharper disable HeapView.ObjectAllocation.Possible
 
+#pragma warning disable S4018
+
 #endregion
 
 // ReSharper disable MemberCanBePrivate.Global
@@ -41,7 +43,9 @@ public static class MethodExtensions
    /// </summary>
    /// <param name="self">The instance to find the method on</param>
    /// <param name="name">the method name.</param>
-   /// <param name="settings">settings that control method selection. <see cref="MethodInfoFilter.AllInstanceMethodsFilter"/> </param>
+   /// <param name="settings">
+   /// settings that control method selection. <see cref="MethodInfoFilter.AllInstanceMethodsFilter" />
+   /// </param>
    /// <returns>null if none found</returns>
    public static MethodInfo GetMethod(this object self, string name, MethodInfoFilter settings)
    {
@@ -52,7 +56,7 @@ public static class MethodExtensions
    }
 
    /// <summary>
-   /// Gets a methodInfo by name from a type. 
+   /// Gets a methodInfo by name from a type.
    /// </summary>
    /// <param name="type">the type to interrogate</param>
    /// <param name="name">the name of the method</param>
@@ -65,7 +69,7 @@ public static class MethodExtensions
    }
 
    /// <summary>
-   /// Gets a methodInfo by name from a type. 
+   /// Gets a methodInfo by name from a type.
    /// </summary>
    /// <param name="type">the type to interrogate</param>
    /// <param name="name">the name of the method</param>
@@ -93,7 +97,9 @@ public static class MethodExtensions
    /// Given a filter return an array of matching MethodInfo's
    /// </summary>
    /// <param name="self">The target object of the method selection.</param>
-   /// <param name="settings">The method selection settings such as <see cref="MethodInfoFilter.AllInstanceMethodsFilter"/></param>
+   /// <param name="settings">
+   /// The method selection settings such as <see cref="MethodInfoFilter.AllInstanceMethodsFilter" />
+   /// </param>
    /// <param name="filter">a predicate to select or exclude specific methods.</param>
    /// <returns>an array of matching methods</returns>
    public static MethodInfo[] GetMethods(
@@ -118,7 +124,11 @@ public static class MethodExtensions
    public static object Invoke(this object self, MethodInfo methodInfo, params object[] @params)
    {
       Argument.IsNotNull(self, nameof(self));
-      if (@params == null) @params = [];
+
+      if (@params == null)
+      {
+         @params = [];
+      }
 
       return methodInfo.Invoke(self, @params);
    }
@@ -128,7 +138,9 @@ public static class MethodExtensions
    /// </summary>
    /// <param name="self">The instance to invoke the method on</param>
    /// <param name="name">the name of the method to invoke</param>
-   /// <param name="settings">The method selection settings such as <see cref="MethodInfoFilter.AllInstanceMethodsFilter"/></param>
+   /// <param name="settings">
+   /// The method selection settings such as <see cref="MethodInfoFilter.AllInstanceMethodsFilter" />
+   /// </param>
    /// <param name="params">the params for the method</param>
    /// <returns>the result, if any</returns>
    public static object Invoke(
@@ -158,7 +170,6 @@ public static class MethodExtensions
    }
 
    /// <summary>
-   /// 
    /// </summary>
    /// <param name="self"></param>
    /// <param name="methodInfo"></param>
@@ -168,7 +179,11 @@ public static class MethodExtensions
    public static TOut Invoke<TOut>(this object self, MethodInfo methodInfo, params object[] @params)
    {
       Argument.IsNotNull(self, nameof(self));
-      if (@params == null) @params = [];
+
+      if (@params == null)
+      {
+         @params = [];
+      }
 
       return (TOut) methodInfo.Invoke(self, @params);
    }
@@ -178,7 +193,9 @@ public static class MethodExtensions
    /// </summary>
    /// <param name="self">The instance to invoke the method on</param>
    /// <param name="name">the name of the method to invoke</param>
-   /// <param name="settings">The method selection settings such as <see cref="MethodInfoFilter.AllInstanceMethodsFilter"/></param>
+   /// <param name="settings">
+   /// The method selection settings such as <see cref="MethodInfoFilter.AllInstanceMethodsFilter" />
+   /// </param>
    /// <param name="params">the params for the method</param>
    /// <returns>the result, if any</returns>
    /// <typeparam name="TOut">result type</typeparam>
@@ -210,7 +227,7 @@ public static class MethodExtensions
    }
 
    /// <summary>
-   /// Invokes a static method on a type 
+   /// Invokes a static method on a type
    /// </summary>
    /// <param name="type">The type containing the static method</param>
    /// <param name="name">The name of the method</param>
@@ -222,12 +239,14 @@ public static class MethodExtensions
    }
 
    /// <summary>
-   /// Invokes a static method on a type 
+   /// Invokes a static method on a type
    /// </summary>
    /// <param name="type">The type containing the static method</param>
    /// <param name="name">The name of the method</param>
    /// <param name="params">The params to pass</param>
-   /// <param name="settings">The method selection settings such as <see cref="MethodInfoFilter.AllStaticMethodsFilter"/></param>
+   /// <param name="settings">
+   /// The method selection settings such as <see cref="MethodInfoFilter.AllStaticMethodsFilter" />
+   /// </param>
    /// <returns>The result of the call, if any</returns>
    public static object Invoke(
       this Type        type
@@ -240,7 +259,7 @@ public static class MethodExtensions
    }
 
    /// <summary>
-   /// Invokes a static method on a type, coercing the return type 
+   /// Invokes a static method on a type, coercing the return type
    /// </summary>
    /// <param name="type">The type containing the static method</param>
    /// <param name="name">The name of the method</param>
@@ -253,12 +272,14 @@ public static class MethodExtensions
    }
 
    /// <summary>
-   /// Invokes a static method on a type, coercing the return type 
+   /// Invokes a static method on a type, coercing the return type
    /// </summary>
    /// <param name="type">The type containing the static method</param>
    /// <param name="name">The name of the method</param>
    /// <param name="params">The params to pass</param>
-   /// <param name="settings">The method selection settings such as <see cref="MethodInfoFilter.AllStaticMethodsFilter"/></param>
+   /// <param name="settings">
+   /// The method selection settings such as <see cref="MethodInfoFilter.AllStaticMethodsFilter" />
+   /// </param>
    /// <typeparam name="TOut">The type of the return</typeparam>
    /// <returns>The result of the call, if any</returns>
    public static TOut Invoke<TOut>(

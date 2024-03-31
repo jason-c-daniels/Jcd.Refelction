@@ -4,8 +4,8 @@
 
 Determines if
 the [derivedType](TypeExtensions.DirectlyInheritsFromGenericTypeDefinition.qE66oTVx3GVuaGUl6VtNHQ.md#Jcd.Reflection.TypeExtensions.DirectlyInheritsFromGenericTypeDefinition(thisSystem.Type,System.Type,bool).derivedType 'Jcd.Reflection.TypeExtensions.DirectlyInheritsFromGenericTypeDefinition(this System.Type, System.Type, bool).derivedType')
-is directly derived from
-the [genericTypeDefinition](TypeExtensions.DirectlyInheritsFromGenericTypeDefinition.qE66oTVx3GVuaGUl6VtNHQ.md#Jcd.Reflection.TypeExtensions.DirectlyInheritsFromGenericTypeDefinition(thisSystem.Type,System.Type,bool).genericTypeDefinition 'Jcd.Reflection.TypeExtensions.DirectlyInheritsFromGenericTypeDefinition(this System.Type, System.Type, bool).genericTypeDefinition')
+is directly derived from the
+[genericTypeDefinition](TypeExtensions.DirectlyInheritsFromGenericTypeDefinition.qE66oTVx3GVuaGUl6VtNHQ.md#Jcd.Reflection.TypeExtensions.DirectlyInheritsFromGenericTypeDefinition(thisSystem.Type,System.Type,bool).genericTypeDefinition 'Jcd.Reflection.TypeExtensions.DirectlyInheritsFromGenericTypeDefinition(this System.Type, System.Type, bool).genericTypeDefinition')
 
 ```csharp
 public static bool DirectlyInheritsFromGenericTypeDefinition(this System.Type derivedType, System.Type genericTypeDefinition, bool allowSelfToCompareToTrueIfConcrete=false);

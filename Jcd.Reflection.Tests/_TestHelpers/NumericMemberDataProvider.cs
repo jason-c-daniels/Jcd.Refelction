@@ -15,7 +15,6 @@ using Xunit;
 namespace Jcd.Reflection.Tests._TestHelpers;
 
 #pragma warning disable CA2021
-
 /// <summary>
 /// An XUnit data provider. This one provides lists of numeric data of a various sorts.
 /// </summary>

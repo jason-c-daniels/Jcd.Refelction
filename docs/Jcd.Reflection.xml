@@ -843,7 +843,8 @@
          </summary>
          <param name="self">The instance to find the method on</param>
          <param name="name">the method name.</param>
-         <param name="settings">settings that control method selection.
+         <param name="settings">
+            settings that control method selection.
             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllInstanceMethodsFilter"/>
          </param>
          <returns>null if none found</returns>
@@ -881,7 +882,8 @@
             Given a filter return an array of matching MethodInfo's
          </summary>
          <param name="self">The target object of the method selection.</param>
-         <param name="settings">The method selection settings such as
+         <param name="settings">
+            The method selection settings such as
             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllInstanceMethodsFilter"/>
          </param>
          <param name="filter">a predicate to select or exclude specific methods.</param>
@@ -904,7 +906,8 @@
          </summary>
          <param name="self">The instance to invoke the method on</param>
          <param name="name">the name of the method to invoke</param>
-         <param name="settings">The method selection settings such as
+         <param name="settings">
+            The method selection settings such as
             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllInstanceMethodsFilter"/>
          </param>
          <param name="params">the params for the method</param>
@@ -922,7 +925,6 @@
       <member
          name="M:Jcd.Reflection.MethodExtensions.Invoke``1(System.Object,System.Reflection.MethodInfo,System.Object[])">
          <summary>
-
          </summary>
          <param name="self"></param>
          <param name="methodInfo"></param>
@@ -937,7 +939,8 @@
          </summary>
          <param name="self">The instance to invoke the method on</param>
          <param name="name">the name of the method to invoke</param>
-         <param name="settings">The method selection settings such as
+         <param name="settings">
+            The method selection settings such as
             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllInstanceMethodsFilter"/>
          </param>
          <param name="params">the params for the method</param>
@@ -971,7 +974,8 @@
          <param name="type">The type containing the static method</param>
          <param name="name">The name of the method</param>
          <param name="params">The params to pass</param>
-         <param name="settings">The method selection settings such as
+         <param name="settings">
+            The method selection settings such as
             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllStaticMethodsFilter"/>
          </param>
          <returns>The result of the call, if any</returns>
@@ -994,7 +998,8 @@
          <param name="type">The type containing the static method</param>
          <param name="name">The name of the method</param>
          <param name="params">The params to pass</param>
-         <param name="settings">The method selection settings such as
+         <param name="settings">
+            The method selection settings such as
             <see cref="F:Jcd.Reflection.MethodInfoFilter.AllStaticMethodsFilter"/>
          </param>
          <typeparam name="TOut">The type of the return</typeparam>
@@ -1131,18 +1136,16 @@
          <returns>true if the object is of an unsigned data type</returns>
       </member>
       <member
-         name="M:Jcd.Reflection.NumericExtensions.IsScalar(System.Object,System.Collections.Generic.HashSet{System.Type})">
+         name="M:Jcd.Reflection.NumericExtensions.IsScalar(System.Object,System.Collections.Generic.ICollection{System.Type})">
          <summary>
-
          </summary>
          <param name="self"></param>
          <param name="nonPrimitiveScalars"></param>
          <returns></returns>
       </member>
       <member
-         name="M:Jcd.Reflection.NumericExtensions.IsScalar(System.Type,System.Collections.Generic.HashSet{System.Type})">
+         name="M:Jcd.Reflection.NumericExtensions.IsScalar(System.Type,System.Collections.Generic.ICollection{System.Type})">
          <summary>
-
          </summary>
          <param name="type"></param>
          <param name="nonPrimitiveScalars"></param>
@@ -1184,11 +1187,14 @@
             Gets implementations of the specified type from an assembly.
          </summary>
          <param name="assembly">the assembly to search.</param>
-         <param name="returnTargetTypeIfConcrete">If
+         <param name="returnTargetTypeIfConcrete">
+            If
             <typeparamref name="T"/>
-            is in the target assembly, and it's a concrete, return it as well.
+            is in the target assembly, and it's a concrete,
+            return it as well.
          </param>
-         <returns>An
+         <returns>
+            An
             <see cref="T:System.Collections.Generic.IEnumerable`1"/>
             of the implementations of
             <typeparam name="T"></typeparam>
@@ -1205,9 +1211,11 @@
          </summary>
          <param name="assembly">the assembly to search.</param>
          <param name="type">The type to find implementations of.</param>
-         <param name="returnTargetTypeIfConcrete">If
+         <param name="returnTargetTypeIfConcrete">
+            If
             <paramref name="type"/>
-            is in the target assembly, and it's a concrete, return it as well.
+            is in the target assembly, and it's a concrete,
+            return it as well.
          </param>
          <returns>An
             <see cref="T:System.Collections.Generic.IEnumerable`1"/>
@@ -1227,9 +1235,11 @@
             Gets implementations of the specified type from a collection of assemblies.
          </summary>
          <param name="assemblies">The collection of assemblies to search.</param>
-         <param name="returnTargetTypeIfConcrete">If
+         <param name="returnTargetTypeIfConcrete">
+            If
             <typeparamref name="T"/>
-            is in the target assembly, and it's a concrete, return it as well.
+            is in the target assembly, and it's a concrete,
+            return it as well.
          </param>
          <returns>An
             <see cref="T:System.Collections.Generic.IEnumerable`1"/>
@@ -1248,9 +1258,11 @@
          </summary>
          <param name="assemblies">The collection of assemblies to search.</param>
          <param name="type">The type to find implementations of.</param>
-         <param name="returnTargetTypeIfConcrete">If
+         <param name="returnTargetTypeIfConcrete">
+            If
             <paramref name="type"/>
-            is in the target assembly, and it's a concrete, return it as well.
+            is in the target assembly, and it's a concrete,
+            return it as well.
          </param>
          <returns>An
             <see cref="T:System.Collections.Generic.IEnumerable`1"/>

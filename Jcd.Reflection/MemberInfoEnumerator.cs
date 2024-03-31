@@ -20,14 +20,14 @@ namespace Jcd.Reflection;
 public class MemberInfoEnumerator : IEnumerable<MemberInfo>
 {
    /// <summary>
-   /// Predefined skip predicate for skipping system members.  
+   /// Predefined skip predicate for skipping system members.
    /// </summary>
    public static readonly Func<MemberInfo, bool> SkipSystemMembers = mi =>
                                                                         mi.DeclaringType?.FullName != null
                                                                      && mi.DeclaringType.FullName.StartsWith("System.");
 
    /// <summary>
-   /// Predefined skip predicate for skipping system members.  
+   /// Predefined skip predicate for skipping system members.
    /// </summary>
    public static readonly Func<MemberInfo, bool> SkipSystemAndNonDataMembers = mi =>
 
@@ -71,12 +71,15 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
    public Type Type { get; }
 
    /// <summary>
-   /// Gets the enumerator 
+   /// Gets the enumerator
    /// </summary>
    /// <returns>An enumerator</returns>
    public IEnumerator<MemberInfo> GetEnumerator()
    {
-      if (Type == null) yield break;
+      if (Type == null)
+      {
+         yield break;
+      }
 
       IEnumerable<MemberInfo> memberInfos = Filter.Flags.HasValue
                                                ? Type.GetMembers(Filter.Flags.Value)
@@ -86,7 +89,10 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
       {
          var skipped = Filter.Skip?.Invoke(mi);
 
-         if (skipped.HasValue && skipped.Value) continue;
+         if (skipped.HasValue && skipped.Value)
+         {
+            continue;
+         }
 
          yield return mi;
       }

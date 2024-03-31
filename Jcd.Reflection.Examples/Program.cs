@@ -8,6 +8,7 @@ using Jcd.Reflection.Examples;
 // ReSharper disable HeapView.ObjectAllocation.Evident
 // ReSharper disable HeapView.BoxingAllocation
 // ReSharper disable UnusedVariable
+#pragma warning disable S109
 
 #endregion
 
