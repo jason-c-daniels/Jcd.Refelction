@@ -114,7 +114,10 @@ public static class TypeExtensions
     , bool      allowSelfToCompareToTrueIfConcrete = false
    )
    {
-      if (derivedType is null) return false;
+      if (derivedType is null)
+      {
+         return false;
+      }
 
       return derivedType.IsGenericType && derivedType.GetGenericTypeDefinition()               == genericTypeDefinition
                 ? allowSelfToCompareToTrueIfConcrete || derivedType.GetGenericTypeDefinition() != derivedType

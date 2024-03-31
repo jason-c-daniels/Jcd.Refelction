@@ -2,6 +2,8 @@
 
 using System.Reflection;
 
+using Jcd.Validations;
+
 // ReSharper disable HeapView.BoxingAllocation
 
 #endregion
@@ -26,6 +28,8 @@ public static class ValueExtensions
     , BindingFlags bindingFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance
    )
    {
+      Argument.IsNotNull(self, nameof(self));
+
       var t  = self.GetType();
       var pi = t.GetProperty(fieldOrPropertyName, bindingFlags);
 
@@ -55,6 +59,7 @@ public static class ValueExtensions
    )
       where T : class
    {
+      Argument.IsNotNull(self, nameof(self));
       var t  = self.GetType();
       var pi = t.GetProperty(fieldOrPropertyName, bindingFlags);
       var fi = t.GetField(fieldOrPropertyName, bindingFlags);

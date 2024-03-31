@@ -5,6 +5,7 @@
 ```csharp
 public static bool IsScalar(this object self, System.Collections.Generic.ICollection<System.Type> nonPrimitiveScalars=null);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.NumericExtensions.IsScalar(thisobject,System.Collections.Generic.ICollection_System.Type_).self'></a>
@@ -16,4 +17,5 @@ public static bool IsScalar(this object self, System.Collections.Generic.ICollec
 `nonPrimitiveScalars` [System.Collections.Generic.ICollection&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1')[System.Type](https://docs.microsoft.com/en-us/dotnet/api/System.Type 'System.Type')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1 'System.Collections.Generic.ICollection`1')
 
 #### Returns
+
 [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')

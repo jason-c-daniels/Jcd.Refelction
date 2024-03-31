@@ -32,7 +32,7 @@ public static class NumericExtensions
    /// </summary>
    /// <param name="self">The object to check</param>
    /// <returns>true if the object is of a decimal data type</returns>
-   public static bool IsDecimalType(this object self) { return Type.GetTypeCode(self.GetType()) == TypeCode.Decimal; }
+   public static bool IsDecimalType(this object self) { return Type.GetTypeCode(self?.GetType()) == TypeCode.Decimal; }
 
    /// <summary>
    /// Indicates if an object is of a floating point data type.
@@ -42,7 +42,7 @@ public static class NumericExtensions
    public static bool IsFloatType(this object self)
    {
       // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-      switch (Type.GetTypeCode(self.GetType()))
+      switch (Type.GetTypeCode(self?.GetType()))
       {
          case TypeCode.Double:
          case TypeCode.Single:
@@ -63,7 +63,7 @@ public static class NumericExtensions
    public static bool IsIntegerType(this object self)
    {
       // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-      switch (Type.GetTypeCode(self.GetType()))
+      switch (Type.GetTypeCode(self?.GetType()))
       {
          case TypeCode.Byte:
          case TypeCode.SByte:
@@ -89,7 +89,7 @@ public static class NumericExtensions
    public static bool IsNumericType(this object self)
    {
       // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-      switch (Type.GetTypeCode(self.GetType()))
+      switch (Type.GetTypeCode(self?.GetType()))
       {
          case TypeCode.Byte:
          case TypeCode.SByte:
@@ -141,9 +141,12 @@ public static class NumericExtensions
    /// <returns>true if the object is of a signed data type</returns>
    public static bool IsSignedType(this object self)
    {
-      if (self is null) return false;
+      if (self is null)
+      {
+         return false;
+      }
 
-      return SignedTypes.Contains(self.GetType());
+      return SignedTypes.Contains(self?.GetType());
    }
 
    /// <summary>
@@ -153,7 +156,10 @@ public static class NumericExtensions
    /// <returns>true if the object is of an unsigned data type</returns>
    public static bool IsUnsignedType(this object self)
    {
-      if (self is null) return false;
+      if (self is null)
+      {
+         return false;
+      }
 
       var type = self.GetType();
 

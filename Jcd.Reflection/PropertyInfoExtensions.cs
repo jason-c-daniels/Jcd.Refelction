@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
+using Jcd.Validations;
+
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable HeapView.ClosureAllocation
 // ReSharper disable HeapView.DelegateAllocation
@@ -32,6 +34,7 @@ public static class PropertyInfoExtensions
     , Func<PropertyInfo, bool> skip  = null
    )
    {
+      Argument.IsNotNull(type, nameof(type));
       IEnumerable<PropertyInfo> props = flags.HasValue ? type.GetProperties(flags.Value) : type.GetProperties();
 
       foreach (var pi in props)
@@ -41,7 +44,8 @@ public static class PropertyInfoExtensions
             continue;
          }
 
-         if (pi.DeclaringType?.FullName != null && pi.DeclaringType.FullName.StartsWith("System."))
+         if (pi.DeclaringType?.FullName != null
+          && pi.DeclaringType.FullName.StartsWith("System.", StringComparison.InvariantCulture))
          {
             continue;
          }
@@ -70,6 +74,8 @@ public static class PropertyInfoExtensions
     , Func<PropertyInfo, bool> skip  = null
    )
    {
+      Argument.IsNotNull(self, nameof(self));
+
       return self.IsScalar() ? null : self.GetType().EnumerateProperties(flags, skip);
    }
 }

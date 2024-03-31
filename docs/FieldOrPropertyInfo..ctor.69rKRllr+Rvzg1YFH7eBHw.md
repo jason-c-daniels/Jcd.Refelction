@@ -7,6 +7,7 @@ Constructs a [FieldOrPropertyInfo](FieldOrPropertyInfo.md 'Jcd.Reflection.FieldO
 ```csharp
 public FieldOrPropertyInfo(System.Reflection.MemberInfo memberInfo, System.Reflection.BindingFlags flags);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.FieldOrPropertyInfo.FieldOrPropertyInfo(System.Reflection.MemberInfo,System.Reflection.BindingFlags).memberInfo'></a>

@@ -7,6 +7,7 @@ Constructs a MemberInfoEnumerator from an instance and settings.
 ```csharp
 public MemberInfoEnumerator(object item, Jcd.Reflection.MemberInfoFilter settings=default(Jcd.Reflection.MemberInfoFilter));
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.MemberInfoEnumerator.MemberInfoEnumerator(object,Jcd.Reflection.MemberInfoFilter).item'></a>

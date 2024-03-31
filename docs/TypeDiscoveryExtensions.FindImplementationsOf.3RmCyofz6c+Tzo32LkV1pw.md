@@ -7,6 +7,7 @@ Gets implementations of the specified type from a collection of assemblies.
 ```csharp
 public static System.Collections.Generic.IEnumerable<System.Type> FindImplementationsOf(this System.Collections.Generic.IEnumerable<System.Reflection.Assembly> assemblies, System.Type type, bool returnTargetTypeIfConcrete=false);
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(thisSystem.Collections.Generic.IEnumerable_System.Reflection.Assembly_,System.Type,bool).assemblies'></a>
@@ -25,12 +26,16 @@ The type to find implementations of.
 
 `returnTargetTypeIfConcrete` [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')
 
-If [type](TypeDiscoveryExtensions.FindImplementationsOf.3RmCyofz6c+Tzo32LkV1pw.md#Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(thisSystem.Collections.Generic.IEnumerable_System.Reflection.Assembly_,System.Type,bool).type 'Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(this System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Type, bool).type') is in the target assembly, and it's a concrete,
+If [type](TypeDiscoveryExtensions.FindImplementationsOf.3RmCyofz6c+Tzo32LkV1pw.md#Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(thisSystem.Collections.Generic.IEnumerable_System.Reflection.Assembly_,System.Type,bool).type 'Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(this System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Type, bool).type')
+is in the target assembly, and it's a concrete,
 return it as well.
 
 #### Returns
+
 [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[System.Type](https://docs.microsoft.com/en-us/dotnet/api/System.Type 'System.Type')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
-An [System.Collections.Generic.IEnumerable&lt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1') of the implementations of [type](TypeDiscoveryExtensions.FindImplementationsOf.3RmCyofz6c+Tzo32LkV1pw.md#Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(thisSystem.Collections.Generic.IEnumerable_System.Reflection.Assembly_,System.Type,bool).type 'Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(this System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Type, bool).type')
+An [System.Collections.Generic.IEnumerable&lt;&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')
+of the implementations
+of [type](TypeDiscoveryExtensions.FindImplementationsOf.3RmCyofz6c+Tzo32LkV1pw.md#Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(thisSystem.Collections.Generic.IEnumerable_System.Reflection.Assembly_,System.Type,bool).type 'Jcd.Reflection.TypeDiscoveryExtensions.FindImplementationsOf(this System.Collections.Generic.IEnumerable<System.Reflection.Assembly>, System.Type, bool).type')
 
 #### Exceptions
 

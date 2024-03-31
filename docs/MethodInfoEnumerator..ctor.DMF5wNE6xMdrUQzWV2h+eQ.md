@@ -7,6 +7,7 @@ Constructs a MethodInfoEnumerator from a type and settings.
 ```csharp
 public MethodInfoEnumerator(System.Type type, Jcd.Reflection.MethodInfoFilter settings=default(Jcd.Reflection.MethodInfoFilter));
 ```
+
 #### Parameters
 
 <a name='Jcd.Reflection.MethodInfoEnumerator.MethodInfoEnumerator(System.Type,Jcd.Reflection.MethodInfoFilter).type'></a>

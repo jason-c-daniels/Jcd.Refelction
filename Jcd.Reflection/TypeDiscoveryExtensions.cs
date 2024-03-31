@@ -43,6 +43,7 @@ public static class TypeDiscoveryExtensions
     , bool          returnTargetTypeIfConcrete = false
    )
    {
+      Argument.IsNotNull(assembly, nameof(assembly));
       return FindImplementationsOf(assembly, typeof(T), returnTargetTypeIfConcrete);
    }
 
@@ -88,6 +89,7 @@ public static class TypeDiscoveryExtensions
     , bool                       returnTargetTypeIfConcrete = false
    )
    {
+      Argument.IsNotNull(assemblies, nameof(assemblies));
       return FindImplementationsOf(assemblies, typeof(T), returnTargetTypeIfConcrete);
    }
 

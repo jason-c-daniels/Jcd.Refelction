@@ -24,7 +24,10 @@ public class MemberInfoEnumerator : IEnumerable<MemberInfo>
    /// </summary>
    public static readonly Func<MemberInfo, bool> SkipSystemMembers = mi =>
                                                                         mi.DeclaringType?.FullName != null
-                                                                     && mi.DeclaringType.FullName.StartsWith("System.");
+                                                                     && mi.DeclaringType.FullName.StartsWith("System."
+                                                                                                           , StringComparison
+                                                                                                               .InvariantCulture
+                                                                                                            );
 
    /// <summary>
    /// Predefined skip predicate for skipping system members.
