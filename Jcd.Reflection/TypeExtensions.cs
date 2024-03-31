@@ -51,10 +51,12 @@ public static class TypeExtensions
     , bool      allowSelfToCompareToTrueIfConcrete = false
    )
    {
-      return parentType.IsGenericTypeDefinition ?
-                derivedType.InheritsFromGenericTypeDefinition(parentType, allowSelfToCompareToTrueIfConcrete) :
-                allowSelfToCompareToTrueIfConcrete ? parentType.IsAssignableFrom(derivedType) :
-                   derivedType != parentType && parentType.IsAssignableFrom(derivedType);
+      if (parentType.IsGenericTypeDefinition)
+         return derivedType.InheritsFromGenericTypeDefinition(parentType, allowSelfToCompareToTrueIfConcrete);
+
+      return allowSelfToCompareToTrueIfConcrete
+                ? parentType.IsAssignableFrom(derivedType)
+                : derivedType != parentType && parentType.IsAssignableFrom(derivedType);
    }
 
    /// <summary>
